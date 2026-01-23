@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find My Club - NCYSA</title>
+<style>
+  #club-tool-wrapper { max-width: 800px; margin: 0 auto; background: #faf7f7; padding: 25px; border-radius: 14px; box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 8px 25px rgba(0,0,0,0.3); text-align: center; font-family: system-ui, sans-serif; transform: translateY(-5px); border: 1px solid rgba(255,255,255,0.2); }
+  .gm-ui-hover-effect { display: none !important; }
+  #club-tool-wrapper h2 { margin-top: 0; color: #10045a; font-size: 22px; font-weight: 700; }
+  .zip-row { display: flex; justify-content: center; gap: 10px; margin-top: 10px; }
+  #zip-input { width: 130px; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; }
+  #search-btn { background: #b82f2f; border: none; padding: 8px 18px; border-radius: 6px; color: white; font-size: 14px; cursor: pointer; }
+  .club-card { display: flex; align-items: center; gap: 12px; background: white; padding: 14px; border-radius: 10px; margin-top: 12px; border: 1px solid #eee; text-align: left; }
+  .club-logo { width: 48px; height: 48px; object-fit: contain; }
+  #map { width: 100%; height: 350px; margin-top: 20px; border-radius: 10px; overflow: hidden; }
+  @media(max-width: 600px){ #club-tool-wrapper { max-width: 90%; padding: 18px; } #zip-input { width: 110px; } }
+</style>
+</head>
+<body>
+<div id="club-tool-wrapper">
+  <h2>FIND MY CLUB</h2>
+  <p style="margin:0 0 10px;">Enter your home ZIP code to see NCYSA member clubs near you.</p>
+  <form id="zip-form">
+    <div class="zip-row">
+      <input id="zip-input" type="text" maxlength="5" placeholder="ZIP">
+      <button id="search-btn">SEARCH</button>
+    </div>
+  </form>
+  <div id="status" style="margin-top:10px; color:#b82f2f; font-size:14px;"></div>
+  <div id="results"></div>
+  <div id="map"></div>
+</div>
+<script>
+const clubs=[
+{n:'316 Futbol Club',lat:35.0768,lng:-80.6689,c:'Indian Trail, NC',w:'https://www.316-sports.com',e:'seth.sullivan@fbcit.org',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/316-FC-logo.jpg'},
+{n:'AC Sandhills',lat:35.1418,lng:-79.4297,c:'Aberdeen, NC',w:'http://www.acsandhills.com',e:'info@acsandhills.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/AC-SANDHILLS.png'},
+{n:'Alamance Aztecs Futbol Club',lat:36.0726,lng:-79.4378,c:'Burlington, NC',w:'https://www.alamanceaztecsfc.com',e:'alamanceaztecsfc@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/12/AlamanceAztecsLogo.png'},
+{n:'Asheboro City Futbol Club',lat:35.7079,lng:-79.8136,c:'Asheboro, NC',w:'https://randolphasheboroymca.com/asheboro-city-futbol-club',e:'krskaskss@live.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/ASHEBORO-CITY-FUTBOL-CLUB.jpg'},
+{n:'Asheville Buncombe Youth Soccer Association',lat:35.6012,lng:-82.4857,c:'Asheville, NC',w:'http://www.abysa.org',e:'bobby@abysa.org',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/ASHEVILLE-BUNCOMBE-YSAHIGHLAND-FC.jpg'},
+{n:'Asheville Football Club',lat:35.5279,lng:-82.6915,c:'Candler, NC',w:'https://avlfootballclub.com/',e:'avlfootballclub@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/ASHEVILLE-FOOTBALL-CLUB.png'},
+{n:'Bogue Banks Futbol Club',lat:34.7879,lng:-76.8591,c:'Newport, NC',w:'https://www.boguebanksfc.com/',e:'marianeliza@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/BOGUE-BANKS-FUTBOL-CLUB.png'},
+{n:'Brunswick United',lat:33.9215,lng:-78.0197,c:'Southport, NC',w:'https://www.brunswickunitednc.com/',e:'info@brunswickunitednc.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/BRUNSWICK-UNITED.jpg'},
+{n:'Burke Soccer Association',lat:35.7454,lng:-81.6848,c:'Morganton, NC',w:'https://burkesoccer.sites.playmetrics.com',e:'Bsaclassicdirector@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/BURKE-SA.jpg'},
+{n:'Carolina Core FC Youth',lat:36.1118,lng:-80.0737,c:'Kernersville, NC',w:'https://www.carolinacoreyouth.com',e:'lauren.olive@carolinacoreyouth.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CAROLINA-CORE-FC-YOUTH.webp'},
+{n:'Carolina Elite Soccer Academy',lat:35.5751,lng:-82.6007,c:'Asheville, NC',w:'http://carolinaelitesc.com/branch-locations/asheville',e:'info@carolinaelitesc.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/12/CAROLINA-ELITE-SOCCER-ACADEMY.png'},
+{n:'Carolina Football Club',lat:35.9382,lng:-78.6414,c:'Raleigh, NC',w:'https://www.carolinafc.org',e:'info@trinitysa.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CAROLINA-FOOTBALL-CLUB.png'},
+{n:'Carolina Mountains Soccer Club',lat:35.4887,lng:-82.9976,c:'Waynesville, NC',w:'http://www.cmsoccerclub.org',e:'cmscpres@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CAROLINA-MOUNTAIN-SC.png'},
+{n:'Carolina United Soccer Association',lat:36.2946,lng:-76.2347,c:'Elizabeth City, NC',w:'http://www.carolinaunitedsoccer.com/',e:'info@carolinaunitedsoccer.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CAROLINA-UNITED-SA.avif'},
+{n:'Carolina Velocity Futbol Club',lat:35.7596,lng:-78.7194,c:'Raleigh, NC',w:'http://www.carolinavelocity.com',e:'info@carolinavelocity.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CAROLINA-VELOCITY-FUTBOL-ACADEMY.png'},
+{n:'Catawba Valley Youth Soccer Association',lat:35.7501,lng:-81.3412,c:'Hickory, NC',w:'http://www.cvysa.org',e:'doc@cvysa.org',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CATAWBA-VALLEY-YOUTH-SA.png'},
+{n:'Charlotte Eagles Soccer Club',lat:35.1079,lng:-80.7626,c:'Charlotte, NC',w:'https://www.charlotteeagles.com/',e:'info@charlotteeagles.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-EAGLES-SOCCER-CLUB.webp'},
+{n:'Charlotte Independence Soccer Club',lat:35.4729,lng:-80.8601,c:'Cornelius, NC',w:'http://www.independencesoccer.club',e:'bethb@independencesoccer.club',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-INDEPENDENCE.png'},
+{n:'Charlotte Soccer Academy',lat:35.0832,lng:-80.8926,c:'Pineville, NC',w:'http://www.charlottesocceracademy.com',e:'kdenner@charlottesocceracademy.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-SOCCER-ACADEMY.jpeg'},
+{n:'Charlotte Metro Futbol Club',lat:35.2251,lng:-80.9084,c:'Charlotte, NC',w:'https://www.charlottemetrofc.com',e:'info@charlottemetrofc.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/12/Charlotte-Metro-FC-logo-jpeg.jpg'},
+{n:'Cherokee Co. Soccer League',lat:35.1554,lng:-83.9918,c:'Marble, NC',w:'http://www.play4ccsl.org',e:'play4ccsl@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHEROKEE-CO-SL.png'},
+{n:'Coastal Area Soccer Association',lat:34.5479,lng:-77.3969,c:'Sneads Ferry, NC',w:'https://mldasoccer.com/casa-home/',e:'jwright@mldasports.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/COASTAL-AREA-SA.png'},
+{n:'Coastal United Soccer Association',lat:35.1085,lng:-77.0890,c:'New Bern, NC',w:'http://www.coastalunited.com',e:'soccer@coastalunited.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/COASTAL-UNITED.png'},
+{n:'Davidson County Youth Soccer League',lat:35.9032,lng:-80.2612,c:'Welcome, NC',w:'http://www.dcysa.org',e:'dcysabod@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/DAVIDSON-COUNTY-YOUTH-SL.jpg'},
+{n:'Denver United Futbol Club',lat:35.5329,lng:-81.0290,c:'Denver, NC',w:'http://www.denverunitedfc.com',e:'denverunitedwarriors@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/DENVER-UNITED.png'},
+{n:'Durham Futbol Club',lat:36.0276,lng:-78.9542,c:'Durham, NC',w:'https://www.durhamsocceracademy.com/durhamfc',e:'coachozzy@durhamsocceracademy.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/DURHAM-FUTBOL-CLUB.png'},
+{n:'East Duplin Soccer Club',lat:34.9246,lng:-77.7780,c:'Beulaville, NC',w:'http://www.edsc-nc.com',e:'eastduplinsc@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/EAST-DUPLIN-SC.png'},
+{n:'Elite Youth Soccer Club Inc',lat:35.6893,lng:-78.6089,c:'Garner, NC',w:'https://www.eliteysc.org/',e:'info@eliteysc.org',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/12/ELITE_YOUTH_PNG__Big__medium.png'},
+{n:'Falcons United',lat:34.7251,lng:-77.1197,c:'Peletier, NC',w:'https://www.falconsunitednc.com/',e:'president@falconsunitednc.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/12/falcons-colored-logo.png'},
+{n:'Fayetteville Soccer Club',lat:35.1018,lng:-78.9364,c:'Fayetteville, NC',w:'http://www.fscforce.com',e:'chip@fscforce.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/12/fsc_logo_2.png'},
+{n:'FC Athletico',lat:35.5751,lng:-80.8101,c:'Mooresville, NC',w:'https://www.fcathletico.com/',e:'nick@fcathletico.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/FC-ATHLETICO.png'},
+{n:'Ferry Riptides Soccer Club',lat:34.7540,lng:-77.4302,c:'Jacksonville, NC',w:'https://ferryriptidessc.com',e:'frscpresident@ferryriptidessc.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/FERRY-RIPTIDES-SOCCER-CLUB.webp'},
+{n:'Fox Soccer Academy of the Carolinas',lat:35.4729,lng:-80.8601,c:'Cornelius, NC',w:'https://www.foxsoccer.academy/carolinas',e:'adminnc@foxsocceracademy.org',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/FOX-SOCCER-ACADEMY-OF-THE-CA.png'},
+{n:'Franklin Wake Soccer Club',lat:36.0968,lng:-78.4747,c:'Youngsville, NC',w:'http://www.fwsoccerclub.com',e:'president@fwsoccerclub.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/FRANKLIN-WAKE-SOCCER-CLUB.png'},
+{n:'Goldsboro Football Club',lat:35.3679,lng:-77.9636,c:'Goldsboro, NC',w:'https://www.strikeeaglesfc.net/',e:'yacoubaide@icloud.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/GOLDSBORO-FOOTBALL-CLUB.png'},
+{n:'Greater Cleveland Athletic Association',lat:35.6507,lng:-78.4564,c:'Clayton, NC',w:'http://www.gcaasports.org',e:'travelsoccer@gcaasports.org',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/GREATER-CLEVELAND-AA.png'},
+{n:'Greater Cleveland Co. Soccer Association',lat:35.2918,lng:-81.5365,c:'Shelby, NC',w:'http://www.gccsasoccer.com',e:'president@gccsasoccer.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/GREATER-CLEVELAND-COUNTY-SA.png'},
+{n:'Guilford Futbol Club',lat:36.0343,lng:-79.7615,c:'Greensboro, NC',w:'https://www.instagram.com/guilford_futbolclub',e:'pgfc.info@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/GUILFORD-FUTBOL-CLUB.jpg'},
+{n:'Havelock Youth Soccer Association',lat:34.8790,lng:-76.9016,c:'Havelock, NC',w:'http://www.havelocksoccer.org',e:'hysapresident1@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/HAVELOCK-YOUTH-SA.png'},
+{n:'High Country Soccer Association',lat:36.2165,lng:-81.6746,c:'Boone, NC',w:'http://www.hcsoccer.com',e:'office@hcsoccer.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/HIGH-COUNTRY-SA.png'},
+{n:'Impact Futbol Club',lat:35.7826,lng:-80.8873,c:'Statesville, NC',w:'http://impactfutbolclub.com/',e:'impactfcnc@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/IMPACT-FUTBOL-CLUB.png'},
+{n:'Indian Trail Athletic Association',lat:35.0768,lng:-80.6689,c:'Indian Trail, NC',w:'https://itaasports.com/playsoccer',e:'soccer.itaa@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/INDIAN-TRAIL-AA.jpg'},
+{n:'Inter Development Futbol',lat:35.8993,lng:-78.6382,c:'Raleigh, NC',w:'https://www.idfutbol.com/',e:'andre@idfutbol.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/INTER-DEVELOPMENT-FUTBOL.png'},
+{n:'Jacksonville Area Soccer Association',lat:34.7540,lng:-77.4302,c:'Jacksonville, NC',w:'http://www.jasa-nc.com',e:'moose@jasa-nc.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/JACKSONVILLE-AREA-SA.png'},
+{n:'Lenoir Youth Soccer Association',lat:35.9140,lng:-81.5387,c:'Lenoir, NC',w:'http://www.lenoiryouthsoccer.com',e:'info@lenoiryouthsoccer.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/LENOIR-YOUTH-SA.png'},
+{n:'Lumber River Football Club',lat:34.6254,lng:-79.0089,c:'Lumberton, NC',w:'https://www.lumberriverfc.org/',e:'info@nrfcriverhawks.org',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/LUMBER-RIVER-FOOTBALL-CLUB.png'},
+{n:'Mebane Youth Soccer Association',lat:36.0929,lng:-79.2672,c:'Mebane, NC',w:'http://www.mebanesoccer.us',e:'info@mebanesoccer.us',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/MEBANE-YOUTH-SA.jpg'},
+{n:'Mint Hill Athletic Association',lat:35.1851,lng:-80.6484,c:'Mint Hill, NC',w:'https://www.mhaa.us/-soccer',e:'soccer@mhaa.us',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/12/35224404_mhaa_logovector_medium.png'},
+{n:'Mooresville Inclusive SA',lat:35.5829,lng:-80.8101,c:'Mooresville, NC',w:'https://www.facebook.com/profile.php?id=61559472201725',e:'mooresvilleinclusivesoccer@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/MOORESVILLE-INCLUSIVE-SA.jpg'},
+{n:'NC Fusion (Kernersville)',lat:36.1118,lng:-80.0737,c:'Kernersville, NC',w:'https://www.ncfusion.org/',e:'swollaston@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NC-FUSION.png'},
+{n:'NC Fusion (Bermuda Run)',lat:36.0040,lng:-80.4218,c:'Bermuda Run, NC',w:'https://www.ncfusion.org/',e:'swollaston@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NC-FUSION.png'},
+{n:'Neuse River Futbol Alliance',lat:35.5893,lng:-78.3847,c:'Archer Lodge, NC',w:'http://www.neuseriverfa.org',e:'admin@neuseriverfa.org',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NEUSE-RIVER-FUTBOL-ALLIANCE.png'},
+{n:'Next Big Thing Soccer Academy',lat:36.1018,lng:-78.4581,c:'Franklinton, NC',w:'https://nbtsoccer.com/',e:'nbtsoccer@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NEXT-BIG-THING-SOCCER-ACADEMY.png'},
+{n:'North Carolina FC Youth',lat:35.8382,lng:-78.6347,c:'Raleigh, NC',w:'https://www.ncfcyouth.com',e:'gary.buete@ncfcyouth.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png'},
+{n:'North Carolina Rush Triad Soccer Club',lat:36.0729,lng:-80.3048,c:'Winston Salem, NC',w:'http://www.northcarolinarushtriad.com',e:'stef.hamilton@northcarolinarush.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-RUSH-TRIAD.png'},
+{n:'OBX Storm',lat:36.0679,lng:-75.7058,c:'Kitty Hawk, NC',w:'http://www.obxstorm.net',e:'registrar@obxstorm.net',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/OBX-STORM-INC.png'},
+{n:'Onslow Classic Soccer Association',lat:34.8729,lng:-77.5469,c:'Richlands, NC',w:'http://www.ocsa-nc.com',e:'ocsaclassic@outlook.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/ONSLOW-CLASSIC-SA.jpeg'},
+{n:'Pender Storm',lat:34.5229,lng:-77.9236,c:'Burgaw, NC',w:'http://www.pysanc.com',e:'penderyouthsoccer@aol.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/PENDER-STORM-FOOTBALL-CLUB.webp'},
+{n:'Piedmont Area Soccer Association',lat:34.9854,lng:-80.5495,c:'Monroe, NC',w:'https://www.praonline.org/soccer',e:'rickc@odell-intl.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/PIEDMONT-AREA-SA.png'},
+{n:'Piney Green Soccer Club',lat:34.7540,lng:-77.3969,c:'Jacksonville, NC',w:'http://www.pineygreensoccer.com',e:'crystal.pgsc@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/PINEY-GREEN-SC.png'},
+{n:'Pitt-Greenville Soccer Association',lat:35.6129,lng:-77.3664,c:'Greenville, NC',w:'http://www.pgsasoccer.com',e:'pittgreenvillesoccer@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/PITT-GREENVILLE-SA.png'},
+{n:'Porter Ridge Athletic Association',lat:35.0768,lng:-80.6689,c:'Indian Trail, NC',w:'http://www.praasoccer.com/',e:'praasocceracademy@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/PORTER-RIDGE-AA.png'},
+{n:'Richlands Soccer Club',lat:34.8729,lng:-77.5469,c:'Richlands, NC',w:'http://www.rsc-nc.com',e:'debbie.marshburn@outlook.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/RICHLANDS-SC.png'},
+{n:'Roanoke Valley Youth Soccer Association',lat:36.4618,lng:-77.6536,c:'Roanoke Rapids, NC',w:'https://www.facebook.com/RVYSA27870/',e:'bobsokolinsky@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/ROANOKE-VALLEY-YOUTH-SA.png'},
+{n:'Rutherford County Soccer Association',lat:35.3654,lng:-81.9570,c:'Rutherfordton, NC',w:'http://www.rcsoccer.org',e:'rutherfordcountysoccer@yahoo.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/RUTHERFORD-COUNTY-SA.png'},
+{n:'Sampson County Soccer Club',lat:35.0129,lng:-78.3236,c:'Clinton, NC',w:'http://www.sampsoncountysoccer.com',e:'prez@sampsoncountysoccer.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/SAMPSON-COUNTY-SC.png'},
+{n:'Sanford Area Soccer League',lat:35.4779,lng:-79.1803,c:'Sanford, NC',w:'http://www.sasl.net',e:'info@sasl.net',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/SANFORD-AREA-SL.png'},
+{n:'Seashore Soccer League',lat:34.7229,lng:-76.7258,c:'Morehead City, NC',w:'http://www.ssl-nc.com',e:'dor@ssl-nc.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/SEASHORE-SL.png'},
+{n:'South Iredell Soccer Association',lat:35.5751,lng:-80.8101,c:'Mooresville, NC',w:'http://www.sisasoccer.com',e:'daryl.e.tilley@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/SOUTH-IREDELL-SA.png'},
+{n:'Southwest Soccer Club',lat:34.6790,lng:-77.3636,c:'Jacksonville, NC',w:'http://www.swsc-nc.com',e:'awhaley@tricorpinsurance.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/SOUTHWEST-SC.png'},
+{n:'Steele Creek Soccer Club',lat:35.1251,lng:-80.9484,c:'Charlotte, NC',w:'https://leagues.bluesombrero.com/Default.aspx?tabid=1709807',e:'infoscaa@scaasports.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/STEELE-CREEK-SOCCER-CLUB.jpeg'},
+{n:'Stokes United FC',lat:36.2943,lng:-80.1387,c:'Walnut Cove, NC',w:'https://www.stokesunitedfc.com',e:'stokesunitedfc@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/STOKES-UNITED-FC.png'},
+{n:'Stokesdale Park Soccer Association',lat:36.2368,lng:-79.9748,c:'Stokesdale, NC',w:'http://www.stokesdaleparksandrec.com',e:'jbaynes13@triad.rr.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/STOKESDALE-PARK-SA.png'},
+{n:'Strikers of Gaston County Soccer Association',lat:35.2618,lng:-81.1873,c:'Gastonia, NC',w:'http://www.sgcsa.net/',e:'sgcsasoccer@yahoo.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/STRIKERS-OF-GASTON-COUNTY-SA.png'},
+{n:'Summersill Soccer Club',lat:34.7540,lng:-77.3969,c:'Jacksonville, NC',w:'http://www.summersillsoccer.org',e:'summersillsoccerclub@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/SUMMERSILL-SC.png'},
+{n:'Superb Futbol Club',lat:34.2079,lng:-77.8869,c:'Wilmington, NC',w:'https://superbfutbolclub.org/',e:'info@superbfutbolclub.org',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/SUPERB-FUTBOL-CLUB.png'},
+{n:'Swain Youth Soccer Association',lat:35.4354,lng:-83.4497,c:'Bryson City, NC',w:'https://www.facebook.com/swainsoccer/',e:'swainsoccerkids@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/SWAIN-YOUTH-SA.png'},
+{n:'Swansboro Soccer Association',lat:34.7251,lng:-77.1197,c:'Swansboro, NC',w:'http://www.swansborosoccerassociation.com',e:'ssa.soccer.mad@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/SWANSBORO-SA.jpeg'},
+{n:'Tar River Youth Soccer Association',lat:35.9418,lng:-77.7903,c:'Rocky Mount, NC',w:'http://www.tarriversoccer.org',e:'president@tarriversoccer.org',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/TAR-RIVER-YOUTH-SA.jpeg'},
+{n:'Toe Valley Soccer Association',lat:35.9168,lng:-82.3015,c:'Burnsville, NC',w:'http://www.toevalleysoccer.org',e:'toevalleysoccer@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/TOE-VALLEY-SA.png'},
+{n:'TOR Futbol Academy',lat:35.8593,lng:-78.5547,c:'Raleigh, NC',w:'https://www.torfutbolacademy.com/',e:'eryka@torfutbol.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/TOR-FUTBOL-ACADEMY.jpg'},
+{n:'Transylvania Youth Soccer Association',lat:35.2329,lng:-82.7348,c:'Brevard, NC',w:'http://www.tysa.us/',e:'tysasoccer@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/TRANSYLVANIA-YOUTH-SA.png'},
+{n:'Triad Union Football Club',lat:35.7079,lng:-79.8136,c:'Asheboro, NC',w:'https://www.triadunionfc.com/',e:'erich@triadunionfc.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/TRIAD-UNION-FOOTBALL-CLUB.png'},
+{n:'Triangle United Soccer Association',lat:35.9493,lng:-79.0558,c:'Chapel Hill, NC',w:'http://www.triangleunited.org',e:'mstrand@triangleunited.org',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/TRIANGLE-UNITED-SA.png'},
+{n:'Triangle Y Soccer Club',lat:35.7079,lng:-78.8503,c:'Apex, NC',w:'https://www.ymca.org/locations/kraft-family-ymca',e:'mark.simmons@ymcatriangle.org',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/TRIANGLE-Y-SC-copy.png'},
+{n:'Union Youth Futbol Club',lat:34.9854,lng:-80.5495,c:'Monroe, NC',w:'https://www.facebook.com/uyfc2016/',e:'info@uniondragons.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/UNION-YOUTH-FUTBOL-CLUB.jpg'},
+{n:'United Soccer Club NC',lat:35.7807,lng:-78.3697,c:'Wendell, NC',w:'https://unitedsoccerclub.teamsnapsites.com',e:'uscncscheduling@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/UNITED-SOCCER-CLUB-NC-INC.jpg'},
+{n:'Wake Futbol Club',lat:35.6429,lng:-78.8336,c:'Holly Springs, NC',w:'http://www.wakefc.com',e:'info@wakefc.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/WAKE-FUTBOL-CLUB-INC.jpeg'},
+{n:'Waxhaw Athletic Association',lat:34.9254,lng:-80.7426,c:'Waxhaw, NC',w:'http://www.waxhawsoccer.org',e:'info@waxhawsoccer.org',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/WAXHAW-AA.jpeg'},
+{n:'Wayne County United Soccer Club',lat:35.3829,lng:-77.9936,c:'Goldsboro, NC',w:'http://www.waynecountyunitedsoccer.com',e:'bdgery@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/WAYNE-COUNTY-UNTED-SC.jpg'},
+{n:'Wesley Chapel Weddington Athletic Assn.',lat:34.9254,lng:-80.7426,c:'Waxhaw, NC',w:'http://www.wcwaasoccer.org',e:'Travis.Joseph@wcwaasoccer.org',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/WESLEY-CHAPEL-WEDDINGTON-AA.png'},
+{n:'Western United Soccer Club',lat:35.2418,lng:-81.0151,c:'Paw Creek, NC',w:'http://www.wuscsoccer.org',e:'wuscsoccer@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/WESTERN-UNITED-SC.png'},
+{n:'Wilmington Hammerheads Youth FC',lat:34.2354,lng:-77.9447,c:'Wilmington, NC',w:'http://www.wilmingtonhammerheadsyouth.com',e:'soccer@wilmingtonhammerheadsyouth.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/WILMINGTON-HAMMERHEADS-YOUTH-FC.png'},
+{n:'Wilson Youth Soccer Association',lat:35.7218,lng:-77.9153,c:'Wilson, NC',w:'http://www.wilsonyouthsoccer.com',e:'wilsonyouthsoccer@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/WILSON-YOUTH-SA.png'},
+{n:'Wings Of Wilkes Soccer Club',lat:36.1454,lng:-81.1609,c:'Wilkesboro, NC',w:'http://www.wingsofwilkes.com',e:'uncjump@networkz.net',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/WINGS-OF-WILKES-SC.png'},
+{n:'Yadkin Soccer Association',lat:36.2118,lng:-80.5687,c:'East Bend, NC',w:'http://www.yadkinsoccer.org',e:'webmaster@yadkinsoccer.org',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/YADKIN-SA.png'},
+{n:'YMCA of Catawba Valley Soccer Club',lat:35.7329,lng:-81.3412,c:'Hickory, NC',w:'http://www.ycvsc.org',e:'registrar.ycvsc@gmail.com',l:'https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/YMCA-OF-CATAWBA-VALLEY-SC.png'}
+];
+
+let map,markers=[],infoWindow;
+function initMap(){map=new google.maps.Map(document.getElementById("map"),{center:{lat:35.5,lng:-79},zoom:7});infoWindow=new google.maps.InfoWindow({maxWidth:180});}
+function clearMarkers(){markers.forEach(m=>m.setMap(null));markers=[];}
+function dist(a,b,c,d){const R=3958.8,x=(c-a)*Math.PI/180,y=(d-b)*Math.PI/180,q=Math.sin(x/2)**2+Math.cos(a*Math.PI/180)*Math.cos(c*Math.PI/180)*Math.sin(y/2)**2;return R*2*Math.atan2(Math.sqrt(q),Math.sqrt(1-q));}
+function drawMap(u,s){if(!map){setTimeout(()=>drawMap(u,s),120);return;}clearMarkers();map.setCenter(u);map.setZoom(10);markers.push(new google.maps.Marker({position:u,map,icon:"https://maps.google.com/mapfiles/ms/icons/blue-dot.png"}));s.slice(0,5).forEach(c=>{const m=new google.maps.Marker({position:{lat:c.lat,lng:c.lng},map,icon:"https://maps.google.com/mapfiles/ms/icons/red-dot.png"});m.addListener("mouseover",()=>{infoWindow.setContent('<div style="font-size:13px;line-height:1.25;padding:2px 4px;"><strong>'+c.n+'</strong><br>'+c.c+'</div>');infoWindow.open(map,m);});m.addListener("mouseout",()=>infoWindow.close());markers.push(m);});}
+function render(s,z){const box=document.getElementById("results");box.innerHTML="";s.slice(0,5).forEach(c=>{const div=document.createElement("div");div.className="club-card";div.innerHTML='<img class="club-logo" src="'+c.l+'"><div><strong>'+c.n+'</strong><br>'+c.distance.toFixed(1)+' miles from '+z+'<br>'+(c.w?'Website: <a href="'+c.w+'" target="_blank">'+c.w+'</a><br>':'')+(c.e?'Email: <a href="mailto:'+c.e+'">'+c.e+'</a>':'')+'</div>';box.appendChild(div);});}
+document.getElementById("zip-form").addEventListener("submit",async(e)=>{e.preventDefault();const z=document.getElementById("zip-input").value.trim(),msg=document.getElementById("status");msg.textContent="";if(!/^\d{5}$/.test(z)){msg.textContent="Enter a valid ZIP.";return;}try{const r=await fetch("https://api.zippopotam.us/us/"+z);if(!r.ok)throw 0;const d=await r.json(),u={lat:parseFloat(d.places[0].latitude),lng:parseFloat(d.places[0].longitude)},s=clubs.map(c=>({...c,distance:dist(u.lat,u.lng,c.lat,c.lng)})).sort((a,b)=>a.distance-b.distance);render(s,z);drawMap(u,s);if(window.dataLayer)window.dataLayer.push({event:"zip_search",search_zip:z,nearest_club_name:s[0]?.n||"",nearest_club_distance_miles:s[0]?.distance.toFixed(1)||""});}catch{msg.textContent="Error processing ZIP.";}});
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDltprGb1G5UEV7WQe3QKnWLB0AfzYFEWI&callback=initMap" async></script>
+</body>
+</html>
