@@ -1,6 +1,11 @@
 // Reads the NCYSA sanctioned tournament list from PlayMetrics and saves it to data/tournaments.json.
-// Runs daily from .github/workflows/playmetrics-tournaments.yml. If nothing can be read, the
-// previous file is left untouched and the run fails, so the website keeps the last good list.
+// Runs daily from .github/workflows/playmetrics-tournaments.yml.
+//
+// How it reads: it opens the public PlayMetrics tournament page in a browser, notes the data request
+// that page makes (tournament_promotions/search), then asks for every page of results. If that fails
+// it falls back to reading the tournament cards on the page itself.
+// If nothing can be read, the previous file is left untouched and the run fails, so the website keeps
+// the last good list.
 import { chromium } from 'playwright';
 import { writeFileSync, mkdirSync } from 'node:fs';
 
@@ -9,139 +14,184 @@ const OUT = 'data/tournaments.json';
 const DEBUG = 'data/debug';
 mkdirSync(DEBUG, { recursive: true });
 
+const STATES = { 'North Carolina': 'NC', 'South Carolina': 'SC', Virginia: 'VA', Georgia: 'GA', Tennessee: 'TN' };
+const log = [];
+const note = (s) => { log.push(s); console.log(s); };
+
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1280, height: 1600 } });
 
-// Keep any JSON the page loads, so the parser can move to PlayMetrics' own data later if needed.
-const captured = [];
+// 1. Watch the page's own data requests.
+const searches = [];
 page.on('response', async (res) => {
   try {
-    const type = res.headers()['content-type'] || '';
-    if (!type.includes('json')) return;
-    const body = await res.text();
-    if (/tournament/i.test(body)) captured.push({ url: res.url(), body: body.slice(0, 500000) });
+    if (!/tournament_promotions\/search/.test(res.url())) return;
+    const req = res.request();
+    searches.push({ url: req.url(), method: req.method(), headers: req.headers(), body: req.postData(), json: await res.json() });
   } catch {}
 });
 
 await page.goto(SOURCE, { waitUntil: 'networkidle', timeout: 90000 });
 await page.waitForFunction(() => /\d+\s+tournaments?/i.test(document.body.innerText), null, { timeout: 60000 }).catch(() => {});
+const stated = await page.evaluate(() => { const m = document.body.innerText.match(/(\d+)\s+tournaments?/i); return m ? +m[1] : null; });
 
-// Scroll to the bottom a few times in case the list loads in pages.
-for (let i = 0; i < 12; i++) {
-  const before = await page.evaluate(() => document.body.scrollHeight);
-  await page.mouse.wheel(0, 4000);
-  await page.waitForTimeout(900);
-  const after = await page.evaluate(() => document.body.scrollHeight);
-  if (after === before && i > 2) break;
+// Scroll, and press any "load more" style button, in case the page loads more results itself.
+for (let i = 0; i < 15; i++) {
+  await page.mouse.wheel(0, 5000);
+  await page.waitForTimeout(800);
+  const more = page.getByRole('button', { name: /load more|show more|more tournaments|next/i });
+  if (await more.count().catch(() => 0)) await more.first().click().catch(() => {});
 }
+await page.waitForTimeout(1500);
 
-const result = await page.evaluate(() => {
-  const DATE = /([A-Z][a-z]{2,8}\.? \d{1,2}, \d{4})(?:\s*[–—-]\s*([A-Z][a-z]{2,8}\.? \d{1,2}, \d{4}))?/g;
-  const countDates = (t) => (t.match(DATE) || []).length;
-  const stated = (document.body.innerText.match(/(\d+)\s+tournaments?/i) || [])[1];
+// 2. Collect every tournament the page received.
+const byId = new Map();
+const add = (rows) => (rows || []).forEach((r) => r && r.id != null && byId.set(r.id, r));
+searches.forEach((s) => add(s.json && s.json.data));
+note(`PlayMetrics says ${stated ?? '?'} tournaments. Page loaded ${byId.size} from ${searches.length} data request(s).`);
 
-  // Smallest elements whose text is just a date or date range.
-  const dateEls = [...document.querySelectorAll('body *')].filter((el) => {
-    const t = (el.innerText || '').trim();
-    return t.length < 60 && countDates(t) === 1 && [...el.children].every((c) => countDates(c.innerText || '') === 0);
-  });
+// 3. If the page held some back, ask the same data address for the next pages.
+const first = searches[0];
+if (first && stated && byId.size < stated) {
+  const meta = Object.fromEntries(Object.entries(first.json).filter(([k]) => k !== 'data'));
+  note(`Paging info from PlayMetrics: ${JSON.stringify(meta).slice(0, 300)}`);
+  note(`Request: ${first.method} ${first.url} ${first.body ? 'body ' + first.body.slice(0, 300) : ''}`);
+  const headers = Object.fromEntries(Object.entries(first.headers).filter(([k]) => !/^(content-length|host|cookie|:)/i.test(k)));
+  const per = (first.json.data || []).length || 10;
 
-  // Walk up from each date to the largest box that still holds only that one tournament.
-  const cards = [];
-  for (const el of dateEls) {
-    let card = el;
-    while (card.parentElement && countDates(card.parentElement.innerText || '') === 1) card = card.parentElement;
-    if (!cards.includes(card)) cards.push(card);
+  const tries = [];
+  for (let p = 1; p <= 20; p++) {
+    let url = new URL(first.url), body = first.body;
+    // Body paging (JSON) and URL paging, both page-number and offset styles.
+    if (body) {
+      try {
+        const b = JSON.parse(body);
+        const set = (o) => {
+          for (const k of Object.keys(o)) {
+            if (/^page$|page_number|pageNumber/i.test(k)) o[k] = typeof o[k] === 'number' ? o[k] + p : p + 1;
+            else if (/offset|skip|start/i.test(k)) o[k] = p * per;
+            else if (o[k] && typeof o[k] === 'object' && !Array.isArray(o[k])) set(o[k]);
+          }
+        };
+        set(b);
+        if (!/"(page|offset|skip)/i.test(body)) { b.page = p + 1; b.offset = p * per; }
+        body = JSON.stringify(b);
+      } catch {}
+    }
+    if (!body || first.method === 'GET') {
+      if (url.searchParams.has('page')) url.searchParams.set('page', String(+url.searchParams.get('page') + p));
+      else if (url.searchParams.has('offset')) url.searchParams.set('offset', String(p * per));
+      else { url.searchParams.set('page', String(p + 1)); url.searchParams.set('offset', String(p * per)); }
+    }
+    tries.push({ url: url.toString(), body });
   }
 
+  for (const t of tries) {
+    if (byId.size >= stated) break;
+    try {
+      const r = await fetch(t.url, { method: first.method, headers, body: first.method === 'GET' ? undefined : t.body });
+      const j = await r.json();
+      const before = byId.size;
+      add(j.data);
+      if (byId.size === before) break; // nothing new, stop paging
+    } catch (e) { note(`Paging stopped: ${e.message}`); break; }
+  }
+  note(`After paging: ${byId.size} tournaments.`);
+}
+
+// 4. Backup: read the cards on the page.
+let cards = [];
+if (!byId.size) {
+  cards = await page.evaluate(() => {
+    const DATE = /([A-Z][a-z]{2,8}\.? \d{1,2}, \d{4})(?:\s*[–—-]\s*([A-Z][a-z]{2,8}\.? \d{1,2}, \d{4}))?/g;
+    const n = (t) => (t.match(DATE) || []).length;
+    const els = [...document.querySelectorAll('body *')].filter((el) => {
+      const t = (el.innerText || '').trim();
+      return t.length < 60 && n(t) === 1 && [...el.children].every((c) => n(c.innerText || '') === 0);
+    });
+    const out = [];
+    for (const el of els) {
+      let c = el;
+      while (c.parentElement && n(c.parentElement.innerText || '') === 1) c = c.parentElement;
+      if (!out.includes(c)) out.push(c);
+    }
+    return out.map((c) => c.innerText.split('\n').map((s) => s.trim()).filter(Boolean));
+  });
+  note(`Data feed not available. Read ${cards.length} cards from the page instead.`);
+}
+
+await page.screenshot({ path: `${DEBUG}/playmetrics.png`, fullPage: true });
+await browser.close();
+
+// 5. Build the clean list.
+function ageText(list, label) {
+  if (!list || !list.length) return '';
+  const nums = list.filter((x) => typeof x === 'number').sort((a, b) => a - b);
+  const parts = [];
+  for (let i = 0; i < nums.length; i++) {
+    let j = i;
+    while (j + 1 < nums.length && nums[j + 1] === nums[j] + 1) j++;
+    parts.push(i === j ? `U${nums[i]}` : `U${nums[i]}–U${nums[j]}`);
+    i = j;
+  }
+  if (list.includes('18+')) parts.push('U18+');
+  return `${label} ${parts.join(', ')}`;
+}
+const clean = (s) => (s || '').replace(/\s+/g, ' ').trim();
+
+let tournaments = [...byId.values()].map((r) => {
+  const a = r.address || {};
+  const st = STATES[a.state] || a.state || '';
+  const short = clean(r.short_description);
   return {
-    stated: stated ? +stated : null,
-    cards: cards.map((card) => {
-      const lines = card.innerText.split('\n').map((s) => s.trim()).filter(Boolean);
-      const links = [...card.querySelectorAll('a')].map((a) => ({ text: (a.innerText || '').trim(), href: a.href }));
-      const img = card.querySelector('img');
-      return { lines, links, logo: img ? img.src : null };
-    }),
+    id: r.id,
+    name: clean(r.name),
+    start: r.tournament_start_date,
+    end: r.tournament_end_date || r.tournament_start_date,
+    city: a.city ? `${clean(a.city).replace(/,\s*(NC|SC|VA)$/i, '')}${st ? ', ' + st : ''}` : null,
+    ages: [ageText(r.eligibility && r.eligibility.male, 'Male'), ageText(r.eligibility && r.eligibility.female, 'Female')].filter(Boolean).join(' | ') || null,
+    venue: /^location:/i.test(short) ? short.replace(/^location:\s*/i, '') : null,
+    registrationOpen: !!r.is_registration_open,
+    registrationCloses: r.registration_end_date || null,
+    registerUrl: r.registration_link || null,
+    scheduleUrl: r.schedule_link || null,
+    websiteUrl: r.website_url || null,
+    logo: r.club_image_url || null,
   };
 });
 
-await page.screenshot({ path: `${DEBUG}/playmetrics.png`, fullPage: true });
-writeFileSync(`${DEBUG}/captured-json.json`, JSON.stringify(captured.map((c) => ({ url: c.url, sample: c.body.slice(0, 4000) })), null, 2));
-writeFileSync(`${DEBUG}/cards.json`, JSON.stringify(result, null, 2));
-await browser.close();
-
-const MON = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, sept: 9, oct: 10, nov: 11, dec: 12 };
-function iso(s) {
-  const m = s && s.match(/([A-Za-z]+)\.? (\d{1,2}), (\d{4})/);
-  if (!m) return null;
-  const mo = MON[m[1].toLowerCase().slice(0, m[1].toLowerCase().startsWith('sept') ? 4 : 3)];
-  return mo ? `${m[3]}-${String(mo).padStart(2, '0')}-${String(m[2]).padStart(2, '0')}` : null;
-}
-function addDays(n) {
-  const d = new Date();
-  d.setUTCHours(12, 0, 0, 0);
-  d.setUTCDate(d.getUTCDate() + n);
-  return d.toISOString().slice(0, 10);
+if (!tournaments.length && cards.length) {
+  const MON = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
+  const iso = (s) => { const m = s && s.match(/([A-Za-z]{3})[a-z]*\.? (\d{1,2}), (\d{4})/); return m && MON[m[1].toLowerCase()] ? `${m[3]}-${String(MON[m[1].toLowerCase()]).padStart(2, '0')}-${m[2].padStart(2, '0')}` : null; };
+  const D = /([A-Z][a-z]{2,8}\.? \d{1,2}, \d{4})(?:\s*[–—-]\s*([A-Z][a-z]{2,8}\.? \d{1,2}, \d{4}))?/;
+  tournaments = cards.map((lines) => {
+    const dl = lines.find((l) => D.test(l)); if (!dl) return null;
+    const [, a, b] = dl.match(D);
+    const rest = lines.filter((l) => !D.test(l) && !/^registration|^(register|view schedule|tournament)$/i.test(l));
+    const [city, ...ages] = (rest[1] || '').split('|').map((s) => s.trim());
+    return { name: rest[0], start: iso(a), end: iso(b || a), city: city || null, ages: ages.join(' | ') || null, registrationOpen: lines.includes('Register') };
+  }).filter((t) => t && t.name && t.start);
 }
 
-const DATE1 = /([A-Z][a-z]{2,8}\.? \d{1,2}, \d{4})(?:\s*[–—-]\s*([A-Z][a-z]{2,8}\.? \d{1,2}, \d{4}))?/;
-const tournaments = [];
-for (const c of result.cards) {
-  const dateLine = c.lines.find((l) => DATE1.test(l));
-  if (!dateLine) continue;
-  const [, a, b] = dateLine.match(DATE1);
-  const skip = (l) => DATE1.test(l) || /^registration/i.test(l) || /^(register|view schedule|tournament)$/i.test(l);
-  const rest = c.lines.filter((l) => !skip(l));
-  const name = rest[0];
-  if (!name) continue;
-
-  const placeLine = rest.find((l) => /\b(NC|SC|VA|GA|TN)\b/.test(l) && l !== name) || '';
-  const [city, ...ageParts] = placeLine.split('|').map((s) => s.trim());
-  const venue = (rest.find((l) => /^location:/i.test(l)) || '').replace(/^location:\s*/i, '');
-
-  const regLine = c.lines.find((l) => /registration closes/i.test(l)) || '';
-  let registrationCloses = null;
-  const n = regLine.match(/in (\d+) days?/i);
-  if (n) registrationCloses = addDays(+n[1]);
-  else if (/today/i.test(regLine)) registrationCloses = addDays(0);
-  else if (/tomorrow/i.test(regLine)) registrationCloses = addDays(1);
-
-  const reg = c.links.find((l) => /register/i.test(l.text));
-  const sched = c.links.find((l) => /schedule/i.test(l.text));
-
-  tournaments.push({
-    name,
-    start: iso(a),
-    end: iso(b || a),
-    city: city || null,
-    ages: ageParts.join(' | ') || null,
-    venue: venue || null,
-    registrationOpen: !!reg,
-    registrationCloses,
-    registerUrl: reg ? reg.href : null,
-    scheduleUrl: sched ? sched.href : null,
-    logo: c.logo && !/placeholder|default/i.test(c.logo) ? c.logo : null,
-  });
-}
-
-tournaments.sort((x, y) => (x.start || '').localeCompare(y.start || ''));
-console.log(`PlayMetrics says ${result.stated ?? '?'} tournaments; read ${tournaments.length}.`);
-tournaments.forEach((t) => console.log(` ${t.start}  ${t.name}  (${t.city || 'no city'})`));
+tournaments.sort((x, y) => (x.start || '').localeCompare(y.start || '') || x.name.localeCompare(y.name));
+tournaments.forEach((t) => note(` ${t.start}  ${t.name}  (${t.city || 'no city'})`));
+writeFileSync(`${DEBUG}/last-run.txt`, log.join('\n') + '\n');
 
 if (!tournaments.length) {
   console.error('No tournaments read. Leaving the previous data/tournaments.json in place.');
   process.exit(1);
 }
-if (result.stated && tournaments.length < result.stated * 0.5) {
-  console.error(`Only ${tournaments.length} of ${result.stated} read. Leaving the previous file in place.`);
+if (stated && tournaments.length < stated * 0.5) {
+  console.error(`Only ${tournaments.length} of ${stated} read. Leaving the previous file in place.`);
   process.exit(1);
 }
 
 writeFileSync(OUT, JSON.stringify({
   updated: new Date().toISOString(),
   source: SOURCE,
-  statedCount: result.stated,
+  statedCount: stated,
   count: tournaments.length,
+  complete: !stated || tournaments.length >= stated,
   tournaments,
 }, null, 2) + '\n');
-console.log(`Saved ${OUT}`);
+note(`Saved ${OUT} with ${tournaments.length} tournaments.`);
