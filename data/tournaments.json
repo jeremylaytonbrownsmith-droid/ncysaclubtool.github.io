@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-13T16:17:42.484Z",
+  "updated": "2026-10-13T18:38:53.138Z",
   "source": "https://playmetricssports.com/g/tournaments/138/North-Carolina",
   "statedCount": 14,
   "count": 14,
@@ -7,7 +7,7 @@
   "tournaments": [
     {
       "id": 93,
-      "name": "2026 ACFC CLASHBORO FALL INVITATIONAL",
+      "name": "2026 ACFC Clashboro Fall Invitational",
       "start": "2026-11-07",
       "end": "2026-11-08",
       "city": "Mebane, NC",
@@ -22,7 +22,7 @@
     },
     {
       "id": 106,
-      "name": "2026 WHYFC FALL BEACH CLASSIC",
+      "name": "2026 WHYFC Fall Beach Classic",
       "start": "2026-11-21",
       "end": "2026-11-22",
       "city": "Wilmington, NC",
@@ -37,7 +37,7 @@
     },
     {
       "id": 104,
-      "name": "HFC RIVERSIDE SENIOR GIRLS SHOWCASE",
+      "name": "HFC Riverside Senior Girls Showcase",
       "start": "2026-12-05",
       "end": "2026-12-06",
       "city": "Asheville, NC",
@@ -52,7 +52,7 @@
     },
     {
       "id": 105,
-      "name": "2026 NCFCY visitRaleigh.com BOYS COLLEGE SHOWCASE",
+      "name": "2026 NCFCY visitRaleigh.com Boys College Showcase",
       "start": "2026-12-11",
       "end": "2026-12-13",
       "city": "Raleigh, NC",
@@ -67,7 +67,7 @@
     },
     {
       "id": 94,
-      "name": "2027 CISC BOYS COLLEGE SHOWCASE presented by Novant Health",
+      "name": "2027 CISC Boys College Showcase presented by Novant Health",
       "start": "2027-01-22",
       "end": "2027-01-24",
       "city": "Rock Hill, SC",
@@ -82,7 +82,7 @@
     },
     {
       "id": 95,
-      "name": "2027 CISC GIRLS COLLEGE SHOWCASE Present by Novant Health",
+      "name": "2027 CISC Girls College Showcase Present by Novant Health",
       "start": "2027-01-29",
       "end": "2027-01-31",
       "city": "Rock Hill, SC",
@@ -127,7 +127,7 @@
     },
     {
       "id": 99,
-      "name": "2027 PGSA BEAST OF THE EAST",
+      "name": "2027 PGSA Beast of the East",
       "start": "2027-02-06",
       "end": "2027-02-07",
       "city": "Greenville, NC",
@@ -157,7 +157,7 @@
     },
     {
       "id": 100,
-      "name": "2027 NCRT BEAT THE HEAT",
+      "name": "2027 NCRT Beat the Heat",
       "start": "2027-04-10",
       "end": "2027-04-11",
       "city": "Winston-Salem, NC",
@@ -172,7 +172,7 @@
     },
     {
       "id": 101,
-      "name": "2027 CVYSA FOOTHILLS CLASSIC",
+      "name": "2027 CVYSA Foothills Classic",
       "start": "2027-04-24",
       "end": "2027-04-25",
       "city": "Hickory, NC",
@@ -187,7 +187,7 @@
     },
     {
       "id": 102,
-      "name": "2027 NCFCY CITY OF OAKS CLASSIC",
+      "name": "2027 NCFCY City of Oaks Classic",
       "start": "2027-05-08",
       "end": "2027-05-09",
       "city": "Raliegh, NC",
