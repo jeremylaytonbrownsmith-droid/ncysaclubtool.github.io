@@ -2,7 +2,7 @@
  "updated": "2026-10-13",
  "season": "2026-27",
  "source": "NCYSA 2026-27 Calendar",
- "note": "Edit this list to change the NCYSA events page and homepage strip. Dates are YYYY-MM-DD. s = start, e = end, t = title, loc = location, cat = category (meeting, statecup, academy, classic, odp, coaching, deadline, office), dl = 1 for a deadline, f = 1 to feature in the Next Up spotlight, label = custom date text, tba = 1 when the date is not set.",
+ "note": "Edit this list to change the NCYSA events page and homepage list. Dates are YYYY-MM-DD. s = start, e = end, t = title, loc = location, cat = category (meeting, statecup, academy, classic, odp, coaching, deadline, office), dl = 1 for a deadline, f = 1 to feature in the Next Up spotlight, p = spotlight priority when two featured events share a date (1 first), label = custom date text, tba = 1 when the date is not set.",
  "events": [
   {
    "s": "2026-08-01",
@@ -115,7 +115,8 @@
    "t": "Fall 2026 Youth Academy Showcase",
    "loc": "High Point",
    "cat": "academy",
-   "f": 1
+   "f": 1,
+   "p": 2
   },
   {
    "s": "2026-10-25",
@@ -128,7 +129,8 @@
    "t": "USYS State Cup: Consolidated Central Prelim Weekend",
    "loc": "Charlotte / Pineville",
    "cat": "statecup",
-   "f": 1
+   "f": 1,
+   "p": 1
   },
   {
    "s": "2026-11-09",
@@ -143,7 +145,8 @@
    "t": "Kepner Presidents State Cup: Prelim Weekend",
    "loc": "Forest City",
    "cat": "statecup",
-   "f": 1
+   "f": 1,
+   "p": 1
   },
   {
    "s": "2026-11-16",
@@ -176,7 +179,8 @@
    "t": "Final Four Weekend: USYS State Cup and Kepner Presidents Cup",
    "loc": "Wilson",
    "cat": "statecup",
-   "f": 1
+   "f": 1,
+   "p": 1
   },
   {
    "s": "2026-12-11",
@@ -213,7 +217,8 @@
    "s": "2027-01-16",
    "t": "Classic League Spring 2027: first day of league play",
    "cat": "classic",
-   "f": 1
+   "f": 1,
+   "p": 3
   },
   {
    "s": "2027-01-18",
@@ -231,7 +236,8 @@
    "t": "NCYSA Symposium and Annual General Meeting",
    "loc": "Wilmington",
    "cat": "meeting",
-   "f": 1
+   "f": 1,
+   "p": 1
   },
   {
    "s": "2027-02-20",
@@ -286,7 +292,8 @@
    "t": "Spring 2027 Youth Academy Showcase",
    "loc": "Truist Sports Park, Bermuda Run",
    "cat": "academy",
-   "f": 1
+   "f": 1,
+   "p": 2
   },
   {
    "s": "2027-05-03",
