@@ -2,48 +2,55 @@
  "updated": "2026-10-13",
  "season": "2026-27",
  "source": "NCYSA 2026-27 Calendar",
- "note": "Edit this list to change the NCYSA events page and homepage list. Dates are YYYY-MM-DD. s = start, e = end, t = title, loc = location, cat = category (meeting, statecup, academy, classic, odp, coaching, deadline, office), dl = 1 for a deadline, f = 1 to feature in the Next Up spotlight, p = spotlight priority when two featured events share a date (1 first), label = custom date text, tba = 1 when the date is not set.",
+ "note": "Edit this list to change the NCYSA events page and homepage list. Dates are YYYY-MM-DD. s = start, e = end, t = title, loc = location, cat = category (meeting, statecup, academy, classic, odp, coaching, deadline, office), dl = 1 for a deadline, f = 1 to feature in the Next Up spotlight, p = spotlight priority when two featured events share a date (1 first), note = short note under the event, label = custom date text, tba = 1 when the date is not set.",
  "events": [
   {
    "s": "2026-08-01",
    "e": "2026-08-02",
-   "t": "NC ODP Talent ID Center (2010–2014 age groups)",
-   "cat": "odp"
+   "t": "NC ODP Talent ID Center (2010–2014 Age Groups)",
+   "cat": "odp",
+   "loc": "Girls: Asheboro; Boys: High Point"
   },
   {
    "s": "2026-08-01",
    "e": "2026-08-02",
-   "t": "D License Coaching Course, In-Person Meeting #2",
-   "loc": "High Point and Charlotte",
-   "cat": "coaching"
+   "t": "D License Coaching Course: In-Person Meeting #2",
+   "cat": "coaching",
+   "loc": "High Point and Charlotte"
   },
   {
    "s": "2026-08-03",
-   "t": "Intent to Participate due: Fall 2026 Youth Academy",
+   "t": "Intent to Participate Due: Fall 2026 Youth Academy",
    "cat": "deadline",
    "dl": 1
   },
   {
    "s": "2026-08-07",
-   "t": "Classic League schedules finalizing, clubs entering into PlayMetrics",
+   "t": "Classic League: Schedules Finalizing, Clubs Entering into PlayMetrics",
    "cat": "classic"
   },
   {
    "s": "2026-08-15",
-   "t": "Classic League Fall play date range opens",
+   "t": "Classic League: Fall Play Date Range Opens (Teams Can Begin Playing)",
    "cat": "classic"
   },
   {
    "s": "2026-08-19",
-   "e": "2026-08-23",
-   "label": "Aug 19 and 23",
    "t": "2026–27 Laws of the Game Update Webinar",
-   "loc": "Online",
-   "cat": "coaching"
+   "cat": "coaching",
+   "loc": "Virtual",
+   "note": "1:00–2:30 PM"
+  },
+  {
+   "s": "2026-08-23",
+   "t": "2026–27 Laws of the Game Update Webinar",
+   "cat": "coaching",
+   "loc": "Virtual",
+   "note": "8:00–9:30 PM"
   },
   {
    "s": "2026-08-26",
-   "t": "State Cup application window opens",
+   "t": "State Cup: Application Window Opens",
    "cat": "statecup"
   },
   {
@@ -54,118 +61,126 @@
   {
    "s": "2026-09-08",
    "e": "2026-09-11",
-   "t": "B License Coaching Course, In-Person Meeting #1",
-   "loc": "Raleigh",
-   "cat": "coaching"
+   "t": "B License Coaching Course: In-Person Meeting #1",
+   "cat": "coaching",
+   "loc": "Raleigh"
   },
   {
    "s": "2026-09-08",
    "e": "2026-09-11",
-   "t": "C License Coaching Course, In-Person Meeting",
-   "loc": "High Point",
-   "cat": "coaching"
+   "t": "C License Coaching Course: In-Person Meeting",
+   "cat": "coaching",
+   "loc": "High Point"
   },
   {
    "s": "2026-09-12",
    "e": "2026-09-13",
-   "t": "D License Coaching Course, In-Person Meeting #1",
-   "loc": "Asheville and Raleigh",
-   "cat": "coaching"
+   "t": "D License Coaching Course: In-Person Meeting #1",
+   "cat": "coaching",
+   "loc": "Asheville and Raleigh"
   },
   {
    "s": "2026-09-14",
-   "t": "State Cup applications: early applicant discount ends",
+   "t": "State Cup Applications: Early Applicant Discount Window Ends",
    "cat": "statecup",
    "dl": 1
   },
   {
    "s": "2026-09-15",
-   "t": "Intent to Participate due: Fall 2026 TOPSoccer",
+   "t": "Intent to Participate Due: Fall 2026 TOPSoccer",
    "cat": "deadline",
    "dl": 1
   },
   {
    "s": "2026-09-16",
-   "t": "Fall 2026 Recreation Bulk Registration deadline",
+   "t": "Deadline: Fall 2026 Recreation Bulk Registration",
    "cat": "deadline",
    "dl": 1
   },
   {
    "s": "2026-09-21",
-   "t": "State Cup applications: final deadline",
+   "t": "State Cup Applications: Final Deadline",
    "cat": "statecup",
    "dl": 1
   },
   {
    "s": "2026-09-28",
    "label": "Late Sep / early Oct",
-   "t": "NCYSA Award nomination information sent to membership",
+   "t": "NCYSA Award Nomination Information Sent to Membership",
    "cat": "meeting"
   },
   {
    "s": "2026-10-10",
    "e": "2026-10-11",
-   "t": "D License Coaching Course, In-Person Meeting #2",
-   "loc": "Asheville and Raleigh",
-   "cat": "coaching"
+   "t": "D License Coaching Course: In-Person Meeting #2",
+   "cat": "coaching",
+   "loc": "Asheville and Raleigh"
   },
   {
    "s": "2026-10-24",
    "e": "2026-10-25",
    "t": "Fall 2026 Youth Academy Showcase",
-   "loc": "High Point",
    "cat": "academy",
+   "loc": "High Point",
    "f": 1,
    "p": 2
   },
   {
    "s": "2026-10-25",
-   "t": "NC ODP Talent ID Center #1 (2015 age group)",
-   "cat": "odp"
+   "t": "NC ODP Talent ID Center #1: 2015 Age Group",
+   "cat": "odp",
+   "loc": "East: Goldsboro; West: Statesville"
   },
   {
    "s": "2026-11-07",
    "e": "2026-11-08",
    "t": "USYS State Cup: Consolidated Central Prelim Weekend",
-   "loc": "Charlotte / Pineville",
    "cat": "statecup",
+   "loc": "Charlotte / Pineville",
    "f": 1,
    "p": 1
   },
   {
    "s": "2026-11-09",
    "e": "2026-11-12",
-   "t": "B License Coaching Course, In-Person Meeting #2",
-   "loc": "Raleigh",
-   "cat": "coaching"
+   "t": "B License Coaching Course: In-Person Meeting #2",
+   "cat": "coaching",
+   "loc": "Raleigh"
   },
   {
    "s": "2026-11-14",
    "e": "2026-11-15",
    "t": "Kepner Presidents State Cup: Prelim Weekend",
-   "loc": "Forest City",
    "cat": "statecup",
+   "loc": "Legacy Soccer Park, Forest City",
    "f": 1,
    "p": 1
   },
   {
    "s": "2026-11-16",
    "e": "2026-11-19",
-   "t": "C License Coaching Course, In-Person Meeting",
-   "loc": "Charlotte",
-   "cat": "coaching"
+   "t": "C License Coaching Course: In-Person Meeting",
+   "cat": "coaching",
+   "loc": "Charlotte"
   },
   {
    "s": "2026-11-20",
-   "t": "Classic League Spring 2027 Program (CLP) due, formerly Intent to Play",
+   "t": "Classic League: Spring 2027 Program (CLP) Due",
    "cat": "classic",
+   "note": "Formerly Intent to Play (ITP).",
    "dl": 1
   },
   {
    "s": "2026-11-21",
-   "e": "2026-11-22",
-   "t": "NC ODP Talent ID Centers #2 and #3",
-   "cat": "odp"
+   "t": "NC ODP Talent ID Center #2: 2015 Age Groups",
+   "cat": "odp",
+   "loc": "East: Goldsboro; West: Statesville"
+  },
+  {
+   "s": "2026-11-22",
+   "t": "NC ODP Talent ID Center #3: 2010–2015 Age Groups",
+   "cat": "odp",
+   "loc": "2010–2014: Asheboro; 2015 East: Goldsboro; 2015 West: Statesville"
   },
   {
    "s": "2026-11-26",
@@ -176,46 +191,67 @@
   {
    "s": "2026-12-05",
    "e": "2026-12-06",
-   "t": "Final Four Weekend: USYS State Cup and Kepner Presidents Cup",
-   "loc": "Wilson",
+   "t": "Final Four Weekend: USYS State Cup & Kepner Presidents Cup",
    "cat": "statecup",
+   "loc": "Wilson",
    "f": 1,
    "p": 1
   },
   {
    "s": "2026-12-11",
-   "e": "2026-12-21",
-   "t": "Classic League Spring 2027 brackets: directors viewing, posting, schedules due",
+   "t": "Classic League: Spring 2027 Directors' Viewing for Brackets",
+   "cat": "classic",
+   "note": "Available for 12 hours."
+  },
+  {
+   "s": "2026-12-13",
+   "t": "Classic League: U11-U14 G/B & U15-U19G: Remaining Games Played to Count for Promotion/Relegation",
+   "cat": "classic"
+  },
+  {
+   "s": "2026-12-14",
+   "t": "Classic League: Spring 2027 Brackets Posted",
+   "cat": "classic"
+  },
+  {
+   "s": "2026-12-19",
+   "t": "NC ODP Team Event Training Sessions (Selected Players Only)",
+   "cat": "odp",
+   "loc": "Asheboro"
+  },
+  {
+   "s": "2026-12-21",
+   "t": "Classic League: Spring 2027 Bracket Schedules Due to Club Admins",
    "cat": "classic",
    "dl": 1
   },
   {
-   "s": "2026-12-19",
-   "t": "NC ODP Team Event Training Sessions (selected players)",
-   "cat": "odp"
-  },
-  {
    "s": "2026-12-23",
    "e": "2027-01-01",
-   "t": "NCYSA Office Closed: Winter Break",
+   "t": "NCYSA Office Closed for Winter Break",
    "cat": "office"
   },
   {
    "s": "2027-01-04",
-   "t": "Intent to Participate due: Spring 2027 Youth Academy",
+   "t": "NCYSA Office Re-opens",
+   "cat": "office"
+  },
+  {
+   "s": "2027-01-04",
+   "t": "Intent to Participate Due: Spring 2027 Youth Academy",
    "cat": "deadline",
    "dl": 1
   },
   {
    "s": "2027-01-09",
    "e": "2027-01-10",
-   "t": "USYS ODP Mini-Region Team Event",
-   "loc": "Matthews / Pineville",
-   "cat": "odp"
+   "t": "USYS ODP Mini-Region Team Event (Selected Players Only)",
+   "cat": "odp",
+   "loc": "Matthews/Pineville, NC"
   },
   {
    "s": "2027-01-16",
-   "t": "Classic League Spring 2027: first day of league play",
+   "t": "Classic League: Spring 2027 First Day of League Play",
    "cat": "classic",
    "f": 1,
    "p": 3
@@ -227,54 +263,56 @@
   },
   {
    "s": "2027-01-24",
-   "t": "NC ODP January Talent ID Training Center",
-   "cat": "odp"
+   "t": "NC ODP January Talent ID Training Center (All Age Groups)",
+   "cat": "odp",
+   "loc": "Older age groups: Asheboro; 12U East: Goldsboro; 12U West: Statesville"
   },
   {
    "s": "2027-01-29",
    "e": "2027-01-30",
-   "t": "NCYSA Symposium and Annual General Meeting",
-   "loc": "Wilmington",
+   "t": "NCYSA Symposium / AGM (Awards Luncheon TBD)",
    "cat": "meeting",
+   "loc": "Wilmington, NC",
    "f": 1,
    "p": 1
   },
   {
    "s": "2027-02-20",
    "e": "2027-02-21",
-   "t": "USYS ODP Mini-Region Team Event",
-   "loc": "Williamsburg, VA",
-   "cat": "odp"
+   "t": "USYS ODP Mini-Region Team Event (Selected Players Only)",
+   "cat": "odp",
+   "loc": "Williamsburg, VA"
   },
   {
    "s": "2027-03-01",
-   "t": "Spring 2027 Recreation Bulk Registration deadline",
+   "t": "Deadline: Spring 2027 Recreation Bulk Registration",
    "cat": "deadline",
    "dl": 1
   },
   {
    "s": "2027-03-03",
-   "t": "State Cup Spring Cup applications: early deadline",
+   "t": "State Cup Spring Cup Applications: Early Entry Deadline",
    "cat": "statecup",
    "dl": 1
   },
   {
    "s": "2027-03-10",
-   "t": "State Cup Spring Cup applications: final deadline",
+   "t": "State Cup Spring Cup Applications: Final Deadline",
    "cat": "statecup",
    "dl": 1
   },
   {
    "s": "2027-03-11",
    "e": "2027-03-14",
-   "t": "U.S. Soccer Annual General Meeting",
-   "loc": "Atlanta, GA",
-   "cat": "meeting"
+   "t": "USSF AGM",
+   "cat": "meeting",
+   "loc": "Atlanta, GA"
   },
   {
    "s": "2027-03-14",
-   "t": "NC ODP Talent ID Training Center",
-   "cat": "odp"
+   "t": "NC ODP March Talent ID Training Center (2013–2015 Age Groups)",
+   "cat": "odp",
+   "loc": "2013 & 2014: Asheboro; 2015 East: Goldsboro; 2015 West: Hickory or Statesville"
   },
   {
    "s": "2027-03-26",
@@ -283,33 +321,36 @@
   },
   {
    "s": "2027-04-11",
-   "t": "NC ODP Talent ID Training Center",
-   "cat": "odp"
+   "t": "NC ODP April Talent ID Training Center (All Age Groups)",
+   "cat": "odp",
+   "loc": "Older age groups: Asheboro; 2015 East: Goldsboro; 2015 West: Hickory or Statesville"
   },
   {
    "s": "2027-04-24",
    "e": "2027-04-25",
    "t": "Spring 2027 Youth Academy Showcase",
-   "loc": "Truist Sports Park, Bermuda Run",
    "cat": "academy",
+   "loc": "Truist Sports Park (Bermuda Run)",
    "f": 1,
    "p": 2
   },
   {
    "s": "2027-05-03",
-   "t": "2027–28 Re-Affiliation and Risk Management requirements open in PlayMetrics",
-   "cat": "deadline"
+   "t": "2027–28 Member Association Re-Affiliation & Risk Management Requirements Open in PlayMetrics",
+   "cat": "deadline",
+   "note": "Head registrars gain access to the new seasonal year in PlayMetrics once their club's re-affiliation application is approved."
   },
   {
    "s": "2027-05-03",
    "e": "2027-06-01",
-   "t": "Member Association Renewal Fee due",
+   "t": "Member Association Renewal Fee Due",
    "cat": "deadline",
+   "note": "Late fees apply after June 1, 2027.",
    "dl": 1
   },
   {
    "s": "2027-05-09",
-   "t": "Classic League Spring 2027 final play date (U11–U14)",
+   "t": "Classic League: Spring 2027 Final Play Date (U11–U14 B/G)",
    "cat": "classic"
   },
   {
@@ -320,20 +361,36 @@
   {
    "s": "2027-06-01",
    "e": "2027-06-30",
-   "label": "June 2027",
-   "t": "NC ODP June Events (2015 and 2010–2014 age groups)",
-   "cat": "odp"
+   "label": "June 2027, date TBD",
+   "t": "NC ODP 2015 Boys & Girls June Event",
+   "cat": "odp",
+   "loc": "Location TBD"
+  },
+  {
+   "s": "2027-06-01",
+   "e": "2027-06-30",
+   "label": "June 2027, date TBD",
+   "t": "NC ODP 2010–2014 Boys & Girls June Event",
+   "cat": "odp",
+   "loc": "Location TBD"
   },
   {
    "s": "2027-06-04",
-   "t": "Classic League Fall 2027 Program (CLP) registration due",
+   "t": "Classic League: Fall 2027 Program (CLP) Registration Due",
    "cat": "classic",
+   "note": "Formerly Intent to Play (ITP).",
    "dl": 1
   },
   {
    "tba": 1,
    "label": "Summer 2027",
    "t": "NCYSA Mid-Year Meeting",
+   "cat": "meeting",
+   "loc": "Location TBD"
+  },
+  {
+   "s": "2027-06-30",
+   "t": "End of NCYSA Fiscal Year",
    "cat": "meeting"
   }
  ]
