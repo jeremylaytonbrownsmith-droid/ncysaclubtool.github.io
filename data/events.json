@@ -1,0 +1,333 @@
+{
+ "updated": "2026-10-13",
+ "season": "2026-27",
+ "source": "NCYSA 2026-27 Calendar",
+ "note": "Edit this list to change the NCYSA events page and homepage strip. Dates are YYYY-MM-DD. s = start, e = end, t = title, loc = location, cat = category (meeting, statecup, academy, classic, odp, coaching, deadline, office), dl = 1 for a deadline, f = 1 to feature in the Next Up spotlight, label = custom date text, tba = 1 when the date is not set.",
+ "events": [
+  {
+   "s": "2026-08-01",
+   "e": "2026-08-02",
+   "t": "NC ODP Talent ID Center (2010–2014 age groups)",
+   "cat": "odp"
+  },
+  {
+   "s": "2026-08-01",
+   "e": "2026-08-02",
+   "t": "D License Coaching Course, In-Person Meeting #2",
+   "loc": "High Point and Charlotte",
+   "cat": "coaching"
+  },
+  {
+   "s": "2026-08-03",
+   "t": "Intent to Participate due: Fall 2026 Youth Academy",
+   "cat": "deadline",
+   "dl": 1
+  },
+  {
+   "s": "2026-08-07",
+   "t": "Classic League schedules finalizing, clubs entering into PlayMetrics",
+   "cat": "classic"
+  },
+  {
+   "s": "2026-08-15",
+   "t": "Classic League Fall play date range opens",
+   "cat": "classic"
+  },
+  {
+   "s": "2026-08-19",
+   "e": "2026-08-23",
+   "label": "Aug 19 and 23",
+   "t": "2026–27 Laws of the Game Update Webinar",
+   "loc": "Online",
+   "cat": "coaching"
+  },
+  {
+   "s": "2026-08-26",
+   "t": "State Cup application window opens",
+   "cat": "statecup"
+  },
+  {
+   "s": "2026-09-07",
+   "t": "NCYSA Office Closed: Labor Day",
+   "cat": "office"
+  },
+  {
+   "s": "2026-09-08",
+   "e": "2026-09-11",
+   "t": "B License Coaching Course, In-Person Meeting #1",
+   "loc": "Raleigh",
+   "cat": "coaching"
+  },
+  {
+   "s": "2026-09-08",
+   "e": "2026-09-11",
+   "t": "C License Coaching Course, In-Person Meeting",
+   "loc": "High Point",
+   "cat": "coaching"
+  },
+  {
+   "s": "2026-09-12",
+   "e": "2026-09-13",
+   "t": "D License Coaching Course, In-Person Meeting #1",
+   "loc": "Asheville and Raleigh",
+   "cat": "coaching"
+  },
+  {
+   "s": "2026-09-14",
+   "t": "State Cup applications: early applicant discount ends",
+   "cat": "statecup",
+   "dl": 1
+  },
+  {
+   "s": "2026-09-15",
+   "t": "Intent to Participate due: Fall 2026 TOPSoccer",
+   "cat": "deadline",
+   "dl": 1
+  },
+  {
+   "s": "2026-09-16",
+   "t": "Fall 2026 Recreation Bulk Registration deadline",
+   "cat": "deadline",
+   "dl": 1
+  },
+  {
+   "s": "2026-09-21",
+   "t": "State Cup applications: final deadline",
+   "cat": "statecup",
+   "dl": 1
+  },
+  {
+   "s": "2026-09-28",
+   "label": "Late Sep / early Oct",
+   "t": "NCYSA Award nomination information sent to membership",
+   "cat": "meeting"
+  },
+  {
+   "s": "2026-10-10",
+   "e": "2026-10-11",
+   "t": "D License Coaching Course, In-Person Meeting #2",
+   "loc": "Asheville and Raleigh",
+   "cat": "coaching"
+  },
+  {
+   "s": "2026-10-24",
+   "e": "2026-10-25",
+   "t": "Fall 2026 Youth Academy Showcase",
+   "loc": "High Point",
+   "cat": "academy",
+   "f": 1
+  },
+  {
+   "s": "2026-10-25",
+   "t": "NC ODP Talent ID Center #1 (2015 age group)",
+   "cat": "odp"
+  },
+  {
+   "s": "2026-11-07",
+   "e": "2026-11-08",
+   "t": "USYS State Cup: Consolidated Central Prelim Weekend",
+   "loc": "Charlotte / Pineville",
+   "cat": "statecup",
+   "f": 1
+  },
+  {
+   "s": "2026-11-09",
+   "e": "2026-11-12",
+   "t": "B License Coaching Course, In-Person Meeting #2",
+   "loc": "Raleigh",
+   "cat": "coaching"
+  },
+  {
+   "s": "2026-11-14",
+   "e": "2026-11-15",
+   "t": "Kepner Presidents State Cup: Prelim Weekend",
+   "loc": "Forest City",
+   "cat": "statecup",
+   "f": 1
+  },
+  {
+   "s": "2026-11-16",
+   "e": "2026-11-19",
+   "t": "C License Coaching Course, In-Person Meeting",
+   "loc": "Charlotte",
+   "cat": "coaching"
+  },
+  {
+   "s": "2026-11-20",
+   "t": "Classic League Spring 2027 Program (CLP) due, formerly Intent to Play",
+   "cat": "classic",
+   "dl": 1
+  },
+  {
+   "s": "2026-11-21",
+   "e": "2026-11-22",
+   "t": "NC ODP Talent ID Centers #2 and #3",
+   "cat": "odp"
+  },
+  {
+   "s": "2026-11-26",
+   "e": "2026-11-27",
+   "t": "NCYSA Office Closed: Thanksgiving",
+   "cat": "office"
+  },
+  {
+   "s": "2026-12-05",
+   "e": "2026-12-06",
+   "t": "Final Four Weekend: USYS State Cup and Kepner Presidents Cup",
+   "loc": "Wilson",
+   "cat": "statecup",
+   "f": 1
+  },
+  {
+   "s": "2026-12-11",
+   "e": "2026-12-21",
+   "t": "Classic League Spring 2027 brackets: directors viewing, posting, schedules due",
+   "cat": "classic",
+   "dl": 1
+  },
+  {
+   "s": "2026-12-19",
+   "t": "NC ODP Team Event Training Sessions (selected players)",
+   "cat": "odp"
+  },
+  {
+   "s": "2026-12-23",
+   "e": "2027-01-01",
+   "t": "NCYSA Office Closed: Winter Break",
+   "cat": "office"
+  },
+  {
+   "s": "2027-01-04",
+   "t": "Intent to Participate due: Spring 2027 Youth Academy",
+   "cat": "deadline",
+   "dl": 1
+  },
+  {
+   "s": "2027-01-09",
+   "e": "2027-01-10",
+   "t": "USYS ODP Mini-Region Team Event",
+   "loc": "Matthews / Pineville",
+   "cat": "odp"
+  },
+  {
+   "s": "2027-01-16",
+   "t": "Classic League Spring 2027: first day of league play",
+   "cat": "classic",
+   "f": 1
+  },
+  {
+   "s": "2027-01-18",
+   "t": "NCYSA Office Closed: Martin Luther King Jr. Day",
+   "cat": "office"
+  },
+  {
+   "s": "2027-01-24",
+   "t": "NC ODP January Talent ID Training Center",
+   "cat": "odp"
+  },
+  {
+   "s": "2027-01-29",
+   "e": "2027-01-30",
+   "t": "NCYSA Symposium and Annual General Meeting",
+   "loc": "Wilmington",
+   "cat": "meeting",
+   "f": 1
+  },
+  {
+   "s": "2027-02-20",
+   "e": "2027-02-21",
+   "t": "USYS ODP Mini-Region Team Event",
+   "loc": "Williamsburg, VA",
+   "cat": "odp"
+  },
+  {
+   "s": "2027-03-01",
+   "t": "Spring 2027 Recreation Bulk Registration deadline",
+   "cat": "deadline",
+   "dl": 1
+  },
+  {
+   "s": "2027-03-03",
+   "t": "State Cup Spring Cup applications: early deadline",
+   "cat": "statecup",
+   "dl": 1
+  },
+  {
+   "s": "2027-03-10",
+   "t": "State Cup Spring Cup applications: final deadline",
+   "cat": "statecup",
+   "dl": 1
+  },
+  {
+   "s": "2027-03-11",
+   "e": "2027-03-14",
+   "t": "U.S. Soccer Annual General Meeting",
+   "loc": "Atlanta, GA",
+   "cat": "meeting"
+  },
+  {
+   "s": "2027-03-14",
+   "t": "NC ODP Talent ID Training Center",
+   "cat": "odp"
+  },
+  {
+   "s": "2027-03-26",
+   "t": "NCYSA Office Closed: Good Friday",
+   "cat": "office"
+  },
+  {
+   "s": "2027-04-11",
+   "t": "NC ODP Talent ID Training Center",
+   "cat": "odp"
+  },
+  {
+   "s": "2027-04-24",
+   "e": "2027-04-25",
+   "t": "Spring 2027 Youth Academy Showcase",
+   "loc": "Truist Sports Park, Bermuda Run",
+   "cat": "academy",
+   "f": 1
+  },
+  {
+   "s": "2027-05-03",
+   "t": "2027–28 Re-Affiliation and Risk Management requirements open in PlayMetrics",
+   "cat": "deadline"
+  },
+  {
+   "s": "2027-05-03",
+   "e": "2027-06-01",
+   "t": "Member Association Renewal Fee due",
+   "cat": "deadline",
+   "dl": 1
+  },
+  {
+   "s": "2027-05-09",
+   "t": "Classic League Spring 2027 final play date (U11–U14)",
+   "cat": "classic"
+  },
+  {
+   "s": "2027-05-31",
+   "t": "NCYSA Office Closed: Memorial Day",
+   "cat": "office"
+  },
+  {
+   "s": "2027-06-01",
+   "e": "2027-06-30",
+   "label": "June 2027",
+   "t": "NC ODP June Events (2015 and 2010–2014 age groups)",
+   "cat": "odp"
+  },
+  {
+   "s": "2027-06-04",
+   "t": "Classic League Fall 2027 Program (CLP) registration due",
+   "cat": "classic",
+   "dl": 1
+  },
+  {
+   "tba": 1,
+   "label": "Summer 2027",
+   "t": "NCYSA Mid-Year Meeting",
+   "cat": "meeting"
+  }
+ ]
+}

@@ -10,3 +10,10 @@ https://playmetricssports.com/g/tournaments/138/North-Carolina once a day and sa
 - Runs daily around 6 AM Eastern. To update now: Actions tab > Update PlayMetrics tournaments > Run workflow.
 - If a run fails, the last good `data/tournaments.json` stays in place and the card keeps working.
 - `data/debug/` holds a screenshot and what the bot read on its last run, for troubleshooting.
+
+## NCYSA key dates
+
+`data/events.json` holds the NCYSA 2026-27 key dates (meetings, State Cup, Youth Academy, Classic League,
+ODP, coaching courses, deadlines, office closures). The Events page and the homepage Coming Up strip both
+read it. To change a date: open the file on GitHub, click the pencil icon, edit, and Commit changes.
+The site picks it up within a few minutes.
