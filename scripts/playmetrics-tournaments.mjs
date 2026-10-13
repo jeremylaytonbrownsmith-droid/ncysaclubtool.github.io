@@ -139,13 +139,32 @@ function ageText(list, label) {
 }
 const clean = (s) => (s || '').replace(/\s+/g, ' ').trim();
 
+// Tournament names arrive however clubs typed them, often ALL CAPS. Turn shouting words into
+// Title Case but keep club abbreviations (ACFC, WHYFC, NCFCY) and age groups (U12) as they are.
+const WORDS = new Set(('a an and at by for in of on or the to vs with fall spring summer winter beach boys girls men women ' +
+  'senior seniors junior juniors youth college showcase classic cup invitational tournament shootout kickoff kick off ' +
+  'beast east west north south beat heat city oaks foothills coast crystal presented present open challenge festival ' +
+  'fest bash clash state soccer club elite stars league games holiday thanksgiving memorial labor day weekend ' +
+  'national regional select premier academy united rush fire hope smoky mountain mountains piedmont triangle ' +
+  'capital river riverside sandhills lake lakes blue ridge park field fields final finals series super').split(' '));
+function tidyName(raw) {
+  return clean(raw).split(' ').map((w, i) => {
+    if (!/[A-Z]/.test(w) || /[a-z]/.test(w)) return w;             // already mixed case or no letters
+    if (/^U\d+$/.test(w) || /^\d/.test(w)) return w;                 // U12, 2026
+    const core = w.replace(/[^A-Za-z]/g, '').toLowerCase();
+    if (!WORDS.has(core) && core.length <= 6) return w;              // likely a club abbreviation
+    if (i > 0 && /^(a|an|and|at|by|for|in|of|on|or|the|to|vs)$/.test(core)) return w.toLowerCase();
+    return w.charAt(0) + w.slice(1).toLowerCase();
+  }).join(' ').replace(/^(\S)/, (c) => c.toUpperCase());
+}
+
 let tournaments = [...byId.values()].map((r) => {
   const a = r.address || {};
   const st = STATES[a.state] || a.state || '';
   const short = clean(r.short_description);
   return {
     id: r.id,
-    name: clean(r.name),
+    name: tidyName(r.name),
     start: r.tournament_start_date,
     end: r.tournament_end_date || r.tournament_start_date,
     city: a.city ? `${clean(a.city).replace(/,\s*(NC|SC|VA)$/i, '')}${st ? ', ' + st : ''}` : null,
