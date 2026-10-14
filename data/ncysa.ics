@@ -1,0 +1,875 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//NCYSA//Tournaments and Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:NCYSA Tournaments & Events
+X-WR-CALDESC:NCYSA sanctioned tournaments and key dates. www.ncsoccer.org
+X-WR-TIMEZONE:America/New_York
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:ev-1btazu0@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20260801
+DTEND;VALUE=DATE:20260803
+SUMMARY:NC ODP Talent ID Center (2010–2014 Age Groups)
+LOCATION:Girls: Asheboro\; Boys: High Point
+DESCRIPTION:ODP\nNCYSA Tournaments & Events: https://www.ncsoccer.org
+CATEGORIES:ODP
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-1095cfk@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20260801
+DTEND;VALUE=DATE:20260803
+SUMMARY:D License Coaching Course: In-Person Meeting #2
+LOCATION:High Point and Charlotte
+DESCRIPTION:Coaching Education\nNCYSA Tournaments & Events: https://www.nc
+ soccer.org
+CATEGORIES:Coaching Education
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-jfv4wc@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20260803
+DTEND;VALUE=DATE:20260804
+SUMMARY:Intent to Participate Due: Fall 2026 Youth Academy
+DESCRIPTION:Deadline\nNCYSA Tournaments & Events: https://www.ncsoccer.org
+CATEGORIES:Deadline
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-1udmyx9@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20260807
+DTEND;VALUE=DATE:20260808
+SUMMARY:Classic League: Schedules Finalizing\, Clubs Entering into PlayMet
+ rics
+DESCRIPTION:Classic League\nNCYSA Tournaments & Events: https://www.ncsocc
+ er.org
+CATEGORIES:Classic League
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-14rjbw0@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20260815
+DTEND;VALUE=DATE:20260816
+SUMMARY:Classic League: Fall Play Date Range Opens (Teams Can Begin Playin
+ g)
+DESCRIPTION:Classic League\nNCYSA Tournaments & Events: https://www.ncsocc
+ er.org
+CATEGORIES:Classic League
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-17sik8g@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20260819
+DTEND;VALUE=DATE:20260820
+SUMMARY:2026–27 Laws of the Game Update Webinar
+LOCATION:Virtual
+DESCRIPTION:Coaching Education\n1:00–2:30 PM\nNCYSA Tournaments & Events
+ : https://www.ncsoccer.org
+CATEGORIES:Coaching Education
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-17sik95@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20260823
+DTEND;VALUE=DATE:20260824
+SUMMARY:2026–27 Laws of the Game Update Webinar
+LOCATION:Virtual
+DESCRIPTION:Coaching Education\n8:00–9:30 PM\nNCYSA Tournaments & Events
+ : https://www.ncsoccer.org
+CATEGORIES:Coaching Education
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-1k71cik@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20260826
+DTEND;VALUE=DATE:20260827
+SUMMARY:State Cup: Application Window Opens
+DESCRIPTION:State Cup\nNCYSA Tournaments & Events: https://www.ncsoccer.or
+ g
+CATEGORIES:State Cup
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-132fdxg@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20260907
+DTEND;VALUE=DATE:20260908
+SUMMARY:NCYSA Office Closed: Labor Day
+DESCRIPTION:NCYSA Office Closed\nNCYSA Tournaments & Events: https://www.n
+ csoccer.org
+CATEGORIES:NCYSA Office Closed
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-194b1zn@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20260908
+DTEND;VALUE=DATE:20260912
+SUMMARY:B License Coaching Course: In-Person Meeting #1
+LOCATION:Raleigh
+DESCRIPTION:Coaching Education\nNCYSA Tournaments & Events: https://www.nc
+ soccer.org
+CATEGORIES:Coaching Education
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-ju3i70@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20260908
+DTEND;VALUE=DATE:20260912
+SUMMARY:C License Coaching Course: In-Person Meeting
+LOCATION:High Point
+DESCRIPTION:Coaching Education\nNCYSA Tournaments & Events: https://www.nc
+ soccer.org
+CATEGORIES:Coaching Education
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-1tz0vzi@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20260912
+DTEND;VALUE=DATE:20260914
+SUMMARY:D License Coaching Course: In-Person Meeting #1
+LOCATION:Asheville and Raleigh
+DESCRIPTION:Coaching Education\nNCYSA Tournaments & Events: https://www.nc
+ soccer.org
+CATEGORIES:Coaching Education
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-13ukgmy@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20260914
+DTEND;VALUE=DATE:20260915
+SUMMARY:State Cup Applications: Early Applicant Discount Window Ends
+DESCRIPTION:State Cup\nNCYSA Tournaments & Events: https://www.ncsoccer.or
+ g
+CATEGORIES:State Cup
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-zxpluz@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260916
+SUMMARY:Intent to Participate Due: Fall 2026 TOPSoccer
+DESCRIPTION:Deadline\nNCYSA Tournaments & Events: https://www.ncsoccer.org
+CATEGORIES:Deadline
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-1hrcb72@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20260916
+DTEND;VALUE=DATE:20260917
+SUMMARY:Deadline: Fall 2026 Recreation Bulk Registration
+DESCRIPTION:Deadline\nNCYSA Tournaments & Events: https://www.ncsoccer.org
+CATEGORIES:Deadline
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-u7heno@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20260921
+DTEND;VALUE=DATE:20260922
+SUMMARY:State Cup Applications: Final Deadline
+DESCRIPTION:State Cup\nNCYSA Tournaments & Events: https://www.ncsoccer.or
+ g
+CATEGORIES:State Cup
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-5u80wh@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20260928
+DTEND;VALUE=DATE:20260929
+SUMMARY:NCYSA Award Nomination Information Sent to Membership
+DESCRIPTION:Meetings and Governance\nNCYSA Tournaments & Events: https://w
+ ww.ncsoccer.org
+CATEGORIES:Meetings and Governance
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-109k15j@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261010
+DTEND;VALUE=DATE:20261012
+SUMMARY:D License Coaching Course: In-Person Meeting #2
+LOCATION:Asheville and Raleigh
+DESCRIPTION:Coaching Education\nNCYSA Tournaments & Events: https://www.nc
+ soccer.org
+CATEGORIES:Coaching Education
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-1hu2sa4@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261026
+SUMMARY:Fall 2026 Youth Academy Showcase
+LOCATION:High Point
+DESCRIPTION:Youth Academy\nNCYSA Tournaments & Events: https://www.ncsocce
+ r.org
+CATEGORIES:Youth Academy
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-1du24w4@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261026
+SUMMARY:NC ODP Talent ID Center #1: 2015 Age Group
+LOCATION:East: Goldsboro\; West: Statesville
+DESCRIPTION:ODP\nNCYSA Tournaments & Events: https://www.ncsoccer.org
+CATEGORIES:ODP
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-17hpov4@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261109
+SUMMARY:USYS State Cup: Consolidated Central Prelim Weekend
+LOCATION:Charlotte / Pineville
+DESCRIPTION:State Cup\nNCYSA Tournaments & Events: https://www.ncsoccer.or
+ g
+CATEGORIES:State Cup
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-feuu5a@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261113
+SUMMARY:B License Coaching Course: In-Person Meeting #2
+LOCATION:Raleigh
+DESCRIPTION:Coaching Education\nNCYSA Tournaments & Events: https://www.nc
+ soccer.org
+CATEGORIES:Coaching Education
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-3be3oc@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261116
+SUMMARY:Kepner Presidents State Cup: Prelim Weekend
+LOCATION:Legacy Soccer Park\, Forest City
+DESCRIPTION:State Cup\nNCYSA Tournaments & Events: https://www.ncsoccer.or
+ g
+CATEGORIES:State Cup
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-jui6wy@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261120
+SUMMARY:C License Coaching Course: In-Person Meeting
+LOCATION:Charlotte
+DESCRIPTION:Coaching Education\nNCYSA Tournaments & Events: https://www.nc
+ soccer.org
+CATEGORIES:Coaching Education
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-154qf4l@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:Classic League: Spring 2027 Program (CLP) Due
+DESCRIPTION:Classic League\nFormerly Intent to Play (ITP).\nNCYSA Tourname
+ nts & Events: https://www.ncsoccer.org
+CATEGORIES:Classic League
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-wcod9x@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:NC ODP Talent ID Center #2: 2015 Age Groups
+LOCATION:East: Goldsboro\; West: Statesville
+DESCRIPTION:ODP\nNCYSA Tournaments & Events: https://www.ncsoccer.org
+CATEGORIES:ODP
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-1ua5ncv@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:NC ODP Talent ID Center #3: 2010–2015 Age Groups
+LOCATION:2010–2014: Asheboro\; 2015 East: Goldsboro\; 2015 West: Statesv
+ ille
+DESCRIPTION:ODP\nNCYSA Tournaments & Events: https://www.ncsoccer.org
+CATEGORIES:ODP
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-1rezoth@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261126
+DTEND;VALUE=DATE:20261128
+SUMMARY:NCYSA Office Closed: Thanksgiving
+DESCRIPTION:NCYSA Office Closed\nNCYSA Tournaments & Events: https://www.n
+ csoccer.org
+CATEGORIES:NCYSA Office Closed
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-1mi3t5o@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261207
+SUMMARY:Final Four Weekend: USYS State Cup & Kepner Presidents Cup
+LOCATION:Wilson
+DESCRIPTION:State Cup\nNCYSA Tournaments & Events: https://www.ncsoccer.or
+ g
+CATEGORIES:State Cup
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-1kedb95@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Classic League: Spring 2027 Directors' Viewing for Brackets
+DESCRIPTION:Classic League\nAvailable for 12 hours.\nNCYSA Tournaments & E
+ vents: https://www.ncsoccer.org
+CATEGORIES:Classic League
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-a0qfsp@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
+SUMMARY:Classic League: U11-U14 G/B & U15-U19G: Remaining Games Played to 
+ Count for Promotion/Relegation
+DESCRIPTION:Classic League\nNCYSA Tournaments & Events: https://www.ncsocc
+ er.org
+CATEGORIES:Classic League
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-1fi7sff@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+SUMMARY:Classic League: Spring 2027 Brackets Posted
+DESCRIPTION:Classic League\nNCYSA Tournaments & Events: https://www.ncsocc
+ er.org
+CATEGORIES:Classic League
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-vfaxxh@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261219
+DTEND;VALUE=DATE:20261220
+SUMMARY:NC ODP Team Event Training Sessions (Selected Players Only)
+LOCATION:Asheboro
+DESCRIPTION:ODP\nNCYSA Tournaments & Events: https://www.ncsoccer.org
+CATEGORIES:ODP
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-em8ofy@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261221
+DTEND;VALUE=DATE:20261222
+SUMMARY:Classic League: Spring 2027 Bracket Schedules Due to Club Admins
+DESCRIPTION:Classic League\nNCYSA Tournaments & Events: https://www.ncsocc
+ er.org
+CATEGORIES:Classic League
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-1rf2fff@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261223
+DTEND;VALUE=DATE:20270102
+SUMMARY:NCYSA Office Closed for Winter Break
+DESCRIPTION:NCYSA Office Closed\nNCYSA Tournaments & Events: https://www.n
+ csoccer.org
+CATEGORIES:NCYSA Office Closed
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-1az5ncb@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270104
+DTEND;VALUE=DATE:20270105
+SUMMARY:NCYSA Office Re-opens
+DESCRIPTION:NCYSA Office Closed\nNCYSA Tournaments & Events: https://www.n
+ csoccer.org
+CATEGORIES:NCYSA Office Closed
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-14n1w2s@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270104
+DTEND;VALUE=DATE:20270105
+SUMMARY:Intent to Participate Due: Spring 2027 Youth Academy
+DESCRIPTION:Deadline\nNCYSA Tournaments & Events: https://www.ncsoccer.org
+CATEGORIES:Deadline
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-5s22l3@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270111
+SUMMARY:USYS ODP Mini-Region Team Event (Selected Players Only)
+LOCATION:Matthews/Pineville\, NC
+DESCRIPTION:ODP\nNCYSA Tournaments & Events: https://www.ncsoccer.org
+CATEGORIES:ODP
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-1pwb5fo@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270116
+DTEND;VALUE=DATE:20270117
+SUMMARY:Classic League: Spring 2027 First Day of League Play
+DESCRIPTION:Classic League\nNCYSA Tournaments & Events: https://www.ncsocc
+ er.org
+CATEGORIES:Classic League
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-1ipbdcr@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270118
+DTEND;VALUE=DATE:20270119
+SUMMARY:NCYSA Office Closed: Martin Luther King Jr. Day
+DESCRIPTION:NCYSA Office Closed\nNCYSA Tournaments & Events: https://www.n
+ csoccer.org
+CATEGORIES:NCYSA Office Closed
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-bzy8fh@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270124
+DTEND;VALUE=DATE:20270125
+SUMMARY:NC ODP January Talent ID Training Center (All Age Groups)
+LOCATION:Older age groups: Asheboro\; 12U East: Goldsboro\; 12U West: Stat
+ esville
+DESCRIPTION:ODP\nNCYSA Tournaments & Events: https://www.ncsoccer.org
+CATEGORIES:ODP
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-172tcyk@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270129
+DTEND;VALUE=DATE:20270131
+SUMMARY:NCYSA Symposium / AGM (Awards Luncheon TBD)
+LOCATION:Wilmington\, NC
+DESCRIPTION:Meetings and Governance\nNCYSA Tournaments & Events: https://w
+ ww.ncsoccer.org
+CATEGORIES:Meetings and Governance
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-5s2pm3@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270220
+DTEND;VALUE=DATE:20270222
+SUMMARY:USYS ODP Mini-Region Team Event (Selected Players Only)
+LOCATION:Williamsburg\, VA
+DESCRIPTION:ODP\nNCYSA Tournaments & Events: https://www.ncsoccer.org
+CATEGORIES:ODP
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-9v8fpe@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270301
+DTEND;VALUE=DATE:20270302
+SUMMARY:Deadline: Spring 2027 Recreation Bulk Registration
+DESCRIPTION:Deadline\nNCYSA Tournaments & Events: https://www.ncsoccer.org
+CATEGORIES:Deadline
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-fh4x03@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270303
+DTEND;VALUE=DATE:20270304
+SUMMARY:State Cup Spring Cup Applications: Early Entry Deadline
+DESCRIPTION:State Cup\nNCYSA Tournaments & Events: https://www.ncsoccer.or
+ g
+CATEGORIES:State Cup
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-7vpo32@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270310
+DTEND;VALUE=DATE:20270311
+SUMMARY:State Cup Spring Cup Applications: Final Deadline
+DESCRIPTION:State Cup\nNCYSA Tournaments & Events: https://www.ncsoccer.or
+ g
+CATEGORIES:State Cup
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-m713tk@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270311
+DTEND;VALUE=DATE:20270315
+SUMMARY:USSF AGM
+LOCATION:Atlanta\, GA
+DESCRIPTION:Meetings and Governance\nNCYSA Tournaments & Events: https://w
+ ww.ncsoccer.org
+CATEGORIES:Meetings and Governance
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-1iww2v@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270314
+DTEND;VALUE=DATE:20270315
+SUMMARY:NC ODP March Talent ID Training Center (2013–2015 Age Groups)
+LOCATION:2013 & 2014: Asheboro\; 2015 East: Goldsboro\; 2015 West: Hickory
+  or Statesville
+DESCRIPTION:ODP\nNCYSA Tournaments & Events: https://www.ncsoccer.org
+CATEGORIES:ODP
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-3ltiny@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270326
+DTEND;VALUE=DATE:20270327
+SUMMARY:NCYSA Office Closed: Good Friday
+DESCRIPTION:NCYSA Office Closed\nNCYSA Tournaments & Events: https://www.n
+ csoccer.org
+CATEGORIES:NCYSA Office Closed
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-138s2a4@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270411
+DTEND;VALUE=DATE:20270412
+SUMMARY:NC ODP April Talent ID Training Center (All Age Groups)
+LOCATION:Older age groups: Asheboro\; 2015 East: Goldsboro\; 2015 West: Hi
+ ckory or Statesville
+DESCRIPTION:ODP\nNCYSA Tournaments & Events: https://www.ncsoccer.org
+CATEGORIES:ODP
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-8kl0yh@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270424
+DTEND;VALUE=DATE:20270426
+SUMMARY:Spring 2027 Youth Academy Showcase
+LOCATION:Truist Sports Park (Bermuda Run)
+DESCRIPTION:Youth Academy\nNCYSA Tournaments & Events: https://www.ncsocce
+ r.org
+CATEGORIES:Youth Academy
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-e806fk@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270503
+DTEND;VALUE=DATE:20270504
+SUMMARY:2027–28 Member Association Re-Affiliation & Risk Management Requ
+ irements Open in PlayMetrics
+DESCRIPTION:Deadline\nHead registrars gain access to the new seasonal year
+  in PlayMetrics once their club's re-affiliation application is approved.
+ \nNCYSA Tournaments & Events: https://www.ncsoccer.org
+CATEGORIES:Deadline
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-zd8ige@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270503
+DTEND;VALUE=DATE:20270602
+SUMMARY:Member Association Renewal Fee Due
+DESCRIPTION:Deadline\nLate fees apply after June 1\, 2027.\nNCYSA Tourname
+ nts & Events: https://www.ncsoccer.org
+CATEGORIES:Deadline
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-12g48tj@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270509
+DTEND;VALUE=DATE:20270510
+SUMMARY:Classic League: Spring 2027 Final Play Date (U11–U14 B/G)
+DESCRIPTION:Classic League\nNCYSA Tournaments & Events: https://www.ncsocc
+ er.org
+CATEGORIES:Classic League
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-1affmzg@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270531
+DTEND;VALUE=DATE:20270601
+SUMMARY:NCYSA Office Closed: Memorial Day
+DESCRIPTION:NCYSA Office Closed\nNCYSA Tournaments & Events: https://www.n
+ csoccer.org
+CATEGORIES:NCYSA Office Closed
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-1ufl4jf@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270604
+DTEND;VALUE=DATE:20270605
+SUMMARY:Classic League: Fall 2027 Program (CLP) Registration Due
+DESCRIPTION:Classic League\nFormerly Intent to Play (ITP).\nNCYSA Tourname
+ nts & Events: https://www.ncsoccer.org
+CATEGORIES:Classic League
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-17iaxon@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270630
+DTEND;VALUE=DATE:20270701
+SUMMARY:End of NCYSA Fiscal Year
+DESCRIPTION:Meetings and Governance\nNCYSA Tournaments & Events: https://w
+ ww.ncsoccer.org
+CATEGORIES:Meetings and Governance
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:tn-93@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261109
+SUMMARY:2026 ACFC Clashboro Fall Invitational
+LOCATION:Mebane\, NC
+DESCRIPTION:NCYSA Sanctioned Tournament\nMale U8–U17\, U18+ | Female U8
+ –U9\, U11–U17\, U18+\nRegistration closes 2026-10-26\nRegister: https
+ ://soccer.sincsports.com/TTApply0.aspx?tid=CLASHFI&tab=2&sub=0\nSchedule:
+  https://soccer.sincsports.com/schedule.aspx?tid=CLASHFI&tab=3&sub=0
+URL:https://soccer.sincsports.com/TTApply0.aspx?tid=CLASHFI&tab=2&sub=0
+CATEGORIES:Sanctioned Tournament
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:tn-106@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261123
+SUMMARY:2026 WHYFC Fall Beach Classic
+LOCATION:Wilmington\, NC / nCino Sports Park\, Veteran’s Park\, Ogden/Ea
+ ton Fields / Wilmington\, NC
+DESCRIPTION:NCYSA Sanctioned Tournament\nMale U9–U15 | Female U9–U17\,
+  U18+\nRegistration closes 2026-11-02\nRegister: https://soccer.sincsport
+ s.com/TTApply0.aspx?tid=BEACH&tab=2&sub=0\nSchedule: https://soccer.sincs
+ ports.com/schedule.aspx?tid=BEACH&tab=4&sub=0
+URL:https://soccer.sincsports.com/TTApply0.aspx?tid=BEACH&tab=2&sub=0
+CATEGORIES:Sanctioned Tournament
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:tn-104@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261207
+SUMMARY:HFC Riverside Senior Girls Showcase
+LOCATION:Asheville\, NC
+DESCRIPTION:NCYSA Sanctioned Tournament\nFemale U16–U17\, U18+\nRegistra
+ tion closes 2026-11-16\nRegister: https://soccer.sincsports.com/register/
+ start.aspx?tid=HFCRSG&tab=6&sub=0\nSchedule: https://soccer.sincsports.co
+ m/schedule.aspx?tid=HFCRSG&tab=2&sub=1
+URL:https://soccer.sincsports.com/register/start.aspx?tid=HFCRSG&tab=6&sub
+ =0
+CATEGORIES:Sanctioned Tournament
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:tn-105@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261214
+SUMMARY:2026 NCFCY visitRaleigh.com Boys College Showcase
+LOCATION:Raleigh\, NC
+DESCRIPTION:NCYSA Sanctioned Tournament\nMale U15–U17\, U18+\nRegistrati
+ on closes 2026-10-20\nRegister: https://system.gotsport.com/event_regs/d6
+ 8f5c2311
+URL:https://system.gotsport.com/event_regs/d68f5c2311
+CATEGORIES:Sanctioned Tournament
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:tn-94@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270122
+DTEND;VALUE=DATE:20270125
+SUMMARY:2027 CISC Boys College Showcase presented by Novant Health
+LOCATION:Rock Hill\, SC
+DESCRIPTION:NCYSA Sanctioned Tournament\nMale U13–U17\, U18+\nRegistrati
+ on not open yet
+CATEGORIES:Sanctioned Tournament
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:tn-95@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270129
+DTEND;VALUE=DATE:20270201
+SUMMARY:2027 CISC Girls College Showcase Present by Novant Health
+LOCATION:Rock Hill\, SC
+DESCRIPTION:NCYSA Sanctioned Tournament\nFemale U13–U17\, U18+\nRegistra
+ tion not open yet
+CATEGORIES:Sanctioned Tournament
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:tn-96@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270130
+DTEND;VALUE=DATE:20270201
+SUMMARY:2027 ABYSA Riverside Spring Kickoff – Boys
+LOCATION:Asheville\, NC
+DESCRIPTION:NCYSA Sanctioned Tournament\nMale U10–U17\, U18+\nRegistrati
+ on not open yet\nRegister: https://soccer.sincsports.com/register/start.a
+ spx?tid=ABYSA1&tab=2&sub=0\nSchedule: https://soccer.sincsports.com/sched
+ ule.aspx?tid=ABYSA1&tab=3&sub=1
+URL:https://soccer.sincsports.com/register/start.aspx?tid=ABYSA1&tab=2&sub
+ =0
+CATEGORIES:Sanctioned Tournament
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:tn-98@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270205
+DTEND;VALUE=DATE:20270208
+SUMMARY:2027 MYSA Spring Shootout
+LOCATION:Mebane\, NC
+DESCRIPTION:NCYSA Sanctioned Tournament\nMale U8–U17\, U18+ | Female U8
+ –U17\, U18+\nRegistration not open yet
+CATEGORIES:Sanctioned Tournament
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:tn-99@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270206
+DTEND;VALUE=DATE:20270208
+SUMMARY:2027 PGSA Beast of the East
+LOCATION:Greenville\, NC
+DESCRIPTION:NCYSA Sanctioned Tournament\nMale U9–U17\, U18+ | Female U9
+ –U17\, U18+\nRegistration not open yet
+CATEGORIES:Sanctioned Tournament
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:tn-97@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270213
+DTEND;VALUE=DATE:20270215
+SUMMARY:2027 ABYSA Riverside Spring Kickoff – Girls
+LOCATION:Asheville\, NC
+DESCRIPTION:NCYSA Sanctioned Tournament\nFemale U10–U14\nRegistration no
+ t open yet\nRegister: https://soccer.sincsports.com/register/start.aspx?t
+ id=ABYSA1&tab=2&sub=0\nSchedule: https://soccer.sincsports.com/schedule.a
+ spx?tid=ABYSA1&tab=3&sub=1
+URL:https://soccer.sincsports.com/register/start.aspx?tid=ABYSA1&tab=2&sub
+ =0
+CATEGORIES:Sanctioned Tournament
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:tn-100@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270410
+DTEND;VALUE=DATE:20270412
+SUMMARY:2027 NCRT Beat the Heat
+LOCATION:Winston-Salem\, NC
+DESCRIPTION:NCYSA Sanctioned Tournament\nMale U11–U17\, U18+ | Female U1
+ 1–U17\, U18+\nRegistration not open yet
+CATEGORIES:Sanctioned Tournament
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:tn-101@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270424
+DTEND;VALUE=DATE:20270426
+SUMMARY:2027 CVYSA Foothills Classic
+LOCATION:Hickory\, NC
+DESCRIPTION:NCYSA Sanctioned Tournament\nMale U8–U17\, U18+ | Female U8
+ –U15\nRegistration not open yet
+CATEGORIES:Sanctioned Tournament
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:tn-102@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270508
+DTEND;VALUE=DATE:20270510
+SUMMARY:2027 NCFCY City of Oaks Classic
+LOCATION:Raliegh\, NC
+DESCRIPTION:NCYSA Sanctioned Tournament\nMale U8–U17\, U18+ | Female U8
+ –U15\nRegistration not open yet
+CATEGORIES:Sanctioned Tournament
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:tn-103@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;VALUE=DATE:20270515
+DTEND;VALUE=DATE:20270517
+SUMMARY:2027 Falcons United Crystal Coast Classic
+LOCATION:Morehead City / Cedar Point / Newport\, NC
+DESCRIPTION:NCYSA Sanctioned Tournament\nMale U9–U14 | Female U9–U14\n
+ Registration not open yet
+CATEGORIES:Sanctioned Tournament
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:state-of-nc-meeting@ncsoccer.org
+DTSTAMP:20261014T154040Z
+DTSTART;TZID=America/New_York:20260819T120000
+DTEND;TZID=America/New_York:20260819T130000
+RRULE:FREQ=MONTHLY;BYDAY=3WE;UNTIL=20270630T235959Z
+SUMMARY:State of NC Meeting
+DESCRIPTION:Monthly NCYSA meeting\, every third Wednesday at 12:00 PM.
+CATEGORIES:Meetings and Governance
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
