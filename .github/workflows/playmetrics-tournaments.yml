@@ -32,6 +32,10 @@ jobs:
       - name: Read PlayMetrics
         run: node scripts/playmetrics-tournaments.mjs
 
+      - name: Add logos and tournaments not in PlayMetrics yet
+        if: always()
+        run: node scripts/merge-extras.mjs
+
       - name: Build subscribable calendar
         if: always()
         run: node scripts/build-calendar.mjs

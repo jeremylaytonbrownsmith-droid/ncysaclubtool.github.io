@@ -6,6 +6,74 @@
   "complete": true,
   "tournaments": [
     {
+      "id": "ncysa-2026-nc-rush-fall-classic",
+      "name": "2026 NCRT Fall Classic",
+      "start": "2026-10-17",
+      "end": "2026-10-18",
+      "city": "Winston-Salem, NC",
+      "ages": "U11–U19 Boys & Girls",
+      "venue": "Sara Lee Soccer Complex & Hine Soccer Park",
+      "registrationOpen": false,
+      "registrationCloses": "2026-09-18",
+      "registerUrl": null,
+      "scheduleUrl": null,
+      "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-nc-rush-fall-classic/",
+      "clubUrl": "https://leagues.bluesombrero.com/Default.aspx?tabid=1795827",
+      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-RUSH-TRIAD.png",
+      "pm": false
+    },
+    {
+      "id": "ncysa-2026-pgsa-pitch-pirates-showdown",
+      "name": "2026 PGSA Pitch Pirates Showdown",
+      "start": "2026-10-17",
+      "end": "2026-10-18",
+      "city": "Greenville, NC",
+      "ages": "U10–U12 Boys & Girls",
+      "venue": null,
+      "registrationOpen": false,
+      "registrationCloses": null,
+      "registerUrl": null,
+      "scheduleUrl": null,
+      "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-pgsa-pitch-pirates-showdown/",
+      "clubUrl": null,
+      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/PITT-GREENVILLE-SA.png",
+      "pm": false
+    },
+    {
+      "id": "ncysa-cvysa-autumn-blast-2026",
+      "name": "2026 CVYSA Autumn Blast",
+      "start": "2026-10-24",
+      "end": "2026-10-25",
+      "city": "Hickory, NC",
+      "ages": "U8–U14 Boys & Girls / U15–U19 Girls",
+      "venue": "Pepsi Regional Soccer Complex",
+      "registrationOpen": false,
+      "registrationCloses": "2026-10-05",
+      "registerUrl": null,
+      "scheduleUrl": null,
+      "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/cvysa-autumn-blast-2026/",
+      "clubUrl": "https://soccer.sincsports.com/details.aspx?tid=CVYSAAB&tab=1",
+      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CATAWBA-VALLEY-YOUTH-SA.png",
+      "pm": false
+    },
+    {
+      "id": "ncysa-2026csa-carolina-shootout-and-ya-festival",
+      "name": "2026 CSA Carolina Shootout & YA Festival",
+      "start": "2026-10-31",
+      "end": "2026-11-01",
+      "city": "Charlotte, NC",
+      "ages": "U8–U10 Youth Academy / U11–U19 Boys & Girls",
+      "venue": null,
+      "registrationOpen": true,
+      "registrationCloses": "2026-10-19",
+      "registerUrl": null,
+      "scheduleUrl": null,
+      "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026csa-carolina-shootout-and-ya-festival/",
+      "clubUrl": "https://www.charlottesocceracademy.com",
+      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-SOCCER-ACADEMY.jpeg",
+      "pm": false
+    },
+    {
       "id": 93,
       "name": "2026 ACFC Clashboro Fall Invitational",
       "start": "2026-11-07",
@@ -18,7 +86,127 @@
       "registerUrl": "https://soccer.sincsports.com/TTApply0.aspx?tid=CLASHFI&tab=2&sub=0",
       "scheduleUrl": "https://soccer.sincsports.com/schedule.aspx?tid=CLASHFI&tab=3&sub=0",
       "websiteUrl": "https://soccer.sincsports.com/TTContent.aspx?tid=CLASHFI&tab=1",
-      "logo": null
+      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/ASHEBORO-CITY-FUTBOL-CLUB.jpg",
+      "logoFrom": "ncysa"
+    },
+    {
+      "id": "ncysa-2026-mysa-fall-champions-cup",
+      "name": "2026 MYSA Fall Champions Classic",
+      "start": "2026-11-07",
+      "end": "2026-11-08",
+      "city": "Mebane, NC",
+      "ages": "U8–U19 Boys & Girls",
+      "venue": null,
+      "registrationOpen": false,
+      "registrationCloses": null,
+      "registerUrl": null,
+      "scheduleUrl": null,
+      "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-mysa-fall-champions-cup/",
+      "clubUrl": null,
+      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/MEBANE-YOUTH-SA.jpg",
+      "pm": false
+    },
+    {
+      "id": "ncysa-2026-ncfcy-visitraleigh-com-girls-jr-showcase",
+      "name": "2026 NCFCY visitRaleigh.com Girls Jr Showcase",
+      "start": "2026-11-07",
+      "end": "2026-11-08",
+      "city": "Raleigh, NC",
+      "ages": "U10–U14 Girls",
+      "venue": null,
+      "registrationOpen": false,
+      "registrationCloses": null,
+      "registerUrl": null,
+      "scheduleUrl": null,
+      "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-girls-jr-showcase/",
+      "clubUrl": null,
+      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png",
+      "pm": false
+    },
+    {
+      "id": "ncysa-2026-nc-fusion-adidas-clash",
+      "name": "2026 NCF Adidas Clash",
+      "start": "2026-11-13",
+      "end": "2026-11-15",
+      "city": "Greensboro, NC",
+      "ages": "U9–U19 Boys & Girls",
+      "venue": null,
+      "registrationOpen": false,
+      "registrationCloses": null,
+      "registerUrl": null,
+      "scheduleUrl": null,
+      "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-nc-fusion-adidas-clash/",
+      "clubUrl": null,
+      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NC-FUSION.png",
+      "pm": false
+    },
+    {
+      "id": "ncysa-2026-cisc-boys-fall-classic",
+      "name": "2026 CISC Boys Fall Classic",
+      "start": "2026-11-14",
+      "end": "2026-11-15",
+      "city": "Huntersville, NC",
+      "ages": "U11–U19 Boys",
+      "venue": null,
+      "registrationOpen": false,
+      "registrationCloses": null,
+      "registerUrl": null,
+      "scheduleUrl": null,
+      "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-cisc-boys-fall-classic/",
+      "clubUrl": null,
+      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-INDEPENDENCE.png",
+      "pm": false
+    },
+    {
+      "id": "ncysa-2026-ncfcy-visitraleigh-com-boys-jr-showcase",
+      "name": "2026 NCFCY visitRaleigh.com Boys Jr Showcase",
+      "start": "2026-11-14",
+      "end": "2026-11-15",
+      "city": "Raleigh, NC",
+      "ages": "U10–U14 Boys",
+      "venue": null,
+      "registrationOpen": false,
+      "registrationCloses": null,
+      "registerUrl": null,
+      "scheduleUrl": null,
+      "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-boys-jr-showcase/",
+      "clubUrl": null,
+      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png",
+      "pm": false
+    },
+    {
+      "id": "ncysa-2026-ncfcy-visitraleigh-com-girls-college-showcase",
+      "name": "2026 NCFCY visitRaleigh.com Girls College Showcase",
+      "start": "2026-11-20",
+      "end": "2026-11-22",
+      "city": "Raleigh, NC",
+      "ages": "U15–U19 Girls",
+      "venue": null,
+      "registrationOpen": false,
+      "registrationCloses": null,
+      "registerUrl": null,
+      "scheduleUrl": null,
+      "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-girls-college-showcase/",
+      "clubUrl": null,
+      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png",
+      "pm": false
+    },
+    {
+      "id": "ncysa-2026-cisc-girls-fall-classic",
+      "name": "2026 CISC Girls Fall Classic",
+      "start": "2026-11-21",
+      "end": "2026-11-22",
+      "city": "Huntersville, NC",
+      "ages": "U11–U19 Girls",
+      "venue": null,
+      "registrationOpen": false,
+      "registrationCloses": null,
+      "registerUrl": null,
+      "scheduleUrl": null,
+      "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-cisc-girls-fall-classic/",
+      "clubUrl": null,
+      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-INDEPENDENCE.png",
+      "pm": false
     },
     {
       "id": 106,
@@ -33,7 +221,8 @@
       "registerUrl": "https://soccer.sincsports.com/TTApply0.aspx?tid=BEACH&tab=2&sub=0",
       "scheduleUrl": "https://soccer.sincsports.com/schedule.aspx?tid=BEACH&tab=4&sub=0",
       "websiteUrl": null,
-      "logo": null
+      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/WILMINGTON-HAMMERHEADS-YOUTH-FC.png",
+      "logoFrom": "ncysa"
     },
     {
       "id": 104,
@@ -63,7 +252,8 @@
       "registerUrl": "https://system.gotsport.com/event_regs/d68f5c2311",
       "scheduleUrl": null,
       "websiteUrl": "https://www.ncfcyouth.com/boys-college-showcase",
-      "logo": null
+      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png",
+      "logoFrom": "ncysa"
     },
     {
       "id": 94,
@@ -123,7 +313,8 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://www.mebaneyouthsoccer.com/",
-      "logo": null
+      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/MEBANE-YOUTH-SA.jpg",
+      "logoFrom": "ncysa"
     },
     {
       "id": 99,
@@ -138,7 +329,25 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://pgsasoccer.com/tournaments/",
-      "logo": null
+      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/PITT-GREENVILLE-SA.png",
+      "logoFrom": "ncysa"
+    },
+    {
+      "id": "ncysa-2027-ccfc-go-forth-home-services-shootout-2",
+      "name": "2027 CCFC Go Forth Home Services Shootout",
+      "start": "2027-02-12",
+      "end": "2027-02-14",
+      "city": "Asheboro / High Point / Kernersville, NC",
+      "ages": "U9–U14 Boys & Girls / U15–U19 Boys",
+      "venue": null,
+      "registrationOpen": true,
+      "registrationCloses": "2027-01-29",
+      "registerUrl": null,
+      "scheduleUrl": null,
+      "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-ccfc-go-forth-home-services-shootout-2/",
+      "clubUrl": "https://carolinacoreyouth.com/",
+      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CAROLINA-CORE-FC-YOUTH.webp",
+      "pm": false
     },
     {
       "id": 97,
@@ -186,6 +395,23 @@
       "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5793/logo"
     },
     {
+      "id": "ncysa-2027-tufc-sun-soccer-spring-bash",
+      "name": "2027 TUFC Sun & Soccer Spring Bash",
+      "start": "2027-04-30",
+      "end": "2027-05-02",
+      "city": "Asheboro, NC",
+      "ages": "U9–U19 Boys & Girls",
+      "venue": null,
+      "registrationOpen": true,
+      "registrationCloses": "2027-04-12",
+      "registerUrl": null,
+      "scheduleUrl": null,
+      "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-tufc-sun-soccer-spring-bash/",
+      "clubUrl": "https://triadunionfc.com",
+      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/TRIAD-UNION-FOOTBALL-CLUB.png",
+      "pm": false
+    },
+    {
       "id": 102,
       "name": "2027 NCFCY City of Oaks Classic",
       "start": "2027-05-08",
@@ -198,7 +424,8 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://www.ncfcyouth.com/city-of-oaks",
-      "logo": null
+      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png",
+      "logoFrom": "ncysa"
     },
     {
       "id": 103,
@@ -215,5 +442,6 @@
       "websiteUrl": "https://www.falconsunitednc.com/program/crystal-coast-classic/36645",
       "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5810/logo"
     }
-  ]
+  ],
+  "notInPlayMetrics": 13
 }
