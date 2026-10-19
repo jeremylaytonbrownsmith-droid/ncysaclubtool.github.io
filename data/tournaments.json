@@ -1,44 +1,10 @@
 {
-  "updated": "2026-10-18T14:03:50.651Z",
+  "updated": "2026-10-19T17:00:59.568Z",
   "source": "https://playmetricssports.com/g/tournaments/138/North-Carolina",
   "statedCount": 14,
   "count": 14,
   "complete": true,
   "tournaments": [
-    {
-      "id": "ncysa-2026-nc-rush-fall-classic",
-      "name": "2026 NCRT Fall Classic",
-      "start": "2026-10-17",
-      "end": "2026-10-18",
-      "city": "Winston-Salem, NC",
-      "ages": "U11–U19 Boys & Girls",
-      "venue": "Sara Lee Soccer Complex & Hine Soccer Park",
-      "registrationOpen": false,
-      "registrationCloses": "2026-09-18",
-      "registerUrl": null,
-      "scheduleUrl": null,
-      "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-nc-rush-fall-classic/",
-      "clubUrl": "https://leagues.bluesombrero.com/Default.aspx?tabid=1795827",
-      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-RUSH-TRIAD.png",
-      "pm": false
-    },
-    {
-      "id": "ncysa-2026-pgsa-pitch-pirates-showdown",
-      "name": "2026 PGSA Pitch Pirates Showdown",
-      "start": "2026-10-17",
-      "end": "2026-10-18",
-      "city": "Greenville, NC",
-      "ages": "U10–U12 Boys & Girls",
-      "venue": null,
-      "registrationOpen": false,
-      "registrationCloses": null,
-      "registerUrl": null,
-      "scheduleUrl": null,
-      "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-pgsa-pitch-pirates-showdown/",
-      "clubUrl": null,
-      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/PITT-GREENVILLE-SA.png",
-      "pm": false
-    },
     {
       "id": "ncysa-cvysa-autumn-blast-2026",
       "name": "2026 CVYSA Autumn Blast",
@@ -443,5 +409,5 @@
       "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5810/logo"
     }
   ],
-  "notInPlayMetrics": 13
+  "notInPlayMetrics": 11
 }
