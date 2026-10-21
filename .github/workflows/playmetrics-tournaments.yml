@@ -29,6 +29,9 @@ jobs:
           npm install playwright@1.47.2 --no-save
           npx playwright install --with-deps chromium
 
+      - name: Keep tournaments that have been played
+        run: node scripts/archive-past.mjs
+
       - name: Read PlayMetrics
         run: node scripts/playmetrics-tournaments.mjs
 
