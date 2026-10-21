@@ -5,3 +5,4 @@ loader block that fetches the file from this folder, so a page is updated by cha
 here; no WordPress edit is needed.
 
 - `ncysa-calendar.html` — NCYSA Calendar & Events (www.ncsoccer.org/ncysa-calendar/)
+- `ncysa-homepage.html` — Homepage: tiles, banners, Highlighted Events, partners footer (www.ncsoccer.org/)
