@@ -158,6 +158,17 @@ function tidyName(raw) {
   }).join(' ').replace(/^(\S)/, (c) => c.toUpperCase());
 }
 
+// Save every field PlayMetrics sends (names plus any date, price or discount values) so new fields like
+// early-bird deadlines can be spotted and added to the page. Written to data/debug/fields.json.
+try {
+  const keys = new Set(), hits = {};
+  const walk = (o, pre) => { for (const [k, v] of Object.entries(o || {})) { const path = pre + k; keys.add(path);
+    if (v && typeof v === 'object' && !Array.isArray(v)) walk(v, path + '.');
+    else if (/date|early|discount|price|fee|cost|deadline/i.test(k) && v != null && v !== '') (hits[path] ||= new Set()).add(String(v).slice(0, 40)); } };
+  for (const r of byId.values()) walk(r, '');
+  writeFileSync(`${DEBUG}/fields.json`, JSON.stringify({ fields: [...keys].sort(), sampleValues: Object.fromEntries(Object.entries(hits).map(([k, v]) => [k, [...v].slice(0, 5)])) }, null, 2) + '\n');
+} catch (e) { note('Could not save field list: ' + e.message); }
+
 let tournaments = [...byId.values()].map((r) => {
   const a = r.address || {};
   const st = STATES[a.state] || a.state || '';
