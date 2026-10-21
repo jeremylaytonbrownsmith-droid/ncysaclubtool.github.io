@@ -1,0 +1,78 @@
+{
+  "fields": [
+    "address",
+    "address.city",
+    "address.state",
+    "club_image_url",
+    "contact_email",
+    "contact_name",
+    "eligibility",
+    "eligibility.adult_female_competition",
+    "eligibility.adult_male_competition",
+    "eligibility.female",
+    "eligibility.male",
+    "fees_description",
+    "governing_body_id",
+    "id",
+    "is_registration_open",
+    "league_id",
+    "long_description",
+    "name",
+    "public_image_url",
+    "public_rules_document_url",
+    "registration_end_date",
+    "registration_link",
+    "registration_start_date",
+    "rules_document_name",
+    "rules_document_url",
+    "rules_type",
+    "sanctioning_bodies",
+    "sanctioning_bodies.other",
+    "sanctioning_bodies.usys",
+    "sanctioning_bodies.usys.associated_state_id",
+    "sanctioning_bodies.usys.value",
+    "schedule_link",
+    "short_description",
+    "tournament_end_date",
+    "tournament_start_date",
+    "unlinked_promotion_status",
+    "usys_sanctioning_body_name",
+    "website_url"
+  ],
+  "sampleValues": {
+    "registration_start_date": [
+      "2026-08-01",
+      "2026-10-01",
+      "2026-11-01",
+      "2026-12-01"
+    ],
+    "registration_end_date": [
+      "2026-10-26",
+      "2026-11-02",
+      "2026-11-16",
+      "2026-10-20",
+      "2027-01-03"
+    ],
+    "tournament_start_date": [
+      "2026-11-07",
+      "2026-11-21",
+      "2026-12-05",
+      "2026-12-11",
+      "2027-01-22"
+    ],
+    "tournament_end_date": [
+      "2026-11-08",
+      "2026-11-22",
+      "2026-12-06",
+      "2026-12-13",
+      "2027-01-24"
+    ],
+    "fees_description": [
+      "<ul><li><div>U11 – U12 – $725</div></li>",
+      "<ul><li><div>U9 – U10 – $500</div></li><",
+      "<div>U16 - U19 Girls - $750</div>",
+      "<div>U15 - 11v11 - $1595</div><div>U16-U",
+      "<div>U13 – U19 – $1,100</div>"
+    ]
+  }
+}

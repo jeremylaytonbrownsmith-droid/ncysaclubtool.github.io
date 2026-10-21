@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T15:10:48.567Z",
+  "updated": "2026-10-21T08:35:09.496Z",
   "source": "https://playmetricssports.com/g/tournaments/138/North-Carolina",
   "statedCount": 14,
   "count": 14,
@@ -225,7 +225,7 @@
       "city": "Raleigh, NC",
       "ages": "Male U15–U17, U18+",
       "venue": null,
-      "registrationOpen": true,
+      "registrationOpen": false,
       "registrationCloses": "2026-10-20",
       "registerUrl": "https://system.gotsport.com/event_regs/d68f5c2311",
       "scheduleUrl": null,
