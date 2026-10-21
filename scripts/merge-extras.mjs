@@ -34,14 +34,14 @@ const added = [];
 for (const x of extras.tournaments || []) {
   if ((x.end || x.start) < today) continue;
   const a = alias[x.assoc] || x.assoc;
-  const found = pm.some((t) => abbr(t.name) === a && Math.abs(day(t.start) - day(x.start)) <= 3);
-  if (found) continue;
+  const match = pm.find((t) => (abbr(t.name) === a || (x.assoc === 'FUNC' && /falcons united/i.test(t.name))) && Math.abs(day(t.start) - day(x.start)) <= 3);
+  if (match) { if (x.url) match.ncysaUrl = x.url; continue; }
   const closes = parse(x.deadline);
   added.push({
     id: 'ncysa-' + x.url.replace(/\/$/, '').split('/').pop(),
     name: x.name, start: x.start, end: x.end || x.start, city: x.city, ages: x.ages, venue: x.venue || null,
     registrationOpen: !!closes && closes >= today, registrationCloses: closes,
-    registerUrl: null, scheduleUrl: null, websiteUrl: x.url, clubUrl: x.website || null,
+    registerUrl: null, scheduleUrl: null, websiteUrl: x.url, ncysaUrl: x.url, clubUrl: x.website || null,
     logo: logos[a] || null, pm: false,
   });
 }

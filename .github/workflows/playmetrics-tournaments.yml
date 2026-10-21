@@ -2,7 +2,7 @@ name: Update PlayMetrics tournaments
 
 on:
   schedule:
-    - cron: '17 10 * * *'   # every day around 6 AM Eastern
+    - cron: '17 */3 * * *'   # every 3 hours, so PlayMetrics edits show up the same day
   workflow_dispatch:         # "Run workflow" button for a manual update
 
 permissions:

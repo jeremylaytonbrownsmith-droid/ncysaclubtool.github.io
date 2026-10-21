@@ -23,9 +23,190 @@
   "TUSA": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/TRIANGLE-UNITED-SA.png",
   "WHYFC": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/WILMINGTON-HAMMERHEADS-YOUTH-FC.png",
   "WYSA": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/WILSON-YOUTH-SA.png",
-  "FU": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/12/falcons-colored-logo.png"
+  "FU": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/12/falcons-colored-logo.png",
+  "FUNC": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/12/falcons-colored-logo.png"
  },
  "tournaments": [
+  {
+   "assoc": "CSA",
+   "name": "2026 CSA DSG Girls Invitational",
+   "start": "2026-08-15",
+   "end": "2026-08-16",
+   "city": "Charlotte, NC",
+   "venue": null,
+   "ages": "U9–U19 Girls",
+   "deadline": null,
+   "url": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-csa-dicks-sporting-goods-girls-invitational/",
+   "website": null
+  },
+  {
+   "assoc": "CSA",
+   "name": "2026 CSA DSG Girls Showcase",
+   "start": "2026-08-15",
+   "end": "2026-08-16",
+   "city": "Charlotte, NC",
+   "venue": null,
+   "ages": "U13–U19 Girls",
+   "deadline": null,
+   "url": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-csa-dicks-sporting-goods-girls-showcase/",
+   "website": null
+  },
+  {
+   "assoc": "HCSA",
+   "name": "2026 HCSA Appalachian Classic",
+   "start": "2026-08-22",
+   "end": "2026-08-23",
+   "city": "Boone, NC",
+   "venue": null,
+   "ages": "",
+   "deadline": null,
+   "url": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-hcsa-appalachian-classic/",
+   "website": null
+  },
+  {
+   "assoc": "ABYSA",
+   "name": "2026 ABYSA Riverside Summer Shootout – Girls",
+   "start": "2026-08-22",
+   "end": "2026-08-23",
+   "city": "Asheville, NC",
+   "venue": null,
+   "ages": "U10–U19 Girls",
+   "deadline": null,
+   "url": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-abysa-riverside-summer-shooutout-girls/",
+   "website": null
+  },
+  {
+   "assoc": "CSA",
+   "name": "2026 CSA DSG Boys Invitational",
+   "start": "2026-08-22",
+   "end": "2026-08-23",
+   "city": "Charlotte, NC",
+   "venue": null,
+   "ages": "U9–U19 Boys",
+   "deadline": null,
+   "url": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-csa-dicks-sporting-goods-boys-invitational/",
+   "website": null
+  },
+  {
+   "assoc": "CSA",
+   "name": "2026 CSA DSG Boys Showcase",
+   "start": "2026-08-22",
+   "end": "2026-08-23",
+   "city": "Charlotte, NC",
+   "venue": null,
+   "ages": "U13–U19 Boys",
+   "deadline": null,
+   "url": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-csa-dicks-sporting-goods-boys-showcase/",
+   "website": null
+  },
+  {
+   "assoc": "CCFC",
+   "name": "2026 CCFC Furniture City Classic",
+   "start": "2026-08-28",
+   "end": "2026-08-30",
+   "city": "High Point/Kernersville, NC",
+   "venue": null,
+   "ages": "",
+   "deadline": null,
+   "url": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ccfc-furniture-city-classic/",
+   "website": null
+  },
+  {
+   "assoc": "TUSA",
+   "name": "2026 TUSA Triangle United Fall Classic",
+   "start": "2026-08-28",
+   "end": "2026-08-30",
+   "city": "Greater Chapel Hill fields",
+   "venue": null,
+   "ages": "",
+   "deadline": "August 21, 2026",
+   "url": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-triangle-united-fall-classic/",
+   "website": null
+  },
+  {
+   "assoc": "ABYSA",
+   "name": "2026 ABYSA Riverside Summer Shootout – Boys",
+   "start": "2026-08-29",
+   "end": "2026-08-30",
+   "city": "Asheville, NC",
+   "venue": null,
+   "ages": "U10–U19 Boys",
+   "deadline": null,
+   "url": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-abysa-riverside-summer-shootout-boys/",
+   "website": null
+  },
+  {
+   "assoc": "NCF",
+   "name": "2026 NCF Labor Day Shootout",
+   "start": "2026-09-05",
+   "end": "2026-09-06",
+   "city": "Greensboro, NC",
+   "venue": null,
+   "ages": "",
+   "deadline": null,
+   "url": "https://www.ncsoccer.org/ncsanctionedtournamentpage/ncfusionlabordayshootout/",
+   "website": null
+  },
+  {
+   "assoc": "CISC",
+   "name": "2026 CISC Independence Cup",
+   "start": "2026-09-11",
+   "end": "2026-09-13",
+   "city": "Huntersville, NC",
+   "venue": null,
+   "ages": "",
+   "deadline": null,
+   "url": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-cisc-independence-cup/",
+   "website": null
+  },
+  {
+   "assoc": "WYSA",
+   "name": "2026 WYSA Explosion Cup",
+   "start": "2026-09-26",
+   "end": "2026-09-27",
+   "city": "Wilson, NC",
+   "venue": "Gillette Soccer Complex",
+   "ages": "U10–U14 Boys / U10–U19 Girls",
+   "deadline": null,
+   "url": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-wysa-explosion-cup/",
+   "website": null
+  },
+  {
+   "assoc": "CVFC",
+   "name": "2026 CVFC Velocity Super Cup",
+   "start": "2026-10-03",
+   "end": "2026-10-04",
+   "city": "Asheboro, NC",
+   "venue": null,
+   "ages": "",
+   "deadline": null,
+   "url": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-cvfc-velocity-super-cup/",
+   "website": null
+  },
+  {
+   "assoc": "NCFCY",
+   "name": "2026 NCFCY Capital City Classic",
+   "start": "2026-10-10",
+   "end": "2026-10-11",
+   "city": "WRAL Soccer Park, Raleigh, NC",
+   "venue": null,
+   "ages": "",
+   "deadline": "September 15, 2026",
+   "url": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-capital-city-classic/",
+   "website": "https://www.ncfcyouth.com/capital-city-classic"
+  },
+  {
+   "assoc": "FCA",
+   "name": "2026 FCA Genesis Cup",
+   "start": "2026-10-10",
+   "end": "2026-10-11",
+   "city": "Mooresville, NC",
+   "venue": "Mazeppa Rd Park",
+   "ages": "",
+   "deadline": "September 11 / 18, 2026",
+   "url": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-fc-athletico-genesis-cup/",
+   "website": null
+  },
   {
    "assoc": "PGSA",
    "name": "2026 PGSA Pitch Pirates Showdown",
@@ -207,6 +388,30 @@
    "website": null
   },
   {
+   "assoc": "CISC",
+   "name": "2027 CISC Boys College Showcase",
+   "start": "2027-01-22",
+   "end": "2027-01-24",
+   "city": "Rock Hill, SC",
+   "venue": null,
+   "ages": "U13–U19 Boys",
+   "deadline": "January 3, 2027",
+   "url": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-cisc-boys-college-showcase/",
+   "website": "https://www.independencesoccer.club/boys-college-showcase"
+  },
+  {
+   "assoc": "CISC",
+   "name": "2027 CISC Girls College Showcase",
+   "start": "2027-01-29",
+   "end": "2027-01-31",
+   "city": "Rock Hill, SC",
+   "venue": null,
+   "ages": "U13–U19 Girls",
+   "deadline": "January 10, 2027",
+   "url": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-cisc-girls-college-showcase/",
+   "website": "https://www.independencesoccer.club/girls-college-showcase"
+  },
+  {
    "assoc": "ABYSA",
    "name": "2027 ABYSA Riverside Spring Kickoff – Boys",
    "start": "2027-01-30",
@@ -267,6 +472,18 @@
    "website": null
   },
   {
+   "assoc": "NCRT",
+   "name": "2027 NCRT Beat the Heat",
+   "start": "2027-04-10",
+   "end": "2027-04-11",
+   "city": "Winston-Salem, NC",
+   "venue": null,
+   "ages": "",
+   "deadline": "March 12, 2027",
+   "url": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-ncrt-beat-the-heat/",
+   "website": "https://leagues.bluesombrero.com/Default.aspx?tabid=2184472"
+  },
+  {
    "assoc": "CVYSA",
    "name": "2027 CVYSA Foothills Classic",
    "start": "2027-04-24",
@@ -301,6 +518,18 @@
    "deadline": "April 14, 2027",
    "url": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-ncfcy-city-of-oaks-classic/",
    "website": "https://www.ncfcyouth.com/city-of-oaks"
+  },
+  {
+   "assoc": "FUNC",
+   "name": "2027 FUNC Falcons United Crystal Coast Classic",
+   "start": "2027-05-15",
+   "end": "2027-05-16",
+   "city": "",
+   "venue": null,
+   "ages": "",
+   "deadline": "April 19, 2027",
+   "url": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-falcons-united-crystal-coast-classic/",
+   "website": "https://falconsunitednc.com/Tournaments"
   }
  ]
 }

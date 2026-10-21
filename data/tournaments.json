@@ -18,6 +18,7 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/cvysa-autumn-blast-2026/",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/cvysa-autumn-blast-2026/",
       "clubUrl": "https://soccer.sincsports.com/details.aspx?tid=CVYSAAB&tab=1",
       "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CATAWBA-VALLEY-YOUTH-SA.png",
       "pm": false
@@ -35,6 +36,7 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026csa-carolina-shootout-and-ya-festival/",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026csa-carolina-shootout-and-ya-festival/",
       "clubUrl": "https://www.charlottesocceracademy.com",
       "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-SOCCER-ACADEMY.jpeg",
       "pm": false
@@ -53,7 +55,8 @@
       "scheduleUrl": "https://soccer.sincsports.com/schedule.aspx?tid=CLASHFI&tab=3&sub=0",
       "websiteUrl": "https://soccer.sincsports.com/TTContent.aspx?tid=CLASHFI&tab=1",
       "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/ASHEBORO-CITY-FUTBOL-CLUB.jpg",
-      "logoFrom": "ncysa"
+      "logoFrom": "ncysa",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-acfc-clashboro-fall-invitational/"
     },
     {
       "id": "ncysa-2026-mysa-fall-champions-cup",
@@ -68,6 +71,7 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-mysa-fall-champions-cup/",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-mysa-fall-champions-cup/",
       "clubUrl": null,
       "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/MEBANE-YOUTH-SA.jpg",
       "pm": false
@@ -85,6 +89,7 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-girls-jr-showcase/",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-girls-jr-showcase/",
       "clubUrl": null,
       "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png",
       "pm": false
@@ -102,6 +107,7 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-nc-fusion-adidas-clash/",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-nc-fusion-adidas-clash/",
       "clubUrl": null,
       "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NC-FUSION.png",
       "pm": false
@@ -119,6 +125,7 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-cisc-boys-fall-classic/",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-cisc-boys-fall-classic/",
       "clubUrl": null,
       "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-INDEPENDENCE.png",
       "pm": false
@@ -136,6 +143,7 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-boys-jr-showcase/",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-boys-jr-showcase/",
       "clubUrl": null,
       "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png",
       "pm": false
@@ -153,6 +161,7 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-girls-college-showcase/",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-girls-college-showcase/",
       "clubUrl": null,
       "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png",
       "pm": false
@@ -170,6 +179,7 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-cisc-girls-fall-classic/",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-cisc-girls-fall-classic/",
       "clubUrl": null,
       "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-INDEPENDENCE.png",
       "pm": false
@@ -188,7 +198,8 @@
       "scheduleUrl": "https://soccer.sincsports.com/schedule.aspx?tid=BEACH&tab=4&sub=0",
       "websiteUrl": null,
       "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/WILMINGTON-HAMMERHEADS-YOUTH-FC.png",
-      "logoFrom": "ncysa"
+      "logoFrom": "ncysa",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-whyfc-fall-beach-classic/"
     },
     {
       "id": 104,
@@ -203,7 +214,8 @@
       "registerUrl": "https://soccer.sincsports.com/register/start.aspx?tid=HFCRSG&tab=6&sub=0",
       "scheduleUrl": "https://soccer.sincsports.com/schedule.aspx?tid=HFCRSG&tab=2&sub=1",
       "websiteUrl": "https://soccer.sincsports.com/TTContent.aspx?tid=HFCRSG&tab=1",
-      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5781/logo"
+      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5781/logo",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-abysa-riverside-sr-girls-showcase/"
     },
     {
       "id": 105,
@@ -219,7 +231,8 @@
       "scheduleUrl": null,
       "websiteUrl": "https://www.ncfcyouth.com/boys-college-showcase",
       "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png",
-      "logoFrom": "ncysa"
+      "logoFrom": "ncysa",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-boys-college-showcase/"
     },
     {
       "id": 94,
@@ -234,7 +247,8 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://www.independencesoccer.club/boys-college-showcase",
-      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5795/logo"
+      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5795/logo",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-cisc-boys-college-showcase/"
     },
     {
       "id": 95,
@@ -249,7 +263,8 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://www.independencesoccer.club/girls-college-showcase",
-      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5795/logo"
+      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5795/logo",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-cisc-girls-college-showcase/"
     },
     {
       "id": 96,
@@ -264,7 +279,8 @@
       "registerUrl": "https://soccer.sincsports.com/register/start.aspx?tid=ABYSA1&tab=2&sub=0",
       "scheduleUrl": "https://soccer.sincsports.com/schedule.aspx?tid=ABYSA1&tab=3&sub=1",
       "websiteUrl": "https://www.abysa.org/",
-      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5781/logo"
+      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5781/logo",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027abysariversidespringkickoffboys/"
     },
     {
       "id": 98,
@@ -280,7 +296,8 @@
       "scheduleUrl": null,
       "websiteUrl": "https://www.mebaneyouthsoccer.com/",
       "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/MEBANE-YOUTH-SA.jpg",
-      "logoFrom": "ncysa"
+      "logoFrom": "ncysa",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-mysa-spring-shootout/"
     },
     {
       "id": 99,
@@ -296,7 +313,8 @@
       "scheduleUrl": null,
       "websiteUrl": "https://pgsasoccer.com/tournaments/",
       "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/PITT-GREENVILLE-SA.png",
-      "logoFrom": "ncysa"
+      "logoFrom": "ncysa",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-pgsa-beast-of-the-east/"
     },
     {
       "id": "ncysa-2027-ccfc-go-forth-home-services-shootout-2",
@@ -311,6 +329,7 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-ccfc-go-forth-home-services-shootout-2/",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-ccfc-go-forth-home-services-shootout-2/",
       "clubUrl": "https://carolinacoreyouth.com/",
       "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CAROLINA-CORE-FC-YOUTH.webp",
       "pm": false
@@ -328,7 +347,8 @@
       "registerUrl": "https://soccer.sincsports.com/register/start.aspx?tid=ABYSA1&tab=2&sub=0",
       "scheduleUrl": "https://soccer.sincsports.com/schedule.aspx?tid=ABYSA1&tab=3&sub=1",
       "websiteUrl": "https://www.abysa.org/",
-      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5781/logo"
+      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5781/logo",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-abysa-riverside-spring-kickoff-girls/"
     },
     {
       "id": 100,
@@ -343,7 +363,8 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://leagues.bluesombrero.com/Default.aspx?tabid=2184472",
-      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5832/logo"
+      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5832/logo",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-ncrt-beat-the-heat/"
     },
     {
       "id": 101,
@@ -358,7 +379,8 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://soccer.sincsports.com/details.aspx?tid=GALSHOOT&qual=INTRO&edit=N",
-      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5793/logo"
+      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5793/logo",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-cvysa-foothills-classic/"
     },
     {
       "id": "ncysa-2027-tufc-sun-soccer-spring-bash",
@@ -373,6 +395,7 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-tufc-sun-soccer-spring-bash/",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-tufc-sun-soccer-spring-bash/",
       "clubUrl": "https://triadunionfc.com",
       "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/TRIAD-UNION-FOOTBALL-CLUB.png",
       "pm": false
@@ -391,7 +414,8 @@
       "scheduleUrl": null,
       "websiteUrl": "https://www.ncfcyouth.com/city-of-oaks",
       "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png",
-      "logoFrom": "ncysa"
+      "logoFrom": "ncysa",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-ncfcy-city-of-oaks-classic/"
     },
     {
       "id": 103,
@@ -406,7 +430,8 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://www.falconsunitednc.com/program/crystal-coast-classic/36645",
-      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5810/logo"
+      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5810/logo",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-falcons-united-crystal-coast-classic/"
     }
   ],
   "notInPlayMetrics": 11
