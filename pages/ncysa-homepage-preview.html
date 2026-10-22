@@ -472,7 +472,7 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
   .ncysa-bts-btn { width: 100%; max-width: 280px; text-align: center; }
 }
 /* ZIP search in Find Your Club banner */
-.fyc-dash { position: absolute; top: 0; left: 0; right: 0; height: 5px; background: repeating-linear-gradient(90deg, rgba(237,195,44,0.42) 0px, rgba(237,195,44,0.42) 20px, transparent 20px, transparent 30px), #10045a; z-index: 4; pointer-events: none; }
+.fyc-dash { position: absolute; top: 0; left: 0; right: 0; height: 5px; background: repeating-linear-gradient(90deg, rgba(237,195,44,0.32) 0px, rgba(237,195,44,0.32) 20px, transparent 20px, transparent 30px), #10045a; z-index: 4; pointer-events: none; }
 #ncysa-home .ncysa-bts-banner::before { height: 5px !important; background: repeating-linear-gradient(90deg, rgba(237,195,44,0.42) 0px, rgba(237,195,44,0.42) 20px, transparent 20px, transparent 30px), #10045a !important; opacity: 1 !important; z-index: 5 !important; }
 .ncysa-club-button-container { height: 300px; }
 .ncysa-club-button-text { max-width: 520px; }
@@ -2468,6 +2468,66 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
     el.classList.add('px-up');
     io.observe(el);
   });
+})();
+</script>
+<style>
+/* One-page polish: headings and buttons match the hero */
+#ncysa-home .ncysa-club-button-container h3, #ncysa-home .ncysa-bts-banner h3 { font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif !important; font-weight: 400 !important; letter-spacing: 0.03em !important; line-height: 0.95 !important; text-shadow: 0 4px 18px rgba(0,0,0,0.45) !important; }
+#ncysa-home .ncysa-club-button-container h3 { font-size: clamp(2.4rem, 5vw, 4rem) !important; }
+#ncysa-home .ncysa-bts-banner h3 { font-size: clamp(1.9rem, 3.4vw, 2.9rem) !important; }
+#ncysa-home .ncysa-club-button-container h3 span, #ncysa-home .ncysa-bts-banner h3 span { background: none !important; -webkit-text-fill-color: #edc32c !important; color: #edc32c !important; filter: none !important; }
+#ncysa-home .ncysa-club-button-container p:not(.fyc-msg), #ncysa-home .ncysa-bts-banner p { font-family: 'Source Sans 3', system-ui, sans-serif !important; }
+#ncysa-home .ncysa-bts-btn { border-radius: 50px !important; padding: 12px 28px !important; font-family: 'Source Sans 3', system-ui, sans-serif !important; font-weight: 800 !important; letter-spacing: 0.08em !important; box-shadow: 0 8px 22px rgba(184,47,47,0.45) !important; }
+#ncysa-home .ncysa-bts-banner:hover .ncysa-bts-btn { box-shadow: 0 12px 28px rgba(184,47,47,0.55) !important; }
+#ncysa-home .ncysa-bts-eyebrow { font-family: 'Source Sans 3', system-ui, sans-serif !important; letter-spacing: 0.16em !important; }
+@media (max-width: 600px) {
+  #ncysa-home .ncysa-club-button-container h3 { font-size: 2.3rem !important; letter-spacing: 0.03em !important; margin-bottom: 8px !important; }
+  #ncysa-home .ncysa-bts-banner h3 { font-size: 2rem !important; }
+  #ncysa-home .ncysa-bts-btn { width: 100%; max-width: 320px; text-align: center; }
+}
+</style>
+<style>
+/* Phone polish */
+@media (max-width: 600px) {
+  /* Find Your Club: heading and ZIP first, map below as a smaller accent */
+  #ncysa-home .ncysa-club-button-text { order: 1; min-width: 0 !important; width: 100%; }
+  #ncysa-home .nc-map-animation { order: 2; max-width: 260px !important; opacity: 0.9; }
+  #ncysa-home .ncysa-club-button-container { padding-top: 40px !important; padding-bottom: 30px !important; }
+  /* Tiles: one swipeable row instead of a tall stack */
+  #ncysa-home .ncysa-tiles-section { padding: 28px 0 24px !important; }
+  #ncysa-home .ncysa-tile-grid { display: flex !important; max-width: none !important; gap: 14px !important; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding: 4px 20px 14px; scroll-padding: 0 20px; scrollbar-width: none; }
+  #ncysa-home .ncysa-tile-grid::-webkit-scrollbar { display: none; }
+  #ncysa-home .ncysa-tile-grid > .ncysa-tile { flex: 0 0 74%; scroll-snap-align: start; }
+  #ncysa-home .fyc-swipe { display: flex; justify-content: center; gap: 6px; margin: 2px 0 0; }
+  #ncysa-home .fyc-swipe i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.35); transition: background .25s ease, width .25s ease; }
+  #ncysa-home .fyc-swipe i.on { width: 20px; border-radius: 4px; background: #edc32c; }
+  /* NCSRA banner: no empty white box around the thin image */
+  #ncysa-home .ncysa-ncsra-section { padding: 0 16px 24px !important; }
+  #ncysa-home .ncysa-ncsra-banner { height: auto !important; border-radius: 12px !important; }
+  /* Day counters: keep DAYS on one line */
+  #ncysa-home #ev.ev.home .mini .big small { white-space: nowrap !important; overflow-wrap: normal !important; }
+  #ncysa-home #ev.ev.home .mini .big { min-width: 58px; }
+}
+@media (min-width: 601px) { #ncysa-home .fyc-swipe { display: none; } }
+</style>
+<script>
+(function () {
+  var grid = document.querySelector('#ncysa-home .ncysa-tile-grid');
+  if (!grid) { return; }
+  var tiles = grid.querySelectorAll('.ncysa-tile');
+  var dots = document.createElement('div');
+  dots.className = 'fyc-swipe';
+  dots.setAttribute('aria-hidden', 'true');
+  for (var i = 0; i < tiles.length; i++) { dots.appendChild(document.createElement('i')); }
+  grid.parentNode.insertBefore(dots, grid.nextSibling);
+  var ds = dots.querySelectorAll('i');
+  function mark() {
+    var best = 0, bd = 1e9, gl = grid.getBoundingClientRect().left;
+    for (var k = 0; k < tiles.length; k++) { var d = Math.abs(tiles[k].getBoundingClientRect().left - gl - 20); if (d < bd) { bd = d; best = k; } }
+    for (var j = 0; j < ds.length; j++) { ds[j].className = (j === best) ? 'on' : ''; }
+  }
+  grid.addEventListener('scroll', function () { requestAnimationFrame(mark); }, { passive: true });
+  mark();
 })();
 </script>
 </div>
