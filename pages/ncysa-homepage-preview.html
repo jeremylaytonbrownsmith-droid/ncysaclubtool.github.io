@@ -471,6 +471,7 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
   .ncysa-bts-btn { width: 100%; max-width: 280px; text-align: center; }
 }
 /* ZIP search in Find Your Club banner */
+.fyc-dash { position: absolute; top: 0; left: 0; right: 0; height: 5px; background: repeating-linear-gradient(90deg, #edc32c 0px, #edc32c 20px, transparent 20px, transparent 30px); opacity: 0.35; z-index: 4; pointer-events: none; }
 .ncysa-club-button-container { height: 300px; }
 .ncysa-club-button-text { max-width: 520px; }
 .fyc-form { display: flex; align-items: center; gap: 6px; width: 100%; max-width: 460px; margin: 0 auto; padding: 6px; border-radius: 50px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.28); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 14px 40px rgba(0,0,0,0.35); }
@@ -491,6 +492,7 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
   <!-- TOP BANNER -->
   <div class="ncysa-club-button-container">
     <div class="ncysa-gold-wave"></div>
+    <div class="fyc-dash" aria-hidden="true"></div>
     <div class="ncysa-club-button-content">
       <div class="ncysa-club-button-text">
         <h3>Find <span>Your Club</span></h3>
