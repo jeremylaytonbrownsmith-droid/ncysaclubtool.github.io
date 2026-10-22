@@ -6,6 +6,7 @@ here; no WordPress edit is needed.
 
 - `ncysa-calendar.html` — NCYSA Calendar & Events (www.ncsoccer.org/ncysa-calendar/)
 - `ncysa-homepage.html` — Homepage: tiles, banners, Highlighted Events, partners footer (www.ncsoccer.org/)
+- `ncysa-site-chrome.html` — PREVIEW restyle of the sub menu, main menu and footer. Loaded site-wide for logged-in users only (footer widget loader). Add ?oldnav to compare, ?nxdebug to see what it detected
 - `ncysa-homepage-preview.html` — TEST copy of the homepage with the ZIP search in the Find Your Club banner (draft page 11455 only)
 - `ncysa-search.html` — Site Search (www.ncsoccer.org/search/); the search index is the ss-data list at the bottom
 - `ncysa-sanctioned-tournaments.html` — NCYSA Sanctioned Tournaments (www.ncsoccer.org/ncysa-sanctioned-tournaments/ and /nc-sanctioned-tournament-page/)

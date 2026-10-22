@@ -1,0 +1,113 @@
+<!-- NCYSA site chrome (sub menu, main menu, footer). PREVIEW: loaded only for logged-in users by the footer widget loader. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700;800&display=swap">
+<style id="nx-chrome">
+.nx-on { --nx-navy: #10045a; --nx-navy-2: #1a0a6e; --nx-navy-3: #0a0238; --nx-red: #b82f2f; --nx-gold: #edc32c; --nx-cream: #f9f7f7; }
+/* Sub menu: slim navy utility bar */
+.nx-on .nx-util { background: linear-gradient(90deg, #0a0238 0%, #10045a 50%, #0a0238 100%) !important; border: 0 !important; border-bottom: 1px solid rgba(237,195,44,0.35) !important; box-shadow: none !important; }
+.nx-on .nx-util * { background-color: transparent !important; }
+.nx-on .nx-util a { color: rgba(255,255,255,0.86) !important; font-family: 'Source Sans 3', system-ui, sans-serif !important; font-size: 0.8rem !important; font-weight: 600 !important; letter-spacing: 0.04em !important; text-decoration: none !important; position: relative; transition: color .2s ease; }
+.nx-on .nx-util a:hover, .nx-on .nx-util a:focus-visible { color: #edc32c !important; }
+.nx-on .nx-util a::after { content: ''; position: absolute; left: 0; right: 0; bottom: -3px; height: 2px; border-radius: 2px; background: #edc32c; transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+.nx-on .nx-util a:hover::after { transform: scaleX(1); }
+/* Header: clean white bar that pins and tightens on scroll */
+.nx-on .nx-header { background: #fff !important; box-shadow: 0 1px 0 rgba(16,4,90,0.08) !important; transition: box-shadow .3s ease; }
+.nx-on.nx-scrolled .nx-header { box-shadow: 0 10px 30px -12px rgba(16,4,90,0.35) !important; }
+.nx-on .nx-header img { transition: transform .3s ease; }
+/* Main menu */
+.nx-on .nx-main > li > a { font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif !important; font-weight: 400 !important; font-size: 1.45rem !important; letter-spacing: 0.04em !important; color: #10045a !important; position: relative; text-decoration: none !important; white-space: nowrap; transition: color .2s ease; }
+.nx-on .nx-main > li > a::after { content: ''; position: absolute; left: 14%; right: 14%; bottom: 6px; height: 3px; border-radius: 3px; background: linear-gradient(90deg, #b82f2f, #edc32c); transform: scaleX(0); transition: transform .28s cubic-bezier(.22,1,.36,1); }
+.nx-on .nx-main > li:hover > a, .nx-on .nx-main > li:focus-within > a { color: #b82f2f !important; }
+.nx-on .nx-main > li:hover > a::after, .nx-on .nx-main > li:focus-within > a::after { transform: scaleX(1); }
+/* Dropdowns */
+.nx-on .nx-main ul { background: #fff !important; border: 0 !important; border-top: 3px solid #edc32c !important; border-radius: 0 0 14px 14px !important; box-shadow: 0 22px 44px -14px rgba(16,4,90,0.35), 0 2px 6px rgba(16,4,90,0.08) !important; padding: 8px 0 !important; overflow: hidden; }
+.nx-on .nx-main ul li { background: transparent !important; border: 0 !important; }
+.nx-on .nx-main ul a { font-family: 'Source Sans 3', system-ui, sans-serif !important; font-size: 0.95rem !important; font-weight: 600 !important; letter-spacing: 0 !important; text-transform: none !important; color: #1d1a18 !important; background: transparent !important; padding: 9px 20px !important; border: 0 !important; text-decoration: none !important; display: block; transition: background .15s ease, color .15s ease, padding .15s ease; }
+.nx-on .nx-main ul a:hover, .nx-on .nx-main ul a:focus-visible { background: #f9f7f7 !important; color: #b82f2f !important; padding-left: 24px !important; }
+/* Footer */
+.nx-on .nx-footer { position: relative; background: linear-gradient(160deg, #1a0a6e 0%, #10045a 45%, #0a0238 100%) !important; color: rgba(255,255,255,0.78) !important; border: 0 !important; padding-top: 34px !important; }
+.nx-on .nx-footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: repeating-linear-gradient(90deg, rgba(237,195,44,0.42) 0px, rgba(237,195,44,0.42) 20px, transparent 20px, transparent 30px), #10045a; z-index: 2; }
+.nx-on .nx-footer * { background-color: transparent !important; border-color: rgba(255,255,255,0.12) !important; }
+.nx-on .nx-footer, .nx-on .nx-footer p, .nx-on .nx-footer span, .nx-on .nx-footer div { font-family: 'Source Sans 3', system-ui, sans-serif !important; }
+.nx-on .nx-footer a { color: rgba(255,255,255,0.9) !important; text-decoration: none !important; transition: color .2s ease; }
+.nx-on .nx-footer a:hover, .nx-on .nx-footer a:focus-visible { color: #edc32c !important; }
+.nx-on .nx-footer #menu-footer-menu { display: flex !important; flex-wrap: wrap; justify-content: center; gap: 6px 4px; margin: 0 auto 10px !important; padding: 0 !important; list-style: none !important; }
+.nx-on .nx-footer #menu-footer-menu > li { margin: 0 !important; padding: 0 !important; list-style: none !important; }
+.nx-on .nx-footer #menu-footer-menu > li > a { display: inline-block; padding: 6px 14px !important; border-radius: 50px !important; font-size: 0.85rem !important; font-weight: 700 !important; letter-spacing: 0.06em !important; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.18) !important; }
+.nx-on .nx-footer #menu-footer-menu > li > a:hover { border-color: #edc32c !important; background: rgba(237,195,44,0.1) !important; }
+.nx-on .nx-footer .widget_media_image img { filter: brightness(0) invert(1); opacity: 0.9; transition: opacity .2s ease; }
+.nx-on .nx-footer .widget_media_image a:hover img { opacity: 1; }
+.nx-on .nx-footer .goog-te-combo, .nx-on .nx-footer select { background: rgba(255,255,255,0.08) !important; color: #fff !important; border: 1px solid rgba(255,255,255,0.3) !important; border-radius: 50px !important; padding: 6px 12px !important; }
+.nx-on .nx-footer .goog-te-combo option { color: #1d1a18; }
+.nx-on .nx-footer .goog-logo-link, .nx-on .nx-footer .goog-te-gadget { color: rgba(255,255,255,0.55) !important; }
+@media (max-width: 900px) {
+  .nx-on .nx-main > li > a { font-size: 1.3rem !important; }
+  .nx-on .nx-main > li > a::after { display: none; }
+  .nx-on .nx-main ul { border-radius: 10px !important; box-shadow: none !important; border-top-width: 2px !important; }
+  .nx-on .nx-footer #menu-footer-menu > li > a { font-size: 0.78rem !important; padding: 6px 12px !important; }
+}
+#nx-debug { position: fixed; left: 8px; bottom: 8px; z-index: 2147483647; max-width: calc(100vw - 16px); max-height: 60vh; overflow: auto; background: #0a0238; color: #fff; font: 12px/1.4 ui-monospace, Menlo, monospace; padding: 10px 12px; border-radius: 10px; border: 2px solid #edc32c; white-space: pre-wrap; }
+</style>
+<script>
+(function () {
+  var body = document.body;
+  if (!body.classList.contains('logged-in')) { return; }
+  if (/[?&]oldnav/.test(location.search)) { return; }
+  function txt(a) { return (a.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase(); }
+  function vw() { return document.documentElement.clientWidth; }
+  function fullWidthUp(el, stopAt) {
+    var cur = el;
+    while (cur.parentElement) {
+      if (cur.getBoundingClientRect().width >= vw() - 4) { return cur; }
+      if (stopAt) { if (cur.parentElement.contains(stopAt)) { return cur; } }
+      if (cur.parentElement === body) { return cur; }
+      cur = cur.parentElement;
+    }
+    return cur;
+  }
+  var links = Array.prototype.slice.call(document.querySelectorAll('a'));
+  var about = null, staff = null;
+  links.forEach(function (a) {
+    var t = txt(a);
+    var r = a.getBoundingClientRect();
+    if (r.top + window.pageYOffset > 900) { return; }
+    if (about === null) { if (t === 'about us') { about = a; } }
+    if (staff === null) { if (t === 'staff directory') { staff = a; } }
+  });
+  var mainUl = about ? about.closest('ul') : null;
+  if (mainUl) {
+    var top = mainUl;
+    while (top.parentElement) { var up = top.parentElement.closest('ul'); if (!up) { break; } top = up; }
+    mainUl = top;
+    mainUl.classList.add('nx-main');
+    var hdr = mainUl.closest('header') || fullWidthUp(mainUl, null);
+    hdr = fullWidthUp(hdr, null);
+    hdr.classList.add('nx-header');
+  }
+  if (staff) {
+    var util = staff.closest('ul') || staff.parentElement;
+    while (util.parentElement) {
+      var par = util.parentElement;
+      if (par === body) { break; }
+      if (mainUl) { if (par.contains(mainUl)) { break; } }
+      if (par.classList.contains('site-container')) { break; }
+      util = par;
+    }
+    util.classList.add('nx-util');
+  }
+  var ft = document.querySelector('.site-footer') || document.querySelector('footer');
+  if (ft) { ft.classList.add('nx-footer'); }
+  body.classList.add('nx-on');
+  var ticking = false;
+  function onScroll() { ticking = false; body.classList.toggle('nx-scrolled', window.pageYOffset > 40); }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
+  if (/[?&]nxdebug/.test(location.search)) {
+    function desc(el) { if (!el) { return '(none)'; } var s = el.tagName.toLowerCase(); if (el.id) { s += '#' + el.id; } if (el.className) { if (typeof el.className === 'string') { s += '.' + el.className.trim().split(/\s+/).join('.'); } } return s; }
+    function chain(el) { var out = []; var c = el; var n = 0; while (c) { if (c === body) { break; } if (n > 7) { break; } out.push(desc(c)); c = c.parentElement; n++; } return out.join('\n  < '); }
+    var d = document.createElement('div');
+    d.id = 'nx-debug';
+    d.textContent = 'UTIL: ' + chain(staff) + '\n\nMAIN: ' + chain(about) + '\n\nFOOT: ' + desc(ft) + '\nchildren: ' + (ft ? Array.prototype.map.call(ft.querySelectorAll('*'), function (x) { return x.children.length ? '' : ''; }).length : 0) + '\nbody: ' + desc(body);
+    body.appendChild(d);
+  }
+})();
+</script>
