@@ -29,7 +29,8 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
 #ncysa-home .home-tk .ncysa-ticker-wrap.tk-navy { --bar: rgba(8,2,50,.55); --fade: 13,3,70; --badge: rgba(5,1,40,.6); --badge-edge: #b82f2f; --edge-soft: rgba(237,195,44,.3); backdrop-filter: blur(2px); }
 #ncysa-home .home-tk .tk-flag { font-weight: 700; }
 #ncysa-home .home-tk .tk-item { padding: 14px 34px; }
-#ncysa-home .home-tk .tk-val { color: #edc32c; }
+#ncysa-home .home-tk .tk-cream .tk-val { color: #10045a; }
+#ncysa-home .home-tk .ncysa-ticker-wrap.tk-cream { border-color: rgba(237,195,44,.9) !important; box-shadow: 0 0 0 1px rgba(237,195,44,.25), 0 10px 30px rgba(0,0,0,.35) !important; }
 /* Highlighted Events curves down into the white sub-footer */
 #ncysa-home #ev.ev.home .home-foot { padding-top: 112px !important; padding-bottom: 112px !important; }
 #ncysa-home #ev.ev.home .home-foot .wrap { display: flex; justify-content: center; }
@@ -470,19 +471,42 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
   .ncysa-bts-photos { height: 160px; }
   .ncysa-bts-btn { width: 100%; max-width: 280px; text-align: center; }
 }
+/* ZIP search in Find Your Club banner */
+.fyc-dash { position: absolute; top: 0; left: 0; right: 0; height: 5px; background: repeating-linear-gradient(90deg, rgba(237,195,44,0.32) 0px, rgba(237,195,44,0.32) 20px, transparent 20px, transparent 30px), #10045a; z-index: 4; pointer-events: none; }
+#ncysa-home .ncysa-bts-banner::before { height: 5px !important; background: repeating-linear-gradient(90deg, rgba(237,195,44,0.42) 0px, rgba(237,195,44,0.42) 20px, transparent 20px, transparent 30px), #10045a !important; opacity: 1 !important; z-index: 5 !important; }
+.ncysa-club-button-container { height: 300px; }
+.ncysa-club-button-text { max-width: 520px; }
+.fyc-form { display: flex; align-items: center; gap: 6px; width: 100%; max-width: 460px; margin: 0 auto; padding: 6px; border-radius: 50px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.28); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 14px 40px rgba(0,0,0,0.35); }
+.fyc-field { flex: 1 1 auto; min-width: 0; display: flex; align-items: center; gap: 8px; height: 50px; padding: 0 16px; border-radius: 50px; background: #fff; }
+.fyc-field svg { flex: 0 0 auto; width: 20px; height: 20px; fill: none; stroke: #b82f2f; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.ncysa-club-button-container input.fyc-zip { flex: 1 1 auto; min-width: 0; width: 100%; height: 48px; margin: 0; padding: 0; border: 0 !important; background: transparent !important; box-shadow: none !important; outline: none; color: #10045a !important; font: 700 17px 'Source Sans 3', system-ui, sans-serif; letter-spacing: 0.06em; }
+.ncysa-club-button-container input.fyc-zip::placeholder { color: #7b7690; font-weight: 600; letter-spacing: 0.01em; }
+.ncysa-club-button-container button.fyc-go { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 8px; height: 50px; margin: 0; padding: 0 24px; border: 0; border-radius: 50px !important; background: linear-gradient(135deg, #d63535, #b82f2f 55%, #8f2222); color: #fff; font: 800 15px 'Source Sans 3', system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; box-shadow: 0 6px 18px rgba(184,47,47,0.45); transition: transform .2s ease, box-shadow .2s ease; }
+.ncysa-club-button-container button.fyc-go:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(184,47,47,0.55); }
+.ncysa-club-button-container button.fyc-go svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.ncysa-club-button-container p.fyc-msg { min-height: 1.2em; margin: 12px 0 0; font-size: 14px; color: rgba(255,255,255,0.8); }
+.ncysa-club-button-container p.fyc-msg a { color: #edc32c; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.ncysa-club-button-container p.fyc-msg.err { color: #ffd95c; font-weight: 700; }
+@media (max-width: 900px) { .ncysa-club-button-container { height: auto; padding-top: 34px; padding-bottom: 34px; } }
+@media (max-width: 600px) { .fyc-form { flex-direction: column; border-radius: 22px; padding: 8px; gap: 8px; } .fyc-field { width: 100%; } .ncysa-club-button-container button.fyc-go { width: 100%; justify-content: center; } .ncysa-club-button-container p.fyc-msg { font-size: 13px; } }
 </style>
 <div class="ncysa-block-wrap">
   <!-- TOP BANNER -->
   <div class="ncysa-club-button-container">
     <div class="ncysa-gold-wave"></div>
+    <div class="fyc-dash" aria-hidden="true"></div>
     <div class="ncysa-club-button-content">
       <div class="ncysa-club-button-text">
         <h3>Find <span>Your Club</span></h3>
-        <p>Discover NCYSA soccer clubs in your area</p>
-        <a href="https://www.ncsoccer.org/find-my-club/" class="ncysa-find-club-btn">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
-          Find Your Club
-        </a>
+        <p>Type your ZIP to see NCYSA clubs closest to home</p>
+        <form class="fyc-form" id="fyc-form" action="https://www.ncsoccer.org/find-my-club/" method="get" novalidate>
+          <div class="fyc-field">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-7.6 7-13a7 7 0 0 0-14 0c0 5.4 7 13 7 13z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+            <input class="fyc-zip" id="fyc-zip" name="zip" type="text" inputmode="numeric" maxlength="5" placeholder="Enter your ZIP code" autocomplete="postal-code" aria-label="ZIP code">
+          </div>
+          <button class="fyc-go" type="submit">Search <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+        </form>
+        <p class="fyc-msg" id="fyc-msg">102 member clubs across North Carolina. <a href="https://www.ncsoccer.org/find-your-ncysa-club/">View all clubs</a></p>
       </div>
       <div class="nc-map-animation">
         <img src="https://www.ncsoccer.org/wp-content/uploads/sites/167/2026/03/nc_outline_transparent-1.png" alt="North Carolina" class="nc-map-outline">
@@ -1335,7 +1359,7 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
     </div>
     <div class="home-tk">
   <!-- Stat ticker: numbers live in the NCYSA_TICKER list in the sub-footer script -->
-  <div class="ncysa-ticker-wrap tk-navy" id="ncysa-ticker">
+  <div class="ncysa-ticker-wrap tk-cream" id="ncysa-ticker">
     <div class="tk-flag">
       <span class="tk-pulse"></span>
       <span class="tk-flag-text">NC Youth Soccer</span>
@@ -1350,15 +1374,15 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
       <article class="spot" id="spot" aria-live="polite"></article>
       <div class="side">
         <div class="mini">
-          <div class="ico" style="background: var(--c-deadline)" title="Deadline"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M5 3 2 6M19 3l3 3"/></svg></div>
+          <div class="ico" style="background: var(--c-deadline)" title="Deadline"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3 2 6"/><path d="m22 6-3-3"/><path d="M6.38 18.7 4 21"/><path d="M17.64 18.67 20 21"/></svg></div>
           <div class="mbody" id="m-deadline"></div>
         </div>
         <div class="mini">
-          <div class="ico" style="background: var(--c-tourn)" title="Tournament registration"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></div>
+          <div class="ico" style="background: var(--c-tourn)" title="Tournament registration"><svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div>
           <div class="mbody" id="m-monthly"></div>
         </div>
         <div class="mini" id="m-tourn-card">
-          <div class="ico" style="background: var(--red)" title="Major event"><svg viewBox="0 0 24 24"><path d="M4 22V4"/><path d="M4 4h12l-2 4 2 4H4"/></svg></div>
+          <div class="ico" style="background: var(--red)" title="Major event"><svg viewBox="0 0 24 24"><path d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528"/></svg></div>
           <div class="mbody" id="m-tourn"></div>
         </div>
       </div>
@@ -1391,7 +1415,7 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
     </div>
     <section class="pmw" aria-label="Sanctioned tournaments" id="tournaments" role="tabpanel">
       <div class="pm">
-        <div class="trophy"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></div>
+        <div class="trophy"><svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div>
         <div class="t">
           <h2>Sanctioned Tournaments</h2>
           <p>Every NCYSA sanctioned tournament, updated throughout the day from PlayMetrics. Register right from the list.</p>
@@ -1464,15 +1488,15 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
   /* Source: NCYSA 2026-27 Calendar. s = start, e = end, dl = counts as a deadline, f = featured in spotlight,
      label = how the date reads when it is not a simple range, tba = date not set. */
   var ICONS = {
-    meeting: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
-    statecup: '<circle cx="12" cy="9" r="6"/><path d="M8.5 13.9 7 22l5-3 5 3-1.5-8.1"/>',
-    academy: '<circle cx="12" cy="12" r="9"/><path d="m12 7 4 3-1.5 4.5h-5L8 10z"/>',
-    classic: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
-    odp: '<path d="M22 7l-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/>',
-    coaching: '<rect x="5" y="4" width="14" height="18" rx="2"/><path d="M9 2h6v4H9zM9 12h6M9 16h4"/>',
-    deadline: '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M5 3 2 6M19 3l3 3"/>',
-    office: '<path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/>',
-    tourn: '<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/>'
+    meeting: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+    statecup: '<path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/>',
+    academy: '<path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>',
+    classic: '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
+    odp: '<path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>',
+    coaching: '<rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/>',
+    deadline: '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3 2 6"/><path d="m22 6-3-3"/><path d="M6.38 18.7 4 21"/><path d="M17.64 18.67 20 21"/>',
+    office: '<path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/>',
+    tourn: '<path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>'
   };
   function ico(k) { return '<svg class="ci" viewBox="0 0 24 24" aria-hidden="true">' + ICONS[k] + '</svg>'; }
   var EVENTS = [{"s":"2026-08-01","e":"2026-08-02","t":"NC ODP Talent ID Center (2010\u20132014 Age Groups)","cat":"odp","loc":"Girls: Asheboro; Boys: High Point"},{"s":"2026-08-01","e":"2026-08-02","t":"D License Coaching Course: In-Person Meeting #2","cat":"coaching","loc":"High Point and Charlotte"},{"s":"2026-08-03","t":"Intent to Participate Due: Fall 2026 Youth Academy","cat":"deadline","dl":1},{"s":"2026-08-07","t":"Classic League: Schedules Finalizing, Clubs Entering into PlayMetrics","cat":"classic"},{"s":"2026-08-15","t":"Classic League: Fall Play Date Range Opens (Teams Can Begin Playing)","cat":"classic"},{"s":"2026-08-19","t":"2026\u201327 Laws of the Game Update Webinar","cat":"coaching","loc":"Virtual","note":"1:00\u20132:30 PM"},{"s":"2026-08-23","t":"2026\u201327 Laws of the Game Update Webinar","cat":"coaching","loc":"Virtual","note":"8:00\u20139:30 PM"},{"s":"2026-08-26","t":"State Cup: Application Window Opens","cat":"statecup"},{"s":"2026-09-07","t":"NCYSA Office Closed: Labor Day","cat":"office"},{"s":"2026-09-08","e":"2026-09-11","t":"B License Coaching Course: In-Person Meeting #1","cat":"coaching","loc":"Raleigh"},{"s":"2026-09-08","e":"2026-09-11","t":"C License Coaching Course: In-Person Meeting","cat":"coaching","loc":"High Point"},{"s":"2026-09-12","e":"2026-09-13","t":"D License Coaching Course: In-Person Meeting #1","cat":"coaching","loc":"Asheville and Raleigh"},{"s":"2026-09-14","t":"State Cup Applications: Early Applicant Discount Window Ends","cat":"statecup","dl":1},{"s":"2026-09-15","t":"Intent to Participate Due: Fall 2026 TOPSoccer","cat":"deadline","dl":1},{"s":"2026-09-16","t":"Deadline: Fall 2026 Recreation Bulk Registration","cat":"deadline","dl":1},{"s":"2026-09-21","t":"State Cup Applications: Final Deadline","cat":"statecup","dl":1},{"s":"2026-09-28","label":"Late Sep / early Oct","t":"NCYSA Award Nomination Information Sent to Membership","cat":"meeting"},{"s":"2026-10-10","e":"2026-10-11","t":"D License Coaching Course: In-Person Meeting #2","cat":"coaching","loc":"Asheville and Raleigh"},{"s":"2026-10-24","e":"2026-10-25","t":"Fall 2026 Youth Academy Showcase","cat":"academy","loc":"High Point","f":1,"p":2},{"s":"2026-10-25","t":"NC ODP Talent ID Center #1: 2015 Age Group","cat":"odp","loc":"East: Goldsboro; West: Statesville"},{"s":"2026-11-07","e":"2026-11-08","t":"USYS State Cup: Consolidated Central Prelim Weekend","cat":"statecup","loc":"Charlotte / Pineville","f":1,"p":1},{"s":"2026-11-09","e":"2026-11-12","t":"B License Coaching Course: In-Person Meeting #2","cat":"coaching","loc":"Raleigh"},{"s":"2026-11-14","e":"2026-11-15","t":"Kepner Presidents State Cup: Prelim Weekend","cat":"statecup","loc":"Legacy Soccer Park, Forest City","f":1,"p":1},{"s":"2026-11-16","e":"2026-11-19","t":"C License Coaching Course: In-Person Meeting","cat":"coaching","loc":"Charlotte"},{"s":"2026-11-20","t":"Classic League: Spring 2027 Program (CLP) Due","cat":"classic","note":"Formerly Intent to Play (ITP).","dl":1},{"s":"2026-11-21","t":"NC ODP Talent ID Center #2: 2015 Age Groups","cat":"odp","loc":"East: Goldsboro; West: Statesville"},{"s":"2026-11-22","t":"NC ODP Talent ID Center #3: 2010\u20132015 Age Groups","cat":"odp","loc":"2010\u20132014: Asheboro; 2015 East: Goldsboro; 2015 West: Statesville"},{"s":"2026-11-26","e":"2026-11-27","t":"NCYSA Office Closed: Thanksgiving","cat":"office"},{"s":"2026-12-05","e":"2026-12-06","t":"Final Four Weekend: USYS State Cup \u0026 Kepner Presidents Cup","cat":"statecup","loc":"Wilson","f":1,"p":1},{"s":"2026-12-11","t":"Classic League: Spring 2027 Directors' Viewing for Brackets","cat":"classic","note":"Available for 12 hours."},{"s":"2026-12-13","t":"Classic League: U11-U14 G/B \u0026 U15-U19G: Remaining Games Played to Count for Promotion/Relegation","cat":"classic"},{"s":"2026-12-14","t":"Classic League: Spring 2027 Brackets Posted","cat":"classic"},{"s":"2026-12-19","t":"NC ODP Team Event Training Sessions (Selected Players Only)","cat":"odp","loc":"Asheboro"},{"s":"2026-12-21","t":"Classic League: Spring 2027 Bracket Schedules Due to Club Admins","cat":"classic","dl":1},{"s":"2026-12-23","e":"2027-01-01","t":"NCYSA Office Closed for Winter Break","cat":"office"},{"s":"2027-01-04","t":"NCYSA Office Re-opens","cat":"office"},{"s":"2027-01-04","t":"Intent to Participate Due: Spring 2027 Youth Academy","cat":"deadline","dl":1},{"s":"2027-01-09","e":"2027-01-10","t":"USYS ODP Mini-Region Team Event (Selected Players Only)","cat":"odp","loc":"Matthews/Pineville, NC"},{"s":"2027-01-16","t":"Classic League: Spring 2027 First Day of League Play","cat":"classic","f":1,"p":3},{"s":"2027-01-18","t":"NCYSA Office Closed: Martin Luther King Jr. Day","cat":"office"},{"s":"2027-01-24","t":"NC ODP January Talent ID Training Center (All Age Groups)","cat":"odp","loc":"Older age groups: Asheboro; 12U East: Goldsboro; 12U West: Statesville"},{"s":"2027-01-29","e":"2027-01-30","t":"NCYSA Symposium / AGM (Awards Luncheon TBD)","cat":"meeting","loc":"Wilmington, NC","f":1,"p":1},{"s":"2027-02-20","e":"2027-02-21","t":"USYS ODP Mini-Region Team Event (Selected Players Only)","cat":"odp","loc":"Williamsburg, VA"},{"s":"2027-03-01","t":"Deadline: Spring 2027 Recreation Bulk Registration","cat":"deadline","dl":1},{"s":"2027-03-03","t":"State Cup Spring Cup Applications: Early Entry Deadline","cat":"statecup","dl":1},{"s":"2027-03-10","t":"State Cup Spring Cup Applications: Final Deadline","cat":"statecup","dl":1},{"s":"2027-03-11","e":"2027-03-14","t":"USSF AGM","cat":"meeting","loc":"Atlanta, GA"},{"s":"2027-03-14","t":"NC ODP March Talent ID Training Center (2013\u20132015 Age Groups)","cat":"odp","loc":"2013 \u0026 2014: Asheboro; 2015 East: Goldsboro; 2015 West: Hickory or Statesville"},{"s":"2027-03-26","t":"NCYSA Office Closed: Good Friday","cat":"office"},{"s":"2027-04-11","t":"NC ODP April Talent ID Training Center (All Age Groups)","cat":"odp","loc":"Older age groups: Asheboro; 2015 East: Goldsboro; 2015 West: Hickory or Statesville"},{"s":"2027-04-24","e":"2027-04-25","t":"Spring 2027 Youth Academy Showcase","cat":"academy","loc":"Truist Sports Park (Bermuda Run)","f":1,"p":2},{"s":"2027-05-03","t":"2027\u201328 Member Association Re-Affiliation \u0026 Risk Management Requirements Open in PlayMetrics","cat":"deadline","note":"Head registrars gain access to the new seasonal year in PlayMetrics once their club's re-affiliation application is approved."},{"s":"2027-05-03","e":"2027-06-01","t":"Member Association Renewal Fee Due","cat":"deadline","note":"Late fees apply after June 1, 2027.","dl":1},{"s":"2027-05-09","t":"Classic League: Spring 2027 Final Play Date (U11\u2013U14 B/G)","cat":"classic"},{"s":"2027-05-31","t":"NCYSA Office Closed: Memorial Day","cat":"office"},{"s":"2027-06-01","e":"2027-06-30","label":"June 2027, date TBD","t":"NC ODP 2015 Boys \u0026 Girls June Event","cat":"odp","loc":"Location TBD"},{"s":"2027-06-01","e":"2027-06-30","label":"June 2027, date TBD","t":"NC ODP 2010\u20132014 Boys \u0026 Girls June Event","cat":"odp","loc":"Location TBD"},{"s":"2027-06-04","t":"Classic League: Fall 2027 Program (CLP) Registration Due","cat":"classic","note":"Formerly Intent to Play (ITP).","dl":1},{"tba":1,"label":"Summer 2027","t":"NCYSA Mid-Year Meeting","cat":"meeting","loc":"Location TBD"},{"s":"2027-06-30","t":"End of NCYSA Fiscal Year","cat":"meeting"}];;
@@ -2177,8 +2201,6 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
   @keyframes tk-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @media (hover: hover) {
     #ncysa-home .ncysa-ticker-wrap:hover .tk-track { animation-play-state: paused; }
-    #ncysa-home .ncysa-ticker-wrap:hover .tk-item { opacity: 0.45; }
-    #ncysa-home .tk-item:hover { opacity: 1; }
   }
   #ncysa-home .ncysa-ticker-wrap::after {
     content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 90px;
@@ -2400,6 +2422,120 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
   track.style.animationDuration = (NCYSA_TICKER.length * perItem) + 's';
 })();
 </script>
+<script>
+(function () {
+  var form = document.getElementById('fyc-form');
+  if (!form) { return; }
+  var zip = document.getElementById('fyc-zip');
+  var msg = document.getElementById('fyc-msg');
+  var def = msg.innerHTML;
+  zip.addEventListener('input', function () { zip.value = zip.value.replace(/[^0-9]/g, '').slice(0, 5); msg.innerHTML = def; msg.className = 'fyc-msg'; });
+  form.addEventListener('submit', function (e) {
+    if (!/^[0-9]{5}$/.test(zip.value.trim())) {
+      e.preventDefault();
+      msg.textContent = 'Please enter a 5-digit ZIP code.';
+      msg.className = 'fyc-msg err';
+      zip.focus();
+    }
+  });
+})();
+</script>
+<style>
+/* Scroll pull-up (preview) */
+@keyframes ncysaRise { from { opacity: 0; transform: translateY(64px); } to { opacity: 1; transform: none; } }
+.ncysa-js .ncysa-reveal.is-visible { animation: ncysaRise 0.95s cubic-bezier(.16,1,.3,1) backwards; }
+#ncysa-home .px-up { opacity: 0; transform: translateY(70px); transition: opacity .9s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1); will-change: transform, opacity; }
+#ncysa-home .px-up.px-in { opacity: 1; transform: none; }
+#ncysa-home .ncysa-tile { transition: transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease; }
+#ncysa-home .ncysa-tile:hover { transform: translateY(-6px); }
+@media (prefers-reduced-motion: reduce) { #ncysa-home .px-up { opacity: 1; transform: none; transition: none; } }
+</style>
+<script>
+(function () {
+  var root = document.getElementById('ncysa-home');
+  if (!root) { return; }
+  if (window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false) { return; }
+  if (!('IntersectionObserver' in window)) { return; }
+  var sel = ['.ncysa-club-button-content', '#ev .home-head', '#ev .home-tk', '#ev section.season', '#ev section.pmw', '#ev section.hc', '#ev .home-foot .wrap', '.ncysa-subfooter .partners', '.ncysa-subfooter .home-ctas'];
+  var els = [];
+  sel.forEach(function (s) { var list = root.querySelectorAll(s); for (var i = 0; i < list.length; i++) { els.push(list[i]); } });
+  var io = new IntersectionObserver(function (en) {
+    en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('px-in'); io.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+  els.forEach(function (el) {
+    var r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight * 0.9) { return; }
+    el.classList.add('px-up');
+    io.observe(el);
+  });
+})();
+</script>
+<style>
+/* One-page polish: headings and buttons match the hero */
+#ncysa-home .ncysa-club-button-container h3, #ncysa-home .ncysa-bts-banner h3 { font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif !important; font-weight: 400 !important; letter-spacing: 0.03em !important; line-height: 0.95 !important; text-shadow: 0 4px 18px rgba(0,0,0,0.45) !important; }
+#ncysa-home .ncysa-club-button-container h3 { font-size: clamp(2.4rem, 5vw, 4rem) !important; }
+#ncysa-home .ncysa-bts-banner h3 { font-size: clamp(1.9rem, 3.4vw, 2.9rem) !important; }
+#ncysa-home .ncysa-club-button-container h3 span, #ncysa-home .ncysa-bts-banner h3 span { background: none !important; -webkit-text-fill-color: #edc32c !important; color: #edc32c !important; filter: none !important; }
+#ncysa-home .ncysa-club-button-container p:not(.fyc-msg), #ncysa-home .ncysa-bts-banner p { font-family: 'Source Sans 3', system-ui, sans-serif !important; }
+#ncysa-home .ncysa-bts-btn { border-radius: 50px !important; padding: 12px 28px !important; font-family: 'Source Sans 3', system-ui, sans-serif !important; font-weight: 800 !important; letter-spacing: 0.08em !important; box-shadow: 0 8px 22px rgba(184,47,47,0.45) !important; }
+#ncysa-home .ncysa-bts-banner:hover .ncysa-bts-btn { box-shadow: 0 12px 28px rgba(184,47,47,0.55) !important; }
+#ncysa-home .ncysa-bts-eyebrow { font-family: 'Source Sans 3', system-ui, sans-serif !important; letter-spacing: 0.16em !important; }
+@media (max-width: 600px) {
+  #ncysa-home .ncysa-club-button-container h3 { font-size: 2.3rem !important; letter-spacing: 0.03em !important; margin-bottom: 8px !important; }
+  #ncysa-home .ncysa-bts-banner h3 { font-size: 2rem !important; }
+  #ncysa-home .ncysa-bts-btn { width: 100%; max-width: 320px; text-align: center; }
+}
+</style>
+<style>
+/* Phone polish */
+@media (max-width: 600px) {
+  /* Find Your Club: heading and ZIP first, map below as a smaller accent */
+  #ncysa-home .ncysa-club-button-text { order: 1; min-width: 0 !important; width: 100%; }
+  #ncysa-home .nc-map-animation { order: 2; max-width: 260px !important; opacity: 0.9; }
+  #ncysa-home .ncysa-club-button-container { padding-top: 40px !important; padding-bottom: 30px !important; }
+  /* Tiles: one swipeable row instead of a tall stack */
+  #ncysa-home .ncysa-tiles-section { padding: 28px 0 24px !important; }
+  #ncysa-home .ncysa-tile-grid { display: flex !important; max-width: none !important; gap: 14px !important; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding: 4px 20px 14px; scroll-padding: 0 20px; scrollbar-width: none; }
+  #ncysa-home .ncysa-tile-grid::-webkit-scrollbar { display: none; }
+  #ncysa-home .ncysa-tile-grid > .ncysa-tile { flex: 0 0 74%; scroll-snap-align: start; }
+  #ncysa-home .fyc-swipe { display: flex; justify-content: center; gap: 6px; margin: 2px 0 0; }
+  #ncysa-home .fyc-swipe i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.35); transition: background .25s ease, width .25s ease; }
+  #ncysa-home .fyc-swipe i.on { width: 20px; border-radius: 4px; background: #edc32c; }
+  /* NCSRA banner: no empty white box around the thin image */
+  #ncysa-home .ncysa-ncsra-section { padding: 0 16px 24px !important; }
+  #ncysa-home .ncysa-ncsra-banner { height: auto !important; border-radius: 12px !important; }
+  /* Day counters: keep DAYS on one line */
+  #ncysa-home #ev.ev.home .mini .big small { white-space: nowrap !important; overflow-wrap: normal !important; }
+  #ncysa-home #ev.ev.home .mini .big { min-width: 58px; }
+}
+@media (min-width: 601px) { #ncysa-home .fyc-swipe { display: none; } }
+</style>
+<script>
+(function () {
+  var grid = document.querySelector('#ncysa-home .ncysa-tile-grid');
+  if (!grid) { return; }
+  var tiles = grid.querySelectorAll('.ncysa-tile');
+  var dots = document.createElement('div');
+  dots.className = 'fyc-swipe';
+  dots.setAttribute('aria-hidden', 'true');
+  for (var i = 0; i < tiles.length; i++) { dots.appendChild(document.createElement('i')); }
+  grid.parentNode.insertBefore(dots, grid.nextSibling);
+  var ds = dots.querySelectorAll('i');
+  function mark() {
+    var best = 0, bd = 1e9, gl = grid.getBoundingClientRect().left;
+    for (var k = 0; k < tiles.length; k++) { var d = Math.abs(tiles[k].getBoundingClientRect().left - gl - 20); if (d < bd) { bd = d; best = k; } }
+    for (var j = 0; j < ds.length; j++) { ds[j].className = (j === best) ? 'on' : ''; }
+  }
+  grid.addEventListener('scroll', function () { requestAnimationFrame(mark); }, { passive: true });
+  mark();
+})();
+</script>
+<style>
+/* Refined event icons (shared by Homepage, Calendar, Sanctioned Tournaments) */
+.ev .ci, .ev .mini .ico svg, .ev .tl-noimg svg { stroke-width: 1.85 !important; }
+.ev .mini .ico, .ev .wk-ic, .ev .sv-ic, #ev.ev.home .hk-ic { border-radius: 12px !important; box-shadow: inset 0 1px 0 rgba(255,255,255,0.28), inset 0 -10px 18px rgba(0,0,0,0.14), 0 8px 16px -8px rgba(16,4,90,0.55) !important; }
+.ev .tl-noimg { border-radius: 12px; box-shadow: inset 0 0 0 1px rgba(59,85,217,0.18); }
+</style>
 </div>
 <script>
 (function () {
