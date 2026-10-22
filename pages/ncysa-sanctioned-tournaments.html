@@ -1,0 +1,1266 @@
+<!-- NCYSA Sanctioned Tournaments - paste into ONE Custom HTML block. It stretches edge to edge on its own; no breakout settings needed. -->
+<style>
+/* One wrapper stretches the whole page edge to edge on every screen size */
+.entry-content #ncysa-page, #ncysa-page { display: block; width: 100vw !important; max-width: 100vw !important; margin: 0 calc(50% - 50vw) !important; padding: 0 !important; overflow-x: clip; }
+html:has(#ncysa-page), body:has(#ncysa-page) { overflow-x: clip; }
+.wp-block-group:has(#ncysa-page), .wp-block-group:has(#ncysa-page) > .wp-block-group__inner-container { margin-top: 0 !important; margin-bottom: 0 !important; padding: 0 !important; max-width: 100% !important; }
+#ncysa-page > * { margin-top: 0 !important; margin-bottom: 0 !important; }
+#ncysa-page > .ev { width: 100% !important; max-width: 100% !important; margin: 0 !important; }
+</style>
+<div id="ncysa-page" class="ncysa-page">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Layout: navy season hero with live progress rail, spotlight dashboard pulled over the curve,
+     12-month season ribbon, filterable month-grouped event list, curved navy closing band. */
+  :root {
+    --navy: #10045a; --navy-2: #1a0a6e; --navy-3: #0d0342;
+    --red: #b82f2f; --gold: #edc32c; --cream: #f9f7f7;
+    --ink: #1d1a18; --muted: #5f5a6a; --line: #e6e2ea; --card: #ffffff;
+    --display: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
+    --body: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --c-meeting: #10045a; --c-statecup: #b82f2f; --c-academy: #b8860b; --c-classic: #0f6e7a;
+    --c-odp: #6b3fa0; --c-coaching: #2f7d4f; --c-deadline: #c2560f; --c-office: #6d6a75; --c-tourn: #3b55d9;
+    color-scheme: light;
+  }
+  .entry-title { display: none !important; }
+  .content .entry { padding-top: 0 !important; margin-top: 0 !important; }
+  .content .entry-header { margin-bottom: 0 !important; padding: 0 !important; min-height: 0 !important; }
+  .entry-content { padding-top: 0 !important; margin-top: 0 !important; }
+  .ev .btn, .ev .btn:hover, .ev .btn:focus { text-decoration: none !important; }
+  .ev .btn.red, .ev .btn.red:hover { background: var(--red) !important; color: #fff !important; -webkit-text-fill-color: #fff; }
+  .ev .btn.gold, .ev .btn.gold:hover { background: var(--gold) !important; color: var(--navy) !important; -webkit-text-fill-color: var(--navy); }
+  .ev .btn.ghost, .ev .btn.ghost:hover { background: rgba(16,4,90,.06) !important; color: var(--navy) !important; -webkit-text-fill-color: var(--navy); }
+  .ev .btn.line, .ev .btn.line:hover { background: transparent !important; color: #fff !important; -webkit-text-fill-color: #fff; }
+  .ev .tab:hover { background: none !important; color: var(--navy) !important; }
+  .ev .linkbtn, .ev .linkbtn:hover { background: none !important; color: var(--red) !important; box-shadow: none !important; }
+  .ev .mo:hover { background: var(--card) !important; color: var(--ink) !important; }
+  .ev .mo.past:hover { background: #f3f1f5 !important; }
+  .ev .mo[aria-pressed="true"]:hover { background: var(--navy) !important; }
+  .ev .cal:hover { background: var(--navy) !important; color: #fff !important; }
+  .ev .tf:hover { background: var(--card) !important; color: var(--ink) !important; }
+  .ev .tf[aria-pressed="true"], .ev .tf[aria-pressed="true"]:hover { background: var(--navy) !important; color: #fff !important; }
+  .ev .tf.hot[aria-pressed="true"], .ev .tf.hot[aria-pressed="true"]:hover { background: var(--red) !important; color: #fff !important; }
+  .ev .key-i, .ev .key-i:hover { background: none !important; color: var(--ink) !important; box-shadow: none !important; }
+  .ev .regbtn, .ev .regbtn:hover { background: var(--c-tourn) !important; color: #fff !important; -webkit-text-fill-color: #fff; text-decoration: none !important; }
+  .ev { font-family: var(--body); color: var(--ink); background: var(--cream); overflow-x: clip; line-height: 1.45; }
+  .ev *, .ev *::before, .ev *::after { box-sizing: border-box; }
+  .ev h1, .ev h2, .ev h3, .ev p { margin: 0; }
+  .ev a { color: inherit; }
+  .ev button { font-family: inherit; }
+  .ev :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+  .ev .wrap { max-width: 1140px; margin: 0 auto; padding-inline: 20px; }
+  /* HERO */
+  .ev .hero { position: relative; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 45%, var(--navy-3) 100%); color: #fff; padding: 56px 20px 150px; text-align: center; overflow: hidden; }
+  .ev .hero::before { content: ''; position: absolute; inset: -50% -20% auto -20%; height: 200%; background: radial-gradient(ellipse at 30% 50%, rgba(184,47,47,.16) 0%, transparent 60%), radial-gradient(ellipse at 75% 30%, rgba(237,195,44,.07) 0%, transparent 50%); pointer-events: none; }
+  .ev .hero::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 80px; background: var(--cream); clip-path: ellipse(55% 100% at 50% 100%); }
+  .ev .hero-in { position: relative; z-index: 3; max-width: 900px; margin: 0 auto; }
+  .ev .pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(184,47,47,.16); border: 1px solid rgba(184,47,47,.45); border-radius: 50px; padding: 7px 18px; font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.92); }
+  .ev .pill i { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(237,195,44,.18); }
+  .ev .hero h1 { font-family: var(--display); font-weight: 400; font-size: clamp(2.4rem, 6vw, 4rem); letter-spacing: .04em; line-height: .95; margin-top: 22px; text-wrap: balance; }
+  .ev .hero h1 span { color: var(--red); }
+  .ev .hero-sub { color: rgba(255,255,255,.76); max-width: 600px; margin: 16px auto 0; font-size: 1.05rem; }
+  .ev .divider { width: 60px; height: 3px; background: var(--red); border-radius: 2px; margin: 20px auto 0; }
+  /* Season rail */
+  .ev .rail { margin: 34px auto 0; max-width: 820px; text-align: left; }
+  .ev .rail-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: .82rem; color: rgba(255,255,255,.7); }
+  .ev .rail-top b { color: #fff; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .ev .rail-track { position: relative; height: 10px; border-radius: 10px; background: rgba(255,255,255,.12); margin-top: 10px; }
+  .ev .rail-fill { position: absolute; inset: 0 auto 0 0; border-radius: 10px; background: linear-gradient(90deg, var(--red), var(--gold)); }
+  .ev .rail-pin { position: absolute; top: 50%; width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px; border-radius: 50%; background: #fff; opacity: .55; }
+  .ev .rail-pin.big { width: 13px; height: 13px; margin: -6.5px 0 0 -6.5px; opacity: .9; border: 2px solid var(--navy); }
+  .ev .rail-now { position: absolute; top: -7px; bottom: -7px; width: 3px; margin-left: -1.5px; background: var(--gold); border-radius: 2px; box-shadow: 0 0 12px rgba(237,195,44,.8); }
+  .ev .rail-months { display: grid; grid-template-columns: repeat(12, 1fr); margin-top: 8px; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.55); }
+  .ev .rail-months span { text-align: center; }
+  .ev .rail-months span.on { color: var(--gold); font-weight: 700; }
+  /* DASHBOARD */
+  .ev .dash { position: relative; z-index: 3; margin-top: -120px; display: grid; grid-template-columns: 1.65fr 1fr; gap: 16px; }
+  .ev .spot { position: relative; background: var(--card); border-radius: 18px; padding: 28px 30px; box-shadow: 0 18px 44px rgba(16,4,90,.16); overflow: hidden; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+  .ev .spot::before { content: ''; position: absolute; right: -70px; top: -70px; width: 240px; height: 240px; border-radius: 50%; background: radial-gradient(circle, rgba(237,195,44,.18), transparent 70%); pointer-events: none; }
+  .ev .eyebrow { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: .76rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--red); }
+  .ev .spot h2 { font-family: var(--display); font-weight: 400; font-size: clamp(2rem, 4.2vw, 2.9rem); line-height: 1; letter-spacing: .03em; color: var(--navy); text-wrap: balance; }
+  .ev .spot-meta { display: flex; flex-wrap: wrap; gap: 8px 22px; color: #3f3a4a; font-size: 1.02rem; font-weight: 600; }
+  .ev .spot-meta span { display: inline-flex; align-items: center; gap: 7px; }
+  .ev .spot-meta svg { width: 16px; height: 16px; stroke: var(--red); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .ev .count { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; max-width: 460px; background: var(--cream); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .ev .count div { padding: 9px 8px 8px; text-align: center; }
+  .ev .count div + div { border-left: 1px solid var(--line); }
+  .ev .count b { display: block; font-family: var(--display); font-weight: 400; font-size: 1.75rem; line-height: 1; letter-spacing: .03em; color: var(--navy); font-variant-numeric: tabular-nums; }
+  .ev .count small { display: block; font-size: .6rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
+  .ev .count div:first-child b { color: var(--red); }
+  .ev .live { display: inline-flex; align-items: center; gap: 8px; background: rgba(47,125,79,.1); color: var(--c-coaching); border-radius: 50px; padding: 8px 16px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: .82rem; align-self: flex-start; }
+  .ev .live i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; animation: evPulse 1.6s ease-in-out infinite; }
+  .ev .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 2px; }
+  .ev .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px; border-radius: 10px; font-weight: 700; font-size: .92rem; text-decoration: none; border: 0; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease; }
+  .ev .btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .ev .btn.red { background: var(--red); color: #fff; box-shadow: 0 6px 16px rgba(184,47,47,.28); }
+  .ev .btn.ghost { background: rgba(16,4,90,.06); color: var(--navy); }
+  .ev .btn:hover { transform: translateY(-2px); }
+  .ev .side { display: grid; gap: 12px; min-width: 0; }
+  .ev .mini { background: var(--card); border-radius: 16px; padding: 14px 18px; box-shadow: 0 10px 28px rgba(16,4,90,.1); display: flex; gap: 14px; align-items: flex-start; min-width: 0; }
+  .ev .mini .ico { width: 42px; height: 42px; min-width: 42px; border-radius: 11px; display: grid; place-items: center; color: #fff; }
+  .ev .mini .ico svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .ev .mini .k { font-size: .74rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--red); }
+  .ev .mini h3 { font-size: 1.06rem; font-weight: 700; color: var(--navy); line-height: 1.28; margin-top: 4px; }
+  .ev .mini p { font-size: .9rem; color: #3f3a4a; margin-top: 5px; font-weight: 600; }
+  .ev .mbody { flex: 1; min-width: 0; display: flex; gap: 12px; align-items: flex-start; }
+  .ev .mbody .txt { flex: 1; min-width: 0; }
+  .ev .big { min-width: 62px; text-align: center; background: var(--cream); border-radius: 12px; padding: 8px 6px 6px; align-self: center; }
+  .ev .big b { display: block; font-family: var(--display); font-weight: 400; font-size: 2.2rem; line-height: .95; color: var(--navy); font-variant-numeric: tabular-nums; }
+  .ev .big small { display: block; font-size: .64rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
+  .ev .also { border-top: 1px solid var(--line); padding-top: 12px; display: grid; gap: 8px; }
+  .ev .also-k { font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--red); }
+  .ev .also-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; font-size: .92rem; }
+  .ev .also-row b { color: var(--navy); }
+  .ev .also-row > span:last-child { color: #3f3a4a; }
+  .ev .after { margin-top: auto; border-top: 1px solid var(--line); padding-top: 14px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 14px; }
+  .ev .after .also-k { grid-column: 1 / -1; }
+  .ev .after-row { display: flex; gap: 10px; align-items: center; min-width: 0; }
+  .ev .after-d { min-width: 46px; text-align: center; border-radius: 10px; background: var(--cream); padding: 5px 4px; font-family: var(--display); font-size: 1.5rem; line-height: 1; color: var(--navy); }
+  .ev .after-d b { display: block; font-family: var(--body); font-size: .62rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--red); margin-bottom: 2px; }
+  .ev .after-t { min-width: 0; display: grid; gap: 2px; font-size: .88rem; line-height: 1.25; }
+  .ev .after-t > b { color: var(--navy); }
+  .ev .after-t .tag { font-size: .8rem; }
+  .ev .after-t > span { color: #3f3a4a; font-size: .8rem; }
+  @media (max-width: 560px) { .ev .after { grid-template-columns: 1fr; } }
+  .ev .mini p b { color: var(--ink); }
+  .ev .mini .txt { min-width: 0; }
+  .ev .tlist { display: block; margin-top: 18px; }
+  .ev .pm-panel { display: none; }
+  .ev #tab-dates, .ev .tabs { display: none !important; }
+  .ev .tabbar { margin-top: 0; border-bottom: 0; min-height: 0; }
+  .ev .tabbar:not(.stuck) .mini-next { display: none; }
+  .ev .tabbar + .pmw { margin-top: 26px; }
+  .ev .wkcount { background: var(--gold); color: var(--navy); border-radius: 50px; padding: 3px 10px; letter-spacing: .06em; }
+  .ev .wk-list { display: grid; gap: 8px; margin: 4px 0 2px; }
+  .ev .wk-row { display: flex; align-items: center; gap: 12px; background: var(--cream); border: 1px solid var(--line); border-left: 4px solid var(--c-tourn); border-radius: 12px; padding: 10px 12px; }
+  .ev .wk-logo { width: 40px; height: 40px; flex-shrink: 0; object-fit: contain; border-radius: 8px; background: #fff; border: 1px solid var(--line); padding: 2px; margin: 0; }
+  .ev .wk-t { flex: 1; min-width: 0; display: grid; gap: 2px; }
+  .ev .wk-t b { color: var(--navy); font-size: .98rem; line-height: 1.25; }
+  .ev .wk-t > span { color: #3f3a4a; font-size: .85rem; }
+  .ev .wk-t .regpill { justify-self: start; margin-top: 2px; }
+  .ev .wk-go, .ev .wk-go:hover { flex-shrink: 0; background: var(--c-tourn) !important; color: #fff !important; -webkit-text-fill-color: #fff; text-decoration: none !important; font-weight: 700; font-size: .82rem; padding: 8px 14px; border-radius: 9px; }
+  .ev .wk-go.ghost, .ev .wk-go.ghost:hover { background: rgba(16,4,90,.08) !important; color: var(--navy) !important; -webkit-text-fill-color: var(--navy); }
+  .ev .tl-wk { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 10px; margin: 10px 0 -2px; font-family: var(--display); font-size: 1.35rem; letter-spacing: .04em; color: var(--navy); }
+  .ev .tl-wk:first-child { margin-top: 0; }
+  .ev .tl-wk b { font-family: var(--body); font-size: .74rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #6b6772; }
+  .ev .tl-wk.multi b { background: var(--gold); color: var(--navy); padding: 2px 9px; border-radius: 50px; }
+  .ev .tl-card.soon { box-shadow: 0 0 0 2px var(--gold), 0 8px 20px rgba(237,195,44,.18); }
+  .ev .when { display: inline-block; font-size: .7rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: var(--navy); background: rgba(16,4,90,.07); border-radius: 50px; padding: 2px 9px; margin-bottom: 4px; }
+  .ev .when.wk { background: var(--gold); }
+  .ev .when.live { background: var(--red); color: #fff; }
+  @media (max-width: 560px) { .ev .wk-row { flex-wrap: wrap; } .ev .wk-go { width: 100%; text-align: center; } }
+  .ev .banner { display: block; margin-top: 26px; border-radius: 14px; overflow: hidden; box-shadow: 0 8px 24px rgba(16,4,90,.12); line-height: 0; }
+  .ev .banner img { width: 100%; height: auto; display: block; margin: 0; }
+  .ev .banner.wilson { margin: 8px 0 36px; }
+  .ev .tl-btns .ncysalink { font-size: .82rem; font-weight: 700; color: var(--navy) !important; text-decoration: underline !important; text-underline-offset: 3px; background: none !important; }
+  .ev .tl-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .ev .tl-card { position: relative; margin-bottom: 0 !important; padding-right: 76px !important; }
+  .ev .tl-logo { position: absolute; top: 12px; right: 12px; width: 52px; height: 52px; border-radius: 10px; object-fit: contain; background: #fff; border: 1px solid var(--line); padding: 3px; }
+  .ev .tl-noimg { display: grid; place-items: center; background: rgba(59,85,217,.1); border-color: transparent; }
+  .ev .tl-noimg svg { width: 26px; height: 26px; fill: none; stroke: var(--c-tourn); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .ev .tl-more { margin-top: 14px; }
+  @media (max-width: 860px) { .ev .tl-grid { grid-template-columns: 1fr; } }
+  .ev .tl-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; padding: 4px 2px 12px; }
+  .ev .tl-head b { font-family: var(--display); font-weight: 400; font-size: 1.4rem; letter-spacing: .04em; color: var(--navy); }
+  .ev .tl-head span { font-size: .82rem; font-weight: 700; color: var(--c-coaching); }
+  .ev .tl-card { display: flex; gap: 12px; background: var(--card); border-radius: 14px; padding: 12px; margin-bottom: 10px; box-shadow: 0 2px 10px rgba(0,0,0,.04); border-left: 4px solid var(--c-tourn); }
+  .ev .tl-txt { min-width: 0; flex: 1; }
+  .ev .info .note { margin: 5px 0 0; font-size: .82rem; color: var(--muted); font-style: italic; }
+  .ev .tl-card .datebox { width: 54px; min-width: 54px; align-self: flex-start; }
+  .ev .tl-txt h4 { margin: 0; font-size: .98rem; font-weight: 700; color: var(--ink); line-height: 1.25; }
+  .ev .tl-txt p { font-size: .84rem; color: #3f3a4a; margin-top: 3px; }
+  .ev .tl-txt .tl-ages { color: var(--muted); font-size: .78rem; }
+  .ev .tl-txt .regpill { margin-top: 6px; }
+  .ev .tl-btns { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-top: 8px; }
+  .ev .tl-more { width: 100%; justify-content: center; margin-top: 4px; }
+  .ev .key { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; margin-top: 14px; padding: 10px 14px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; }
+  .ev .key-k { font-size: .7rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .ev .key-i { display: inline-flex; align-items: center; gap: 6px; background: none; border: 0; padding: 3px 0; font: 600 .84rem var(--body); color: var(--ink); cursor: pointer; border-bottom: 2px solid transparent; }
+  .ev .key-i:hover, .ev .key-i[aria-pressed="true"] { border-bottom-color: var(--cat); }
+  .ev .regpill { white-space: nowrap; display: inline-block; margin-top: 7px; background: #ffd84d; color: #1d1a18; border-radius: 50px; padding: 3px 11px; font-size: .76rem; font-weight: 700; }
+  /* PLAYMETRICS BAND */
+  .ev .pm { margin-top: 26px; border-radius: 18px; background: linear-gradient(110deg, var(--navy) 0%, var(--navy-2) 55%, var(--red) 140%); color: #fff; padding: 24px 28px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap; position: relative; overflow: hidden; }
+  .ev .pm::after { content: ''; position: absolute; right: -40px; bottom: -80px; width: 260px; height: 260px; border-radius: 50%; border: 36px solid rgba(255,255,255,.05); pointer-events: none; }
+  .ev .pm .trophy { width: 56px; height: 56px; min-width: 56px; border-radius: 14px; background: rgba(237,195,44,.16); display: grid; place-items: center; }
+  .ev .pm .trophy svg { width: 28px; height: 28px; fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .ev .pm .t { flex: 1 1 320px; min-width: 0; }
+  .ev .pm h2 { font-family: var(--display); font-weight: 400; font-size: 1.9rem; letter-spacing: .04em; line-height: 1; }
+  .ev .pm p { color: rgba(255,255,255,.75); margin-top: 6px; font-size: .95rem; }
+  .ev .pm .acts { display: flex; gap: 10px; flex-wrap: wrap; position: relative; z-index: 1; }
+  .ev .btn.gold { background: var(--gold); color: var(--navy); }
+  .ev .btn.line { background: transparent; color: #fff; box-shadow: inset 0 0 0 2px rgba(255,255,255,.35); }
+  .ev .pmw { margin-top: 26px; }
+  .ev .pmw .pm { margin-top: 0; border-radius: 18px 18px 0 0; }
+  .ev .pm-panel { background: var(--card); border-radius: 0 0 18px 18px; box-shadow: 0 14px 34px rgba(16,4,90,.12); overflow: hidden; }
+  .ev .pm-bar { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; padding: 12px 20px; border-bottom: 1px solid var(--line); font-size: .82rem; color: var(--muted); }
+  .ev .pm-live { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: .74rem; color: var(--c-coaching); }
+  .ev .pm-live i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; animation: evPulse 1.6s ease-in-out infinite; }
+  .ev .pm-frame { --pm-crop: 0px; position: relative; height: max(88vh, 1000px); overflow: hidden; background: #f4f5f9; }
+  .ev .pm-frame iframe { display: block; width: 100%; border: 0; height: calc(100% + var(--pm-crop)); margin-top: calc(var(--pm-crop) * -1); }
+  .ev .pm-demo { height: 100%; overflow-y: auto; padding: 18px; display: grid; gap: 12px; align-content: start; }
+  .ev .pm-note { background: rgba(237,195,44,.18); border: 1px dashed rgba(184,134,11,.5); border-radius: 12px; padding: 12px 14px; font-size: .86rem; color: var(--ink); }
+  .ev .pm-card { background: #fff; border: 1px solid #d9dbe6; border-radius: 6px; padding: 16px 18px; display: grid; gap: 6px; }
+  .ev .pm-card .pd { color: #3b55d9; font-size: .86rem; font-weight: 600; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .ev .pm-card .pd b { background: #ffe14d; color: #1d1a18; border-radius: 50px; padding: 2px 10px; font-size: .76rem; }
+  .ev .pm-card h4 { margin: 0; font-family: var(--display); font-weight: 400; font-size: 1.4rem; letter-spacing: .02em; color: #111; }
+  .ev .pm-card p { font-size: .86rem; color: #555; }
+  .ev .pm-card .pa { display: flex; gap: 16px; align-items: center; margin-top: 4px; font-size: .86rem; }
+  .ev .pm-card .pa span:first-child { background: #3b55d9; color: #fff; border-radius: 4px; padding: 6px 12px; font-weight: 600; }
+  .ev .pm-card .pa span:last-child { color: #3b55d9; text-decoration: underline; }
+  @media (max-width: 560px) {
+    .ev .tlist { margin-top: 14px; }
+    .ev .tl-card { padding-right: 64px !important; }
+    .ev .tl-logo { width: 44px; height: 44px; }
+    .ev .pmw .pm { border-radius: 14px; }
+    .ev .mbody { flex-direction: column; gap: 8px; }
+    .ev .big { display: inline-flex; align-items: baseline; gap: 6px; align-self: flex-start; padding: 4px 12px; min-width: 0; }
+    .ev .big b { font-size: 1.5rem; }
+    .ev .big small { margin-top: 0; }
+    .ev .pm .t p { display: none; }
+    .ev .pm { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; }
+    .ev .pm .trophy { display: none; }
+    .ev .pm .t { flex: 1 1 auto; }
+    .ev .pm h2 { font-size: 1.35rem; }
+    .ev .pm .acts .btn { padding: 9px 12px; font-size: .82rem; white-space: nowrap; }
+    .ev .pm .acts .btn.line { display: none; }
+  }
+  .ev .tabbar { position: sticky; top: 0; z-index: 30; margin-top: 34px; display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; background: var(--cream); border-bottom: 2px solid var(--line); transition: box-shadow .25s ease; }
+  .ev .tabbar.stuck { box-shadow: 0 10px 22px -14px rgba(16,4,90,.35); }
+  .ev .tabs { display: flex; gap: 6px; }
+  .ev .mini-next { display: flex; align-items: center; gap: 8px; padding: 0 4px 12px; font-size: .86rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; opacity: 0; transform: translateY(6px); transition: opacity .25s ease, transform .25s ease; pointer-events: none; }
+  .ev .tabbar.stuck .mini-next { opacity: 1; transform: none; }
+  .ev .mini-next span { font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--red); }
+  .ev .mini-next b { color: var(--navy); overflow: hidden; text-overflow: ellipsis; }
+  .ev .mini-next em { font-style: normal; font-weight: 800; color: #fff; background: var(--navy); border-radius: 6px; padding: 2px 8px; font-variant-numeric: tabular-nums; }
+  .ev .alert { display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center; margin: 22px auto 0; padding: 9px 16px; border-radius: 50px; background: rgba(255,216,77,.14); border: 1px solid rgba(255,216,77,.45); color: #fff; font-size: .9rem; max-width: 100%; }
+  .ev .al-dot { width: 8px; height: 8px; border-radius: 50%; background: #ffd84d; box-shadow: 0 0 0 4px rgba(255,216,77,.2); animation: evPulse 1.6s ease-in-out infinite; }
+  .ev .al-txt b { color: #ffd84d; }
+  .ev .al-go { color: #fff; font-weight: 800; text-decoration: none; }
+  .ev .al-more { color: rgba(255,255,255,.65); font-size: .82rem; }
+  .ev .tbits { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-top: 7px; }
+  .ev .regpill.sm { margin-top: 0; font-size: .72rem; padding: 2px 9px; }
+  .ev .regnote { font-size: .78rem; color: var(--muted); }
+  .ev .schedlink { font-size: .8rem; font-weight: 700; color: var(--c-tourn); text-decoration: underline; text-underline-offset: 2px; }
+  .ev .regbtn { display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 8px; background: var(--c-tourn); color: #fff; font-weight: 700; font-size: .84rem; text-decoration: none; white-space: nowrap; }
+  .ev .regbtn:hover { filter: brightness(1.08); }
+  .ev .tab { white-space: nowrap; }
+  @media (max-width: 700px) { .ev .mini-next b { display: none; } }
+  @media (max-width: 560px) { .ev .tab { font-size: 1.1rem; padding: 10px 10px; } .ev .tab .tw { display: none; } .ev .mini-next { display: none; } .ev .tabbar { gap: 4px; } }
+  .ev .tab { background: none; border: 0; padding: 12px 18px; font-family: var(--display); font-size: 1.35rem; letter-spacing: .05em; color: var(--muted); cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -2px; }
+  .ev .tab[aria-selected="true"] { color: var(--navy); border-bottom-color: var(--red); }
+  .ev .tabs + .pmw, .ev .tabs ~ .sec { margin-top: 26px; }
+  .ev .sel { height: 44px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); padding: 0 12px; font: 600 .92rem var(--body); color: var(--ink); }
+  /* SECTION HEAD */
+  .ev .sec { margin-top: 54px; }
+  .ev .sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+  .ev .label { display: inline-flex; align-items: center; gap: 8px; background: rgba(16,4,90,.06); border-radius: 50px; padding: 6px 15px; font-size: .74rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--navy); }
+  .ev .label i { width: 6px; height: 6px; border-radius: 50%; background: var(--red); }
+  .ev .sec h2.st { font-family: var(--display); font-weight: 400; font-size: clamp(1.9rem, 3.6vw, 2.5rem); letter-spacing: .04em; color: var(--navy); margin-top: 10px; line-height: 1; }
+  .ev .sec .ss { color: var(--muted); margin-top: 6px; }
+  /* MONTH RIBBON */
+  .ev .months { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+  .ev .mo { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 6px 10px; text-align: center; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; overflow: hidden; color: var(--ink); }
+  .ev .mo:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(16,4,90,.1); }
+  .ev .mo .m { font-family: var(--display); font-size: 1.35rem; letter-spacing: .05em; color: var(--navy); line-height: 1; }
+  .ev .mo .y { font-size: .66rem; color: var(--muted); letter-spacing: .1em; }
+  .ev .mo .n { font-size: .78rem; font-weight: 700; margin-top: 6px; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .ev .mo .dots { display: flex; justify-content: center; flex-wrap: wrap; gap: 3px; margin-top: 6px; min-height: 7px; }
+  .ev .mo .dots i { width: 6px; height: 6px; border-radius: 50%; }
+  .ev .mo .bar { position: absolute; left: 0; bottom: 0; height: 4px; background: var(--red); }
+  .ev .mo.past { background: #f3f1f5; }
+  .ev .mo.past .m, .ev .mo.past .n { color: #9a95a3; }
+  .ev .mo.past .dots i { opacity: .45; }
+  .ev .mo.now { border-color: var(--red); box-shadow: 0 0 0 2px rgba(184,47,47,.15); }
+  .ev .mo.now::before { content: 'NOW'; position: absolute; top: 5px; right: 6px; font-size: .55rem; font-weight: 800; letter-spacing: .1em; color: var(--red); }
+  .ev .mo[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); }
+  .ev .mo[aria-pressed="true"] .m, .ev .mo[aria-pressed="true"] .n { color: #fff; }
+  .ev .mo[aria-pressed="true"] .y { color: rgba(255,255,255,.65); }
+  .ev .mo[aria-pressed="true"]::before { color: var(--gold); }
+  /* TOOLBAR */
+  .ev .tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 22px 0 6px; }
+  .ev .search { flex: 1 1 240px; display: flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 0 12px; min-width: 0; }
+  .ev .search svg { width: 17px; height: 17px; stroke: var(--muted); fill: none; stroke-width: 2; stroke-linecap: round; }
+  .ev .search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; height: 42px; font: 400 .98rem var(--body); color: var(--ink); }
+  .ev .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .ev .chip { display: inline-flex; align-items: center; gap: 7px; padding: 7px 13px; border-radius: 50px; border: 1px solid var(--line); background: var(--card); font-size: .84rem; font-weight: 600; color: var(--ink); cursor: pointer; transition: background .2s ease, color .2s ease, border-color .2s ease; }
+  .ev .chip i { width: 8px; height: 8px; border-radius: 50%; }
+  .ev .chip em { font-style: normal; font-size: .74rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .ev .chip[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .ev .chip[aria-pressed="true"] em { color: rgba(255,255,255,.65); }
+  .ev .status { font-size: .86rem; color: var(--muted); margin-top: 14px; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .ev .linkbtn { background: none; border: 0; padding: 0; color: var(--red); font-weight: 700; cursor: pointer; font-size: .86rem; }
+  /* EVENT LIST */
+  .ev .group { margin-top: 26px; }
+  .ev .group-h { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .ev .group-h h3 { font-family: var(--display); font-weight: 400; font-size: 1.55rem; letter-spacing: .05em; color: var(--navy); white-space: nowrap; }
+  .ev .group-h::after { content: ''; flex: 1; height: 2px; background: linear-gradient(90deg, rgba(16,4,90,.14), transparent); }
+  .ev .group-h small { font-size: .78rem; color: var(--muted); font-weight: 600; white-space: nowrap; }
+  .ev .list { display: grid; gap: 10px; }
+  .ev .item { display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; gap: 16px; align-items: center; background: var(--card); border-radius: 14px; padding: 14px 16px; border: 1px solid rgba(0,0,0,.04); box-shadow: 0 2px 10px rgba(0,0,0,.03); position: relative; transition: transform .2s ease, box-shadow .2s ease; }
+  .ev .item:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(16,4,90,.08); }
+  .ev .item::before { content: ''; position: absolute; left: 0; top: 14px; bottom: 14px; width: 4px; border-radius: 0 4px 4px 0; background: var(--cat); }
+  .ev .datebox { text-align: center; border-radius: 10px; background: rgba(16,4,90,.05); padding: 7px 4px 6px; }
+  .ev .datebox .dm { display: block; font-size: .68rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--red); }
+  .ev .datebox .dd { display: block; font-family: var(--display); font-size: 1.85rem; line-height: 1; color: var(--navy); font-variant-numeric: tabular-nums; }
+  .ev .datebox .dw { display: block; font-size: .64rem; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+  .ev .info { min-width: 0; }
+  .ev .info h4 { margin: 0; font-size: 1rem; font-weight: 700; color: var(--ink); line-height: 1.3; }
+  .ev .info .meta { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 5px; font-size: .84rem; color: var(--muted); }
+  .ev .tag { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--cat); }
+  .ev .tag .ci, .ev .key .ci { width: 14px; height: 14px; fill: none; stroke: var(--cat); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  .ev .right { display: flex; align-items: center; gap: 10px; }
+  .ev .when { font-size: .74rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: 5px 10px; border-radius: 50px; white-space: nowrap; background: rgba(16,4,90,.06); color: var(--navy); font-variant-numeric: tabular-nums; }
+  .ev .when.soon { background: rgba(184,47,47,.1); color: var(--red); }
+  .ev .when.now { background: rgba(47,125,79,.12); color: var(--c-coaching); }
+  .ev .when.done { background: #efedf2; color: #9a95a3; }
+  .ev .cal { width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; background: rgba(16,4,90,.06); color: var(--navy); text-decoration: none; transition: background .2s ease, color .2s ease; }
+  .ev .cal:hover { background: var(--navy); color: #fff; }
+  .ev .cal svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .ev .item.past { opacity: .62; }
+  .ev .item.past .cal { display: none; }
+  .ev .empty { background: var(--card); border-radius: 14px; padding: 30px; text-align: center; color: var(--muted); margin-top: 20px; }
+  .ev .pastbar { margin-top: 18px; display: flex; justify-content: center; }
+  /* ONE LIST */
+  .ev .one { display: grid; grid-template-columns: 1.15fr 1fr; gap: 18px; }
+  .ev .preview { background: var(--card); border-radius: 18px; padding: 22px; box-shadow: 0 10px 28px rgba(16,4,90,.08); min-width: 0; }
+  .ev .preview .ph { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .ev .preview .ph b { font-family: var(--display); font-weight: 400; font-size: 1.5rem; letter-spacing: .05em; color: var(--navy); }
+  .ev .preview .ph span { font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .ev .strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .ev .strip div { border-radius: 12px; background: var(--navy); color: #fff; padding: 14px; min-width: 0; }
+  .ev .strip small { display: block; font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+  .ev .strip p { font-size: .9rem; font-weight: 700; line-height: 1.25; margin-top: 6px; }
+  .ev .strip em { display: block; font-style: normal; font-size: .76rem; color: rgba(255,255,255,.65); margin-top: 6px; }
+  .ev .steps { display: grid; gap: 10px; min-width: 0; }
+  .ev .step { display: flex; gap: 14px; background: var(--card); border-radius: 14px; padding: 16px 18px; border: 1px solid var(--line); }
+  .ev .step b { font-family: var(--display); font-weight: 400; font-size: 1.6rem; line-height: 1; color: var(--red); min-width: 22px; }
+  .ev .step h4 { margin: 0; font-size: .98rem; color: var(--navy); }
+  .ev .step p { font-size: .87rem; color: var(--muted); margin-top: 3px; }
+  /* CLOSING BAND */
+  .ev .close { margin-top: 64px; background: var(--navy); color: #fff; padding: 110px 20px 64px; text-align: center; position: relative; overflow: hidden; }
+  .ev .close::before { content: ''; position: absolute; top: -2px; left: 0; right: 0; height: 80px; background: var(--cream); clip-path: ellipse(55% 100% at 50% 0%); }
+  .ev .close h2 { font-family: var(--display); font-weight: 400; font-size: clamp(2rem, 5vw, 2.9rem); letter-spacing: .04em; }
+  .ev .close p { color: rgba(255,255,255,.72); max-width: 560px; margin: 10px auto 24px; }
+  .ev .close .btns { justify-content: center; }
+  /* Phones: break out of the theme's side margins so the page runs edge to edge */
+  @media (max-width: 768px) {
+    .ev .wrap { padding-inline: 12px; }
+    .ev .spot { padding: 20px 18px; }
+    .ev .mini { padding: 14px 14px; }
+  }
+  /* Computers: globe look. Each card is a soft barrel shape (curved shoulders, no sharp tips), lit in the middle and shaded at the edges */
+  @media (min-width: 961px) {
+    .ev .dash { gap: 18px; filter: drop-shadow(0 22px 26px rgba(16,4,90,.22)); }
+    .ev .spot, .ev .side .mini { position: relative; isolation: isolate; box-shadow: none; border-radius: 26px;
+      -webkit-mask-image: radial-gradient(ellipse 62.5% 80% at 50% 50%, #000 99.4%, transparent 100%);
+              mask-image: radial-gradient(ellipse 62.5% 80% at 50% 50%, #000 99.4%, transparent 100%); }
+    .ev .spot { padding: 36px 46px 32px; }
+    .ev .side .mini { padding: 20px 30px; -webkit-mask-image: radial-gradient(ellipse 58% 90% at 50% 50%, #000 99.4%, transparent 100%); mask-image: radial-gradient(ellipse 58% 90% at 50% 50%, #000 99.4%, transparent 100%); }
+    .ev .spot::after, .ev .side .mini::after { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 2;
+      background: radial-gradient(ellipse 62.5% 80% at 50% 45%, rgba(255,255,255,0) 62%, rgba(16,4,90,.06) 82%, rgba(16,4,90,.14) 97%); }
+    .ev .side .mini::after { background: radial-gradient(ellipse 58% 90% at 50% 45%, rgba(255,255,255,0) 62%, rgba(16,4,90,.06) 82%, rgba(16,4,90,.13) 97%); }
+  }
+  /* Header badges, field lines, calendar subscribe */
+  .ev .pills { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+  .ev .hero .field { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .07; pointer-events: none; z-index: 1; }
+  /* Tournament filters and stamp */
+  .ev .tl-filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 14px; }
+  .ev .tf { border: 1px solid var(--line); background: var(--card); border-radius: 50px; padding: 8px 14px; font: 700 .84rem var(--body); color: var(--ink); cursor: pointer; }
+  .ev .tf[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .ev .tf.hot[aria-pressed="true"] { background: var(--red); border-color: var(--red); }
+  .ev .tl-filters select { height: 38px; border: 1px solid var(--line); border-radius: 50px; background: var(--card); padding: 0 12px; font: 700 .84rem var(--body); color: var(--ink); }
+  .ev .tl-stamp { font-size: .78rem; color: var(--muted); display: inline-flex; align-items: center; gap: 6px; }
+  .ev .tl-stamp i { width: 7px; height: 7px; border-radius: 50%; background: var(--c-coaching); }
+  .ev .tl-empty { padding: 26px; text-align: center; color: var(--muted); background: var(--card); border-radius: 14px; }
+  .ev .regpill.hot { background: var(--red); color: #fff; }
+  /* Tournament cards: navy date block, larger logo, lift on hover */
+  .ev .tl-card { transition: transform .2s ease, box-shadow .2s ease; }
+  .ev .tl-card:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(16,4,90,.12); }
+  .ev .tl-card .datebox { background: var(--navy); }
+  .ev .tl-card .datebox .dm { color: var(--gold); }
+  .ev .tl-card .datebox .dd { color: #fff; }
+  .ev .tl-card .datebox .dw { color: rgba(255,255,255,.6); }
+  .ev .tl-card .datebox { position: relative; }
+  .ev .tl-card.npm .datebox::after { content: ''; position: absolute; top: 5px; right: 5px; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); opacity: .85; }
+  .ev .npm-tag { display: inline-block; font-size: .72rem; font-weight: 700; color: #7a5b00; background: #fff4cc; border: 1px solid var(--gold); border-radius: 999px; padding: 2px 9px; }
+  .ev .npm-note { background: #fff8de; border: 1px solid var(--gold); border-radius: 10px; padding: 10px 12px; margin-bottom: 10px; font-size: .88rem; color: var(--ink, #1d1a18); }
+  @media (min-width: 861px) { .ev .tl-card { padding-right: 92px !important; } .ev .tl-logo { width: 66px; height: 66px; } }
+  /* Month tiles styled like calendar pages */
+  .ev .mo { border-top: 0; box-shadow: inset 0 4px 0 var(--red); padding-top: 15px; }
+  .ev .mo.past { box-shadow: inset 0 4px 0 #cfcad6; }
+  .ev .mo.now { box-shadow: inset 0 4px 0 var(--red), 0 0 0 2px rgba(184,47,47,.15); }
+  /* Scroll-in motion: only for cards below the fold at load; everything is visible without it */
+  .ev .pre { opacity: 0; transform: translateY(16px); }
+  .ev .rise { transition: opacity .5s ease, transform .5s ease; }
+  @keyframes evPulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+  @media (prefers-reduced-motion: reduce) { .ev *, .ev *::before { animation: none !important; transition: none !important; } }
+  @media (max-width: 960px) {
+    .ev .dash, .ev .one { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .ev .hero { padding: 44px 16px 140px; }
+    .ev .wrap { padding-inline: 16px; }
+    .ev .spot { padding: 22px 20px; }
+    .ev .count { max-width: none; } .ev .count b { font-size: 1.7rem; }
+    .ev .spot .btns .btn { flex: 1 1 0; justify-content: center; white-space: nowrap; }
+    .ev .months { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .ev .rail-months { font-size: .58rem; }
+    .ev .item { grid-template-columns: 54px minmax(0, 1fr); }
+    .ev .right { grid-column: 2; justify-content: space-between; }
+    .ev .strip { grid-template-columns: 1fr; }
+    .ev .pm { padding: 22px 20px; }
+  }
+  /* Tournament cards, in the style of the old page */
+  .ev .tl-grid { grid-template-columns: 1fr !important; gap: 14px; }
+  .ev .tc { display: flex; background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(16,4,90,.06); transition: transform .2s ease, box-shadow .2s ease; min-width: 0; }
+  .ev .tc:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(16,4,90,.12); }
+  .ev .tc.soon { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold), 0 10px 24px rgba(237,195,44,.18); }
+  .ev .tc-date { flex: 0 0 104px; background: var(--navy); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 14px 6px; text-align: center; position: relative; }
+  .ev .tc.npm .tc-date::after { content: ''; position: absolute; top: 8px; right: 8px; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); opacity: .8; }
+  .ev .tc-date .m { color: var(--gold); font-weight: 800; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; }
+  .ev .tc-date .d { font-family: var(--display); font-size: 2.7rem; line-height: 1; color: #fff; }
+  .ev .tc-date .y { font-size: .72rem; color: rgba(255,255,255,.6); letter-spacing: .06em; }
+  .ev .tc-body { flex: 1; min-width: 0; padding: 16px 20px 16px; display: flex; flex-direction: column; gap: 10px; }
+  .ev .tc-top { display: flex; align-items: center; gap: 14px; min-width: 0; }
+  .ev .tc-logo { width: 52px; height: 52px; flex: 0 0 52px; border-radius: 10px; border: 1px solid var(--line); background: #fff; object-fit: contain; padding: 3px; margin: 0; }
+  .ev .tc-noimg { display: flex; align-items: center; justify-content: center; background: rgba(59,85,217,.08); border-color: transparent; }
+  .ev .tc-noimg svg { width: 24px; height: 24px; fill: none; stroke: var(--c-tourn); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .ev .tc-title { flex: 1; min-width: 0; }
+  .ev .tc-name { font-family: var(--display); font-size: 1.5rem; letter-spacing: .03em; color: var(--navy); line-height: 1.05; overflow-wrap: break-word; }
+  .ev .tc-status { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-top: 5px; }
+  .ev .tc-status:empty { display: none; }
+  .ev .tc-status .regpill { margin: 0; }
+  .ev .tc-assoc { flex: 0 0 auto; align-self: flex-start; background: var(--navy); color: #fff; font-size: .7rem; font-weight: 800; letter-spacing: .08em; padding: 4px 9px; border-radius: 6px; }
+  .ev .tc-meta { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: .9rem; color: #5f5a6a; }
+  .ev .tc-meta span { display: inline-flex; align-items: center; gap: 6px; min-width: 0; }
+  .ev .tc-meta svg { width: 15px; height: 15px; flex: 0 0 15px; fill: none; stroke: var(--red); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .ev .tc-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .ev .tc-btn, .ev .tc-btn:hover, .ev .tc-btn:focus { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 8px; font-size: .84rem; font-weight: 700; line-height: 1.1; text-decoration: none !important; background: rgba(16,4,90,.06) !important; color: var(--navy) !important; -webkit-text-fill-color: var(--navy); box-shadow: none !important; transition: transform .15s ease, background .15s ease; }
+  .ev .tc-btn:hover { transform: translateY(-1px); background: rgba(16,4,90,.11) !important; }
+  .ev .tc-btn svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .ev .tc-btn.reg, .ev .tc-btn.reg:hover { background: var(--red) !important; color: #fff !important; -webkit-text-fill-color: #fff; }
+  .ev .tc-btn.reg:hover { background: #9a2626 !important; }
+  .ev .tc-btn.det, .ev .tc-btn.det:hover { background: var(--navy) !important; color: #fff !important; -webkit-text-fill-color: #fff; }
+  .ev .tc-btn.det:hover { background: #1a0a6e !important; }
+  .ev .tc-note { font-size: .82rem; color: #7a7682; }
+  @media (max-width: 600px) {
+    .ev .tc-date { flex-basis: 56px; padding: 12px 2px; }
+    .ev .tc-date .m { font-size: .68rem; letter-spacing: .1em; }
+    .ev .tc-date .d { font-size: 1.9rem; }
+    .ev .tc-date .y { font-size: .62rem; }
+    .ev .tc-body { padding: 13px 12px; gap: 9px; }
+    .ev .tc-top { align-items: flex-start; gap: 10px; flex-wrap: wrap; }
+    .ev .tc-logo { width: 38px; height: 38px; flex-basis: 38px; }
+    .ev .tc-name { font-size: 1.25rem; }
+    .ev .tc-assoc { font-size: .62rem; padding: 3px 7px; }
+    .ev .tl-wk { flex-wrap: wrap; row-gap: 4px; }
+    .ev .tl-wk b { white-space: nowrap; }
+    .ev .tc-meta { font-size: .84rem; gap: 4px 14px; }
+    .ev .tc-actions .tc-btn { flex: 1 1 auto; justify-content: center; }
+  }
+  /* Spotlight: buttons line up with the countdown above them */
+  .ev .spot .count, .ev .spot .btns { width: 100%; max-width: 600px; }
+  .ev .spot .btns { display: grid !important; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 10px; }
+  .ev .spot .btns .btn { width: 100%; justify-content: center; text-align: center; margin: 0 !important; min-height: 48px; padding: 10px 12px; white-space: normal; line-height: 1.15; }
+  @media (max-width: 560px) { .ev .spot .btns { grid-auto-flow: row; } }
+  /* 50th banner: just the banner, at the bottom */
+  .ev .b50wrap { margin-top: 34px; margin-bottom: 6px; }
+  .ev .b50wrap { text-align: center; }
+  .ev .banner.b50 { display: block; width: 100%; max-width: 760px; margin: 0 auto !important; border-radius: 0; background: none !important; box-shadow: none !important; overflow: visible; }
+  .ev .banner.b50 img { width: 100%; height: auto; margin: 0 auto; }
+  /* Tabs instead of filters */
+  .ev .tl-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
+  .ev .tt, .ev .tt:hover, .ev .tt:focus { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--line) !important; background: #fff !important; color: var(--navy) !important; -webkit-text-fill-color: var(--navy); border-radius: 50px; padding: 8px 15px; font: 700 .86rem var(--body); line-height: 1.1; cursor: pointer; box-shadow: none !important; transition: border-color .15s ease, transform .15s ease; }
+  .ev .tt:hover { border-color: var(--navy) !important; transform: translateY(-1px); }
+  .ev .tt i { font-style: normal; font-size: .72rem; font-weight: 800; background: rgba(16,4,90,.08); color: var(--navy); border-radius: 50px; padding: 2px 7px; }
+  .ev .tt[aria-selected="true"], .ev .tt[aria-selected="true"]:hover { background: var(--navy) !important; border-color: var(--navy) !important; color: #fff !important; -webkit-text-fill-color: #fff; }
+  .ev .tt[aria-selected="true"] i { background: rgba(255,255,255,.18); color: #fff; }
+  .ev .tt.open[aria-selected="true"], .ev .tt.open[aria-selected="true"]:hover { background: var(--red) !important; border-color: var(--red) !important; }
+  /* Two tournaments per row when there is room; one column when zoomed in or on phones */
+  .ev #tlist { container-type: inline-size; container-name: tl; }
+  .ev .tl-grid { grid-template-columns: 1fr !important; gap: 12px; }
+  @container tl (min-width: 820px) {
+    .ev .tl-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 14px; }
+    .ev .tc-date { flex-basis: 84px; }
+    .ev .tc-date .d { font-size: 2.3rem; }
+    .ev .tc-body { padding: 14px 16px; gap: 8px; }
+    .ev .tc-top { gap: 12px; }
+    .ev .tc-logo { width: 46px; height: 46px; flex-basis: 46px; }
+    .ev .tc-name { font-size: 1.3rem; }
+    .ev .tc-meta { flex-direction: column; gap: 3px; font-size: .86rem; }
+    .ev .tc-btn, .ev .tc-btn:hover, .ev .tc-btn:focus { padding: 7px 12px; font-size: .8rem; }
+  }
+  .ev .tc-actions { margin-top: auto; }
+  .ev .tc-wk { display: inline-flex; align-items: center; gap: 4px; background: rgba(237,195,44,.22); color: #7a5c00; border: 1px solid rgba(237,195,44,.55); border-radius: 50px; padding: 2px 9px; font-size: .72rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+  .ev .tc-wk b { color: var(--navy); }
+  .ev .tl-more { margin-top: 20px !important; }
+  @container tl (min-width: 820px) { .ev .tc .lbl-l { display: none; } }
+  /* Petite tournament cards: a grid of small cards, as many per row as fit */
+  .ev .tl-grid { grid-template-columns: repeat(auto-fill, minmax(232px, 1fr)) !important; gap: 12px !important; }
+  .ev .tl-wk { margin: 14px 0 0 !important; }
+  .ev .pc { position: relative; display: flex; flex-direction: column; gap: 6px; min-width: 0; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--c-tourn); border-radius: 12px; padding: 12px 12px 12px; box-shadow: 0 3px 12px rgba(16,4,90,.06); transition: transform .2s ease, box-shadow .2s ease; }
+  .ev .pc:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(16,4,90,.12); }
+  .ev .pc.soon { border-color: var(--gold); border-top-color: var(--gold); box-shadow: 0 0 0 1px var(--gold), 0 8px 20px rgba(237,195,44,.18); }
+  .ev .pc-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+  .ev .pc-date { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 48px; height: 50px; border-radius: 9px; background: var(--navy); line-height: 1; position: relative; }
+  .ev .pc.npm .pc-date::after { content: ''; position: absolute; top: 4px; right: 4px; width: 4px; height: 4px; border-radius: 50%; background: var(--gold); opacity: .8; }
+  .ev .pc-date .m { color: var(--gold); font-size: .62rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+  .ev .pc-date .d { color: #fff; font-family: var(--display); font-size: 1.6rem; margin-top: 2px; }
+  .ev .pc .pc-logo { width: 50px; height: 50px; flex: 0 0 50px; border-radius: 9px; padding: 3px; }
+  .ev .pc-assoc { align-self: flex-start; background: rgba(16,4,90,.07); color: var(--navy); font-size: .62rem; font-weight: 800; letter-spacing: .08em; padding: 2px 7px; border-radius: 5px; margin-top: 2px; }
+  .ev .pc-name { margin: 0; font-family: var(--display); font-weight: 400; font-size: 1.18rem; letter-spacing: .03em; line-height: 1.08; color: var(--navy); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .ev .pc-meta { margin: 0; font-size: .8rem; font-weight: 600; color: #4a4650; line-height: 1.3; }
+  .ev .pc-ages { margin: 0; font-size: .74rem; color: #77737e; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ev .pc-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .ev .pc-tags:empty { display: none; }
+  .ev .pc-tags .regpill, .ev .pc-tags .tc-wk { margin: 0; font-size: .64rem; padding: 2px 7px; }
+  .ev .pc-btns { display: flex; gap: 6px; margin-top: auto; padding-top: 4px; align-items: stretch; }
+  .ev .pc-btn, .ev .pc-btn:hover, .ev .pc-btn:focus { flex: 1 1 auto; display: inline-flex; align-items: center; justify-content: center; padding: 7px 8px; border-radius: 7px; font-size: .78rem; font-weight: 700; line-height: 1.1; text-decoration: none !important; box-shadow: none !important; background: var(--navy) !important; color: #fff !important; -webkit-text-fill-color: #fff; transition: background .15s ease; }
+  .ev .pc-btn.reg, .ev .pc-btn.reg:hover { background: var(--red) !important; }
+  .ev .pc-btn.reg:hover { background: #9a2626 !important; }
+  .ev .pc-btn.det:hover { background: #1a0a6e !important; }
+  .ev .pc-btn.ghost, .ev .pc-btn.ghost:hover { background: rgba(16,4,90,.07) !important; color: var(--navy) !important; -webkit-text-fill-color: var(--navy); }
+  .ev .pc-cal, .ev .pc-cal:hover { flex: 0 0 34px; display: inline-flex; align-items: center; justify-content: center; border-radius: 7px; background: rgba(16,4,90,.07) !important; color: var(--navy) !important; box-shadow: none !important; }
+  .ev .pc-cal:hover { background: rgba(16,4,90,.13) !important; }
+  .ev .pc-cal svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .ev .pc-note { margin: 0; font-size: .7rem; color: #85818c; }
+  @media (max-width: 520px) { .ev .tl-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 9px !important; } .ev .pc { padding: 10px; } .ev .pc .pc-logo { width: 40px; height: 40px; flex-basis: 40px; } .ev .pc-date { width: 42px; height: 44px; } .ev .pc-name { font-size: 1.05rem; } .ev .pc-ages { display: none; } }
+  @media (max-width: 340px) { .ev .tl-grid { grid-template-columns: 1fr !important; } }
+  /* Week-by-week boxes, same as the Highlighted Events page */
+  .ev .sv-week { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); }
+  .ev .sv-week.now { background: linear-gradient(90deg, rgba(237,195,44,.14), transparent 70%); border-radius: 16px; border-top-color: transparent; padding: 18px 14px; margin: 0 -14px; }
+  .ev .sv-when { position: sticky; top: 12px; align-self: start; }
+  .ev .sv-m { display: block; font-size: .74rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--red); }
+  .ev .sv-when > b { display: block; font-family: var(--display); font-weight: 400; font-size: 2.4rem; line-height: 1; color: var(--navy); letter-spacing: .02em; }
+  .ev .sv-now { display: inline-block; margin-top: 6px; background: var(--gold); color: var(--navy); font-size: .7rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: 3px 9px; border-radius: 50px; }
+  .ev .sv-counts { display: grid; gap: 2px; margin-top: 8px; font-size: .8rem; font-weight: 700; color: #555; }
+  .ev .sv-counts .t { color: var(--c-tourn); }
+  .ev .sv-dots { display: flex; gap: 4px; margin-top: 8px; }
+  .ev .sv-dots i { width: 10px; height: 10px; border-radius: 3px; }
+  .ev .sv-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; align-content: start; }
+  .ev .sv-card { display: flex; gap: 12px; align-items: flex-start; background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--cat); border-radius: 14px; padding: 12px; box-shadow: 0 2px 10px rgba(0,0,0,.04); transition: transform .2s ease, box-shadow .2s ease; }
+  .ev .sv-card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(16,4,90,.1); }
+  .ev .sv-card.live { box-shadow: 0 0 0 2px var(--gold), 0 8px 20px rgba(237,195,44,.2); }
+  .ev .sv-logo { width: 44px; height: 44px; flex-shrink: 0; object-fit: contain; border-radius: 10px; background: #fff; border: 1px solid var(--line); padding: 3px; margin: 0; }
+  .ev .sv-ic { width: 44px; height: 44px; flex-shrink: 0; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; background: var(--cat); }
+  .ev .sv-ic .ci { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .ev .sv-body { flex: 1; min-width: 0; display: grid; gap: 2px; }
+  .ev .sv-cat { font-size: .66rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--cat); }
+  .ev .sv-body h4 { margin: 0; font-size: .98rem; line-height: 1.25; color: var(--navy); font-weight: 800; }
+  .ev .sv-body p { margin: 0; font-size: .84rem; color: #3f3a4a; }
+  .ev .sv-body .sv-ages { font-size: .78rem; color: #6b6772; }
+  .ev .sv-body .regpill { justify-self: start; margin-top: 4px; }
+  .ev .sv-go, .ev .sv-go:hover { flex-shrink: 0; align-self: center; display: inline-flex; align-items: center; gap: 6px; background: var(--c-tourn) !important; color: #fff !important; -webkit-text-fill-color: #fff; text-decoration: none !important; font-weight: 700; font-size: .8rem; padding: 8px 12px; border-radius: 9px; }
+  .ev .sv-go.ghost, .ev .sv-go.ghost:hover { background: rgba(16,4,90,.07) !important; color: var(--navy) !important; -webkit-text-fill-color: var(--navy); }
+  .ev .sv-go svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  @media (max-width: 980px) { .ev .sv-cards { grid-template-columns: 1fr; } }
+  @media (max-width: 640px) {
+    .ev .sv-week { grid-template-columns: 1fr; gap: 10px; }
+    .ev .sv-week.now { margin: 0 -8px; padding: 16px 8px; }
+    .ev .sv-when { position: static; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+    .ev .sv-when > b { font-size: 1.9rem; }
+    .ev .sv-counts { display: flex; gap: 10px; margin-top: 0; }
+    .ev .sv-dots, .ev .sv-now { margin-top: 0; }
+    .ev .sv-card { flex-wrap: wrap; }
+    .ev .sv-body { flex: 1 1 calc(100% - 60px); }
+    .ev .sv-go { flex: 1 1 100%; justify-content: center; }
+  }
+  .ev .sv-card.npm .sv-logo, .ev .sv-card.npm .sv-ic { box-shadow: 0 0 0 0 transparent; }
+  .ev #tlist .tl-tabs { margin-bottom: 6px; }
+  /* Tournament cards: the same cards as the homepage Highlighted Events */
+  .ev .hc { margin-top: 30px; }
+  .ev .hc-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .ev .hk, .ev .hk:hover { position: relative; display: flex; flex-direction: column; min-width: 0; background: #fff !important; border-radius: 18px; overflow: hidden; text-decoration: none !important; color: var(--ink) !important; box-shadow: 0 14px 30px rgba(16,4,90,.14), 0 2px 6px rgba(16,4,90,.06); transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease; animation: hkIn .6s cubic-bezier(.2,.8,.2,1) both; animation-delay: calc(var(--i) * 70ms); }
+  .ev .hk:hover { transform: translateY(-6px) scale(1.015); box-shadow: 0 26px 46px rgba(16,4,90,.22), 0 0 0 2px var(--cat); }
+  @keyframes hkIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  .ev .hk-top { display: flex; align-items: center; gap: 8px; background: var(--cat); color: #fff; font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; padding: 9px 14px; }
+  .ev .hk-top em { margin-left: auto; font-style: normal; background: rgba(255,255,255,.22); border-radius: 50px; padding: 2px 9px; letter-spacing: .04em; }
+  .ev .hk-ic .ci { width: 15px; height: 15px; fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; display: block; }
+  .ev .hk-body { display: flex; gap: 12px; align-items: flex-start; padding: 14px 14px 10px; flex: 1; }
+  .ev .hk-d { flex-shrink: 0; width: 56px; border-radius: 12px; background: var(--navy); color: #fff; text-align: center; padding: 7px 0 6px; font-family: var(--display); font-size: 2rem; line-height: .95; box-shadow: 0 6px 14px rgba(16,4,90,.25); }
+  .ev .hk-d b { display: block; font-family: var(--body); font-size: .62rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+  .ev .hk-d small { display: block; font-family: var(--body); font-size: .6rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.7); margin-top: 3px; }
+  .ev .hk-t { flex: 1; min-width: 0; display: grid; gap: 3px; }
+  .ev .hk-t strong { font-size: .98rem; line-height: 1.25; color: var(--navy); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .ev .hk-t small { font-size: .8rem; color: #555; }
+  .ev .hk-t .regpill { justify-self: start; margin-top: 3px; }
+  .ev .hk-logo { width: 38px; height: 38px; flex-shrink: 0; object-fit: contain; border-radius: 8px; border: 1px solid var(--line); background: #fff; padding: 2px; margin: 0; }
+  .ev .hk-go { display: flex; justify-content: space-between; align-items: center; margin: 0 14px 14px; padding-top: 10px; border-top: 1px solid var(--line); font-size: .82rem; font-weight: 800; color: var(--cat); }
+  .ev .hk-go i { font-style: normal; display: inline-flex; width: 28px; height: 28px; border-radius: 50%; align-items: center; justify-content: center; background: var(--cat); color: #fff; transition: transform .25s ease; }
+  .ev .hk:hover .hk-go i { transform: translateX(4px); }
+  @media (prefers-reduced-motion: reduce) { .ev .hk { animation: none; } }
+  @media (max-width: 980px) { .ev .hc-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 600px) { .ev .hc-list { grid-template-columns: 1fr; } }
+  .ev #tlist .hc-list { margin-top: 10px; }
+  .ev #tlist .tl-wk { margin: 22px 0 0 !important; }
+  .ev #tlist .tl-wk:first-of-type { margin-top: 6px !important; }
+  .ev .hk-t .hk-ages { font-size: .74rem; color: #77737e; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* Every card the same size: two-line title, one line each for date and ages, registration status in the footer */
+  .ev #tlist .hk-t strong { min-height: 2.5em; }
+  .ev #tlist .hk-t small { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ev #tlist .hk-go { gap: 10px; min-height: 38px; }
+  .ev #tlist .hk-go-l { display: flex; align-items: center; gap: 8px; min-width: 0; flex-wrap: nowrap; }
+  .ev #tlist .hk-go-l .regpill { margin: 0; white-space: nowrap; font-size: .66rem; padding: 3px 8px; }
+  .ev #tlist .hk-go i { flex: 0 0 28px; }
+  .ev .hk.wk, .ev .hk.wk:hover { box-shadow: 0 0 0 2px var(--gold), 0 14px 30px rgba(237,195,44,.22); }
+  .ev .hk-d { font-size: 2rem; }
+  .ev .tt.past[aria-selected="true"], .ev .tt.past[aria-selected="true"]:hover { background: #6d6a75 !important; border-color: #6d6a75 !important; }
+  .ev .hk.past { opacity: .92; }
+  .ev .hk.past .hk-d { background: #4a4652; }
+  .ev .tl-showmore, .ev .tl-showmore:hover, .ev .tl-showmore:focus { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; max-width: 420px; margin: 24px auto 0; height: 48px; padding: 0 20px; line-height: 1; border: 1px solid var(--navy) !important; border-radius: 50px; background: #fff !important; color: var(--navy) !important; -webkit-text-fill-color: var(--navy); font: 800 .92rem var(--body); cursor: pointer; box-shadow: 0 6px 16px rgba(16,4,90,.08) !important; transition: transform .15s ease, box-shadow .15s ease; }
+  .ev .tl-showmore:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(16,4,90,.14) !important; }
+  .ev .tl-showmore i { font-style: normal; font-size: .74rem; font-weight: 800; background: rgba(16,4,90,.08); border-radius: 50px; padding: 3px 9px; }
+  .ev a.btn.tl-more, .ev a.btn.tl-more:hover, .ev a.btn.tl-more:focus { display: flex !important; align-items: center; justify-content: center; width: 100%; max-width: 420px; margin: 12px auto 0 !important; height: 48px; padding: 0 20px; line-height: 1; border: 1px solid var(--red) !important; border-radius: 50px; font: 800 .92rem var(--body); box-shadow: 0 6px 16px rgba(184,47,47,.18) !important; transition: transform .15s ease, box-shadow .15s ease; }
+  .ev a.btn.tl-more:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(184,47,47,.26) !important; }
+  .ev .tl-showmore svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+  /* tabs fill each row edge to edge */
+  .ev #tlist .tl-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+  .ev #tlist .tt, .ev #tlist .tt:hover, .ev #tlist .tt:focus { flex: 1 1 auto; justify-content: center; }
+  /* Show more and PlayMetrics buttons: same pill shape in every state (theme styles overridden) */
+  .ev #tlist .tl-showmore, .ev #tlist .tl-showmore:hover, .ev #tlist .tl-showmore:focus, .ev #tlist .tl-showmore:active,
+  .ev #tlist a.btn.tl-more, .ev #tlist a.btn.tl-more:hover, .ev #tlist a.btn.tl-more:focus, .ev #tlist a.btn.tl-more:active {
+    border-radius: 50px !important; height: 48px !important; min-height: 48px !important; width: 100% !important; max-width: 420px !important;
+    padding: 0 22px !important; margin-left: auto !important; margin-right: auto !important; line-height: 1 !important;
+    font: 800 .92rem var(--body) !important; letter-spacing: .01em !important; text-transform: none !important; text-decoration: none !important;
+    display: flex !important; align-items: center !important; justify-content: center !important; gap: 10px !important; outline-offset: 3px;
+    transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, color .18s ease, border-color .18s ease !important; }
+  .ev #tlist .tl-showmore, .ev #tlist .tl-showmore:focus { background: #fff !important; color: var(--navy) !important; -webkit-text-fill-color: var(--navy); border: 2px solid var(--navy) !important; box-shadow: 0 6px 16px rgba(16,4,90,.08) !important; }
+  .ev #tlist .tl-showmore:hover { background: var(--navy) !important; color: #fff !important; -webkit-text-fill-color: #fff; border-color: var(--navy) !important; transform: translateY(-2px) !important; box-shadow: 0 12px 24px rgba(16,4,90,.22) !important; }
+  .ev #tlist .tl-showmore:hover i { background: rgba(255,255,255,.18); color: #fff; }
+  .ev #tlist .tl-showmore:hover svg { transform: translateY(2px); }
+  .ev #tlist .tl-showmore svg { transition: transform .18s ease; }
+  .ev #tlist a.btn.tl-more, .ev #tlist a.btn.tl-more:focus { background: var(--red) !important; color: #fff !important; -webkit-text-fill-color: #fff; border: 2px solid var(--red) !important; box-shadow: 0 6px 16px rgba(184,47,47,.18) !important; }
+  .ev #tlist a.btn.tl-more:hover { background: #fff !important; color: var(--red) !important; -webkit-text-fill-color: var(--red); border-color: var(--red) !important; transform: translateY(-2px) !important; box-shadow: 0 12px 24px rgba(184,47,47,.22) !important; }
+  .ev #tlist .tl-showmore:active, .ev #tlist a.btn.tl-more:active { transform: translateY(0) scale(.98) !important; }
+  /* Dashboard cards: clean rounded corners like the stat cards */
+  @media (min-width: 961px) {
+    .ev .dash { filter: none !important; }
+    .ev .dash .spot, .ev .dash .side .mini { -webkit-mask-image: none !important; mask-image: none !important; border-radius: 24px !important; overflow: hidden; border: 1px solid rgba(16,4,90,.06); box-shadow: inset 0 3px 0 rgba(255,255,255,.9), 0 14px 34px rgba(16,4,90,.14), 0 2px 6px rgba(16,4,90,.06) !important; }
+    .ev .dash .spot::after, .ev .dash .side .mini::after { border-radius: inherit; background: radial-gradient(ellipse 80% 90% at 50% 40%, rgba(255,255,255,0) 60%, rgba(16,4,90,.05) 100%) !important; }
+  }
+  /* This Week list fits its box at any zoom: no side scrollbar */
+  .ev .spot .wk-list { overflow-x: hidden !important; min-width: 0; }
+  .ev .spot .wk-row, .ev .spot .wk-row:hover { transform: none !important; min-width: 0; max-width: 100%; }
+  .ev .spot .wk-t { min-width: 0; flex: 1 1 auto; }
+  .ev .spot .wk-t * { overflow-wrap: anywhere; }
+  .ev .spot, .ev .dash > * { min-width: 0; }
+  /* Translation safe: longer words wrap inside their boxes */
+  .ev .mini { min-width: 0; }
+  .ev .mini .txt { flex: 1 1 0; min-width: 0; }
+  .ev .mini .txt, .ev .mini .txt * { overflow-wrap: break-word; }
+  .ev .mini .big { flex: 0 0 auto; max-width: 96px; min-width: 70px; text-align: center; }
+  .ev .mini .big small { display: block; white-space: normal; overflow-wrap: anywhere; line-height: 1.15; }
+  .ev .count > div { min-width: 0; }
+  .ev .count small { display: block; white-space: normal; overflow-wrap: anywhere; line-height: 1.15; }
+</style>
+<div class="ev" id="ev">
+  <section class="hero">
+    <svg class="field" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="2"><line x1="600" y1="0" x2="600" y2="400"/><circle cx="600" cy="200" r="92"/><circle cx="600" cy="200" r="4" fill="#fff"/><rect x="-2" y="70" width="170" height="260"/><rect x="-2" y="135" width="62" height="130"/><path d="M168 150 a70 70 0 0 1 0 100"/><rect x="1032" y="70" width="170" height="260"/><rect x="1140" y="135" width="62" height="130"/><path d="M1032 150 a70 70 0 0 0 0 100"/></g></svg>
+    <div class="hero-in">
+      <div class="pills"><span class="pill"><i></i>2026–27 Season</span></div>
+      <h1>NCYSA <span>Sanctioned</span> Tournaments</h1>
+      <p class="hero-sub">Every NCYSA sanctioned tournament in North Carolina, in one place. Check dates and age groups, see when registration closes and register. Updated throughout the day from PlayMetrics.</p>
+      <div class="divider"></div>
+      <div class="alert" id="ev-alert" role="status" hidden></div>
+    </div>
+  </section>
+  <div class="wrap">
+    <div class="dash">
+      <article class="spot" id="spot" aria-live="polite"></article>
+      <div class="side">
+        <div class="mini">
+          <div class="ico" style="background: var(--c-deadline)" title="Registration"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M5 3 2 6M19 3l3 3"/></svg></div>
+          <div class="mbody" id="m-deadline"></div>
+        </div>
+        <div class="mini">
+          <div class="ico" style="background: var(--c-meeting)" title="This month"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+          <div class="mbody" id="m-monthly"></div>
+        </div>
+        <div class="mini" id="m-tourn-card">
+          <div class="ico" style="background: var(--c-tourn)" title="Sanctioned Tournaments"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></div>
+          <div class="mbody" id="m-tourn"></div>
+        </div>
+      </div>
+    </div>
+    <div class="tabbar" id="tabbar">
+    <div class="tabs" role="tablist">
+      <button type="button" role="tab" class="tab" id="tab-tourn" aria-selected="true" aria-controls="tournaments"><span class="tw">Sanctioned </span>Tournaments</button>
+      <button type="button" role="tab" class="tab" id="tab-dates" aria-selected="false" aria-controls="panel-dates" hidden>Key Dates</button>
+    </div>
+    <div class="mini-next" id="mini-next" aria-hidden="true"></div>
+    </div>
+    <section class="pmw" aria-label="Sanctioned tournaments" id="tournaments" role="tabpanel">
+      <div class="pm">
+        <div class="trophy"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></div>
+        <div class="t">
+          <h2>Sanctioned Tournaments</h2>
+          <p>Every NCYSA sanctioned tournament, updated throughout the day from PlayMetrics. Register right from the list.</p>
+        </div>
+        <div class="acts">
+          <a class="btn gold" href="https://playmetricssports.com/g/tournaments/138/North-Carolina" target="_blank" rel="noopener">Search on PlayMetrics <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          <a class="btn line" href="https://www.ncsoccer.org/tournaments-overview/" target="_blank" rel="noopener">Host a Tournament</a>
+        </div>
+      </div>
+      <div class="tlist" id="tlist"></div>
+      <div class="pm-panel">
+        <div class="pm-bar"><span class="pm-live"><i></i>Live from PlayMetrics</span><span class="pm-hint">Scroll inside the panel to see every tournament</span></div>
+        <!-- On ncsoccer.org the live PlayMetrics list loads here. --pm-crop hides PlayMetrics' own header (set after a live preview). -->
+        <div class="pm-frame" id="pm-frame" data-src="https://playmetricssports.com/g/tournaments/138/North-Carolina"></div>
+      </div>
+    </section>
+    <section class="sec" aria-labelledby="season-h" id="panel-dates" role="tabpanel" hidden style="display:none">
+      <div class="sec-head">
+        <div>
+                    <h2 class="st" id="season-h">Month by Month</h2>
+        </div>
+      </div>
+      <div class="months" id="months"></div>
+      <div class="key" id="key" aria-label="What the icons and colors mean"></div>
+      <div class="tools">
+        <label class="search" for="ev-q"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="ev-q" type="search" placeholder="Search dates" autocomplete="off"></label>
+        <select class="sel" id="ev-cat" aria-label="Category"></select>
+      </div>
+      <div class="status"><span id="ev-status"></span><button class="linkbtn" id="ev-reset" type="button" hidden>Clear filters</button></div>
+      <div id="ev-list"></div>
+      <div class="pastbar"><button class="btn ghost" id="ev-past" type="button"></button></div>
+    </section>
+  </div>
+  <div class="wrap b50wrap">
+    <a class="banner b50" href="https://www.ncsoccer.org/" aria-label="NC Youth Soccer 50th Anniversary"><img src="https://www.ncsoccer.org/wp-content/uploads/sites/167/2026/08/banner-50th-2000.png" alt="NC Youth Soccer 50th Anniversary"></a>
+  </div>
+  <section class="close">
+    <h2>Questions About a Tournament?</h2>
+    <p>Contact the NCYSA State Office about a sanctioned tournament, or learn how to host one.</p>
+    <div class="btns">
+      <a class="btn red" href="mailto:info@ncsoccer.org">Email info@ncsoccer.org</a>
+      <a class="btn line" href="https://www.ncsoccer.org/hosting-an-event-overview/" target="_blank" rel="noopener">Host a Tournament</a>
+      <a class="btn line" href="https://www.ncsoccer.org/ncysa-calendar/" target="_blank" rel="noopener">NCYSA Calendar &amp; Events</a>
+    </div>
+  </section>
+</div>
+<script>
+(function () {
+  var ROOT = (function () { var sc = document.currentScript, n = sc ? sc.previousElementSibling : null; while (n ? !(n.classList ? n.classList.contains('ev') : false) : false) n = n.previousElementSibling; return n || document.getElementById('ev'); })();
+  var CATS = {
+    meeting:  { name: 'Meetings and Governance', c: 'var(--c-meeting)' },
+    statecup: { name: 'State Cup', c: 'var(--c-statecup)' },
+    academy:  { name: 'Youth Academy', c: 'var(--c-academy)' },
+    classic:  { name: 'Classic League', c: 'var(--c-classic)' },
+    odp:      { name: 'ODP', c: 'var(--c-odp)' },
+    coaching: { name: 'Coaching Education', c: 'var(--c-coaching)' },
+    deadline: { name: 'Deadlines', c: 'var(--c-deadline)' },
+    office:   { name: 'Office Closed', c: 'var(--c-office)' },
+    tourn:    { name: 'Sanctioned Tournaments', c: 'var(--c-tourn)' }
+  };
+  /* Source: NCYSA 2026-27 Calendar. s = start, e = end, dl = counts as a deadline, f = featured in spotlight,
+     label = how the date reads when it is not a simple range, tba = date not set. */
+  var ICONS = {
+    meeting: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+    statecup: '<circle cx="12" cy="9" r="6"/><path d="M8.5 13.9 7 22l5-3 5 3-1.5-8.1"/>',
+    academy: '<circle cx="12" cy="12" r="9"/><path d="m12 7 4 3-1.5 4.5h-5L8 10z"/>',
+    classic: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+    odp: '<path d="M22 7l-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/>',
+    coaching: '<rect x="5" y="4" width="14" height="18" rx="2"/><path d="M9 2h6v4H9zM9 12h6M9 16h4"/>',
+    deadline: '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M5 3 2 6M19 3l3 3"/>',
+    office: '<path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/>',
+    tourn: '<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/>'
+  };
+  function ico(k) { return '<svg class="ci" viewBox="0 0 24 24" aria-hidden="true">' + ICONS[k] + '</svg>'; }
+  var EVENTS = [];  /* tournaments only on this page; filled from the feed */;
+  var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var MONL = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var DOW = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var SEASON_START = new Date(2026, 7, 1), SEASON_END = new Date(2027, 6, 31, 23, 59, 59);
+  var DAY = 864e5;
+  function d(iso) { var p = iso.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
+  function endOf(dt) { return new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 23, 59, 59); }
+  /* No ampersand characters in this script: WordPress can rewrite them and break links. */
+  var AMP = String.fromCharCode(38);
+  function all() { for (var i = 0; i < arguments.length; i++) { if (!arguments[i]) return false; } return true; }
+  function esc(s) { var t = document.createElement('div'); t.textContent = String(s); return t.innerHTML.split('"').join(AMP + 'quot;'); }
+  function ymd(dt) { return dt.getFullYear() + String(dt.getMonth() + 1).padStart(2, '0') + String(dt.getDate()).padStart(2, '0'); }
+  function prep(x) {
+    if (x.tba) return x;
+    x.start = d(x.s); x.end = endOf(x.e ? d(x.e) : d(x.s));
+    x.mkey = x.start.getFullYear() * 12 + x.start.getMonth();
+    x.due = x.dl ? x.end : x.start;
+    return x;
+  }
+  EVENTS.forEach(prep);
+  /* Whole calendar days from today to a date: tomorrow is 1, no matter the time of day */
+  function calDays(dt) { var n = new Date(); return Math.round((new Date(dt.getFullYear(), dt.getMonth(), dt.getDate()) - new Date(n.getFullYear(), n.getMonth(), n.getDate())) / DAY); }
+  /* Spotlight order: soonest first; on the same day, lower p wins (1 State Cup and AGM, 2 Youth Academy, 3 Classic League) */
+  function byPriority(a, b) { return (a.start - b.start) || ((a.p || 5) - (b.p || 5)); }
+  function daysTo(iso) { var n = new Date(); return Math.round((d(iso) - new Date(n.getFullYear(), n.getMonth(), n.getDate())) / DAY); }
+  function closesText(cd) { return cd === 0 ? 'Registration closes today' : cd === 1 ? 'Registration closes tomorrow' : 'Registration closes in ' + cd + ' days'; }
+  function rangeText(x) {
+    if (x.label) return x.label;
+    var a = x.start, b = x.end;
+    if (!x.e || a.toDateString() === b.toDateString()) return DOW[a.getDay()] + ', ' + MON[a.getMonth()] + ' ' + a.getDate();
+    if (a.getMonth() === b.getMonth()) return MON[a.getMonth()] + ' ' + a.getDate() + '–' + b.getDate();
+    return MON[a.getMonth()] + ' ' + a.getDate() + ' – ' + MON[b.getMonth()] + ' ' + b.getDate();
+  }
+  function rel(x, now) {
+    if (x.tba) return { t: 'Date TBA', k: '' };
+    if (now > x.end) return { t: 'Past', k: 'done' };
+    if (now >= x.start) return { t: 'Happening now', k: 'now' };
+    var days = calDays(x.start);
+    if (days <= 1) return { t: 'Tomorrow', k: 'soon' };
+    if (days <= 14) return { t: 'In ' + days + ' days', k: 'soon' };
+    if (days <= 60) return { t: 'In ' + Math.round(days / 7) + ' weeks', k: '' };
+    return { t: 'In ' + Math.round(days / 30.4) + ' months', k: '' };
+  }
+  function gcal(x) {
+    var endExcl = new Date(x.end.getFullYear(), x.end.getMonth(), x.end.getDate() + 1);
+    return 'https://calendar.google.com/calendar/render?action=TEMPLATE' + AMP + 'text=' + encodeURIComponent(x.t) +
+      AMP + 'dates=' + ymd(x.start) + '/' + ymd(endExcl) +
+      AMP + 'details=' + encodeURIComponent('NCYSA 2026–27 calendar. www.ncsoccer.org') +
+      (x.loc ? AMP + 'location=' + encodeURIComponent(x.loc + ', NC') : '');
+  }
+  function thirdWed(y, m) { var f = new Date(y, m, 1); var off = (3 - f.getDay() + 7) % 7; return new Date(y, m, 1 + off + 14, 12, 0, 0); }
+  var calIcon = '<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M12 14v4M10 16h4"/></svg>';
+  var pinIcon = '<svg viewBox="0 0 24 24"><path d="M12 22s7-7.6 7-13a7 7 0 0 0-14 0c0 5.4 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>';
+  var dayIcon = '<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>';
+  var state = { cat: 'all', month: null, q: '', showPast: false };
+  var $ = function (id) { return ROOT.id === id ? ROOT : ROOT.querySelector('#' + id); };
+  /* Season rail in the hero */
+  function drawRail(now) {
+    var total = SEASON_END - SEASON_START, pct = Math.max(0, Math.min(1, (now - SEASON_START) / total));
+    var dayNum = Math.max(1, Math.ceil((now - SEASON_START) / DAY));
+    $('rail-fill').style.width = (pct * 100).toFixed(2) + '%';
+    $('rail-pct').innerHTML = 'Day <b>' + Math.min(dayNum, 365) + '</b> of 365 \u00b7 <b>' + Math.round(pct * 100) + '%</b> complete';
+    var html = '';
+    EVENTS.forEach(function (x) {
+      if (!x.f || x.tba) return;
+      var p = (x.start - SEASON_START) / total * 100;
+      html += '<span class="rail-pin big" style="left:' + p.toFixed(2) + '%" title="' + esc(x.t) + '"></span>';
+    });
+    html += '<span class="rail-now" style="left:' + (pct * 100).toFixed(2) + '%" title="Today"></span>';
+    $('rail-track').insertAdjacentHTML('beforeend', html);
+    var m = '';
+    for (var i = 0; i < 12; i++) {
+      var mi = (7 + i) % 12, y = i < 5 ? 2026 : 2027;
+      var on = all(now.getFullYear() === y, now.getMonth() === mi);
+      m += '<span' + (on ? ' class="on"' : '') + '>' + MON[mi] + '</span>';
+    }
+    $('rail-months').innerHTML = m;
+  }
+  /* Weekend key: the Saturday of the weekend a tournament starts in (Fri, Sat and Sun share one key) */
+  function wkSat(dt) { var g = dt.getDay(), off = g === 5 ? 1 : g === 0 ? -1 : (6 - g); return new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + off); }
+  function wkKey(dt) { var s = wkSat(dt); return s.getFullYear() * 10000 + s.getMonth() * 100 + s.getDate(); }
+  function wkLabel(list) {
+    var a = list[0].start, b = list[0].end;
+    list.forEach(function (x) { if (x.start < a) a = x.start; if (x.end > b) b = x.end; });
+    var same = a.getMonth() === b.getMonth();
+    return MON[a.getMonth()] + ' ' + a.getDate() + '\u2013' + (same ? '' : MON[b.getMonth()] + ' ') + b.getDate();
+  }
+  function upcoming(now) { return TOURNAMENTS.map(function (x) { x.start = d(x.s); x.end = endOf(d(x.e || x.s)); return x; }).filter(function (x) { return x.end >= now; }).sort(function (a, b) { return a.start - b.start; }); }
+  function weekends(now) { var out = [], idx = {}; upcoming(now).forEach(function (x) { var k = wkKey(x.start); if (idx[k] === undefined) { idx[k] = out.length; out.push({ k: k, list: [] }); } out[idx[k]].list.push(x); }); return out; }
+  /* Small status chip on a card: happening now, this weekend, or starts in N days */
+  function whenChip(x, now) {
+    var a = calDays(x.start), live = all(now >= x.start, now <= x.end);
+    if (live) return '<span class="when live">Happening now</span>';
+    if (wkKey(x.start) === wkKey(now) || a <= 3) return '<span class="when wk">This weekend</span>';
+    if (a <= 14) return '<span class="when">Starts in ' + a + ' days</span>';
+    return '';
+  }
+  /* Spotlight and side cards */
+  function drawSpot(now) {
+    var wks = weekends(now), el = $('spot');
+    if (!wks.length) { el.innerHTML = '<div class="eyebrow"><span>Season complete</span></div><h2>See you in 2027\u201328</h2>'; return; }
+    var cur = wks[0].list, next = cur[0], live = now >= next.start, many = cur.length > 1;
+    var head = many
+      ? '<div class="eyebrow"><span>' + (live ? 'This Tournament Weekend' : 'Next Tournament Weekend') + '</span><span class="wkcount">' + cur.length + ' tournaments</span></div><h2>' + wkLabel(cur) + ', ' + next.start.getFullYear() + '</h2>'
+      : '<div class="eyebrow"><span>Next Tournament</span></div><h2>' + esc(next.t) + '</h2><div class="spot-meta"><span>' + dayIcon + rangeText(next) + ', ' + next.start.getFullYear() + '</span>' + (next.loc ? '<span>' + pinIcon + esc(next.loc) + '</span>' : '') + '</div>';
+    var rows = many ? '<div class="wk-list">' + cur.map(function (x) {
+      var pill = ''; if (x.close) { var cd = daysTo(x.close); if (cd >= 0) pill = '<span class="regpill sm' + (cd <= 7 ? ' hot' : '') + '">' + closesText(cd) + '</span>'; }
+      var go = x.reg ? '<a class="wk-go" href="' + esc(x.reg) + '" target="_blank" rel="noopener">Register</a>' : (x.nc ? '<a class="wk-go ghost" href="' + esc(x.nc) + '" target="_blank" rel="noopener">Details</a>' : '');
+      var logo = x.logo ? '<img class="wk-logo" src="' + esc(x.logo) + '" alt="" loading="lazy" onerror="this.remove()">' : '';
+      return '<div class="wk-row">' + logo + '<div class="wk-t"><b>' + esc(x.t) + '</b><span>' + rangeText(x) + (x.loc ? ' \u00b7 ' + esc(x.loc) : '') + '</span>' + pill + '</div>' + go + '</div>';
+    }).join('') + '</div>' : '';
+    var single = '';
+    if (!many) { if (next.close) { var c1 = daysTo(next.close); if (c1 >= 0) single = '<span class="regpill' + (c1 <= 7 ? ' hot' : '') + '">' + closesText(c1) + '</span>'; } }
+    var after = wks.slice(1, 3);
+    el.innerHTML = head +
+      (live ? '<span class="live"><i></i>Happening now</span>' : '<div class="count" id="count"></div>') + single + rows +
+      '<div class="btns">' + (!many ? (next.reg ? '<a class="btn red" href="' + esc(next.reg) + '" target="_blank" rel="noopener">Register</a>' : (next.nc ? '<a class="btn red" href="' + esc(next.nc) + '" target="_blank" rel="noopener">Tournament details</a>' : '')) : '') +
+      '<a class="btn ghost" href="' + gcal(next) + '" target="_blank" rel="noopener">' + calIcon + 'Add to Calendar</a>' +
+      '<button class="btn ghost" type="button" id="spot-jump">All ' + MONL[next.start.getMonth()] + ' tournaments</button></div>' +
+      (after.length ? '<div class="after"><div class="also-k">Coming up after</div>' + after.map(function (w) {
+        var f = w.list[0];
+        return '<div class="after-row"><span class="after-d"><b>' + MON[f.start.getMonth()] + '</b>' + wkSat(f.start).getDate() + '</span><span class="after-t"><b>' + (w.list.length > 1 ? w.list.length + ' tournaments' : esc(f.t)) + '</b><span>' + (w.list.length > 1 ? w.list.map(function (x) { return esc(x.t.replace(/^\d{4} /, '')); }).join(' \u00b7 ') : (f.loc ? esc(f.loc) : '')) + '</span></span></div>';
+      }).join('') + '</div>' : '');
+    $('spot-jump').onclick = function () { tf.month = String(next.mkey || (next.start.getFullYear() * 12 + next.start.getMonth())); drawTList(new Date()); $('tlist').scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+    if (!live) tick(next);
+  }
+  function tick(next) {
+    var box = $('count'); if (!box) return;
+    var ms = Math.max(0, next.start - new Date());
+    var dd = Math.floor(ms / DAY), hh = Math.floor(ms % DAY / 36e5), mm = Math.floor(ms % 36e5 / 6e4), ss = Math.floor(ms % 6e4 / 1e3);
+    box.innerHTML = [[dd, 'Days'], [hh, 'Hours'], [mm, 'Minutes']].map(function (p) {
+      return '<div><b class="notranslate" translate="no">' + String(p[0]).padStart(2, '0') + '</b><small>' + p[1] + '</small></div>';
+    }).join('');
+  }
+  /* Sanctioned tournaments. On ncsoccer.org these come from the daily PlayMetrics feed; elsewhere this sample is shown. */
+  var SAMPLE_FEED = {"tournaments":[{"id":"ncysa-cvysa-autumn-blast-2026","name":"2026 CVYSA Autumn Blast","start":"2026-10-24","end":"2026-10-25","city":"Hickory, NC","ages":"U8\u2013U14 Boys \u0026 Girls / U15\u2013U19 Girls","registrationOpen":false,"registrationCloses":"2026-10-05","websiteUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/cvysa-autumn-blast-2026/","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/cvysa-autumn-blast-2026/","logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CATAWBA-VALLEY-YOUTH-SA.png","pm":false},{"id":"ncysa-2026csa-carolina-shootout-and-ya-festival","name":"2026 CSA Carolina Shootout \u0026 YA Festival","start":"2026-10-31","end":"2026-11-01","city":"Charlotte, NC","ages":"U8\u2013U10 Youth Academy / U11\u2013U19 Boys \u0026 Girls","registrationOpen":false,"registrationCloses":"2026-10-19","websiteUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026csa-carolina-shootout-and-ya-festival/","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026csa-carolina-shootout-and-ya-festival/","logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-SOCCER-ACADEMY.jpeg","pm":false},{"id":93,"name":"2026 ACFC Clashboro Fall Invitational","start":"2026-11-07","end":"2026-11-08","city":"Mebane, NC","ages":"Male U8\u2013U17, U18+ | Female U8\u2013U9, U11\u2013U17, U18+","registrationOpen":true,"registrationCloses":"2026-10-26","registerUrl":"https://soccer.sincsports.com/TTApply0.aspx?tid=CLASHFI\u0026tab=2\u0026sub=0","scheduleUrl":"https://soccer.sincsports.com/schedule.aspx?tid=CLASHFI\u0026tab=3\u0026sub=0","websiteUrl":"https://soccer.sincsports.com/TTContent.aspx?tid=CLASHFI\u0026tab=1","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-acfc-clashboro-fall-invitational/","logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/ASHEBORO-CITY-FUTBOL-CLUB.jpg"},{"id":"ncysa-2026-mysa-fall-champions-cup","name":"2026 MYSA Fall Champions Classic","start":"2026-11-07","end":"2026-11-08","city":"Mebane, NC","ages":"U8\u2013U19 Boys \u0026 Girls","registrationOpen":false,"websiteUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-mysa-fall-champions-cup/","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-mysa-fall-champions-cup/","logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/MEBANE-YOUTH-SA.jpg","pm":false},{"id":"ncysa-2026-ncfcy-visitraleigh-com-girls-jr-showcase","name":"2026 NCFCY visitRaleigh.com Girls Jr Showcase","start":"2026-11-07","end":"2026-11-08","city":"Raleigh, NC","ages":"U10\u2013U14 Girls","registrationOpen":false,"websiteUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-girls-jr-showcase/","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-girls-jr-showcase/","logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png","pm":false},{"id":"ncysa-2026-nc-fusion-adidas-clash","name":"2026 NCF Adidas Clash","start":"2026-11-13","end":"2026-11-15","city":"Greensboro, NC","ages":"U9\u2013U19 Boys \u0026 Girls","registrationOpen":false,"websiteUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-nc-fusion-adidas-clash/","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-nc-fusion-adidas-clash/","logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NC-FUSION.png","pm":false},{"id":"ncysa-2026-cisc-boys-fall-classic","name":"2026 CISC Boys Fall Classic","start":"2026-11-14","end":"2026-11-15","city":"Huntersville, NC","ages":"U11\u2013U19 Boys","registrationOpen":false,"websiteUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-cisc-boys-fall-classic/","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-cisc-boys-fall-classic/","logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-INDEPENDENCE.png","pm":false},{"id":"ncysa-2026-ncfcy-visitraleigh-com-boys-jr-showcase","name":"2026 NCFCY visitRaleigh.com Boys Jr Showcase","start":"2026-11-14","end":"2026-11-15","city":"Raleigh, NC","ages":"U10\u2013U14 Boys","registrationOpen":false,"websiteUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-boys-jr-showcase/","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-boys-jr-showcase/","logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png","pm":false},{"id":"ncysa-2026-ncfcy-visitraleigh-com-girls-college-showcase","name":"2026 NCFCY visitRaleigh.com Girls College Showcase","start":"2026-11-20","end":"2026-11-22","city":"Raleigh, NC","ages":"U15\u2013U19 Girls","registrationOpen":false,"websiteUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-girls-college-showcase/","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-girls-college-showcase/","logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png","pm":false},{"id":"ncysa-2026-cisc-girls-fall-classic","name":"2026 CISC Girls Fall Classic","start":"2026-11-21","end":"2026-11-22","city":"Huntersville, NC","ages":"U11\u2013U19 Girls","registrationOpen":false,"websiteUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-cisc-girls-fall-classic/","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-cisc-girls-fall-classic/","logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-INDEPENDENCE.png","pm":false},{"id":106,"name":"2026 WHYFC Fall Beach Classic","start":"2026-11-21","end":"2026-11-22","city":"Wilmington, NC","ages":"Male U9\u2013U15 | Female U9\u2013U17, U18+","registrationOpen":true,"registrationCloses":"2026-11-02","registerUrl":"https://soccer.sincsports.com/TTApply0.aspx?tid=BEACH\u0026tab=2\u0026sub=0","scheduleUrl":"https://soccer.sincsports.com/schedule.aspx?tid=BEACH\u0026tab=4\u0026sub=0","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-whyfc-fall-beach-classic/","logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/WILMINGTON-HAMMERHEADS-YOUTH-FC.png"},{"id":104,"name":"HFC Riverside Senior Girls Showcase","start":"2026-12-05","end":"2026-12-06","city":"Asheville, NC","ages":"Female U16\u2013U17, U18+","registrationOpen":true,"registrationCloses":"2026-11-16","registerUrl":"https://soccer.sincsports.com/register/start.aspx?tid=HFCRSG\u0026tab=6\u0026sub=0","scheduleUrl":"https://soccer.sincsports.com/schedule.aspx?tid=HFCRSG\u0026tab=2\u0026sub=1","websiteUrl":"https://soccer.sincsports.com/TTContent.aspx?tid=HFCRSG\u0026tab=1","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-abysa-riverside-sr-girls-showcase/","logo":"https://api.gb.playmetrics.com/public/gbs/1207/clubs/5781/logo"},{"id":105,"name":"2026 NCFCY visitRaleigh.com Boys College Showcase","start":"2026-12-11","end":"2026-12-13","city":"Raleigh, NC","ages":"Male U15\u2013U17, U18+","registrationOpen":true,"registrationCloses":"2026-10-20","registerUrl":"https://system.gotsport.com/event_regs/d68f5c2311","websiteUrl":"https://www.ncfcyouth.com/boys-college-showcase","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-boys-college-showcase/","logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png"},{"id":94,"name":"2027 CISC Boys College Showcase presented by Novant Health","start":"2027-01-22","end":"2027-01-24","city":"Rock Hill, SC","ages":"Male U13\u2013U17, U18+","registrationOpen":false,"registrationCloses":"2027-01-03","websiteUrl":"https://www.independencesoccer.club/boys-college-showcase","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-cisc-boys-college-showcase/","logo":"https://api.gb.playmetrics.com/public/gbs/1207/clubs/5795/logo"},{"id":95,"name":"2027 CISC Girls College Showcase Present by Novant Health","start":"2027-01-29","end":"2027-01-31","city":"Rock Hill, SC","ages":"Female U13\u2013U17, U18+","registrationOpen":false,"registrationCloses":"2027-01-10","websiteUrl":"https://www.independencesoccer.club/girls-college-showcase","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-cisc-girls-college-showcase/","logo":"https://api.gb.playmetrics.com/public/gbs/1207/clubs/5795/logo"},{"id":96,"name":"2027 ABYSA Riverside Spring Kickoff \u2013 Boys","start":"2027-01-30","end":"2027-01-31","city":"Asheville, NC","ages":"Male U10\u2013U17, U18+","registrationOpen":false,"registrationCloses":"2027-01-05","registerUrl":"https://soccer.sincsports.com/register/start.aspx?tid=ABYSA1\u0026tab=2\u0026sub=0","scheduleUrl":"https://soccer.sincsports.com/schedule.aspx?tid=ABYSA1\u0026tab=3\u0026sub=1","websiteUrl":"https://www.abysa.org/","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2027abysariversidespringkickoffboys/","logo":"https://api.gb.playmetrics.com/public/gbs/1207/clubs/5781/logo"},{"id":98,"name":"2027 MYSA Spring Shootout","start":"2027-02-05","end":"2027-02-07","city":"Mebane, NC","ages":"Male U8\u2013U17, U18+ | Female U8\u2013U17, U18+","registrationOpen":false,"registrationCloses":"2027-01-04","websiteUrl":"https://www.mebaneyouthsoccer.com/","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-mysa-spring-shootout/","logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/MEBANE-YOUTH-SA.jpg"},{"id":99,"name":"2027 PGSA Beast of the East","start":"2027-02-06","end":"2027-02-07","city":"Greenville, NC","ages":"Male U9\u2013U17, U18+ | Female U9\u2013U17, U18+","registrationOpen":false,"registrationCloses":"2027-01-09","websiteUrl":"https://pgsasoccer.com/tournaments/","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-pgsa-beast-of-the-east/","logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/PITT-GREENVILLE-SA.png"},{"id":"ncysa-2027-ccfc-go-forth-home-services-shootout-2","name":"2027 CCFC Go Forth Home Services Shootout","start":"2027-02-12","end":"2027-02-14","city":"Asheboro / High Point / Kernersville, NC","ages":"U9\u2013U14 Boys \u0026 Girls / U15\u2013U19 Boys","registrationOpen":true,"registrationCloses":"2027-01-29","websiteUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-ccfc-go-forth-home-services-shootout-2/","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-ccfc-go-forth-home-services-shootout-2/","logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CAROLINA-CORE-FC-YOUTH.webp","pm":false},{"id":97,"name":"2027 ABYSA Riverside Spring Kickoff \u2013 Girls","start":"2027-02-13","end":"2027-02-14","city":"Asheville, NC","ages":"Female U10\u2013U14","registrationOpen":false,"registrationCloses":"2027-01-25","registerUrl":"https://soccer.sincsports.com/register/start.aspx?tid=ABYSA1\u0026tab=2\u0026sub=0","scheduleUrl":"https://soccer.sincsports.com/schedule.aspx?tid=ABYSA1\u0026tab=3\u0026sub=1","websiteUrl":"https://www.abysa.org/","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-abysa-riverside-spring-kickoff-girls/","logo":"https://api.gb.playmetrics.com/public/gbs/1207/clubs/5781/logo"},{"id":100,"name":"2027 NCRT Beat the Heat","start":"2027-04-10","end":"2027-04-11","city":"Winston-Salem, NC","ages":"Male U11\u2013U17, U18+ | Female U11\u2013U17, U18+","registrationOpen":false,"registrationCloses":"2027-03-12","websiteUrl":"https://leagues.bluesombrero.com/Default.aspx?tabid=2184472","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-ncrt-beat-the-heat/","logo":"https://api.gb.playmetrics.com/public/gbs/1207/clubs/5832/logo"},{"id":101,"name":"2027 CVYSA Foothills Classic","start":"2027-04-24","end":"2027-04-25","city":"Hickory, NC","ages":"Male U8\u2013U17, U18+ | Female U8\u2013U15","registrationOpen":false,"registrationCloses":"2027-03-25","websiteUrl":"https://soccer.sincsports.com/details.aspx?tid=GALSHOOT\u0026qual=INTRO\u0026edit=N","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-cvysa-foothills-classic/","logo":"https://api.gb.playmetrics.com/public/gbs/1207/clubs/5793/logo"},{"id":"ncysa-2027-tufc-sun-soccer-spring-bash","name":"2027 TUFC Sun \u0026 Soccer Spring Bash","start":"2027-04-30","end":"2027-05-02","city":"Asheboro, NC","ages":"U9\u2013U19 Boys \u0026 Girls","registrationOpen":true,"registrationCloses":"2027-04-12","websiteUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-tufc-sun-soccer-spring-bash/","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-tufc-sun-soccer-spring-bash/","logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/TRIAD-UNION-FOOTBALL-CLUB.png","pm":false},{"id":102,"name":"2027 NCFCY City of Oaks Classic","start":"2027-05-08","end":"2027-05-09","city":"Raliegh, NC","ages":"Male U8\u2013U17, U18+ | Female U8\u2013U15","registrationOpen":false,"registrationCloses":"2027-04-14","websiteUrl":"https://www.ncfcyouth.com/city-of-oaks","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-ncfcy-city-of-oaks-classic/","logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png"},{"id":103,"name":"2027 Falcons United Crystal Coast Classic","start":"2027-05-15","end":"2027-05-16","city":"Morehead City / Cedar Point / Newport, NC","ages":"Male U9\u2013U14 | Female U9\u2013U14","registrationOpen":false,"registrationCloses":"2027-04-19","websiteUrl":"https://www.falconsunitednc.com/program/crystal-coast-classic/36645","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-falcons-united-crystal-coast-classic/","logo":"https://api.gb.playmetrics.com/public/gbs/1207/clubs/5810/logo"}]};
+  /* Turn one tournaments.json entry into a card. pm:false = sanctioned but not in PlayMetrics yet. */
+  function fromFeed(t) {
+    var npm = t.pm === false;
+    return { s: t.start, e: t.end, t: t.name, loc: (t.city || '').replace(/, NC$/, ''), ages: t.ages, logo: t.logo, open: t.registrationOpen,
+      close: t.registrationOpen ? t.registrationCloses : null, reg: all(t.registrationOpen, !npm) ? t.registerUrl : null, sched: t.scheduleUrl,
+      web: npm ? t.websiteUrl : null, nc: t.ncysaUrl || null, npm: npm, rc: t.registrationCloses || null };
+  }
+  var TOURNAMENTS = SAMPLE_FEED.tournaments.map(fromFeed);
+  /* Staff view: add #review to the page address to label tournaments that still need to be added to PlayMetrics. */
+  var REVIEW = /review/.test(location.hash);
+  var FEED_UPDATED = null;
+  var DATA = 'https://raw.githubusercontent.com/jeremylaytonbrownsmith-droid/ncysaclubtool.github.io/main/data/';
+  var ONSITE = /ncsoccer\.org$/.test(location.hostname);
+  function mergeTourn() {
+    EVENTS = TOURNAMENTS.map(function (t) {
+      return prep({ s: t.s, e: t.e, t: t.t, loc: t.loc, cat: 'tourn', close: t.close, reg: t.reg, sched: t.sched, web: t.web, nc: t.nc, f: 1, p: 1 });
+    });
+  }
+  function loadData() {
+    if (!ONSITE) { mergeTourn(); drawAll(); return; }
+    fetch(DATA + 'tournaments.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
+      if (!(j.tournaments || []).length) return;
+      FEED_UPDATED = j.updated || null;
+      TOURNAMENTS = j.tournaments.map(fromFeed);
+      mergeTourn(); drawAll();
+    }).catch(function () {});
+  }
+  function drawTourn(now) {
+    var up = TOURNAMENTS.filter(function (x) { return endOf(d(x.e || x.s)) >= now; });
+    var open = up.filter(function (x) { return x.close ? daysTo(x.close) >= 0 : false; }).length;
+    var ages = up.filter(function (x) { return /U(8|9|10)\b/.test(x.ages || ''); }).length;
+    $('m-tourn').innerHTML = '<div class="txt"><div class="k">Open for Registration</div><h3>' + open + ' tournament' + (open === 1 ? '' : 's') + ' taking entries</h3><p>Filter by age group, month or registration below.</p>' +
+      '<button type="button" class="linkbtn" id="m-tourn-go">Show open \u2192</button></div>' + big(open, 'open');
+    $('m-tourn-go').onclick = function () { tf.open = true; drawTList(new Date()); $('tlist').scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+  }
+  function big(n, unit) { return '<div class="big"><b class="notranslate" translate="no">' + n + '</b><small>' + unit + '</small></div>'; }
+  function bigDays(n) { return n <= 0 ? big('Today', '') : big(n, n === 1 ? 'day' : 'days'); }
+  function drawMinis(now) {
+    var up = TOURNAMENTS.map(function (x) { x.start = d(x.s); x.end = endOf(d(x.e || x.s)); return x; }).filter(function (x) { return x.end >= now; });
+    var closing = up.filter(function (x) { return x.close ? daysTo(x.close) >= 0 : false; }).sort(function (a, b) { return d(a.close) - d(b.close); });
+    var c = closing[0];
+    if (c) {
+      var cd = d(c.close);
+      $('m-deadline').innerHTML = '<div class="txt"><div class="k">Registration Closes Next</div><h3>' + esc(c.t) + '</h3><p>Closes ' + DOW[cd.getDay()] + ', ' + MON[cd.getMonth()] + ' ' + cd.getDate() + (closing.length > 1 ? ' \u00b7 ' + closing.length + ' open now' : '') + '</p>' +
+        (c.reg ? '<a class="linkbtn" style="text-decoration:none" href="' + esc(c.reg) + '" target="_blank" rel="noopener">Register \u2192</a>' : '') + '</div>' + bigDays(calDays(cd));
+    } else {
+      $('m-deadline').innerHTML = '<div class="txt"><div class="k">Registration</div><h3>No deadlines right now</h3><p>Check back soon for new tournaments.</p></div>';
+    }
+    var y = now.getFullYear(), m = now.getMonth();
+    var month = up.filter(function (x) { return all(x.start.getFullYear() === y, x.start.getMonth() === m); });
+    var nextKey = y * 12 + m + 1, nextM = up.filter(function (x) { return x.start.getFullYear() * 12 + x.start.getMonth() === nextKey; });
+    $('m-monthly').innerHTML = '<div class="txt"><div class="k">This Month</div><h3>' + month.length + ' tournament' + (month.length === 1 ? '' : 's') + ' in ' + MONL[m] + '</h3><p>' + nextM.length + ' in ' + MONL[(m + 1) % 12] + ' \u00b7 ' + up.length + ' upcoming this season</p>' +
+      '<button type="button" class="linkbtn" id="m-month-go">See ' + MONL[m] + ' \u2192</button></div>' + big(month.length, MON[m]);
+    $('m-month-go').onclick = function () { tf.month = String(y * 12 + m); drawTList(new Date()); $('tlist').scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+  }
+  /* Month ribbon */
+  function drawMonths(now) {
+    var nowKey = now.getFullYear() * 12 + now.getMonth(), html = '';
+    /* Rolling four months: this month and the next three. Moves forward on its own. */
+    for (var i = 0; i < 4; i++) {
+      var key = nowKey + i, mi = key % 12, y = Math.floor(key / 12);
+      var evs = EVENTS.filter(function (x) { return x.mkey === key; });
+      var cats = {}; evs.forEach(function (x) { cats[x.cat] = 1; });
+      var cls = key < nowKey ? 'past' : key === nowKey ? 'now' : '';
+      var bar = '';
+      if (key === nowKey) { var dim = new Date(y, mi + 1, 0).getDate(); bar = '<span class="bar" style="width:' + (now.getDate() / dim * 100).toFixed(0) + '%"></span>'; }
+      html += '<button type="button" class="mo ' + cls + '" data-key="' + key + '" aria-pressed="' + (state.month === key) + '">' +
+        '<div class="m">' + MON[mi] + '</div><div class="y">' + y + '</div>' +
+        '<div class="n">' + evs.length + ' date' + (evs.length === 1 ? '' : 's') + '</div>' +
+        bar + '</button>';
+    }
+    $('months').innerHTML = html;
+    Array.prototype.forEach.call($('months').children, function (b) {
+      b.onclick = function () { var k = +b.dataset.key; state.month = state.month === k ? null : k; render(); };
+    });
+  }
+  function drawKey() {
+    var el = $('key'); if (el.children.length) { Array.prototype.forEach.call(el.querySelectorAll('button'), function (b) { b.setAttribute('aria-pressed', state.cat === b.dataset.cat); }); return; }
+    el.innerHTML = '<span class="key-k">Key</span>' + Object.keys(CATS).map(function (k) {
+      return '<button type="button" class="key-i" data-cat="' + k + '" style="--cat:' + CATS[k].c + '" aria-pressed="false" title="Show only ' + CATS[k].name + '">' + ico(k) + CATS[k].name + '</button>';
+    }).join('');
+    Array.prototype.forEach.call(el.querySelectorAll('button'), function (b) { b.onclick = function () { state.cat = state.cat === b.dataset.cat ? 'all' : b.dataset.cat; render(); }; });
+  }
+  function drawChips() {
+    var sel = $('ev-cat'); if (sel.options.length) { sel.value = state.cat; return; }
+    sel.innerHTML = '<option value="all">All categories</option>' + Object.keys(CATS).map(function (k) { return '<option value="' + k + '">' + CATS[k].name + '</option>'; }).join('');
+    sel.onchange = function () { state.cat = sel.value; render(); };
+  }
+  function itemHTML(x, now) {
+    var cat = CATS[x.cat], r = rel(x, now), past = r.k === 'done';
+    var box = x.tba ? '<div class="datebox"><span class="dm">TBA</span><span class="dd">–</span><span class="dw">Summer</span></div>'
+      : '<div class="datebox"><span class="dm">' + MON[x.start.getMonth()] + '</span><span class="dd">' + x.start.getDate() + '</span><span class="dw">' + DOW[x.start.getDay()] + '</span></div>';
+    return '<article class="item' + (past ? ' past' : '') + '" style="--cat:' + cat.c + '">' + box +
+      '<div class="info"><h4>' + esc(x.t) + '</h4><div class="meta"><span class="tag">' + ico(x.cat) + cat.name + '</span>' +
+      (x.tba ? '' : '<span>' + rangeText(x) + '</span>') + (x.loc ? '<span>' + esc(x.loc) + '</span>' : '') + '</div>' +
+      (x.note ? '<p class="note">' + esc(x.note) + '</p>' : '') +
+      (x.cat === 'tourn' ? tournBits(x, past) : '') + '</div>' +
+      '<div class="right">' + (r.k === 'soon' || r.k === 'now' ? '<span class="when ' + r.k + '">' + r.t + '</span>' : '') +
+      (x.reg ? (past ? '' : '<a class="regbtn" href="' + esc(x.reg) + '" target="_blank" rel="noopener">Register</a>') : '') +
+      (x.tba ? '' : '<a class="cal" href="' + gcal(x) + '" target="_blank" rel="noopener" aria-label="Add ' + esc(x.t) + ' to calendar" title="Add to calendar">' + calIcon + '</a>') + '</div></article>';
+  }
+  function tournBits(x, past) {
+    var out = '';
+    if (all(x.close, !past)) { var cd = daysTo(x.close); if (cd >= 0) out += '<span class="regpill sm' + (cd <= 7 ? ' hot' : '') + '">' + closesText(cd) + '</span>'; }
+    else if (all(!past, !x.web)) out += '<span class="regnote">Registration not open yet</span>';
+    if (all(!past, x.web)) out += '<a class="schedlink" href="' + esc(x.web) + '" target="_blank" rel="noopener">Details</a>';
+    if (x.sched) out += '<a class="schedlink" href="' + esc(x.sched) + '" target="_blank" rel="noopener">View schedule</a>';
+    return out ? '<div class="tbits">' + out + '</div>' : '';
+  }
+  /* The page shows four months: this month and the next three. */
+  function winEnd(now) { return new Date(now.getFullYear(), now.getMonth() + 4, 1); }
+  function drawList(now) {
+    var q = state.q.trim().toLowerCase(), we = winEnd(now);
+    var match = EVENTS.filter(function (x) {
+      if (x.tba) return false;
+      if (x.start >= we) return false;
+      if (all(state.cat !== 'all', x.cat !== state.cat)) return false;
+      if (all(state.month !== null, x.mkey !== state.month)) return false;
+      if (all(q, (x.t + ' ' + (x.loc || '') + ' ' + CATS[x.cat].name).toLowerCase().indexOf(q) < 0)) return false;
+      return true;
+    });
+    var filtered = state.month !== null || q || state.cat !== 'all';
+    var upcoming = match.filter(function (x) { return x.tba || x.end >= now; });
+    var shown = state.month !== null ? match : upcoming;
+    shown.sort(function (a, b) { return (a.tba ? 1e15 : a.start) - (b.tba ? 1e15 : b.start); });
+    var total = shown.length;
+    if (all(!filtered, !state.showPast)) shown = shown.slice(0, 6);
+    var groups = [], cur = null;
+    shown.forEach(function (x) {
+      var key = x.tba ? 'tba' : x.mkey;
+      if (!cur || cur.key !== key) { cur = { key: key, items: [] }; groups.push(cur); }
+      cur.items.push(x);
+    });
+    var html = groups.map(function (g) {
+      var title = g.key === 'tba' ? 'Date to Be Announced' : MONL[g.key % 12] + ' ' + Math.floor(g.key / 12);
+      return '<div class="group"><div class="group-h"><h3>' + title + '</h3><small>' + g.items.length + ' date' + (g.items.length === 1 ? '' : 's') + '</small></div><div class="list">' +
+        g.items.map(function (x) { return itemHTML(x, now); }).join('') + '</div></div>';
+    }).join('');
+    $('ev-list').innerHTML = html || '<div class="empty">No dates match. Try another month or category.</div>';
+    var parts = [];
+    if (state.month !== null) parts.push(MONL[state.month % 12] + ' ' + Math.floor(state.month / 12));
+    if (state.cat !== 'all') parts.push(CATS[state.cat].name);
+    if (q) parts.push('"' + state.q.trim() + '"');
+    $('ev-status').textContent = filtered ? shown.length + ' date' + (shown.length === 1 ? '' : 's') + ' for ' + parts.join(', ') : (state.showPast ? 'All upcoming dates' : 'Next ' + shown.length + ' dates');
+    $('ev-reset').hidden = !parts.length;
+    var pb = $('ev-past');
+    pb.hidden = filtered || total <= 6;
+    pb.textContent = state.showPast ? 'Show fewer' : 'See all ' + total + ' upcoming dates';
+  }
+  function drawStrip(now) {
+    var next = EVENTS.filter(function (x) { return all(!x.tba, x.end >= now, x.cat !== 'office'); }).sort(function (a, b) { return a.start - b.start; }).slice(0, 3);
+    $('strip').innerHTML = next.map(function (x) {
+      return '<div><small>' + rangeText(x) + '</small><p>' + esc(x.t) + '</p><em>' + CATS[x.cat].name + (x.loc ? ' \u00b7 ' + esc(x.loc) : '') + '</em></div>';
+    }).join('');
+  }
+  /* Closing-soon alert in the header: deadlines and tournament registrations ending within 7 days */
+  function drawAlert(now) {
+    var soon = [];
+    EVENTS.forEach(function (x) {
+      if (x.tba) return;
+      if (x.cat === 'tourn') { if (x.close) { var c = daysTo(x.close); if (all(c >= 0, c <= 7)) soon.push({ c: c, t: x.t, reg: x.reg, kind: 'reg' }); } return; }
+      if (x.dl) { var c2 = Math.round((new Date(x.due.getFullYear(), x.due.getMonth(), x.due.getDate()) - new Date(now.getFullYear(), now.getMonth(), now.getDate())) / DAY); if (all(c2 >= 0, c2 <= 7)) soon.push({ c: c2, t: x.t, kind: 'dl' }); }
+    });
+    soon.sort(function (a, b) { return a.c - b.c; });
+    var el = $('ev-alert');
+    if (!soon.length) { el.hidden = true; return; }
+    var a = soon[0], when = a.c === 0 ? 'today' : a.c === 1 ? 'tomorrow' : 'in ' + a.c + ' days';
+    el.innerHTML = '<span class="al-dot"></span><span class="al-txt"><b>' + (a.kind === 'reg' ? 'Registration closes ' + when : 'Due ' + when) + '</b> ' + esc(a.t) + '</span>' +
+      (a.reg ? '<a class="al-go" href="' + esc(a.reg) + '" target="_blank" rel="noopener">Register \u2192</a>' : '') +
+      (soon.length > 1 ? '<span class="al-more">+' + (soon.length - 1) + ' more this week</span>' : '');
+    el.hidden = false;
+  }
+  var spotNext = null;
+  /* Phone tournament list: compact cards from the same PlayMetrics data */
+  var tIcon = '<span class="tl-logo tl-noimg"><svg viewBox="0 0 24 24" aria-hidden="true">' + ICONS.tourn + '</svg></span>';
+  var tf = { open: false, soon: false, month: 'all', age: 'all', past: false, more: false };
+  /* Tournaments already played this season. On ncsoccer.org this comes from data/past.json, which the update keeps on its own. */
+  var PAST = [{"name":"2026 CSA DSG Girls Invitational","start":"2026-08-15","end":"2026-08-16","city":"Charlotte, NC","ages":"U9\u2013U19 Girls","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-csa-dicks-sporting-goods-girls-invitational/","websiteUrl":null,"logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-SOCCER-ACADEMY.jpeg"},{"name":"2026 CSA DSG Girls Showcase","start":"2026-08-15","end":"2026-08-16","city":"Charlotte, NC","ages":"U13\u2013U19 Girls","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-csa-dicks-sporting-goods-girls-showcase/","websiteUrl":null,"logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-SOCCER-ACADEMY.jpeg"},{"name":"2026 HCSA Appalachian Classic","start":"2026-08-22","end":"2026-08-23","city":"Boone, NC","ages":null,"ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-hcsa-appalachian-classic/","websiteUrl":null,"logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/HIGH-COUNTRY-SA.png"},{"name":"2026 ABYSA Riverside Summer Shootout \u2013 Girls","start":"2026-08-22","end":"2026-08-23","city":"Asheville, NC","ages":"U10\u2013U19 Girls","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-abysa-riverside-summer-shooutout-girls/","websiteUrl":null,"logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/ASHEVILLE-BUNCOMBE-YSAHIGHLAND-FC.jpg"},{"name":"2026 CSA DSG Boys Invitational","start":"2026-08-22","end":"2026-08-23","city":"Charlotte, NC","ages":"U9\u2013U19 Boys","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-csa-dicks-sporting-goods-boys-invitational/","websiteUrl":null,"logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-SOCCER-ACADEMY.jpeg"},{"name":"2026 CSA DSG Boys Showcase","start":"2026-08-22","end":"2026-08-23","city":"Charlotte, NC","ages":"U13\u2013U19 Boys","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-csa-dicks-sporting-goods-boys-showcase/","websiteUrl":null,"logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-SOCCER-ACADEMY.jpeg"},{"name":"2026 CCFC Furniture City Classic","start":"2026-08-28","end":"2026-08-30","city":"High Point/Kernersville, NC","ages":null,"ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ccfc-furniture-city-classic/","websiteUrl":null,"logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CAROLINA-CORE-FC-YOUTH.webp"},{"name":"2026 TUSA Triangle United Fall Classic","start":"2026-08-28","end":"2026-08-30","city":"Greater Chapel Hill fields","ages":null,"ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-triangle-united-fall-classic/","websiteUrl":null,"logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/TRIANGLE-UNITED-SA.png"},{"name":"2026 ABYSA Riverside Summer Shootout \u2013 Boys","start":"2026-08-29","end":"2026-08-30","city":"Asheville, NC","ages":"U10\u2013U19 Boys","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-abysa-riverside-summer-shootout-boys/","websiteUrl":null,"logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/ASHEVILLE-BUNCOMBE-YSAHIGHLAND-FC.jpg"},{"name":"2026 NCF Labor Day Shootout","start":"2026-09-05","end":"2026-09-06","city":"Greensboro, NC","ages":null,"ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/ncfusionlabordayshootout/","websiteUrl":null,"logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NC-FUSION.png"},{"name":"2026 CISC Independence Cup","start":"2026-09-11","end":"2026-09-13","city":"Huntersville, NC","ages":null,"ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-cisc-independence-cup/","websiteUrl":null,"logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-INDEPENDENCE.png"},{"name":"2026 WYSA Explosion Cup","start":"2026-09-26","end":"2026-09-27","city":"Wilson, NC","ages":"U10\u2013U14 Boys / U10\u2013U19 Girls","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-wysa-explosion-cup/","websiteUrl":null,"logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/WILSON-YOUTH-SA.png"},{"name":"2026 CVFC Velocity Super Cup","start":"2026-10-03","end":"2026-10-04","city":"Asheboro, NC","ages":null,"ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-cvfc-velocity-super-cup/","websiteUrl":null,"logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CAROLINA-VELOCITY-FUTBOL-ACADEMY.png"},{"name":"2026 NCFCY Capital City Classic","start":"2026-10-10","end":"2026-10-11","city":"WRAL Soccer Park, Raleigh, NC","ages":null,"ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-capital-city-classic/","websiteUrl":"https://www.ncfcyouth.com/capital-city-classic","logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png"},{"name":"2026 FCA Genesis Cup","start":"2026-10-10","end":"2026-10-11","city":"Mooresville, NC","ages":null,"ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-fc-athletico-genesis-cup/","websiteUrl":null,"logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2026/09/FCAthletico-Surf-Logo_3D-shield-white-outline.png"},{"name":"2026 PGSA Pitch Pirates Showdown","start":"2026-10-17","end":"2026-10-18","city":"Greenville, NC","ages":"U10\u2013U12 Boys \u0026 Girls","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-pgsa-pitch-pirates-showdown/","websiteUrl":null,"logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/PITT-GREENVILLE-SA.png"},{"name":"2026 NCRT Fall Classic","start":"2026-10-17","end":"2026-10-18","city":"Winston-Salem, NC","ages":"U11\u2013U19 Boys \u0026 Girls","ncysaUrl":"https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-nc-rush-fall-classic/","websiteUrl":"https://leagues.bluesombrero.com/Default.aspx?tabid=1795827","logo":"https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-RUSH-TRIAD.png"}];
+  function loadPast() { if (!ONSITE) return; fetch(DATA + 'past.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) { if ((j.tournaments || []).length) { PAST = j.tournaments; drawTList(new Date()); } }).catch(function () {}); }
+  function pastList(now) {
+    var y = now.getMonth() >= 7 ? now.getFullYear() : now.getFullYear() - 1, from = new Date(y, 7, 1);
+    return PAST.map(function (t) { return { t: t.name, start: d(t.start), end: endOf(d(t.end || t.start)), e: t.end, loc: (t.city || '').replace(/, NC$/, ''), ages: t.ages, logo: t.logo, nc: t.ncysaUrl || t.websiteUrl || null, past: true }; })
+      .filter(function (x) { return all(x.end < now, x.start >= from); }).sort(function (a, b) { return b.start - a.start; });
+  }
+  function ageSet(str) {
+    var out = {}; String(str || '').replace(/U(\d+)(?:\u2013U?(\d+))?(\+)?/g, function (m, a, b, plus) {
+      var lo = +a, hi = b ? +b : (plus ? 19 : +a);
+      for (var k = lo; k <= hi; k++) out[k] = 1;
+      return m;
+    });
+    return out;
+  }
+  function stampText() {
+    if (!FEED_UPDATED) return 'Updated throughout the day from PlayMetrics';
+    var t = new Date(FEED_UPDATED), n = new Date();
+    var hm = t.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+    var same = t.toDateString() === n.toDateString();
+    return 'Updated ' + (same ? 'today' : DOW[t.getDay()] + ', ' + MON[t.getMonth()] + ' ' + t.getDate()) + ' at ' + hm + ' from PlayMetrics';
+  }
+  /* Week by week, the same boxes as the Highlighted Events page */
+  function svCardT(x, now) {
+    var mark = x.logo ? '<img class="sv-logo" src="' + esc(x.logo) + '" alt="" loading="lazy" onerror="this.outerHTML=this.dataset.f" data-f="' + esc('<span class="sv-ic">' + ico('tourn') + '</span>') + '">' : '<span class="sv-ic">' + ico('tourn') + '</span>';
+    var det = x.nc || x.web;
+    var go = x.reg ? '<a class="sv-go" href="' + esc(x.reg) + '" target="_blank" rel="noopener">Register</a>' : (det ? '<a class="sv-go ghost" href="' + esc(det) + '" target="_blank" rel="noopener">Details</a>' : '');
+    var live = all(now >= x.start, now <= x.end), pill = '';
+    if (x.close) { var cd = daysTo(x.close); if (cd >= 0) pill = '<span class="regpill sm' + (cd <= 7 ? ' hot' : '') + '">' + closesText(cd) + '</span>'; }
+    return '<article class="sv-card t' + (live ? ' live' : '') + (x.npm ? ' npm' : '') + '" style="--cat:var(--c-tourn)">' + mark +
+      '<div class="sv-body"><span class="sv-cat">Sanctioned Tournament' + (live ? ' · Happening now' : '') + '</span><h4>' + esc(x.t) + '</h4>' +
+      '<p>' + rangeText(x) + (x.loc ? ' · ' + esc(x.loc) : '') + '</p>' + (x.ages ? '<p class="sv-ages">' + esc(x.ages) + '</p>' : '') +
+      pill + (all(REVIEW, x.npm) ? '<span class="npm-tag">Not in PlayMetrics yet</span>' : '') + '</div>' + go + '</article>';
+  }
+  function svWeeksT(items, now, past) {
+    if (!items.length) return '<div class="tl-empty">' + (past ? 'No tournaments played yet this season.' : 'No tournaments match this tab.') + '</div>';
+    var groups = [], idx = {};
+    items.forEach(function (x) { var k = x.start.getFullYear() * 12 + x.start.getMonth(); if (idx[k] === undefined) { idx[k] = groups.length; groups.push({ k: k, list: [] }); } groups[idx[k]].list.push(x); });
+    var n = 0, nowK = wkKey(now);
+    return groups.map(function (g) {
+      return '<div class="tl-wk"><span>' + MONL[g.k % 12] + ' ' + Math.floor(g.k / 12) + '</span><b>' + g.list.length + ' tournament' + (g.list.length === 1 ? '' : 's') + '</b></div>' +
+        '<div class="hc-list">' + g.list.map(function (x) {
+          if (past) { var pm2 = x.logo ? '<img class="hk-logo" src="' + esc(x.logo) + '" alt="" loading="lazy" onerror="this.remove()">' : '';
+            return '<a class="hk past" style="--cat:#6d6a75;--i:' + Math.min(n++, 8) + '" href="' + esc(x.nc || 'https://www.ncsoccer.org/nc-sanctioned-tournament-page/') + '" target="_blank" rel="noopener"><span class="hk-top"><span class="hk-ic">' + ico('tourn') + '</span>Sanctioned Tournament<em>Played</em></span>' +
+              '<span class="hk-body"><span class="hk-d"><b>' + MON[x.start.getMonth()] + '</b><span class="notranslate" translate="no">' + x.start.getDate() + '</span><small>' + DOW[x.start.getDay()] + '</small></span><span class="hk-t"><strong>' + esc(x.t) + '</strong><small>' + rangeText(x) + (x.loc ? ' \u00b7 ' + esc(x.loc) : '') + '</small>' + '<small class="hk-ages">' + (x.ages ? esc(x.ages) : '\u00a0') + '</small></span>' + pm2 + '</span><span class="hk-go">Details <i>\u2192</i></span></a>'; }
+          var det = x.nc || x.web, href = x.reg || det || 'https://playmetricssports.com/g/tournaments/138/North-Carolina';
+          var tag = x.reg ? 'Register' : 'Details';
+          var mark = x.logo ? '<img class="hk-logo" src="' + esc(x.logo) + '" alt="" loading="lazy" onerror="this.remove()">' : '';
+          var days = calDays(x.start), live = all(now >= x.start, now <= x.end), pill = '';
+          if (x.close) { var cd = daysTo(x.close); if (cd >= 0) pill = '<span class="regpill sm' + (cd <= 7 ? ' hot' : '') + '">' + closesText(cd) + '</span>'; }
+          return '<a class="hk' + (wkKey(x.start) === nowK ? ' wk' : '') + '" style="--cat:var(--c-tourn);--i:' + Math.min(n++, 8) + '" href="' + esc(href) + '" target="_blank" rel="noopener">' +
+            '<span class="hk-top"><span class="hk-ic">' + ico('tourn') + '</span>Sanctioned Tournament<em>' + (live ? 'Now' : days <= 0 ? 'Now' : 'In ' + days + ' day' + (days === 1 ? '' : 's')) + '</em></span>' +
+            '<span class="hk-body"><span class="hk-d"><b>' + MON[x.start.getMonth()] + '</b><span class="notranslate" translate="no">' + x.start.getDate() + '</span><small>' + DOW[x.start.getDay()] + '</small></span>' +
+              '<span class="hk-t"><strong>' + esc(x.t) + '</strong><small>' + rangeText(x) + (x.loc ? ' · ' + esc(x.loc) : '') + '</small>' + '<small class="hk-ages">' + (x.ages ? esc(x.ages) : '\u00a0') + '</small></span>' + mark + '</span>' +
+            '<span class="hk-go"><span class="hk-go-l">' + tag + pill + '</span><i>→</i></span></a>';
+        }).join('') + '</div>';
+    }).join('');
+  }
+  function drawTList(now) {
+    var list = TOURNAMENTS.map(function (x) { x.start = d(x.s); x.end = endOf(d(x.e || x.s)); x.ageset = ageSet(x.ages); return x; })
+      .filter(function (x) { return x.end >= now; }).sort(function (a, b) { return a.start - b.start; });
+    var isOpen = function (x) { return x.close ? daysTo(x.close) >= 0 : false; };
+    var isSoon = function (x) { return x.close ? all(daysTo(x.close) >= 0, daysTo(x.close) <= 7) : false; };
+    var open = list.filter(isOpen).length, soon = list.filter(isSoon).length;
+    var months = []; list.forEach(function (x) { var k = x.start.getFullYear() * 12 + x.start.getMonth(); if (months.indexOf(k) < 0) months.push(k); });
+    var shown = list.filter(function (x) {
+      if (all(tf.open, !isOpen(x))) return false;
+      if (all(tf.soon, !isSoon(x))) return false;
+      if (tf.month !== 'all') { if (x.start.getFullYear() * 12 + x.start.getMonth() !== +tf.month) return false; }
+      if (tf.age !== 'all') { if (!x.ageset[+tf.age]) return false; }
+      return true;
+    });
+    var pastL = pastList(now), pastN = pastL.length, nowMk = now.getFullYear() * 12 + now.getMonth();
+    var vis = shown;
+    if (all(!tf.open, !tf.past, !tf.more, tf.month === 'all')) { vis = shown.filter(function (x) { return x.start.getFullYear() * 12 + x.start.getMonth() < nowMk + 3; }); if (vis.length < 3) vis = shown.slice(0, 6); }
+    var hidden = shown.length - vis.length;
+    var ages = ''; for (var a = 8; a <= 19; a++) ages += '<option value="' + a + '"' + (String(a) === tf.age ? ' selected' : '') + '>U' + a + (a === 19 ? ' / U18+' : '') + '</option>';
+    $('tlist').innerHTML = (REVIEW ? '<div class="npm-note"><b>Staff view.</b> ' + list.filter(function (x) { return x.npm; }).length + ' upcoming tournaments are not in PlayMetrics yet. They show from the NCYSA list and drop off on their own once added in PlayMetrics.</div>' : '') +
+      '<div class="tl-head"><b>' + list.length + ' sanctioned tournaments</b><span class="tl-stamp"><i></i>' + stampText() + '</span></div>' +
+      '<div class="tl-tabs" role="tablist" aria-label="Show tournaments">' +
+        '<button type="button" class="tt" role="tab" data-t="all" aria-selected="' + all(!tf.open, tf.month === 'all', !tf.past) + '">All <i>' + list.length + '</i></button>' +
+        '<button type="button" class="tt open" role="tab" data-t="open" aria-selected="' + all(tf.open, !tf.past) + '">Registration Open <i>' + open + '</i></button>' +
+        months.map(function (k) { var c = list.filter(function (x) { return x.start.getFullYear() * 12 + x.start.getMonth() === k; }).length; return '<button type="button" class="tt" role="tab" data-t="m' + k + '" aria-selected="' + all(!tf.open, !tf.past, String(k) === tf.month) + '">' + MON[k % 12] + (Math.floor(k / 12) !== now.getFullYear() ? ' ’' + String(Math.floor(k / 12)).slice(2) : '') + ' <i>' + c + '</i></button>'; }).join('') +
+        (pastN ? '<button type="button" class="tt past" role="tab" data-t="past" aria-selected="' + tf.past + '">Past this season <i>' + pastN + '</i></button>' : '') +
+      '</div>' +
+      (tf.past ? svWeeksT(pastL, now, true) : svWeeksT(vis, now)) +
+      (all(!tf.past, hidden > 0) ? '<button type="button" class="tl-showmore" id="tl-more">Show more tournaments <i>' + hidden + ' more</i><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>' : '') +
+      '<a class="btn red tl-more" href="https://playmetricssports.com/g/tournaments/138/North-Carolina" target="_blank" rel="noopener">Search and filter on PlayMetrics</a>';
+    Array.prototype.forEach.call(ROOT.querySelectorAll('#tlist .tt'), function (b) { b.onclick = function () { var t = b.dataset.t; tf.soon = false; tf.age = 'all'; tf.past = t === 'past'; tf.more = false; if (t === 'open') { tf.open = true; tf.month = 'all'; } else if (t === 'past') { tf.open = false; tf.month = 'all'; } else { tf.open = false; tf.month = t === 'all' ? 'all' : t.slice(1); } drawTList(new Date()); }; });
+    if ($('tl-more')) $('tl-more').onclick = function () { tf.more = true; drawTList(new Date()); };
+  }
+  /* Scroll-in motion for cards below the fold */
+  var reduceMotion = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false;
+  var riseObs = ('IntersectionObserver' in window) ? new IntersectionObserver(function (en) {
+    en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('rise'); e.target.classList.remove('pre'); riseObs.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -40px 0px' }) : null;
+  function riseIn(sel) {
+    if (reduceMotion) return; if (!riseObs) return;
+    Array.prototype.forEach.call(ROOT.querySelectorAll(sel), function (el, i) {
+      if (el.getBoundingClientRect().top < window.innerHeight) return;
+      el.classList.add('pre'); el.style.transitionDelay = (i % 4) * 60 + 'ms'; riseObs.observe(el);
+    });
+  }
+  function drawAll() {
+    var now = new Date();
+    drawSpot(now); drawMinis(now); drawTourn(now); drawTList(now); drawAlert(now); render();
+    spotNext = (weekends(now)[0] || { list: [] }).list[0] || null;
+    tickMini();
+  }
+  function tickMini() {
+    var el = $('mini-next'); if (!spotNext) { el.textContent = ''; return; }
+    var ms = spotNext.start - new Date();
+    var t = ms <= 0 ? 'happening now' : Math.floor(ms / DAY) + 'd ' + Math.floor(ms % DAY / 36e5) + 'h';
+    el.innerHTML = '<span>Next up</span> <b>' + esc(spotNext.t) + '</b> <em>' + t + '</em>';
+  }
+  function render() {
+    var now = new Date();
+    drawMonths(now); drawChips(); drawKey(); drawList(now); riseIn('#ev-list .item');
+  }
+  /* PlayMetrics panel: live iframe on ncsoccer.org, labeled preview anywhere else */
+  (function () {
+    var box = $('pm-frame'), src = box.dataset.src;
+    if (/ncsoccer\.org$/.test(location.hostname)) {
+      box.innerHTML = '<iframe src="' + src + '" title="NCYSA Sanctioned Tournaments on PlayMetrics" loading="lazy"></iframe>';
+      return;
+    }
+    var demo = [
+      ['Nov 7, 2026 – Nov 8, 2026', 'Registration closes in 13 days', '2026 ACFC Clashboro Fall Invitational', 'Mebane, NC | Male U8–U17, U18+ | Female U8–U9, U11–U17, U18+'],
+      ['Nov 21, 2026 – Nov 22, 2026', '', '2026 WHYFC Fall Beach Classic', 'Wilmington, NC | Male U9–U15 | Female U9–U17, U18+'],
+      ['Dec 5, 2026 – Dec 6, 2026', '', 'HFC Riverside Senior Girls Showcase', '']
+    ];
+    box.innerHTML = '<div class="pm-demo"><div class="pm-note"><b>Mockup preview.</b> On ncsoccer.org this panel shows the live PlayMetrics list with its search, Month, Age and Gender filters and Register buttons. Shared preview links cannot load other websites, so three listings are shown here as examples.</div>' +
+      demo.map(function (r) {
+        return '<div class="pm-card"><div class="pd">' + r[0] + (r[1] ? '<b>' + r[1] + '</b>' : '') + '</div><h4>' + r[2] + '</h4>' + (r[3] ? '<p>' + r[3] + '</p>' : '') + '<div class="pa"><span>Register</span><span>View Schedule</span></div></div>';
+      }).join('') + '</div>';
+  })();
+  function showTab(t) {
+    var dates = t === 'dates';
+    $('tab-dates').setAttribute('aria-selected', dates); $('tab-tourn').setAttribute('aria-selected', !dates);
+    $('panel-dates').hidden = !dates; $('tournaments').hidden = dates;
+  }
+  $('tab-dates').onclick = function () { showTab('dates'); };
+  $('tab-tourn').onclick = function () { showTab('tourn'); };
+  showTab('tourn');
+  mergeTourn(); drawAll(); loadData(); loadPast();
+  setInterval(function () { if (spotNext) { if (new Date() < spotNext.start) tick(spotNext); } tickMini(); }, 1000);
+  /* Sticky tab bar: once the spotlight scrolls away, the bar sticks to the top and shows the countdown */
+  (function () {
+    var bar = $('tabbar'), bump = document.getElementById('wpadminbar');
+    var top = bump ? (getComputedStyle(bump).position === 'fixed' ? bump.offsetHeight : 0) : 0;
+    bar.style.top = top + 'px';
+    if (!('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (en) {
+      var gone = all(!en[0].isIntersecting, en[0].boundingClientRect.top < 0);
+      bar.classList.toggle('stuck', gone);
+    }, { threshold: 0 }).observe($('spot'));
+  })();
+  $('ev-q').addEventListener('input', function (e) { state.q = e.target.value; render(); });
+  $('ev-reset').onclick = function () { state = { cat: 'all', month: null, q: '', showPast: false }; $('ev-q').value = ''; render(); };
+  $('ev-past').onclick = function () { state.showPast = !state.showPast; render(); };
+})();
+</script>
+</div>
+<script>
+(function () {
+  var el = document.getElementById('ncysa-page'); if (!el) return;
+  function fit() {
+    ['margin-left', 'margin-right', 'width', 'max-width'].forEach(function (p) { el.style.removeProperty(p); });
+    var vw = document.documentElement.clientWidth, r = el.getBoundingClientRect();
+    if (Math.abs(r.left) < 1) { if (Math.abs(r.width - vw) < 2) return; }
+    var ml = parseFloat(getComputedStyle(el).marginLeft) || 0;
+    el.style.setProperty('max-width', 'none', 'important');
+    el.style.setProperty('width', vw + 'px', 'important');
+    el.style.setProperty('margin-left', (ml - r.left) + 'px', 'important');
+    el.style.setProperty('margin-right', '0px', 'important');
+  }
+  var lastW = window.innerWidth;
+  window.addEventListener('resize', function () { if (window.innerWidth !== lastW) { lastW = window.innerWidth; fit(); } });
+  window.addEventListener('load', fit); window.addEventListener('orientationchange', function () { setTimeout(fit, 300); });
+  fit(); setTimeout(fit, 400); setTimeout(fit, 1500);
+})();
+</script>
