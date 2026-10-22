@@ -2440,6 +2440,36 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
   });
 })();
 </script>
+<style>
+/* Scroll pull-up (preview) */
+@keyframes ncysaRise { from { opacity: 0; transform: translateY(64px); } to { opacity: 1; transform: none; } }
+.ncysa-js .ncysa-reveal.is-visible { animation: ncysaRise 0.95s cubic-bezier(.16,1,.3,1) backwards; }
+#ncysa-home .px-up { opacity: 0; transform: translateY(70px); transition: opacity .9s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1); will-change: transform, opacity; }
+#ncysa-home .px-up.px-in { opacity: 1; transform: none; }
+#ncysa-home .ncysa-tile { transition: transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease; }
+#ncysa-home .ncysa-tile:hover { transform: translateY(-6px); }
+@media (prefers-reduced-motion: reduce) { #ncysa-home .px-up { opacity: 1; transform: none; transition: none; } }
+</style>
+<script>
+(function () {
+  var root = document.getElementById('ncysa-home');
+  if (!root) { return; }
+  if (window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false) { return; }
+  if (!('IntersectionObserver' in window)) { return; }
+  var sel = ['.ncysa-club-button-content', '#ev .home-head', '#ev .home-tk', '#ev section.season', '#ev section.pmw', '#ev section.hc', '#ev .home-foot .wrap', '.ncysa-subfooter .partners', '.ncysa-subfooter .home-ctas'];
+  var els = [];
+  sel.forEach(function (s) { var list = root.querySelectorAll(s); for (var i = 0; i < list.length; i++) { els.push(list[i]); } });
+  var io = new IntersectionObserver(function (en) {
+    en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('px-in'); io.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+  els.forEach(function (el) {
+    var r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight * 0.9) { return; }
+    el.classList.add('px-up');
+    io.observe(el);
+  });
+})();
+</script>
 </div>
 <script>
 (function () {
