@@ -36,7 +36,7 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
 #ncysa-home #ev.ev.home .home-foot .home-ctas { display: grid !important; grid-template-columns: repeat(2, 260px); gap: 14px; justify-content: center !important; margin: 0 auto !important; width: auto; }
 #ncysa-home #ev.ev.home .home-foot .home-ctas .btn { width: 100% !important; justify-content: center !important; text-align: center; margin: 0 !important; }
 @media (max-width: 600px) { #ncysa-home #ev.ev.home .home-foot .home-ctas { grid-template-columns: minmax(0, 300px); width: 100%; } }
-#ncysa-home #ev.ev.home .home-foot::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 80px; background: #fff; clip-path: ellipse(55% 100% at 50% 100%); }
+#ncysa-home #ev.ev.home .home-foot::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 80px; background: #f9f7f7; clip-path: ellipse(55% 100% at 50% 100%); }
 /* homepage bottom buttons: oval like the other pages */
 #ncysa-home #ev.ev.home .home-foot .home-ctas .btn, #ncysa-home #ev.ev.home .home-foot .home-ctas .btn:hover { border-radius: 50px !important; height: 48px; padding: 0 22px !important; }
 #ncysa-home .ncysa-subfooter .partners { padding-top: 8px; text-align: center !important; }
@@ -471,7 +471,8 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
   .ncysa-bts-btn { width: 100%; max-width: 280px; text-align: center; }
 }
 /* ZIP search in Find Your Club banner */
-.fyc-dash { position: absolute; top: 0; left: 0; right: 0; height: 5px; background: repeating-linear-gradient(90deg, #edc32c 0px, #edc32c 20px, transparent 20px, transparent 30px); opacity: 0.35; z-index: 4; pointer-events: none; }
+.fyc-dash { position: absolute; top: 0; left: 0; right: 0; height: 5px; background: repeating-linear-gradient(90deg, rgba(237,195,44,0.42) 0px, rgba(237,195,44,0.42) 20px, transparent 20px, transparent 30px), #10045a; z-index: 4; pointer-events: none; }
+#ncysa-home .ncysa-bts-banner::before { height: 5px !important; background: repeating-linear-gradient(90deg, rgba(237,195,44,0.42) 0px, rgba(237,195,44,0.42) 20px, transparent 20px, transparent 30px), #10045a !important; opacity: 1 !important; z-index: 5 !important; }
 .ncysa-club-button-container { height: 300px; }
 .ncysa-club-button-text { max-width: 520px; }
 .fyc-form { display: flex; align-items: center; gap: 6px; width: 100%; max-width: 460px; margin: 0 auto; padding: 6px; border-radius: 50px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.28); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 14px 40px rgba(0,0,0,0.35); }
@@ -2127,7 +2128,7 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
   .ncysa-subfooter {
     --navy: #10045a; --red: #b82f2f; --gold: #edc32c;
     font-family: 'Source Sans 3', system-ui, sans-serif;
-    background: #fff; overflow: hidden;
+    background: #f9f7f7; overflow: hidden;
     margin-top: -75px;
     width: 100%; max-width: 100%;
   }
@@ -2199,8 +2200,6 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
   @keyframes tk-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @media (hover: hover) {
     #ncysa-home .ncysa-ticker-wrap:hover .tk-track { animation-play-state: paused; }
-    #ncysa-home .ncysa-ticker-wrap:hover .tk-item { opacity: 0.45; }
-    #ncysa-home .tk-item:hover { opacity: 1; }
   }
   #ncysa-home .ncysa-ticker-wrap::after {
     content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 90px;
@@ -2278,7 +2277,7 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
   .ncysa-subfooter .social-row .social-btn:hover { background: var(--red); transform: scale(1.1); }
   .ncysa-subfooter .social-row .social-btn svg { width: 13px; height: 13px; fill: #fff; }
   /* ── PUBLIX BANNER ── */
-  .ncysa-subfooter .publix-section { padding: 18px 20px 18px; text-align: center; background: #fff; }
+  .ncysa-subfooter .publix-section { padding: 18px 20px 18px; text-align: center; background: #f9f7f7; }
   /* Asset is 728x90. Capping at native width keeps it crisp; going wider
      upscales it and the logo goes soft. */
   .ncysa-subfooter .publix-section a { display: inline-block; max-width: 728px; width: 100%; transition: opacity 0.25s ease; }
