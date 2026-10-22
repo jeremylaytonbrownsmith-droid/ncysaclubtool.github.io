@@ -2,10 +2,14 @@
   "fields": [
     "address",
     "address.city",
+    "address.line1",
+    "address.line2",
     "address.state",
+    "address.zip",
     "club_image_url",
     "contact_email",
     "contact_name",
+    "contact_phone",
     "eligibility",
     "eligibility.adult_female_competition",
     "eligibility.adult_male_competition",
@@ -20,6 +24,7 @@
     "name",
     "public_image_url",
     "public_rules_document_url",
+    "ref_assignor_name",
     "registration_end_date",
     "registration_link",
     "registration_start_date",
@@ -44,7 +49,8 @@
       "2026-08-01",
       "2026-10-01",
       "2026-11-01",
-      "2026-12-01"
+      "2026-12-01",
+      "2026-10-30"
     ],
     "registration_end_date": [
       "2026-10-26",

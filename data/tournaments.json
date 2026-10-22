@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-22T17:11:32.142Z",
+  "updated": "2026-10-22T21:36:36.422Z",
   "source": "https://playmetricssports.com/g/tournaments/138/North-Carolina",
-  "statedCount": 14,
-  "count": 14,
+  "statedCount": 17,
+  "count": 17,
   "complete": true,
   "tournaments": [
     {
@@ -367,6 +367,21 @@
       "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-ncrt-beat-the-heat/"
     },
     {
+      "id": 110,
+      "name": "King of the Mountain",
+      "start": "2027-04-17",
+      "end": "2027-04-18",
+      "city": "Boone, NC",
+      "ages": "Male U11–U18",
+      "venue": null,
+      "registrationOpen": false,
+      "registrationCloses": "2027-04-09",
+      "registerUrl": null,
+      "scheduleUrl": null,
+      "websiteUrl": "https://www.appfcacademy.com/",
+      "logo": null
+    },
+    {
       "id": 101,
       "name": "2027 CVYSA Foothills Classic",
       "start": "2027-04-24",
@@ -401,6 +416,21 @@
       "pm": false
     },
     {
+      "id": 111,
+      "name": "Queen of the Mountain",
+      "start": "2027-05-01",
+      "end": "2027-05-02",
+      "city": "Boone, NC",
+      "ages": "Female U10–U18",
+      "venue": null,
+      "registrationOpen": false,
+      "registrationCloses": "2027-04-30",
+      "registerUrl": null,
+      "scheduleUrl": null,
+      "websiteUrl": "https://www.appfcacademy.com/tournaments/",
+      "logo": null
+    },
+    {
       "id": 102,
       "name": "2027 NCFCY City of Oaks Classic",
       "start": "2027-05-08",
@@ -432,6 +462,21 @@
       "websiteUrl": "https://www.falconsunitednc.com/program/crystal-coast-classic/36645",
       "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5810/logo",
       "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-falcons-united-crystal-coast-classic/"
+    },
+    {
+      "id": 112,
+      "name": "IFC Crossroads Classic",
+      "start": "2027-05-15",
+      "end": "2027-05-16",
+      "city": "Statesville, NC",
+      "ages": "Male U7–U18 | Female U7–U18",
+      "venue": null,
+      "registrationOpen": false,
+      "registrationCloses": "2027-05-01",
+      "registerUrl": null,
+      "scheduleUrl": null,
+      "websiteUrl": "https://www.impactfutbolclub.com/crossroads-classic",
+      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5820/logo"
     }
   ],
   "notInPlayMetrics": 11

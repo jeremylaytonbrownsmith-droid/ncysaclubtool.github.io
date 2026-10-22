@@ -1,7 +1,7 @@
-PlayMetrics says 14 tournaments. Page loaded 10 from 1 data request(s).
-Paging info from PlayMetrics: {"pagination":{"page":1,"per_page":10,"total_pages":2,"total_items":14}}
+PlayMetrics says 17 tournaments. Page loaded 10 from 1 data request(s).
+Paging info from PlayMetrics: {"pagination":{"page":1,"per_page":10,"total_pages":2,"total_items":17}}
 Request: POST https://api.gb.playmetrics.com/external/tp/tournament_promotions/search?populate=public_rules_document_url,club_image_url,sanctioning_body_state_name body {"filters":{"genders":[],"dates":[],"name_contains":"","age_classifications":[],"adult_competition":false,"states":[],"sanctioning_bodies":[],"is_registration_open":false,"is_include_test_gbs":false,"state_sanctioning_body_id":138},"sort":["tournament_start_date-ASC"],"page":1,"per_page":10}
-After paging: 14 tournaments.
+After paging: 17 tournaments.
  2026-11-07  2026 ACFC Clashboro Fall Invitational  (Mebane, NC)
  2026-11-21  2026 WHYFC Fall Beach Classic  (Wilmington, NC)
  2026-12-05  HFC Riverside Senior Girls Showcase  (Asheville, NC)
@@ -13,6 +13,9 @@ After paging: 14 tournaments.
  2027-02-06  2027 PGSA Beast of the East  (Greenville, NC)
  2027-02-13  2027 ABYSA Riverside Spring Kickoff – Girls  (Asheville, NC)
  2027-04-10  2027 NCRT Beat the Heat  (Winston-Salem, NC)
+ 2027-04-17  King of the Mountain  (Boone, NC)
  2027-04-24  2027 CVYSA Foothills Classic  (Hickory, NC)
+ 2027-05-01  Queen of the Mountain  (Boone, NC)
  2027-05-08  2027 NCFCY City of Oaks Classic  (Raliegh, NC)
  2027-05-15  2027 Falcons United Crystal Coast Classic  (Morehead City / Cedar Point / Newport, NC)
+ 2027-05-15  IFC Crossroads Classic  (Statesville, NC)
