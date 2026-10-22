@@ -29,7 +29,8 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
 #ncysa-home .home-tk .ncysa-ticker-wrap.tk-navy { --bar: rgba(8,2,50,.55); --fade: 13,3,70; --badge: rgba(5,1,40,.6); --badge-edge: #b82f2f; --edge-soft: rgba(237,195,44,.3); backdrop-filter: blur(2px); }
 #ncysa-home .home-tk .tk-flag { font-weight: 700; }
 #ncysa-home .home-tk .tk-item { padding: 14px 34px; }
-#ncysa-home .home-tk .tk-val { color: #edc32c; }
+#ncysa-home .home-tk .tk-cream .tk-val { color: #10045a; }
+#ncysa-home .home-tk .ncysa-ticker-wrap.tk-cream { border-color: rgba(237,195,44,.55) !important; }
 /* Highlighted Events curves down into the white sub-footer */
 #ncysa-home #ev.ev.home .home-foot { padding-top: 112px !important; padding-bottom: 112px !important; }
 #ncysa-home #ev.ev.home .home-foot .wrap { display: flex; justify-content: center; }
@@ -1358,7 +1359,7 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
     </div>
     <div class="home-tk">
   <!-- Stat ticker: numbers live in the NCYSA_TICKER list in the sub-footer script -->
-  <div class="ncysa-ticker-wrap tk-navy" id="ncysa-ticker">
+  <div class="ncysa-ticker-wrap tk-cream" id="ncysa-ticker">
     <div class="tk-flag">
       <span class="tk-pulse"></span>
       <span class="tk-flag-text">NC Youth Soccer</span>
