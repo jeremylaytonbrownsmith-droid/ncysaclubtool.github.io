@@ -2536,6 +2536,19 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
 .ev .mini .ico, .ev .wk-ic, .ev .sv-ic, #ev.ev.home .hk-ic { border-radius: 12px !important; box-shadow: inset 0 1px 0 rgba(255,255,255,0.28), inset 0 -10px 18px rgba(0,0,0,0.14), 0 8px 16px -8px rgba(16,4,90,0.55) !important; }
 .ev .tl-noimg { border-radius: 12px; box-shadow: inset 0 0 0 1px rgba(59,85,217,0.18); }
 </style>
+<style>
+/* Behind the Scenes sits inside the Highlighted Events curve: its bottom edge follows the gold arc */
+#ncysa-home { --bts-arc: 90px; }
+@media (max-width: 700px) { #ncysa-home { --bts-arc: 48px; } }
+#ncysa-home .ncysa-bts-section { position: relative; z-index: 4; }
+#ncysa-home .ncysa-bts-banner { clip-path: polygon(0 0, 100% 0, 100.000% calc(100% - var(--bts-arc) * 0.7111 - 1px), 96.901% calc(100% - var(--bts-arc) * 0.6233 - 1px), 93.523% calc(100% - var(--bts-arc) * 0.5431 - 1px), 89.893% calc(100% - var(--bts-arc) * 0.4705 - 1px), 86.034% calc(100% - var(--bts-arc) * 0.4056 - 1px), 81.973% calc(100% - var(--bts-arc) * 0.3483 - 1px), 77.734% calc(100% - var(--bts-arc) * 0.2986 - 1px), 73.344% calc(100% - var(--bts-arc) * 0.2566 - 1px), 68.827% calc(100% - var(--bts-arc) * 0.2222 - 1px), 64.209% calc(100% - var(--bts-arc) * 0.1955 - 1px), 59.515% calc(100% - var(--bts-arc) * 0.1764 - 1px), 54.770% calc(100% - var(--bts-arc) * 0.1649 - 1px), 50.000% calc(100% - var(--bts-arc) * 0.1611 - 1px), 45.230% calc(100% - var(--bts-arc) * 0.1649 - 1px), 40.485% calc(100% - var(--bts-arc) * 0.1764 - 1px), 35.791% calc(100% - var(--bts-arc) * 0.1955 - 1px), 31.173% calc(100% - var(--bts-arc) * 0.2222 - 1px), 26.656% calc(100% - var(--bts-arc) * 0.2566 - 1px), 22.266% calc(100% - var(--bts-arc) * 0.2986 - 1px), 18.027% calc(100% - var(--bts-arc) * 0.3483 - 1px), 13.966% calc(100% - var(--bts-arc) * 0.4056 - 1px), 10.107% calc(100% - var(--bts-arc) * 0.4705 - 1px), 6.477% calc(100% - var(--bts-arc) * 0.5431 - 1px), 3.099% calc(100% - var(--bts-arc) * 0.6233 - 1px), 0.000% calc(100% - var(--bts-arc) * 0.7111 - 1px)); -webkit-clip-path: polygon(0 0, 100% 0, 100.000% calc(100% - var(--bts-arc) * 0.7111 - 1px), 96.901% calc(100% - var(--bts-arc) * 0.6233 - 1px), 93.523% calc(100% - var(--bts-arc) * 0.5431 - 1px), 89.893% calc(100% - var(--bts-arc) * 0.4705 - 1px), 86.034% calc(100% - var(--bts-arc) * 0.4056 - 1px), 81.973% calc(100% - var(--bts-arc) * 0.3483 - 1px), 77.734% calc(100% - var(--bts-arc) * 0.2986 - 1px), 73.344% calc(100% - var(--bts-arc) * 0.2566 - 1px), 68.827% calc(100% - var(--bts-arc) * 0.2222 - 1px), 64.209% calc(100% - var(--bts-arc) * 0.1955 - 1px), 59.515% calc(100% - var(--bts-arc) * 0.1764 - 1px), 54.770% calc(100% - var(--bts-arc) * 0.1649 - 1px), 50.000% calc(100% - var(--bts-arc) * 0.1611 - 1px), 45.230% calc(100% - var(--bts-arc) * 0.1649 - 1px), 40.485% calc(100% - var(--bts-arc) * 0.1764 - 1px), 35.791% calc(100% - var(--bts-arc) * 0.1955 - 1px), 31.173% calc(100% - var(--bts-arc) * 0.2222 - 1px), 26.656% calc(100% - var(--bts-arc) * 0.2566 - 1px), 22.266% calc(100% - var(--bts-arc) * 0.2986 - 1px), 18.027% calc(100% - var(--bts-arc) * 0.3483 - 1px), 13.966% calc(100% - var(--bts-arc) * 0.4056 - 1px), 10.107% calc(100% - var(--bts-arc) * 0.4705 - 1px), 6.477% calc(100% - var(--bts-arc) * 0.5431 - 1px), 3.099% calc(100% - var(--bts-arc) * 0.6233 - 1px), 0.000% calc(100% - var(--bts-arc) * 0.7111 - 1px)); }
+@media (min-width: 601px) {
+  #ncysa-home .ncysa-bts-banner { height: calc(260px + var(--bts-arc)) !important; }
+  #ncysa-home .ncysa-bts-inner { padding-bottom: calc(var(--bts-arc) * 0.55) !important; }
+}
+@media (max-width: 600px) { #ncysa-home .ncysa-bts-photos { height: calc(190px + var(--bts-arc)) !important; } }
+#ncysa-home #ev.ev.home section.home-top { margin-top: calc(var(--bts-arc) * -1) !important; }
+</style>
 </div>
 <script>
 (function () {
