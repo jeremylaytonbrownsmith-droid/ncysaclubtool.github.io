@@ -2,28 +2,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700;800&display=swap">
 <style id="nx-chrome">
 .nx-on { --nx-navy: #10045a; --nx-navy-2: #1a0a6e; --nx-navy-3: #0a0238; --nx-red: #b82f2f; --nx-gold: #edc32c; --nx-cream: #f9f7f7; }
-/* Sub menu: deep red utility bar, crisp bold white text, thin dividers, soft pill on hover. Sized so all 10 links fit on one line. */
-.nx-on .nx-util { background: linear-gradient(90deg, #962323 0%, #ab2b2b 50%, #962323 100%) !important; border: 0 !important; box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(0,0,0,0.2) !important; }
+/* Sub menu: slim navy utility bar */
+.nx-on .nx-util { background: linear-gradient(90deg, #a72a2a 0%, #b82f2f 50%, #a72a2a 100%) !important; border: 0 !important; box-shadow: inset 0 -1px 0 rgba(0,0,0,0.12) !important; }
 .nx-on .nx-util * { background-color: transparent !important; }
-.nx-on .nx-util, .nx-on .nx-util .site-inner, .nx-on .nx-util .header-secondary-menu, .nx-on .nx-util #menu-header-menu-secondary-menu { height: auto !important; max-height: none !important; overflow: visible !important; }
-.nx-on .nx-util a { color: #fff !important; font-family: 'Source Sans 3', system-ui, sans-serif !important; font-size: 0.8rem !important; line-height: 1.2 !important; -webkit-font-smoothing: antialiased; font-weight: 700 !important; letter-spacing: 0.01em !important; text-transform: none !important; text-decoration: none !important; text-shadow: 0 1px 1px rgba(0,0,0,0.18); position: relative; display: inline-block; white-space: nowrap; padding: 5px 9px !important; border-radius: 50px !important; transition: background-color .2s ease, color .2s ease; }
-.nx-on .nx-util a:hover, .nx-on .nx-util a:focus-visible { color: #fff !important; background-color: rgba(255,255,255,0.14) !important; }
-.nx-on .nx-util a:focus-visible { outline: 2px solid #edc32c; outline-offset: 1px; }
-.nx-on .nx-util a::after { content: ''; position: absolute; left: 9px; right: 9px; bottom: 1px; height: 2px; border-radius: 2px; background: #edc32c; transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
-.nx-on .nx-util a:hover::after, .nx-on .nx-util a:focus-visible::after { transform: scaleX(1); }
-.nx-on .nx-util .current-menu-item > a { background-color: rgba(0,0,0,0.14) !important; }
-@media (min-width: 901px) {
-  .nx-on .nx-util #menu-header-menu-secondary-menu { display: flex !important; align-items: center; justify-content: center; flex-wrap: wrap; row-gap: 2px; padding-top: 4px !important; padding-bottom: 4px !important; }
-  .nx-on .nx-util #menu-header-menu-secondary-menu > li { display: flex !important; align-items: center; float: none !important; margin: 0 !important; padding: 0 !important; border: 0 !important; }
-  .nx-on .nx-util #menu-header-menu-secondary-menu > li::before, .nx-on .nx-util #menu-header-menu-secondary-menu > li::after { display: none !important; }
-  .nx-on .nx-util #menu-header-menu-secondary-menu > li + li::before { content: '' !important; display: block !important; width: 1px; height: 11px; margin: 0 1px; background: rgba(255,255,255,0.32) !important; }
-}
-@media (max-width: 1300px) and (min-width: 901px) {
-  .nx-on .nx-util a { font-size: 0.74rem !important; padding: 5px 7px !important; }
-}
-@media (max-width: 900px) {
-  .nx-on .nx-util a { font-size: 0.74rem !important; padding: 6px 8px !important; }
-}
+.nx-on .nx-util a { color: rgba(255,255,255,0.92) !important; font-family: 'Source Sans 3', system-ui, sans-serif !important; font-size: 0.76rem !important; -webkit-font-smoothing: antialiased; font-weight: 600 !important; letter-spacing: 0.04em !important; text-decoration: none !important; position: relative; transition: color .2s ease; }
+.nx-on .nx-util a:hover, .nx-on .nx-util a:focus-visible { color: #fff !important; }
+.nx-on .nx-util a::after { content: ''; position: absolute; left: 0; right: 0; bottom: -3px; height: 2px; border-radius: 2px; background: #edc32c; transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+.nx-on .nx-util a:hover::after { transform: scaleX(1); }
 /* Header: clean white bar that pins and tightens on scroll */
 .nx-on .nx-header { background: #fff !important; box-shadow: 0 1px 0 rgba(16,4,90,0.08) !important; transition: box-shadow .3s ease; }
 .nx-on.nx-scrolled .nx-header { box-shadow: 0 10px 30px -12px rgba(16,4,90,0.35) !important; }
@@ -33,15 +18,17 @@
 .nx-on .nx-main > li > a::after { content: ''; position: absolute; left: 14%; right: 14%; bottom: 8px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, #b82f2f, #edc32c); transform: scaleX(0); transition: transform .28s cubic-bezier(.22,1,.36,1); }
 .nx-on .nx-main > li:hover > a, .nx-on .nx-main > li:focus-within > a { color: #b82f2f !important; }
 .nx-on .nx-main > li:hover > a::after, .nx-on .nx-main > li:focus-within > a::after { transform: scaleX(1); }
-/* Dropdowns: theme handles opening; links get hover bar, slide and arrow */
-.nx-on .nx-main .sub-menu { background: rgba(255,255,255,0.98) !important; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 0 !important; border-top: 3px solid #edc32c !important; border-radius: 0 0 16px 16px !important; box-shadow: 0 24px 48px -16px rgba(16,4,90,0.38), 0 2px 8px rgba(16,4,90,0.08) !important; padding: 10px !important; min-width: 250px; }
+/* Dropdowns: theme handles opening. Rounded card, bold navy links with thin dividers; hover turns the row navy with white text and a gold arrow. */
+.nx-on .nx-main .sub-menu { background: #fff !important; border: 1px solid rgba(16,4,90,0.08) !important; border-top: 3px solid #edc32c !important; border-radius: 14px !important; box-shadow: 0 26px 50px -18px rgba(16,4,90,0.42), 0 4px 12px rgba(16,4,90,0.08) !important; padding: 8px !important; min-width: 270px; }
 .nx-on .nx-main .sub-menu::before { content: ''; position: absolute; left: 0; right: 0; top: -14px; height: 14px; }
-.nx-on .nx-main .sub-menu li { background: transparent !important; border: 0 !important; margin: 0 !important; }
-.nx-on .nx-main .sub-menu a { position: relative; display: block; font-family: 'Source Sans 3', system-ui, sans-serif !important; font-size: 0.93rem !important; font-weight: 600 !important; letter-spacing: 0.01em !important; text-transform: none !important; color: #26213a !important; background: transparent !important; padding: 10px 34px 10px 14px !important; border: 0 !important; border-radius: 10px !important; text-decoration: none !important; -webkit-font-smoothing: antialiased; transition: background .18s ease, color .18s ease, padding .22s cubic-bezier(.22,1,.36,1); }
-.nx-on .nx-main .sub-menu a::before { content: ''; position: absolute; left: 4px; top: 50%; width: 3px; height: 0; border-radius: 3px; background: linear-gradient(180deg, #b82f2f, #edc32c); transform: translateY(-50%); transition: height .22s cubic-bezier(.22,1,.36,1); }
-.nx-on .nx-main .sub-menu a::after { content: '\2192'; position: absolute; right: 14px; top: 50%; transform: translate(-6px, -50%); opacity: 0; color: #b82f2f; font-weight: 700; transition: opacity .2s ease, transform .25s cubic-bezier(.22,1,.36,1); }
-.nx-on .nx-main .sub-menu a:hover, .nx-on .nx-main .sub-menu a:focus-visible { background: #f6f3fb !important; color: #10045a !important; padding-left: 20px !important; }
-.nx-on .nx-main .sub-menu a:hover::before, .nx-on .nx-main .sub-menu a:focus-visible::before { height: 60%; }
+.nx-on .nx-main .sub-menu li { background: transparent !important; border: 0 !important; margin: 0 !important; position: relative; }
+.nx-on .nx-main .sub-menu li + li::before { content: ''; position: absolute; left: 14px; right: 14px; top: 0; height: 1px; background: #eeebf4; pointer-events: none; }
+.nx-on .nx-main .sub-menu li:hover::before, .nx-on .nx-main .sub-menu li:hover + li::before { opacity: 0; }
+.nx-on .nx-main .sub-menu a { position: relative; display: block; font-family: 'Source Sans 3', system-ui, sans-serif !important; font-size: 0.95rem !important; font-weight: 700 !important; letter-spacing: 0.01em !important; text-transform: none !important; color: #10045a !important; background: transparent !important; padding: 11px 36px 11px 14px !important; border: 0 !important; border-radius: 10px !important; text-decoration: none !important; -webkit-font-smoothing: antialiased; transition: background .18s ease, color .18s ease, padding .22s cubic-bezier(.22,1,.36,1); }
+.nx-on .nx-main .sub-menu a::before { content: ''; position: absolute; left: 6px; top: 50%; width: 3px; height: 0; border-radius: 3px; background: #edc32c; transform: translateY(-50%); transition: height .22s cubic-bezier(.22,1,.36,1); }
+.nx-on .nx-main .sub-menu a::after { content: '\2192'; position: absolute; right: 14px; top: 50%; transform: translate(-6px, -50%); opacity: 0; color: #edc32c; font-weight: 700; transition: opacity .2s ease, transform .25s cubic-bezier(.22,1,.36,1); }
+.nx-on .nx-main .sub-menu a:hover, .nx-on .nx-main .sub-menu a:focus-visible { background: #10045a !important; color: #fff !important; -webkit-text-fill-color: #fff; padding-left: 20px !important; }
+.nx-on .nx-main .sub-menu a:hover::before, .nx-on .nx-main .sub-menu a:focus-visible::before { height: 55%; }
 .nx-on .nx-main .sub-menu a:hover::after, .nx-on .nx-main .sub-menu a:focus-visible::after { opacity: 1; transform: translate(0, -50%); }
 @media (prefers-reduced-motion: reduce) { .nx-on .nx-main .sub-menu, .nx-on .nx-main .sub-menu > li { animation: none !important; } }
 /* Footer: white, compact */
