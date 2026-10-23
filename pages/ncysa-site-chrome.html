@@ -2,22 +2,27 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700;800&display=swap">
 <style id="nx-chrome">
 .nx-on { --nx-navy: #10045a; --nx-navy-2: #1a0a6e; --nx-navy-3: #0a0238; --nx-red: #b82f2f; --nx-gold: #edc32c; --nx-cream: #f9f7f7; }
-/* Sub menu: deep red utility bar, crisp white caps, thin dividers, soft pill on hover */
+/* Sub menu: deep red utility bar, crisp bold white text, thin dividers, soft pill on hover. Sized so all 10 links fit on one line. */
 .nx-on .nx-util { background: linear-gradient(90deg, #962323 0%, #ab2b2b 50%, #962323 100%) !important; border: 0 !important; box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(0,0,0,0.2) !important; }
 .nx-on .nx-util * { background-color: transparent !important; }
-.nx-on .nx-util a { color: #fff !important; font-family: 'Source Sans 3', system-ui, sans-serif !important; font-size: 0.78rem !important; line-height: 1 !important; -webkit-font-smoothing: antialiased; font-weight: 700 !important; letter-spacing: 0.07em !important; text-transform: uppercase !important; text-decoration: none !important; text-shadow: 0 1px 1px rgba(0,0,0,0.18); position: relative; display: inline-block; padding: 8px 11px !important; border-radius: 50px !important; transition: background-color .2s ease, color .2s ease; }
-.nx-on .nx-util a:hover, .nx-on .nx-util a:focus-visible { color: #fff !important; background-color: rgba(255,255,255,0.13) !important; }
+.nx-on .nx-util, .nx-on .nx-util .site-inner, .nx-on .nx-util .header-secondary-menu, .nx-on .nx-util #menu-header-menu-secondary-menu { height: auto !important; max-height: none !important; overflow: visible !important; }
+.nx-on .nx-util a { color: #fff !important; font-family: 'Source Sans 3', system-ui, sans-serif !important; font-size: 0.8rem !important; line-height: 1.2 !important; -webkit-font-smoothing: antialiased; font-weight: 700 !important; letter-spacing: 0.01em !important; text-transform: none !important; text-decoration: none !important; text-shadow: 0 1px 1px rgba(0,0,0,0.18); position: relative; display: inline-block; white-space: nowrap; padding: 5px 9px !important; border-radius: 50px !important; transition: background-color .2s ease, color .2s ease; }
+.nx-on .nx-util a:hover, .nx-on .nx-util a:focus-visible { color: #fff !important; background-color: rgba(255,255,255,0.14) !important; }
 .nx-on .nx-util a:focus-visible { outline: 2px solid #edc32c; outline-offset: 1px; }
-.nx-on .nx-util a::after { content: ''; position: absolute; left: 11px; right: 11px; bottom: 3px; height: 2px; border-radius: 2px; background: #edc32c; transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+.nx-on .nx-util a::after { content: ''; position: absolute; left: 9px; right: 9px; bottom: 1px; height: 2px; border-radius: 2px; background: #edc32c; transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
 .nx-on .nx-util a:hover::after, .nx-on .nx-util a:focus-visible::after { transform: scaleX(1); }
 .nx-on .nx-util .current-menu-item > a { background-color: rgba(0,0,0,0.14) !important; }
 @media (min-width: 901px) {
-  .nx-on .nx-util #menu-header-menu-secondary-menu { display: flex !important; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; }
+  .nx-on .nx-util #menu-header-menu-secondary-menu { display: flex !important; align-items: center; justify-content: center; flex-wrap: wrap; row-gap: 2px; padding-top: 4px !important; padding-bottom: 4px !important; }
   .nx-on .nx-util #menu-header-menu-secondary-menu > li { display: flex !important; align-items: center; float: none !important; margin: 0 !important; padding: 0 !important; border: 0 !important; }
-  .nx-on .nx-util #menu-header-menu-secondary-menu > li + li::before { content: ''; display: block; width: 1px; height: 12px; margin: 0 3px; background: rgba(255,255,255,0.3); }
+  .nx-on .nx-util #menu-header-menu-secondary-menu > li::before, .nx-on .nx-util #menu-header-menu-secondary-menu > li::after { display: none !important; }
+  .nx-on .nx-util #menu-header-menu-secondary-menu > li + li::before { content: '' !important; display: block !important; width: 1px; height: 11px; margin: 0 1px; background: rgba(255,255,255,0.32) !important; }
+}
+@media (max-width: 1300px) and (min-width: 901px) {
+  .nx-on .nx-util a { font-size: 0.74rem !important; padding: 5px 7px !important; }
 }
 @media (max-width: 900px) {
-  .nx-on .nx-util a { font-size: 0.72rem !important; letter-spacing: 0.05em !important; padding: 7px 8px !important; }
+  .nx-on .nx-util a { font-size: 0.74rem !important; padding: 6px 8px !important; }
 }
 /* Header: clean white bar that pins and tightens on scroll */
 .nx-on .nx-header { background: #fff !important; box-shadow: 0 1px 0 rgba(16,4,90,0.08) !important; transition: box-shadow .3s ease; }
