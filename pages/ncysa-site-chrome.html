@@ -45,12 +45,14 @@
   .nx-on .nx-main ul { border-radius: 10px !important; box-shadow: none !important; border-top-width: 2px !important; }
   .nx-on .nx-footer #menu-footer-menu > li > a { font-size: 0.78rem !important; padding: 6px 12px !important; }
 }
+#nx-badge { position: fixed; right: 10px; bottom: 10px; z-index: 2147483646; background: #edc32c; color: #10045a; font: 800 11px/1 'Source Sans 3', system-ui, sans-serif; letter-spacing: .06em; text-transform: uppercase; padding: 7px 12px; border-radius: 50px; box-shadow: 0 6px 16px rgba(0,0,0,.3); pointer-events: none; }
 #nx-debug { position: fixed; left: 8px; bottom: 8px; z-index: 2147483647; max-width: calc(100vw - 16px); max-height: 60vh; overflow: auto; background: #0a0238; color: #fff; font: 12px/1.4 ui-monospace, Menlo, monospace; padding: 10px 12px; border-radius: 10px; border: 2px solid #edc32c; white-space: pre-wrap; }
 </style>
 <script>
 (function () {
   var body = document.body;
-  if (!body.classList.contains('logged-in')) { return; }
+  var force = /[?&]nxpreview/.test(location.search);
+  if (!force) { if (!body.classList.contains('logged-in')) { return; } }
   if (/[?&]oldnav/.test(location.search)) { return; }
   function txt(a) { return (a.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase(); }
   function vw() { return document.documentElement.clientWidth; }
@@ -66,12 +68,11 @@
   }
   var links = Array.prototype.slice.call(document.querySelectorAll('a'));
   var about = null, staff = null;
+  function shown(a) { var r = a.getBoundingClientRect(); if (r.width < 1) { return false; } if (r.height < 1) { return false; } if (r.top + window.pageYOffset > 900) { return false; } return true; }
   links.forEach(function (a) {
     var t = txt(a);
-    var r = a.getBoundingClientRect();
-    if (r.top + window.pageYOffset > 900) { return; }
-    if (about === null) { if (t === 'about us') { about = a; } }
-    if (staff === null) { if (t === 'staff directory') { staff = a; } }
+    if (about === null) { if (t.indexOf('about us') === 0) { if (shown(a)) { about = a; } } }
+    if (staff === null) { if (t.indexOf('staff directory') === 0) { if (shown(a)) { staff = a; } } }
   });
   var mainUl = about ? about.closest('ul') : null;
   if (mainUl) {
@@ -97,6 +98,10 @@
   var ft = document.querySelector('.site-footer') || document.querySelector('footer');
   if (ft) { ft.classList.add('nx-footer'); }
   body.classList.add('nx-on');
+  var badge = document.createElement('div');
+  badge.id = 'nx-badge';
+  badge.textContent = 'New menu preview on' + (mainUl ? '' : ' (main menu not found)') + (staff ? '' : ' (sub menu not found)') + (ft ? '' : ' (footer not found)');
+  body.appendChild(badge);
   var ticking = false;
   function onScroll() { ticking = false; body.classList.toggle('nx-scrolled', window.pageYOffset > 40); }
   window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
