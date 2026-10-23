@@ -18,21 +18,10 @@
 .nx-on .nx-main > li > a::after { content: ''; position: absolute; left: 14%; right: 14%; bottom: 8px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, #b82f2f, #edc32c); transform: scaleX(0); transition: transform .28s cubic-bezier(.22,1,.36,1); }
 .nx-on .nx-main > li:hover > a, .nx-on .nx-main > li:focus-within > a { color: #b82f2f !important; }
 .nx-on .nx-main > li:hover > a::after, .nx-on .nx-main > li:focus-within > a::after { transform: scaleX(1); }
-/* Dropdowns: drop in, links cascade in, arrow slides on hover */
-@keyframes nxDrop { from { opacity: 0; transform: translateY(10px) scale(0.98); } to { opacity: 1; transform: none; } }
-@keyframes nxItem { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
-.nx-on .nx-main .sub-menu { background: rgba(255,255,255,0.98) !important; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 0 !important; border-top: 3px solid #edc32c !important; border-radius: 0 0 16px 16px !important; box-shadow: 0 24px 48px -16px rgba(16,4,90,0.38), 0 2px 8px rgba(16,4,90,0.08) !important; padding: 10px !important; min-width: 250px; transform-origin: top center; }
-.nx-on .nx-main li:hover > ul, .nx-on .nx-main li:focus-within > ul { animation: nxDrop .28s cubic-bezier(.22,1,.36,1) both; }
+/* Dropdowns: theme handles opening; links get hover bar, slide and arrow */
+.nx-on .nx-main .sub-menu { background: rgba(255,255,255,0.98) !important; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 0 !important; border-top: 3px solid #edc32c !important; border-radius: 0 0 16px 16px !important; box-shadow: 0 24px 48px -16px rgba(16,4,90,0.38), 0 2px 8px rgba(16,4,90,0.08) !important; padding: 10px !important; min-width: 250px; }
+.nx-on .nx-main .sub-menu::before { content: ''; position: absolute; left: 0; right: 0; top: -14px; height: 14px; }
 .nx-on .nx-main .sub-menu li { background: transparent !important; border: 0 !important; margin: 0 !important; }
-.nx-on .nx-main li:hover > ul > li, .nx-on .nx-main li:focus-within > ul > li { animation: nxItem .3s cubic-bezier(.22,1,.36,1) both; }
-.nx-on .nx-main .sub-menu > li:nth-child(1) { animation-delay: .03s !important; }
-.nx-on .nx-main .sub-menu > li:nth-child(2) { animation-delay: .06s !important; }
-.nx-on .nx-main .sub-menu > li:nth-child(3) { animation-delay: .09s !important; }
-.nx-on .nx-main .sub-menu > li:nth-child(4) { animation-delay: .12s !important; }
-.nx-on .nx-main .sub-menu > li:nth-child(5) { animation-delay: .15s !important; }
-.nx-on .nx-main .sub-menu > li:nth-child(6) { animation-delay: .18s !important; }
-.nx-on .nx-main .sub-menu > li:nth-child(7) { animation-delay: .21s !important; }
-.nx-on .nx-main .sub-menu > li:nth-child(n+8) { animation-delay: .24s !important; }
 .nx-on .nx-main .sub-menu a { position: relative; display: block; font-family: 'Source Sans 3', system-ui, sans-serif !important; font-size: 0.93rem !important; font-weight: 600 !important; letter-spacing: 0.01em !important; text-transform: none !important; color: #26213a !important; background: transparent !important; padding: 10px 34px 10px 14px !important; border: 0 !important; border-radius: 10px !important; text-decoration: none !important; -webkit-font-smoothing: antialiased; transition: background .18s ease, color .18s ease, padding .22s cubic-bezier(.22,1,.36,1); }
 .nx-on .nx-main .sub-menu a::before { content: ''; position: absolute; left: 4px; top: 50%; width: 3px; height: 0; border-radius: 3px; background: linear-gradient(180deg, #b82f2f, #edc32c); transform: translateY(-50%); transition: height .22s cubic-bezier(.22,1,.36,1); }
 .nx-on .nx-main .sub-menu a::after { content: '\2192'; position: absolute; right: 14px; top: 50%; transform: translate(-6px, -50%); opacity: 0; color: #b82f2f; font-weight: 700; transition: opacity .2s ease, transform .25s cubic-bezier(.22,1,.36,1); }
