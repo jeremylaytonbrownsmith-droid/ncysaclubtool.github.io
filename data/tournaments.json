@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T17:07:41.860Z",
+  "updated": "2026-10-23T21:30:43.853Z",
   "source": "https://playmetricssports.com/g/tournaments/138/North-Carolina",
   "statedCount": 17,
   "count": 17,
@@ -54,8 +54,7 @@
       "registerUrl": "https://soccer.sincsports.com/TTApply0.aspx?tid=CLASHFI&tab=2&sub=0",
       "scheduleUrl": "https://soccer.sincsports.com/schedule.aspx?tid=CLASHFI&tab=3&sub=0",
       "websiteUrl": "https://soccer.sincsports.com/TTContent.aspx?tid=CLASHFI&tab=1",
-      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/ASHEBORO-CITY-FUTBOL-CLUB.jpg",
-      "logoFrom": "ncysa",
+      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5780/logo",
       "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-acfc-clashboro-fall-invitational/"
     },
     {
