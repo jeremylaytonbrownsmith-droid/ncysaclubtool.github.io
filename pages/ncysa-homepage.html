@@ -2537,6 +2537,15 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
 .ev .tl-noimg { border-radius: 12px; box-shadow: inset 0 0 0 1px rgba(59,85,217,0.18); }
 </style>
 <style>
+/* Info tiles: image stays whole inside the tile and the button sits below it, so nothing covers the artwork at any zoom */
+#ncysa-home .ncysa-tile { aspect-ratio: auto !important; display: flex !important; flex-direction: column; }
+#ncysa-home .ncysa-tile-img { position: relative !important; inset: auto !important; display: block; width: 100%; height: auto !important; aspect-ratio: 5 / 6; flex-shrink: 0; }
+#ncysa-home .ncysa-tile::after { display: none !important; }
+#ncysa-home .ncysa-tile:hover .ncysa-tile-img { transform: scale(1.03); }
+#ncysa-home .ncysa-tile-label { position: relative !important; left: auto !important; bottom: auto !important; transform: none !important; display: flex; align-items: center; justify-content: center; width: calc(100% - 24px) !important; min-height: 46px; margin: 12px auto 14px; padding: 8px 10px !important; font-size: clamp(12px, 0.95vw, 14px) !important; }
+#ncysa-home .ncysa-tile:hover .ncysa-tile-label { transform: translateY(-2px) !important; }
+</style>
+<style>
 /* Behind the Scenes sits inside the Highlighted Events curve: its bottom edge follows the gold arc */
 #ncysa-home { --bts-arc: 90px; }
 @media (max-width: 700px) { #ncysa-home { --bts-arc: 48px; } }
