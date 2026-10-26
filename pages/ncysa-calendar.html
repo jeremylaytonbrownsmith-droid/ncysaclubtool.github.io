@@ -1290,7 +1290,7 @@ html:has(#ncysa-page), body:has(#ncysa-page) { overflow-x: clip; }
   function hkCard(x, now, past, n, nowK) {
     var tourn = x.cat === 'tourn', c = CATS[x.cat], days = calDays(x.start), live = all(now >= x.start, now <= x.end), pill = '';
     var href, tag;
-    if (tourn) { var det = x.nc || x.web; href = past ? (det || 'https://www.ncsoccer.org/nc-sanctioned-tournament-page/') : (x.reg || det || 'https://playmetricssports.com/g/tournaments/138/North-Carolina'); tag = all(!past, x.reg) ? 'Register' : 'Details'; }
+    if (tourn) { var det = x.web || x.nc; href = past ? (det || 'https://www.ncsoccer.org/nc-sanctioned-tournament-page/') : (x.reg || det || 'https://playmetricssports.com/g/tournaments/138/North-Carolina'); tag = all(!past, x.reg) ? 'Register' : 'Details'; }
     else { href = past ? 'https://www.ncsoccer.org/ncysa-calendar/' : gcal(x); tag = past ? 'See the calendar' : 'Add to calendar'; }
     if (!past) {
       if (tourn) { if (x.close) { var cd = daysTo(x.close); if (cd >= 0) pill = '<span class="regpill sm' + (cd <= 7 ? ' hot' : '') + '">' + closesText(cd) + '</span>'; } }

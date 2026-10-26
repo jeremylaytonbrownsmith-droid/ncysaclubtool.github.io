@@ -30,6 +30,23 @@ for (const t of pm) {
   if (!t.logo) { const l = logos[a] || (/falcons united/i.test(t.name) ? logos.FU : null); if (l) { t.logo = l; t.logoFrom = 'ncysa'; filled++; } }
 }
 
+// The tournament's own website: use extras.json "website" when set, otherwise read the
+// "Website" link from its NCYSA tournament page so the card can send people straight there.
+const siteFrom = async (url) => {
+  try {
+    const r = await fetch(url, { headers: { 'user-agent': 'ncysa-bot' } });
+    if (!r.ok) return null;
+    const html = await r.text();
+    const m = html.match(/<a[^>]+href="([^"]+)"[^>]*>(?:\s|<[^>]+>)*Website/i);
+    if (!m) return null;
+    const u = m[1].replace(/&amp;/g, '&');
+    return /^https?:\/\//.test(u) ? u : null;
+  } catch (e) { return null; }
+};
+for (const x of extras.tournaments || []) {
+  if ((x.end || x.start) < today) continue;
+  if (!x.website) { const w = await siteFrom(x.url); if (w) { x.website = w; console.log(`  website found: ${x.name} -> ${w}`); } }
+}
 const added = [];
 for (const x of extras.tournaments || []) {
   if ((x.end || x.start) < today) continue;
@@ -41,7 +58,7 @@ for (const x of extras.tournaments || []) {
     id: 'ncysa-' + x.url.replace(/\/$/, '').split('/').pop(),
     name: x.name, start: x.start, end: x.end || x.start, city: x.city, ages: x.ages, venue: x.venue || null,
     registrationOpen: !!closes && closes >= today, registrationCloses: closes,
-    registerUrl: null, scheduleUrl: null, websiteUrl: x.url, ncysaUrl: x.url, clubUrl: x.website || null,
+    registerUrl: null, scheduleUrl: null, websiteUrl: x.website || null, ncysaUrl: x.url, clubUrl: x.website || null,
     logo: logos[a] || null, pm: false,
   });
 }

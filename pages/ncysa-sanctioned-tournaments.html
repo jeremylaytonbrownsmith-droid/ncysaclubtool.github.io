@@ -1107,7 +1107,7 @@ html:has(#ncysa-page), body:has(#ncysa-page) { overflow-x: clip; }
   /* Week by week, the same boxes as the Highlighted Events page */
   function svCardT(x, now) {
     var mark = x.logo ? '<img class="sv-logo" src="' + esc(x.logo) + '" alt="" loading="lazy" onerror="this.outerHTML=this.dataset.f" data-f="' + esc('<span class="sv-ic">' + ico('tourn') + '</span>') + '">' : '<span class="sv-ic">' + ico('tourn') + '</span>';
-    var det = x.nc || x.web;
+    var det = x.web || x.nc;
     var go = x.reg ? '<a class="sv-go" href="' + esc(x.reg) + '" target="_blank" rel="noopener">Register</a>' : (det ? '<a class="sv-go ghost" href="' + esc(det) + '" target="_blank" rel="noopener">Details</a>' : '');
     var live = all(now >= x.start, now <= x.end), pill = '';
     if (x.close) { var cd = daysTo(x.close); if (cd >= 0) pill = '<span class="regpill sm' + (cd <= 7 ? ' hot' : '') + '">' + closesText(cd) + '</span>'; }
@@ -1127,7 +1127,7 @@ html:has(#ncysa-page), body:has(#ncysa-page) { overflow-x: clip; }
           if (past) { var pm2 = x.logo ? '<img class="hk-logo" src="' + esc(x.logo) + '" alt="" loading="lazy" onerror="this.remove()">' : '';
             return '<a class="hk past" style="--cat:#6d6a75;--i:' + Math.min(n++, 8) + '" href="' + esc(x.nc || 'https://www.ncsoccer.org/nc-sanctioned-tournament-page/') + '" target="_blank" rel="noopener"><span class="hk-top"><span class="hk-ic">' + ico('tourn') + '</span>Sanctioned Tournament<em>Played</em></span>' +
               '<span class="hk-body"><span class="hk-d"><b>' + MON[x.start.getMonth()] + '</b><span class="notranslate" translate="no">' + x.start.getDate() + '</span><small>' + DOW[x.start.getDay()] + '</small></span><span class="hk-t"><strong>' + esc(x.t) + '</strong><small>' + rangeText(x) + (x.loc ? ' \u00b7 ' + esc(x.loc) : '') + '</small>' + '<small class="hk-ages">' + (x.ages ? esc(x.ages) : '\u00a0') + '</small></span>' + pm2 + '</span><span class="hk-go">Details <i>\u2192</i></span></a>'; }
-          var det = x.nc || x.web, href = x.reg || det || 'https://playmetricssports.com/g/tournaments/138/North-Carolina';
+          var det = x.web || x.nc, href = x.reg || det || 'https://playmetricssports.com/g/tournaments/138/North-Carolina';
           var tag = x.reg ? 'Register' : 'Details';
           var mark = x.logo ? '<img class="hk-logo" src="' + esc(x.logo) + '" alt="" loading="lazy" onerror="this.remove()">' : '';
           var days = calDays(x.start), live = all(now >= x.start, now <= x.end), pill = '';

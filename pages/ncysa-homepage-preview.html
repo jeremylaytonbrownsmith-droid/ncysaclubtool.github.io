@@ -1992,7 +1992,7 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
     var next = items.filter(function (x) { return wkKey(x.start) !== skip; }).slice(0, 6);
     box.innerHTML = next.length ? next.map(function (x, i) {
       var tourn = x.cat === 'tourn', c = CATS[x.cat];
-      var href = tourn ? (x.reg || x.nc || 'https://www.ncsoccer.org/ncysa-calendar/') : gcal(x);
+      var href = tourn ? (x.reg || x.web || x.nc || 'https://www.ncsoccer.org/ncysa-calendar/') : gcal(x);
       var tag = tourn ? (x.reg ? 'Register' : 'Details') : 'Add to calendar';
       var mark = x.logo ? '<img class="hk-logo" src="' + esc(x.logo) + '" alt="" loading="lazy" onerror="this.remove()">' : '';
       var days = calDays(x.start), live = all(now >= x.start, now <= x.end), sub = tourn ? (x.ages || '') : (x.note || '');
