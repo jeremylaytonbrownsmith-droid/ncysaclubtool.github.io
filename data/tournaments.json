@@ -1,28 +1,10 @@
 {
-  "updated": "2026-10-25T23:17:07.304Z",
+  "updated": "2026-10-26T04:47:39.378Z",
   "source": "https://playmetricssports.com/g/tournaments/138/North-Carolina",
   "statedCount": 17,
   "count": 17,
   "complete": true,
   "tournaments": [
-    {
-      "id": "ncysa-cvysa-autumn-blast-2026",
-      "name": "2026 CVYSA Autumn Blast",
-      "start": "2026-10-24",
-      "end": "2026-10-25",
-      "city": "Hickory, NC",
-      "ages": "U8–U14 Boys & Girls / U15–U19 Girls",
-      "venue": "Pepsi Regional Soccer Complex",
-      "registrationOpen": false,
-      "registrationCloses": "2026-10-05",
-      "registerUrl": null,
-      "scheduleUrl": null,
-      "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/cvysa-autumn-blast-2026/",
-      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/cvysa-autumn-blast-2026/",
-      "clubUrl": "https://soccer.sincsports.com/details.aspx?tid=CVYSAAB&tab=1",
-      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CATAWBA-VALLEY-YOUTH-SA.png",
-      "pm": false
-    },
     {
       "id": "ncysa-2026csa-carolina-shootout-and-ya-festival",
       "name": "2026 CSA Carolina Shootout & YA Festival",
@@ -478,5 +460,5 @@
       "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5820/logo"
     }
   ],
-  "notInPlayMetrics": 11
+  "notInPlayMetrics": 10
 }

@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-21T17:13:18.637Z",
+ "updated": "2026-10-26T04:47:23.241Z",
  "note": "Sanctioned tournaments that have already been played. Kept by scripts/archive-past.mjs.",
- "count": 17,
+ "count": 18,
  "tournaments": [
   {
    "id": "past-2026-csa-dsg-girls-invitational-2026-08-15",
@@ -206,6 +206,18 @@
    "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-nc-rush-fall-classic/",
    "websiteUrl": "https://leagues.bluesombrero.com/Default.aspx?tabid=1795827",
    "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-RUSH-TRIAD.png"
+  },
+  {
+   "id": "ncysa-cvysa-autumn-blast-2026",
+   "name": "2026 CVYSA Autumn Blast",
+   "start": "2026-10-24",
+   "end": "2026-10-25",
+   "city": "Hickory, NC",
+   "ages": "U8–U14 Boys & Girls / U15–U19 Girls",
+   "venue": "Pepsi Regional Soccer Complex",
+   "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/cvysa-autumn-blast-2026/",
+   "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/cvysa-autumn-blast-2026/",
+   "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CATAWBA-VALLEY-YOUTH-SA.png"
   }
  ]
 }
