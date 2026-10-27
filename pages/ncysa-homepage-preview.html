@@ -2497,14 +2497,6 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
   #ncysa-home .ncysa-club-button-text { order: 1; min-width: 0 !important; width: 100%; }
   #ncysa-home .nc-map-animation { order: 2; max-width: 260px !important; opacity: 0.9; }
   #ncysa-home .ncysa-club-button-container { padding-top: 40px !important; padding-bottom: 30px !important; }
-  /* Tiles: one swipeable row instead of a tall stack */
-  #ncysa-home .ncysa-tiles-section { padding: 28px 0 24px !important; }
-  #ncysa-home .ncysa-tile-grid { display: flex !important; max-width: none !important; gap: 14px !important; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding: 4px 20px 14px; scroll-padding: 0 20px; scrollbar-width: none; }
-  #ncysa-home .ncysa-tile-grid::-webkit-scrollbar { display: none; }
-  #ncysa-home .ncysa-tile-grid > .ncysa-tile { flex: 0 0 74%; scroll-snap-align: start; }
-  #ncysa-home .fyc-swipe { display: flex; justify-content: center; gap: 6px; margin: 2px 0 0; }
-  #ncysa-home .fyc-swipe i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.35); transition: background .25s ease, width .25s ease; }
-  #ncysa-home .fyc-swipe i.on { width: 20px; border-radius: 4px; background: #edc32c; }
   /* NCSRA banner: no empty white box around the thin image */
   #ncysa-home .ncysa-ncsra-section { padding: 0 16px 24px !important; }
   #ncysa-home .ncysa-ncsra-banner { height: auto !important; border-radius: 12px !important; }
@@ -2512,7 +2504,18 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
   #ncysa-home #ev.ev.home .mini .big small { white-space: nowrap !important; overflow-wrap: normal !important; }
   #ncysa-home #ev.ev.home .mini .big { min-width: 58px; }
 }
-@media (min-width: 601px) { #ncysa-home .fyc-swipe { display: none; } }
+/* Tiles: one swipeable row whenever the screen (or zoom) can't fit all five side by side. Tiles keep a moderate size instead of growing huge. */
+@media (max-width: 1200px) {
+  #ncysa-home .ncysa-tiles-section { padding: 28px 0 24px !important; }
+  #ncysa-home .ncysa-tile-grid { display: flex !important; max-width: none !important; gap: 14px !important; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding: 10px 20px 14px; scroll-padding: 0 20px; scrollbar-width: none; }
+  #ncysa-home .ncysa-tile-grid::-webkit-scrollbar { display: none; }
+  #ncysa-home .ncysa-tile-grid > .ncysa-tile { flex: 0 0 min(280px, 74%); scroll-snap-align: start; }
+  #ncysa-home .ncysa-tile:hover { transform: translateY(-4px); }
+  #ncysa-home .fyc-swipe { display: flex; justify-content: center; gap: 6px; margin: 2px 0 0; }
+  #ncysa-home .fyc-swipe i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.35); transition: background .25s ease, width .25s ease; cursor: pointer; }
+  #ncysa-home .fyc-swipe i.on { width: 20px; border-radius: 4px; background: #edc32c; }
+}
+@media (min-width: 1201px) { #ncysa-home .fyc-swipe { display: none; } }
 </style>
 <script>
 (function () {
@@ -2525,6 +2528,7 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
   for (var i = 0; i < tiles.length; i++) { dots.appendChild(document.createElement('i')); }
   grid.parentNode.insertBefore(dots, grid.nextSibling);
   var ds = dots.querySelectorAll('i');
+  Array.prototype.forEach.call(ds, function (d, n) { d.addEventListener('click', function () { grid.scrollTo({ left: tiles[n].getBoundingClientRect().left - grid.getBoundingClientRect().left + grid.scrollLeft - 20, behavior: 'smooth' }); }); });
   function mark() {
     var best = 0, bd = 1e9, gl = grid.getBoundingClientRect().left;
     for (var k = 0; k < tiles.length; k++) { var d = Math.abs(tiles[k].getBoundingClientRect().left - gl - 20); if (d < bd) { bd = d; best = k; } }
