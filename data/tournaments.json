@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31T19:18:23.732Z",
+  "updated": "2026-11-01T00:08:59.213Z",
   "source": "https://playmetricssports.com/g/tournaments/138/North-Carolina",
   "statedCount": 17,
   "count": 17,
@@ -255,7 +255,7 @@
       "city": "Asheville, NC",
       "ages": "Male U10–U17, U18+",
       "venue": null,
-      "registrationOpen": false,
+      "registrationOpen": true,
       "registrationCloses": "2027-01-05",
       "registerUrl": "https://soccer.sincsports.com/register/start.aspx?tid=ABYSA1&tab=2&sub=0",
       "scheduleUrl": "https://soccer.sincsports.com/schedule.aspx?tid=ABYSA1&tab=3&sub=1",
