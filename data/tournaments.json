@@ -1,28 +1,10 @@
 {
-  "updated": "2026-11-02T00:45:34.983Z",
+  "updated": "2026-11-02T11:06:19.621Z",
   "source": "https://playmetricssports.com/g/tournaments/138/North-Carolina",
   "statedCount": 17,
   "count": 17,
   "complete": true,
   "tournaments": [
-    {
-      "id": "ncysa-2026csa-carolina-shootout-and-ya-festival",
-      "name": "2026 CSA Carolina Shootout & YA Festival",
-      "start": "2026-10-31",
-      "end": "2026-11-01",
-      "city": "Charlotte, NC",
-      "ages": "U8–U10 Youth Academy / U11–U19 Boys & Girls",
-      "venue": null,
-      "registrationOpen": false,
-      "registrationCloses": "2026-10-19",
-      "registerUrl": null,
-      "scheduleUrl": null,
-      "websiteUrl": "https://www.charlottesocceracademy.com",
-      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026csa-carolina-shootout-and-ya-festival/",
-      "clubUrl": "https://www.charlottesocceracademy.com",
-      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-SOCCER-ACADEMY.jpeg",
-      "pm": false
-    },
     {
       "id": 93,
       "name": "2026 ACFC Clashboro Fall Invitational",
@@ -460,5 +442,5 @@
       "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5820/logo"
     }
   ],
-  "notInPlayMetrics": 10
+  "notInPlayMetrics": 9
 }

@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-26T04:47:23.241Z",
+ "updated": "2026-11-02T11:06:03.598Z",
  "note": "Sanctioned tournaments that have already been played. Kept by scripts/archive-past.mjs.",
- "count": 18,
+ "count": 19,
  "tournaments": [
   {
    "id": "past-2026-csa-dsg-girls-invitational-2026-08-15",
@@ -218,6 +218,18 @@
    "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/cvysa-autumn-blast-2026/",
    "websiteUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/cvysa-autumn-blast-2026/",
    "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CATAWBA-VALLEY-YOUTH-SA.png"
+  },
+  {
+   "id": "ncysa-2026csa-carolina-shootout-and-ya-festival",
+   "name": "2026 CSA Carolina Shootout & YA Festival",
+   "start": "2026-10-31",
+   "end": "2026-11-01",
+   "city": "Charlotte, NC",
+   "ages": "U8–U10 Youth Academy / U11–U19 Boys & Girls",
+   "venue": null,
+   "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026csa-carolina-shootout-and-ya-festival/",
+   "websiteUrl": "https://www.charlottesocceracademy.com",
+   "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-SOCCER-ACADEMY.jpeg"
   }
  ]
 }
