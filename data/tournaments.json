@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T21:43:16.509Z",
+  "updated": "2026-11-03T06:47:01.921Z",
   "source": "https://playmetricssports.com/g/tournaments/138/North-Carolina",
   "statedCount": 17,
   "count": 17,
@@ -155,7 +155,7 @@
       "city": "Wilmington, NC",
       "ages": "Male U9–U15 | Female U9–U17, U18+",
       "venue": "Wilmington, NC / nCino Sports Park, Veteran’s Park, Ogden/Eaton Fields",
-      "registrationOpen": true,
+      "registrationOpen": false,
       "registrationCloses": "2026-11-02",
       "registerUrl": "https://soccer.sincsports.com/TTApply0.aspx?tid=BEACH&tab=2&sub=0",
       "scheduleUrl": "https://soccer.sincsports.com/schedule.aspx?tid=BEACH&tab=4&sub=0",
