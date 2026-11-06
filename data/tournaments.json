@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T06:45:07.561Z",
+  "updated": "2026-11-06T16:45:58.370Z",
   "source": "https://playmetricssports.com/g/tournaments/138/North-Carolina",
   "statedCount": 17,
   "count": 17,
@@ -193,8 +193,7 @@
       "registerUrl": "https://system.gotsport.com/event_regs/d68f5c2311",
       "scheduleUrl": null,
       "websiteUrl": "https://www.ncfcyouth.com/boys-college-showcase",
-      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png",
-      "logoFrom": "ncysa",
+      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5831/logo",
       "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-boys-college-showcase/"
     },
     {
@@ -342,7 +341,7 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://www.appfcacademy.com/",
-      "logo": null
+      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5819/logo"
     },
     {
       "id": 101,
@@ -391,7 +390,7 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://www.appfcacademy.com/tournaments/",
-      "logo": null
+      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5819/logo"
     },
     {
       "id": 102,
@@ -406,8 +405,7 @@
       "registerUrl": null,
       "scheduleUrl": null,
       "websiteUrl": "https://www.ncfcyouth.com/city-of-oaks",
-      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png",
-      "logoFrom": "ncysa",
+      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5831/logo",
       "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-ncfcy-city-of-oaks-classic/"
     },
     {
