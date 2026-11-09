@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-02T11:06:03.598Z",
+ "updated": "2026-11-09T06:27:26.887Z",
  "note": "Sanctioned tournaments that have already been played. Kept by scripts/archive-past.mjs.",
- "count": 19,
+ "count": 22,
  "tournaments": [
   {
    "id": "past-2026-csa-dsg-girls-invitational-2026-08-15",
@@ -230,6 +230,42 @@
    "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026csa-carolina-shootout-and-ya-festival/",
    "websiteUrl": "https://www.charlottesocceracademy.com",
    "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-SOCCER-ACADEMY.jpeg"
+  },
+  {
+   "id": 93,
+   "name": "2026 ACFC Clashboro Fall Invitational",
+   "start": "2026-11-07",
+   "end": "2026-11-08",
+   "city": "Mebane, NC",
+   "ages": "Male U8–U17, U18+ | Female U8–U9, U11–U17, U18+",
+   "venue": null,
+   "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-acfc-clashboro-fall-invitational/",
+   "websiteUrl": "https://soccer.sincsports.com/TTContent.aspx?tid=CLASHFI&tab=1",
+   "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5780/logo"
+  },
+  {
+   "id": "ncysa-2026-mysa-fall-champions-cup",
+   "name": "2026 MYSA Fall Champions Classic",
+   "start": "2026-11-07",
+   "end": "2026-11-08",
+   "city": "Mebane, NC",
+   "ages": "U8–U19 Boys & Girls",
+   "venue": null,
+   "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-mysa-fall-champions-cup/",
+   "websiteUrl": "https://www.mebaneyouthsoccer.com/",
+   "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/MEBANE-YOUTH-SA.jpg"
+  },
+  {
+   "id": "ncysa-2026-ncfcy-visitraleigh-com-girls-jr-showcase",
+   "name": "2026 NCFCY visitRaleigh.com Girls Jr Showcase",
+   "start": "2026-11-07",
+   "end": "2026-11-08",
+   "city": "Raleigh, NC",
+   "ages": "U10–U14 Girls",
+   "venue": null,
+   "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-girls-jr-showcase/",
+   "websiteUrl": "https://www.ncfcyouth.com/",
+   "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png"
   }
  ]
 }

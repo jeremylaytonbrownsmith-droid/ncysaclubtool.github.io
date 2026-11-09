@@ -1,62 +1,10 @@
 {
-  "updated": "2026-11-08T22:05:05.275Z",
+  "updated": "2026-11-09T06:27:42.924Z",
   "source": "https://playmetricssports.com/g/tournaments/138/North-Carolina",
-  "statedCount": 17,
-  "count": 17,
+  "statedCount": 16,
+  "count": 16,
   "complete": true,
   "tournaments": [
-    {
-      "id": 93,
-      "name": "2026 ACFC Clashboro Fall Invitational",
-      "start": "2026-11-07",
-      "end": "2026-11-08",
-      "city": "Mebane, NC",
-      "ages": "Male U8–U17, U18+ | Female U8–U9, U11–U17, U18+",
-      "venue": null,
-      "registrationOpen": false,
-      "registrationCloses": "2026-10-26",
-      "registerUrl": "https://soccer.sincsports.com/TTApply0.aspx?tid=CLASHFI&tab=2&sub=0",
-      "scheduleUrl": "https://soccer.sincsports.com/schedule.aspx?tid=CLASHFI&tab=3&sub=0",
-      "websiteUrl": "https://soccer.sincsports.com/TTContent.aspx?tid=CLASHFI&tab=1",
-      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5780/logo",
-      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-acfc-clashboro-fall-invitational/"
-    },
-    {
-      "id": "ncysa-2026-mysa-fall-champions-cup",
-      "name": "2026 MYSA Fall Champions Classic",
-      "start": "2026-11-07",
-      "end": "2026-11-08",
-      "city": "Mebane, NC",
-      "ages": "U8–U19 Boys & Girls",
-      "venue": null,
-      "registrationOpen": false,
-      "registrationCloses": null,
-      "registerUrl": null,
-      "scheduleUrl": null,
-      "websiteUrl": "https://www.mebaneyouthsoccer.com/",
-      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-mysa-fall-champions-cup/",
-      "clubUrl": "https://www.mebaneyouthsoccer.com/",
-      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/MEBANE-YOUTH-SA.jpg",
-      "pm": false
-    },
-    {
-      "id": "ncysa-2026-ncfcy-visitraleigh-com-girls-jr-showcase",
-      "name": "2026 NCFCY visitRaleigh.com Girls Jr Showcase",
-      "start": "2026-11-07",
-      "end": "2026-11-08",
-      "city": "Raleigh, NC",
-      "ages": "U10–U14 Girls",
-      "venue": null,
-      "registrationOpen": false,
-      "registrationCloses": null,
-      "registerUrl": null,
-      "scheduleUrl": null,
-      "websiteUrl": "https://www.ncfcyouth.com/",
-      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-girls-jr-showcase/",
-      "clubUrl": "https://www.ncfcyouth.com/",
-      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png",
-      "pm": false
-    },
     {
       "id": "ncysa-2026-nc-fusion-adidas-clash",
       "name": "2026 NCF Adidas Clash",
@@ -440,5 +388,5 @@
       "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5820/logo"
     }
   ],
-  "notInPlayMetrics": 9
+  "notInPlayMetrics": 7
 }
