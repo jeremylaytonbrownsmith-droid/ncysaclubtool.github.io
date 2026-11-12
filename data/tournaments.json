@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-12T11:08:44.239Z",
+  "updated": "2026-11-12T19:53:58.965Z",
   "source": "https://playmetricssports.com/g/tournaments/138/North-Carolina",
-  "statedCount": 16,
-  "count": 16,
+  "statedCount": 19,
+  "count": 19,
   "complete": true,
   "tournaments": [
     {
@@ -177,6 +177,21 @@
       "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-cisc-girls-college-showcase/"
     },
     {
+      "id": 121,
+      "name": "Commanders Cup",
+      "start": "2027-01-29",
+      "end": "2027-01-31",
+      "city": "Goldsboro, NC",
+      "ages": "Male U9–U18 | Female U9–U18",
+      "venue": null,
+      "registrationOpen": true,
+      "registrationCloses": "2027-01-09",
+      "registerUrl": "https://soccer.sincsports.com/register/start.aspx?tid=COMCUP&tab=2&sub=0",
+      "scheduleUrl": null,
+      "websiteUrl": "https://soccer.sincsports.com/TTContent.aspx?tid=COMCUP&tab=1&",
+      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5870/logo"
+    },
+    {
       "id": 96,
       "name": "2027 ABYSA Riverside Spring Kickoff – Boys",
       "start": "2027-01-30",
@@ -191,6 +206,21 @@
       "websiteUrl": "https://www.abysa.org/",
       "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5781/logo",
       "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027abysariversidespringkickoffboys/"
+    },
+    {
+      "id": 123,
+      "name": "PUMA KINGS Cup Girls 2027",
+      "start": "2027-01-30",
+      "end": "2027-01-31",
+      "city": "Charlotte, NC",
+      "ages": "Female U9–U18",
+      "venue": null,
+      "registrationOpen": true,
+      "registrationCloses": "2027-01-18",
+      "registerUrl": "https://soccer.sincsports.com/register/start.aspx?tid=CSAADIG&tab=2&sub=0",
+      "scheduleUrl": "https://soccer.sincsports.com/schedule.aspx?tid=CSAADIG&tab=4&sub=1",
+      "websiteUrl": "https://soccer.sincsports.com/details.aspx?tid=CSAADIG&tab=1",
+      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5798/logo"
     },
     {
       "id": 98,
@@ -225,6 +255,21 @@
       "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/PITT-GREENVILLE-SA.png",
       "logoFrom": "ncysa",
       "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2027-pgsa-beast-of-the-east/"
+    },
+    {
+      "id": 122,
+      "name": "PUMA KINGS Cup Boys 2027",
+      "start": "2027-02-06",
+      "end": "2027-02-07",
+      "city": "Charlotte, NC",
+      "ages": "Male U9–U18",
+      "venue": null,
+      "registrationOpen": true,
+      "registrationCloses": "2027-01-31",
+      "registerUrl": "https://soccer.sincsports.com/register/start.aspx?tid=CSAADI&tab=2&sub=0",
+      "scheduleUrl": "https://soccer.sincsports.com/schedule.aspx?tid=CSAADI&tab=4&sub=1",
+      "websiteUrl": "http://soccer.sincsports.com/TTIntro7.aspx?tid=CSAADI",
+      "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5798/logo"
     },
     {
       "id": "ncysa-2027-ccfc-go-forth-home-services-shootout-2",
