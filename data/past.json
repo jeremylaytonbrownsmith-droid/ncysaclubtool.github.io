@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-09T06:27:26.887Z",
+ "updated": "2026-11-16T06:28:56.357Z",
  "note": "Sanctioned tournaments that have already been played. Kept by scripts/archive-past.mjs.",
- "count": 22,
+ "count": 25,
  "tournaments": [
   {
    "id": "past-2026-csa-dsg-girls-invitational-2026-08-15",
@@ -264,6 +264,42 @@
    "ages": "U10–U14 Girls",
    "venue": null,
    "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-girls-jr-showcase/",
+   "websiteUrl": "https://www.ncfcyouth.com/",
+   "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png"
+  },
+  {
+   "id": "ncysa-2026-nc-fusion-adidas-clash",
+   "name": "2026 NCF Adidas Clash",
+   "start": "2026-11-13",
+   "end": "2026-11-15",
+   "city": "Greensboro, NC",
+   "ages": "U9–U19 Boys & Girls",
+   "venue": null,
+   "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-nc-fusion-adidas-clash/",
+   "websiteUrl": "https://soccer.sincsports.com/details.aspx?tid=TRN013&tab=1",
+   "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NC-FUSION.png"
+  },
+  {
+   "id": "ncysa-2026-cisc-boys-fall-classic",
+   "name": "2026 CISC Boys Fall Classic",
+   "start": "2026-11-14",
+   "end": "2026-11-15",
+   "city": "Huntersville, NC",
+   "ages": "U11–U19 Boys",
+   "venue": null,
+   "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-cisc-boys-fall-classic/",
+   "websiteUrl": "https://www.independencesoccer.club/",
+   "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-INDEPENDENCE.png"
+  },
+  {
+   "id": "ncysa-2026-ncfcy-visitraleigh-com-boys-jr-showcase",
+   "name": "2026 NCFCY visitRaleigh.com Boys Jr Showcase",
+   "start": "2026-11-14",
+   "end": "2026-11-15",
+   "city": "Raleigh, NC",
+   "ages": "U10–U14 Boys",
+   "venue": null,
+   "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-boys-jr-showcase/",
    "websiteUrl": "https://www.ncfcyouth.com/",
    "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png"
   }

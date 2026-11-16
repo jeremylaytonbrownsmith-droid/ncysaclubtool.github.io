@@ -1,64 +1,10 @@
 {
-  "updated": "2026-11-15T22:48:25.171Z",
+  "updated": "2026-11-16T06:29:12.310Z",
   "source": "https://playmetricssports.com/g/tournaments/138/North-Carolina",
   "statedCount": 19,
   "count": 19,
   "complete": true,
   "tournaments": [
-    {
-      "id": "ncysa-2026-nc-fusion-adidas-clash",
-      "name": "2026 NCF Adidas Clash",
-      "start": "2026-11-13",
-      "end": "2026-11-15",
-      "city": "Greensboro, NC",
-      "ages": "U9–U19 Boys & Girls",
-      "venue": null,
-      "registrationOpen": false,
-      "registrationCloses": null,
-      "registerUrl": null,
-      "scheduleUrl": null,
-      "websiteUrl": "https://soccer.sincsports.com/details.aspx?tid=TRN013&tab=1",
-      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-nc-fusion-adidas-clash/",
-      "clubUrl": "https://soccer.sincsports.com/details.aspx?tid=TRN013&tab=1",
-      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NC-FUSION.png",
-      "pm": false
-    },
-    {
-      "id": "ncysa-2026-cisc-boys-fall-classic",
-      "name": "2026 CISC Boys Fall Classic",
-      "start": "2026-11-14",
-      "end": "2026-11-15",
-      "city": "Huntersville, NC",
-      "ages": "U11–U19 Boys",
-      "venue": null,
-      "registrationOpen": false,
-      "registrationCloses": null,
-      "registerUrl": null,
-      "scheduleUrl": null,
-      "websiteUrl": "https://www.independencesoccer.club/",
-      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-cisc-boys-fall-classic/",
-      "clubUrl": "https://www.independencesoccer.club/",
-      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-INDEPENDENCE.png",
-      "pm": false
-    },
-    {
-      "id": "ncysa-2026-ncfcy-visitraleigh-com-boys-jr-showcase",
-      "name": "2026 NCFCY visitRaleigh.com Boys Jr Showcase",
-      "start": "2026-11-14",
-      "end": "2026-11-15",
-      "city": "Raleigh, NC",
-      "ages": "U10–U14 Boys",
-      "venue": null,
-      "registrationOpen": false,
-      "registrationCloses": null,
-      "registerUrl": null,
-      "scheduleUrl": null,
-      "websiteUrl": "https://www.ncfcyouth.com/",
-      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-boys-jr-showcase/",
-      "clubUrl": "https://www.ncfcyouth.com/",
-      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png",
-      "pm": false
-    },
     {
       "id": "ncysa-2026-ncfcy-visitraleigh-com-girls-college-showcase",
       "name": "2026 NCFCY visitRaleigh.com Girls College Showcase",
@@ -433,5 +379,5 @@
       "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5820/logo"
     }
   ],
-  "notInPlayMetrics": 7
+  "notInPlayMetrics": 4
 }
