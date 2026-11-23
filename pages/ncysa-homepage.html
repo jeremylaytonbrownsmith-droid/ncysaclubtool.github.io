@@ -1367,6 +1367,36 @@ html:has(#ncysa-home), body:has(#ncysa-home) { overflow-x: clip; }
     </div>
     <div class="tk-viewport"><div class="tk-track" id="ncysa-ticker-track"></div></div>
   </div>
+<style id="ncysa-newsbar-css">
+#ncysa-home .nb { display: flex; align-items: center; gap: 14px; margin: 14px 0 0; padding: 12px 14px 12px 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(237,195,44,.45); border-radius: 14px; text-decoration: none !important; color: #fff; font-family: 'Source Sans 3', system-ui, sans-serif; box-shadow: 0 10px 30px rgba(0,0,0,.3); transition: background .2s ease, transform .2s ease; }
+#ncysa-home .nb:hover { background: rgba(255,255,255,.11); transform: translateY(-1px); }
+#ncysa-home .nb:focus-visible { outline: 3px solid #edc32c; outline-offset: 2px; }
+#ncysa-home .nb-tag { flex: none; display: inline-flex; align-items: center; gap: 7px; padding: 6px 11px; background: #b82f2f; color: #fff; border-radius: 999px; font-weight: 700; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+#ncysa-home .nb-tag i { width: 7px; height: 7px; border-radius: 50%; background: #fff; animation: nbPulse 1.8s ease-in-out infinite; }
+@keyframes nbPulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+#ncysa-home .nb-txt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+#ncysa-home .nb-date { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #edc32c; }
+#ncysa-home .nb-title { font-size: 17px; font-weight: 600; line-height: 1.3; color: #fff; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#ncysa-home .nb-go { flex: none; padding: 9px 16px; background: #edc32c; color: #10045a; border-radius: 10px; font-weight: 700; font-size: 14px; white-space: nowrap; }
+@media (max-width: 600px) { #ncysa-home .nb { flex-wrap: wrap; gap: 10px; padding: 14px; } #ncysa-home .nb-txt { flex-basis: 100%; order: 2; } #ncysa-home .nb-title { white-space: normal; font-size: 16px; } #ncysa-home .nb-go { order: 3; width: 100%; text-align: center; } }
+</style>
+<a class="nb" id="ncysa-newsbar" href="https://www.ncsoccer.org/news/" hidden><span class="nb-tag"><i></i>News</span><span class="nb-txt"><span class="nb-date" id="nb-date"></span><span class="nb-title" id="nb-title"></span></span><span class="nb-go">Read &#8594;</span></a>
+<script>
+(function () {
+  var bar = document.getElementById('ncysa-newsbar');
+  if (!bar) { return; }
+  fetch('https://www.ncsoccer.org/wp-json/wp/v2/sec_news?per_page=1&_fields=title,link,date').then(function (r) { return r.json(); }).then(function (d) {
+    if (!d || !d.length) { return; }
+    var p = d[0], dt = new Date(p.date);
+    if ((Date.now() - dt.getTime()) > 30 * 86400000) { return; }
+    var t = document.createElement('textarea'); t.innerHTML = p.title.rendered;
+    document.getElementById('nb-title').textContent = t.value;
+    document.getElementById('nb-date').textContent = dt.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+    bar.href = p.link; bar.setAttribute('aria-label', 'Latest news: ' + t.value);
+    bar.hidden = false;
+  }).catch(function () {});
+})();
+</script>
     </div>
   </div></section>
   <div class="wrap">
