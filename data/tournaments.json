@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-22T19:39:41.419Z",
+  "updated": "2026-11-23T01:42:50.672Z",
   "source": "https://playmetricssports.com/g/tournaments/138/North-Carolina",
-  "statedCount": 19,
-  "count": 19,
+  "statedCount": 18,
+  "count": 18,
   "complete": true,
   "tournaments": [
     {
@@ -42,21 +42,22 @@
       "pm": false
     },
     {
-      "id": 106,
-      "name": "2026 WHYFC Fall Beach Classic",
+      "id": "ncysa-2026-whyfc-fall-beach-classic",
+      "name": "2026 WHYFC Beach Soccer Classic",
       "start": "2026-11-21",
       "end": "2026-11-22",
       "city": "Wilmington, NC",
-      "ages": "Male U9–U15 | Female U9–U17, U18+",
-      "venue": "Wilmington, NC / nCino Sports Park, Veteran’s Park, Ogden/Eaton Fields",
+      "ages": "U9–U15 Boys / U9–U19 Girls",
+      "venue": null,
       "registrationOpen": false,
       "registrationCloses": "2026-11-02",
-      "registerUrl": "https://soccer.sincsports.com/TTApply0.aspx?tid=BEACH&tab=2&sub=0",
-      "scheduleUrl": "https://soccer.sincsports.com/schedule.aspx?tid=BEACH&tab=4&sub=0",
-      "websiteUrl": null,
+      "registerUrl": null,
+      "scheduleUrl": null,
+      "websiteUrl": "https://soccer.sincsports.com/TTContent.aspx?tid=BEACH&tab=1",
+      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-whyfc-fall-beach-classic/",
+      "clubUrl": "https://soccer.sincsports.com/TTContent.aspx?tid=BEACH&tab=1",
       "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/WILMINGTON-HAMMERHEADS-YOUTH-FC.png",
-      "logoFrom": "ncysa",
-      "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-whyfc-fall-beach-classic/"
+      "pm": false
     },
     {
       "id": 104,
@@ -379,5 +380,5 @@
       "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5820/logo"
     }
   ],
-  "notInPlayMetrics": 4
+  "notInPlayMetrics": 5
 }
