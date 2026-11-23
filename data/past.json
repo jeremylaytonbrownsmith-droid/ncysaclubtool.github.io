@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-16T06:28:56.357Z",
+ "updated": "2026-11-23T12:38:54.465Z",
  "note": "Sanctioned tournaments that have already been played. Kept by scripts/archive-past.mjs.",
- "count": 25,
+ "count": 28,
  "tournaments": [
   {
    "id": "past-2026-csa-dsg-girls-invitational-2026-08-15",
@@ -302,6 +302,42 @@
    "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-boys-jr-showcase/",
    "websiteUrl": "https://www.ncfcyouth.com/",
    "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png"
+  },
+  {
+   "id": "ncysa-2026-ncfcy-visitraleigh-com-girls-college-showcase",
+   "name": "2026 NCFCY visitRaleigh.com Girls College Showcase",
+   "start": "2026-11-20",
+   "end": "2026-11-22",
+   "city": "Raleigh, NC",
+   "ages": "U15–U19 Girls",
+   "venue": null,
+   "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-ncfcy-visitraleigh-com-girls-college-showcase/",
+   "websiteUrl": "https://www.ncfcyouth.com/",
+   "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/NORTH-CAROLINA-FC-YOUTH.png"
+  },
+  {
+   "id": "ncysa-2026-cisc-girls-fall-classic",
+   "name": "2026 CISC Girls Fall Classic",
+   "start": "2026-11-21",
+   "end": "2026-11-22",
+   "city": "Huntersville, NC",
+   "ages": "U11–U19 Girls",
+   "venue": null,
+   "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-cisc-girls-fall-classic/",
+   "websiteUrl": "https://www.independencesoccer.club/",
+   "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/CHARLOTTE-INDEPENDENCE.png"
+  },
+  {
+   "id": "ncysa-2026-whyfc-fall-beach-classic",
+   "name": "2026 WHYFC Beach Soccer Classic",
+   "start": "2026-11-21",
+   "end": "2026-11-22",
+   "city": "Wilmington, NC",
+   "ages": "U9–U15 Boys / U9–U19 Girls",
+   "venue": null,
+   "ncysaUrl": "https://www.ncsoccer.org/ncsanctionedtournamentpage/2026-whyfc-fall-beach-classic/",
+   "websiteUrl": "https://soccer.sincsports.com/TTContent.aspx?tid=BEACH&tab=1",
+   "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/WILMINGTON-HAMMERHEADS-YOUTH-FC.png"
   }
  ]
 }
