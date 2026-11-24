@@ -1,7 +1,7 @@
-PlayMetrics says 18 tournaments. Page loaded 10 from 1 data request(s).
-Paging info from PlayMetrics: {"pagination":{"page":1,"per_page":10,"total_pages":2,"total_items":18}}
+PlayMetrics says 19 tournaments. Page loaded 10 from 1 data request(s).
+Paging info from PlayMetrics: {"pagination":{"page":1,"per_page":10,"total_pages":2,"total_items":19}}
 Request: POST https://api.gb.playmetrics.com/external/tp/tournament_promotions/search?populate=public_rules_document_url,club_image_url,sanctioning_body_state_name body {"filters":{"genders":[],"dates":[],"name_contains":"","age_classifications":[],"adult_competition":false,"states":[],"sanctioning_bodies":[],"is_registration_open":false,"is_include_test_gbs":false,"state_sanctioning_body_id":138},"sort":["tournament_start_date-ASC"],"page":1,"per_page":10}
-After paging: 18 tournaments.
+After paging: 19 tournaments.
  2026-12-05  HFC Riverside Senior Girls Showcase  (Asheville, NC)
  2026-12-11  2026 NCFCY visitRaleigh.com Boys College Showcase  (Raleigh, NC)
  2027-01-22  2027 CISC Boys College Showcase presented by Novant Health  (Rock Hill, SC)
@@ -20,3 +20,4 @@ After paging: 18 tournaments.
  2027-05-08  2027 NCFCY City of Oaks Classic  (Raliegh, NC)
  2027-05-15  2027 Falcons United Crystal Coast Classic  (Morehead City / Cedar Point / Newport, NC)
  2027-05-15  IFC Crossroads Classic  (Statesville, NC)
+ 2027-11-05  MYSA Fall Champions Cup  (Mebane, NC)

@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-23T12:39:10.619Z",
+  "updated": "2026-11-24T02:12:52.619Z",
   "source": "https://playmetricssports.com/g/tournaments/138/North-Carolina",
-  "statedCount": 18,
-  "count": 18,
+  "statedCount": 19,
+  "count": 19,
   "complete": true,
   "tournaments": [
     {
@@ -324,6 +324,22 @@
       "scheduleUrl": null,
       "websiteUrl": "https://www.impactfutbolclub.com/crossroads-classic",
       "logo": "https://api.gb.playmetrics.com/public/gbs/1207/clubs/5820/logo"
+    },
+    {
+      "id": 127,
+      "name": "MYSA Fall Champions Cup",
+      "start": "2027-11-05",
+      "end": "2027-11-07",
+      "city": "Mebane, NC",
+      "ages": "Male U8–U18 | Female U8–U18",
+      "venue": null,
+      "registrationOpen": false,
+      "registrationCloses": "2027-10-06",
+      "registerUrl": "https://soccer.sincsports.com/TTContent.aspx?tid=MYSAFC&tab=1",
+      "scheduleUrl": null,
+      "websiteUrl": "https://soccer.sincsports.com/TTContent.aspx?tid=MYSAFC&tab=1",
+      "logo": "https://www.ncsoccer.org/wp-content/uploads/sites/167/2025/11/MEBANE-YOUTH-SA.jpg",
+      "logoFrom": "ncysa"
     }
   ],
   "notInPlayMetrics": 2
